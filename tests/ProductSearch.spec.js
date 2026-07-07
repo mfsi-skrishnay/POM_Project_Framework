@@ -10,6 +10,7 @@ test('Scenario 1 - Product Search and Product Details Validation', async ({ page
     homePageobj = new HomePage(page);
     searchResultsPageobj = new SearchResultsPage(page);
     
+    const homepageTitle = "Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in";
     const productName = 'iPhone 15';
     const expectedTitle = 'iPhone';
     const productIndex = 0;
@@ -18,7 +19,7 @@ test('Scenario 1 - Product Search and Product Details Validation', async ({ page
     await homePageobj.navigateToHomePage();
 
     // Validate Home Page
-    await homePageobj.validateHomePage();         //mehtods with paramter
+    await homePageobj.validateHomePage(homepageTitle);        
 
     // Step 2 : Search Product
     await homePageobj.searchProduct(productName);

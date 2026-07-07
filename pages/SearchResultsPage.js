@@ -143,7 +143,6 @@ class SearchResultsPage {
     }
 
     async validatePriceLowToHigh() {
-
     const prices = await this.getNonSponsoredProducts().locator(locators.productPrice).allTextContents();
     for (let i = 0; i < prices.length - 1; i++) {
         const currentPrice = Number(prices[i].replace(/,/g, ''));

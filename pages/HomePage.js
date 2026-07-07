@@ -25,11 +25,12 @@ class HomePage {
     }
     }
     
-    async validateHomePage() {
-        await expect(this.page.locator(locators.logo)).toBeVisible();
-        await expect(this.page.locator(locators.searchBox)).toBeVisible();
-        await expect(this.page.locator(locators.searchButton)).toBeVisible();
-    }
+    async validateHomePage(expectedTitle) {
+    await expect(this.page).toHaveTitle(expectedTitle);
+    await expect(this.page.locator(locators.logo)).toBeVisible();
+    await expect(this.page.locator(locators.searchBox)).toBeVisible();
+    await expect(this.page.locator(locators.searchButton)).toBeVisible();
+}
 
     async searchProduct(productName) {
         await this.page.locator(locators.searchBox).fill(productName);
