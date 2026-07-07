@@ -18,14 +18,13 @@ test('Scenario 1 - Product Search and Product Details Validation', async ({ page
     await homePageobj.navigateToHomePage();
 
     // Validate Home Page
-    await homePageobj.validateHomePage();
+    await homePageobj.validateHomePage();         //mehtods with paramter
 
     // Step 2 : Search Product
     await homePageobj.searchProduct(productName);
 
     // Validate Search Results
     await searchResultsPageobj.validateSearchResults(productName);
-
 
     // Step 3 : Open First Product
     const productPage = await searchResultsPageobj.openProduct(productIndex);
