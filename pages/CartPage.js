@@ -17,10 +17,9 @@ class CartPage {
     }
 
     async validateSubtotalVisible() {
-        //await expect(this.page.locator(locators.subtotal).first()).toBeVisible(); 
         const count = await this.page.locator(locators.subtotal).count();
-    console.log('Matches found:', count);
-    await expect(this.page.locator(locators.subtotal).first()).toBeVisible();
+        console.log('Matches found:', count);
+        await expect(this.page.locator(locators.subtotal).first()).toBeVisible();
     }
 
     async increaseQuantity(targetQty) {

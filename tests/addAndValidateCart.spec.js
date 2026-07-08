@@ -10,7 +10,6 @@ test('Scenario 3 - Add Product to Cart and Validate Cart', async ({ page }) => {
     homePageobj = new HomePage(page);
     searchResultsPageobj = new SearchResultsPage(page);
     
-
     const productName = 'Bluetooth Speaker';
     const productIndex = 2;
     const initialQuantity = 1;

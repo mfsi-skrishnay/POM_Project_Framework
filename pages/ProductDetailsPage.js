@@ -9,8 +9,11 @@ const locators = {
 
     addToCartButton: 'input[id*="add-to-cart"]',
     goToCartButton: "//a[normalize-space()='Go to Cart']",
-    goToCartLink: "//a[normalize-space()='Go to Cart']",
     addedItemPrice: "span[class*='subtotal'] h2",
+
+    addToWishlistButton: "#wishListMainButton",
+    wishlistdialog: 'div[aria-label="Add to Wish List"]',
+    wishlistConfirmation: 'div[aria-label="Add to Wish List"] h4',
 
 };
 
@@ -32,7 +35,7 @@ class ProductDetailsPage {
         const productPrice = await this.page.locator(locators.productPrice).first().textContent();
         expect(productPrice).not.toBe('');
         await expect(this.page.locator(locators.productRating).nth(0)).toHaveAttribute('aria-label', /Reviews/);
-        await expect(this.page.locator(locators.deliveryInfo)).toBeVisible();
+        await expect(this.page.locator(locators.deliveryInfo)).toBeVisible(); 
     }
 
     async returnToSearchResults() {
@@ -54,9 +57,25 @@ class ProductDetailsPage {
     }
 
     async goToCart() {
-        await this.page.locator(locators.goToCartLink).first().click();
+        await this.page.locator(locators.goToCartButton).first().click();
     }
 
+    async validateAddToWishlistVisible() {
+        await expect(this.page.locator(locators.addToWishlistButton)).toBeVisible();
+    }
+
+    async addToWishlist(){
+        await this.page.locator(locators.addToWishlistButton).click();
+    }
+
+    async validateWishlistDialogOpened() {
+        await expect(this.page.locator(locators.wishlistdialog)).toBeVisible();
+    }
+
+    async validateAddedToWishlist(expectedTitle) {
+    await expect(this.page.locator(locators.wishlistConfirmation)).toBeVisible();
+    await expect(this.page.locator(locators.productTitle).first()).toContainText(expectedTitle);
+    }
 
 
 }

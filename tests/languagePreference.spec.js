@@ -2,7 +2,6 @@ const { test } = require('@playwright/test');
 const { HomePage } = require('../pages/HomePage.js');
 
 let homePageobj;
-
 test('Scenario 4 - Language Preference Change and Validation', async ({ page }) => {
     homePageobj = new HomePage(page);
 

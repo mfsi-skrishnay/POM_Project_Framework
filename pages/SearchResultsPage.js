@@ -32,19 +32,14 @@ class SearchResultsPage {
     }
 
     getNonSponsoredProducts() {
-    return this.page
-        .locator(locators.productList)
-        .filter({
-            hasNot: this.page.getByText('Sponsored')
-        });
+    return this.page.locator(locators.productList).filter({hasNot: this.page.getByText('Sponsored')});
 }
 
     async validateSearchResults(searchKeyword) {
 
-    await expect(this.page.locator(locators.searchBox)).toHaveValue(searchKeyword); // Verify searched keyword
-    await expect(this.page.locator(locators.productList).first()).toBeVisible();  // Verify search results are displayed
-    
-    const resultCount = await this.page.locator(locators.productList).count();   // Verify search results count
+    await expect(this.page.locator(locators.searchBox)).toHaveValue(searchKeyword); 
+    await expect(this.page.locator(locators.productList).first()).toBeVisible();  
+    const resultCount = await this.page.locator(locators.productList).count();   
     expect(resultCount).toBeGreaterThan(0);
     
     }
@@ -52,14 +47,13 @@ class SearchResultsPage {
     async openProduct(index) {
 
         const newPagePromise = this.page.context().waitForEvent('page');    //waiting for a new browser tab to open
-        await this.page.locator(locators.productList).nth(index).locator(locators.productTitle).click();  //click on product based on the index
+        await this.getNonSponsoredProducts().nth(index).locator(locators.productTitle).click();  //click on non-sponsored product based on index
         const productPage = await newPagePromise;
         await productPage.waitForLoadState();
         return productPage;
     }
 
     async validateSearchResultsAfterBack(searchKeyword) {
-
         await expect(this.page.locator(locators.searchBox)).toHaveValue(searchKeyword);
         await expect(this.page.locator(locators.productList).first()).toBeVisible();
     }

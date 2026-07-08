@@ -12,7 +12,7 @@ const locators = {
     languageOptionRadio: 'input[type="radio"]',
     languageOptionIcon: 'i.a-icon-radio',     
     saveChangesButton: 'input[aria-labelledby*="save-button"]',
-    headerContainer: '[id*="icp-nav-flyout"] div',    //'a[aria-label*="Choose a language"]' 
+    headerContainer: '[id*="icp-nav-flyout"] div',   
 };
 
 class HomePage {
@@ -24,6 +24,7 @@ class HomePage {
     await this.page.goto('/');
     await this.handleContinueShopping();
     }
+    
     async handleContinueShopping() {
     const continueButton = this.page.locator(locators.continueBtn);
     try {
