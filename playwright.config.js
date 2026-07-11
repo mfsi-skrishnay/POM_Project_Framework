@@ -12,7 +12,9 @@ module.exports = defineConfig({
         baseURL: 'https://www.amazon.in',
         browserName: 'chromium',
         headless: false,
-         trace: 'on-first-retry'
+        video: 'retain-on-failure',
+        trace: 'retain-on-failure',
+        screenshot: 'only-on-failure', 
     },
 
     projects: [

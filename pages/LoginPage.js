@@ -44,9 +44,10 @@ class LoginPage{
     }
 
     async logout() {
-        await this.page.locator(locators.accountinfo).hover();
-        await this.page.locator(locators.signOutLink).click();
-        
+    await this.page.locator(locators.accountinfo).hover();
+    const signOutLink = this.page.locator(locators.signOutLink);
+    await signOutLink.waitFor({ state: 'visible', timeout: 10000 });
+    await signOutLink.click();
     }
 
     

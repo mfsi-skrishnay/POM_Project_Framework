@@ -43,8 +43,8 @@ class ProductDetailsPage {
     }
 
     async validateProductTitleAndPrice() {
-        const productTitle = await this.page.locator(locators.productTitle).first().textContent();
-        const productPrice = await this.page.locator(locators.productPrice).first().textContent();
+        await expect(this.page.locator(locators.productTitle).first()).toBeVisible();  
+        await expect(this.page.locator(locators.productPrice).first()).toBeVisible();
     }
 
     async addToCart() {
@@ -77,6 +77,9 @@ class ProductDetailsPage {
     await expect(this.page.locator(locators.productTitle).first()).toContainText(expectedTitle);
     }
 
+    async closeAfterWishlistConfirmation() {
+        await this.page.close();
+    }
 
 }
 module.exports = { ProductDetailsPage };
