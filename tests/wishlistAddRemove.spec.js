@@ -6,107 +6,114 @@ const { LoginPage } = require('../pages/LoginPage.js');
 const { WishlistPage } = require('../pages/wishlistPage.js');
 const testData = require('../utils/testData.js');
 
+
+const products = [
+    { name: 'Laptop', index: 0 },
+    { name: 'Earbuds', index: 2 },
+    { name: 'TV', index: 3 }
+];
+const wishlistUrl = '/hz/wishlist/ls/';
+const expectedWishlistItemCount = 3;
+const newWishlistName = 'MyShoppingList';
+
 let homePageobj, searchResultsPageobj, loginPageobj, wishlistPageobj;
-let productDetailsPageobj1,productPage1,productPage2,productDetailsPageobj2, productPage3,productDetailsPageobj3;
 
-test.describe.serial('Scenario 5 - Add Product to Wishlist and Remove It', () => {
-    test.setTimeout(90000);
-    test.beforeAll(async ({ browser }) => {
-        const page = await browser.newPage();
-        homePageobj = new HomePage(page);
-        loginPageobj = new LoginPage(page);
-        searchResultsPageobj = new SearchResultsPage(page);
+test.beforeAll(async ({ browser }) => {
+    const page = await browser.newPage();
+    homePageobj = new HomePage(page);
+    loginPageobj = new LoginPage(page);
+    searchResultsPageobj = new SearchResultsPage(page);
 
-        // Login
-        await homePageobj.navigateToHomePage();
-        await loginPageobj.login(testData.email, testData.password);
-    });
-
-    test('Test 1 - Add to Wishlist and Open Your Wishlist', async () => {
-    const [product1, product2, product3] = testData.products;
-
-    // Step 1: Search and open product 1 (Laptop), add to wishlist, close
-    await homePageobj.searchProduct(product1.name);
-    await searchResultsPageobj.validateSearchResults(product1.name);
-    productPage1 = await searchResultsPageobj.openProduct(product1.index);
-    productDetailsPageobj1 = new ProductDetailsPage(productPage1);
-    await productDetailsPageobj1.validateProductTitleAndPrice();
-    await productDetailsPageobj1.validateAddToWishlistVisible();
-    await productDetailsPageobj1.addToWishlist();
-    await productDetailsPageobj1.validateWishlistDialogOpened();
-    await productDetailsPageobj1.validateAddedToWishlist(product1.name);
-    await productDetailsPageobj1.closeAfterWishlistConfirmation();
-
-    // Step 2: Search and open product 2 (Mobile), add to wishlist, close
-    await homePageobj.searchProduct(product2.name);
-    await searchResultsPageobj.validateSearchResults(product2.name);
-    productPage2 = await searchResultsPageobj.openProduct(product2.index);
-    productDetailsPageobj2 = new ProductDetailsPage(productPage2);
-    await productDetailsPageobj2.validateProductTitleAndPrice();
-    await productDetailsPageobj2.validateAddToWishlistVisible();
-    await productDetailsPageobj2.addToWishlist();
-    await productDetailsPageobj2.validateWishlistDialogOpened();
-    await productDetailsPageobj2.validateAddedToWishlist(product2.name);
-    await productDetailsPageobj2.closeAfterWishlistConfirmation();
-
-    // Step 3: Search and open product 3 (TV), add to wishlist, KEEP OPEN
-    await homePageobj.searchProduct(product3.name);
-    await searchResultsPageobj.validateSearchResults(product3.name);
-    productPage3 = await searchResultsPageobj.openProduct(product3.index);
-    productDetailsPageobj3 = new ProductDetailsPage(productPage3);
-    await productDetailsPageobj3.validateProductTitleAndPrice();
-    await productDetailsPageobj3.validateAddToWishlistVisible();
-    await productDetailsPageobj3.addToWishlist();
-    await productDetailsPageobj3.validateWishlistDialogOpened();
-    await productDetailsPageobj3.validateAddedToWishlist(product3.name);
-
-    // Step 4: Open Your Wish List — from product 3 page
-    wishlistPageobj = new WishlistPage(productPage3);
-    await wishlistPageobj.openWishlist(testData.actualUrl);
-    await wishlistPageobj.validateWishlistItemCount(testData.actualCount);
-
-    wishlistPageobj = new WishlistPage(productPage3);
-    await wishlistPageobj.openWishlist(testData.actualUrl);
-    await wishlistPageobj.validateWishlistItemCount(testData.actualCount);
-
-    // Visual validation additions
-    await wishlistPageobj.captureWishlistScreenshot('wishlist-after-adding-3-items');
-    await wishlistPageobj.captureFullWishlistScreenshot('wishlist-fullpage-after-adding-3-items');
-    await wishlistPageobj.captureWishlistItemScreenshot(0, 'first-wishlist-item');
-
+    await homePageobj.navigateToHomePage();
+    await loginPageobj.login(testData.email, testData.password);
 });
 
-    test('Test 2- Searching in the wishlist',async()=>{
-    const [product1] = testData.products;   // using "Laptop" as the search keyword
+// Adds each product to the wishlist, then opens the wishlist 
+async function addAllProducts() {
+    const [firstProduct, secondProduct, thirdProduct] = products;   //destructuring
 
-    // Step 5: Search within wishlist and validate results
-    await wishlistPageobj.searchWithinWishlist(product1.name);
-    await wishlistPageobj.validateSearchResultsKeyword(product1.name)
-    await wishlistPageobj.clearSearchKeyword();
-    })
- 
-    test('Test 3 - Removing 1 item from wishlist', async () => {
-    const removeIndex = 0;   // removes the first item in the wishlist (e.g. Laptop)
+    // Add the first product 
+    await homePageobj.searchProduct(firstProduct.name);
+    await searchResultsPageobj.validateSearchResults(firstProduct.name);
+    const firstProductPage = await searchResultsPageobj.openProduct(firstProduct.index);
+    const firstProductDetails = new ProductDetailsPage(firstProductPage);
+    await firstProductDetails.validateProductTitleAndPrice();
+    await firstProductDetails.validateAddToWishlistVisible();
+    await firstProductDetails.addToWishlist();
+    await firstProductDetails.validateWishlistDialogOpened();
+    await firstProductDetails.validateAddedToWishlist(firstProduct.name);
+    await firstProductDetails.closeAfterWishlistConfirmation();
 
-    // Step 6: Remove the item based on index and validate
-    await wishlistPageobj.removeProductFromWishlist(removeIndex);
-    await wishlistPageobj.validateProductRemoved();
+    // Add the second product 
+    await homePageobj.searchProduct(secondProduct.name);
+    await searchResultsPageobj.validateSearchResults(secondProduct.name);
+    const secondProductPage = await searchResultsPageobj.openProduct(secondProduct.index);
+    const secondProductDetails = new ProductDetailsPage(secondProductPage);
+    await secondProductDetails.validateProductTitleAndPrice();
+    await secondProductDetails.validateAddToWishlistVisible();
+    await secondProductDetails.addToWishlist();
+    await secondProductDetails.validateWishlistDialogOpened();
+    await secondProductDetails.validateAddedToWishlist(secondProduct.name);
+    await secondProductDetails.closeAfterWishlistConfirmation();
+
+    // Add the third product open the wishlist
+    await homePageobj.searchProduct(thirdProduct.name);
+    await searchResultsPageobj.validateSearchResults(thirdProduct.name);
+    const thirdProductPage = await searchResultsPageobj.openProduct(thirdProduct.index);
+    const thirdProductDetails = new ProductDetailsPage(thirdProductPage);
+    await thirdProductDetails.validateProductTitleAndPrice();
+    await thirdProductDetails.validateAddToWishlistVisible();
+    await thirdProductDetails.addToWishlist();
+    await thirdProductDetails.validateWishlistDialogOpened();
+    await thirdProductDetails.validateAddedToWishlist(thirdProduct.name);
+
+    // Open the wishlist from the last page and validate count.
+    wishlistPageobj = new WishlistPage(thirdProductPage);
+    await wishlistPageobj.openWishlist(wishlistUrl);
+    await wishlistPageobj.validateWishlistItemCount(expectedWishlistItemCount);
+}
+
+test.describe('Scenario 5 - Add Product to Wishlist and Remove It', () => {
+
+    test.beforeEach(async () => {
+        await addAllProducts();
     });
 
-    test('Test 4 - Changing Wishlist Name', async () => {
+    test.afterEach(async () => {
+        await wishlistPageobj.clearAllWishlistItems();
         
-    // Step 7: Hover on wishlist menu, open Manage List
-    await wishlistPageobj.wishlistMenuHover();
-    await wishlistPageobj.clickOnManageList();
-
-    // Step 8: Edit and save the new list name
-    await wishlistPageobj.editListName(testData.newListName);
-    await wishlistPageobj.validateListName(testData.newListName);
-    
     });
 
-    test.afterAll(async () => {
-        await loginPageobj.logout();
+    test('Test 1 - Add products to the wishlist and open page', async () => {
+
+        //Applying ss here for practice
+        await wishlistPageobj.captureWishlistScreenshot('Wishlist after adding 3 items');
+        await wishlistPageobj.captureFullWishlistScreenshot('Wishlist full page after adding 3 items');
+        await wishlistPageobj.captureWishlistItemScreenshot(0, 'First wishlist item');
     });
 
+    test('Test 2 - Search for an item within the wishlist', async () => {
+        const [laptop] = products;
+
+        await wishlistPageobj.searchWithinWishlist(laptop.name);
+        await wishlistPageobj.validateSearchResultsKeyword(laptop.name);
+        await wishlistPageobj.clearSearchKeyword();
+    });
+
+    test('Test 3 - Remove a single item from the wishlist', async () => {
+    const indexOfItemToRemove = 0;
+    await wishlistPageobj.removeProductFromWishlist(indexOfItemToRemove);
+    await wishlistPageobj.validateProductMessage('Deleted');
+    });
+
+    test('Test 4 - Rename the wishlist', async () => {
+        await wishlistPageobj.wishlistMenuHover();
+        await wishlistPageobj.clickOnManageList();
+        await wishlistPageobj.editListName(newWishlistName);
+        await wishlistPageobj.validateListName(newWishlistName);
+    });
+});
+
+test.afterAll(async () => {
+    await loginPageobj.logout();
 });

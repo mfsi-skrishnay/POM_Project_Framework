@@ -49,7 +49,6 @@ class SearchResultsPage {
         const newPagePromise = this.page.context().waitForEvent('page');    //waiting for a new browser tab to open
         await this.getNonSponsoredProducts().nth(index).locator(locators.productTitle).click();  //click on non-sponsored product based on index
         const productPage = await newPagePromise;
-        await productPage.waitForLoadState();
         return productPage;
     }
 

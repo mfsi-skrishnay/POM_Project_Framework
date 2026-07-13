@@ -54,9 +54,9 @@ class WishlistPage {
     await this.page.locator(locators.removeItemButton).nth(index).click();
     }
 
-    async validateProductRemoved() {
-        const deletedAlert = this.page.locator(locators.deletedAlert, { hasText: 'Deleted' });
-        await expect(deletedAlert).toBeVisible();
+    async validateProductMessage(expectedMessage) {
+    const alertMessage = this.page.locator(locators.deletedAlert, {hasText: expectedMessage});
+    await expect(alertMessage).toBeVisible();
     }
 
     async refreshAndValidateWishlistEmpty() {
@@ -85,7 +85,7 @@ class WishlistPage {
     try{
     await expect(this.page.locator(locators.profileListName)).toBeVisible();
     await expect(this.page.locator(locators.profileListName)).toContainText(expectedName);
-    await this.page.close();
+    
     }
     catch (error) {
     await this.page.screenshot({ path: `screenshots/failure-validateListName-${Date.now()}.png` });
@@ -105,6 +105,16 @@ class WishlistPage {
     await this.page.locator(locators.wishlistItemTitle).nth(index).screenshot({ path: `screenshots/${fileName}.png` });
     }
 
-
+    async clearAllWishlistItems() {
+    let remainingItemCount = await this.page.locator(locators.wishlistItemTitle).count();
+    while (remainingItemCount > 0) {
+        await this.removeProductFromWishlist(0);
+        await expect(this.page.locator(locators.deletedAlert, { hasText: 'Deleted' }).last()).toBeVisible();
+        await this.page.reload();
+        remainingItemCount = await this.page.locator(locators.wishlistItemTitle).count();
+        
+    }
+    await this.page.close();
+}
 }
 module.exports = { WishlistPage };

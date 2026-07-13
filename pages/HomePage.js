@@ -43,8 +43,10 @@ class HomePage {
     }
 
     async searchProduct(productName) {
-        await this.page.locator(locators.searchBox).fill(productName);
-        await this.page.locator(locators.searchButton).click();
+    const searchBox = this.page.locator(locators.searchBox);
+    await searchBox.fill(productName);
+    await expect(searchBox).toHaveValue(productName);
+    await this.page.locator(locators.searchButton).click();
     }
 
     async openLanguageSettingPage() {
