@@ -1,8 +1,8 @@
 const { expect } = require('@playwright/test');
 const locators = {
-    searchBox: '#twotabsearchtextbox',
+    searchBox: '[type="text"][placeholder*="Search"]',
     productList: 'div[data-component-type*="result"]',
-    productTitle: 'h2 span',
+    productTitle: 'a h2',
     
     brandFilterOptions: '#filter-p_123 li',
     brandFilter: 'a[aria-label*="the filter"]',
@@ -27,13 +27,14 @@ const locators = {
 };
 
 class SearchResultsPage {
-    constructor(page) {
-        this.page = page;
+    constructor(page, isMobile) {
+    this.page = page;
+    this.isMobile = isMobile;
     }
 
     getNonSponsoredProducts() {
     return this.page.locator(locators.productList).filter({hasNot: this.page.getByText('Sponsored')});
-}
+    }
 
     async validateSearchResults(searchKeyword) {
 
@@ -44,13 +45,30 @@ class SearchResultsPage {
     
     }
    
-    async openProduct(index) {
+    // async openProduct(index) {
+    // const newPagePromise = this.page.context().waitForEvent('page');
+    // await this.getNonSponsoredProducts().nth(index).locator(locators.productTitle).click();
+    // const productPage = await newPagePromise;
+    // await productPage.waitForLoadState('domcontentloaded');
+    // return productPage;
+    // }
 
-        const newPagePromise = this.page.context().waitForEvent('page');    //waiting for a new browser tab to open
-        await this.getNonSponsoredProducts().nth(index).locator(locators.productTitle).click();  //click on non-sponsored product based on index
-        const productPage = await newPagePromise;
-        return productPage;
+    async openProduct(index) {
+    const product = this.getNonSponsoredProducts().nth(index).locator(locators.productTitle);
+    if (this.page.viewportSize().width <= 768) {
+        await product.click(); 
+        await this.page.waitForURL(/\/dp\/|\/gp\/product\//);
+        await this.page.waitForLoadState('domcontentloaded');
+        return this.page;
     }
+    const newPagePromise = this.page.context().waitForEvent('page');
+    await product.click(); 
+    const productPage = await newPagePromise;
+    await productPage.waitForLoadState('domcontentloaded');
+    return productPage;
+    }
+
+
 
     async validateSearchResultsAfterBack(searchKeyword) {
         await expect(this.page.locator(locators.searchBox)).toHaveValue(searchKeyword);

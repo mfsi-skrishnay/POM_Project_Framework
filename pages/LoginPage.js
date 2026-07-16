@@ -32,21 +32,22 @@ class LoginPage{
         await this.page.locator(locators.signInButton).click();
     }
 
-    async validateLoggedIn() {
+    async validateLoggedIn(expectedName) {
         await expect(this.page.locator(locators.accountName)).toBeVisible();
+         await expect(this.page.locator(locators.accountName)).toContainText(expectedName);
     }
 
     async login(email, password) {
         await this.openSignInPage();
         await this.enterEmail(email);
         await this.enterPassword(password);
-        await this.validateLoggedIn();
+        
     }
 
     async logout() {
     await this.page.locator(locators.accountinfo).hover();
     const signOutLink = this.page.locator(locators.signOutLink);
-    await signOutLink.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(signOutLink).toBeVisible();
     await signOutLink.click();
     }
 

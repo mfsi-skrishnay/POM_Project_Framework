@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","31952","Test 2 - Remove a single item from the wishlist","Chromium","2026-07-16","broken","2026-07-16","Scenario 5 - Add Product to Wishlist and Remove It","wishlistAddRemove.spec.js","",""
+"","40153","Test 3 - Rename the wishlist","Chromium","2026-07-16","broken","2026-07-16","Scenario 5 - Add Product to Wishlist and Remove It","wishlistAddRemove.spec.js","",""
+"","30367","Test 1 - Search for an item within the wishlist","Chromium","2026-07-16","broken","2026-07-16","Scenario 5 - Add Product to Wishlist and Remove It","wishlistAddRemove.spec.js","",""

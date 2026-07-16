@@ -2,18 +2,25 @@ const { defineConfig, devices } = require('@playwright/test');
 
 module.exports = defineConfig({
     testDir: './tests',
-    reporter: 'html',
-    timeout: 60000,        
-    expect: {
-        timeout: 10000,     
-    },
+    reporter: [['html'],['list'],['./reporters/CustomReporter.js']],
+    // reporter: 'list',                                          
+    // reporter: 'dot',                                           
+    // reporter: 'line',                                          
+    // reporter: [['json', { outputFile: 'results.json' }]],      
+    // reporter: [['junit', { outputFile: 'results.xml' }]],      
+    // reporter: [['blob', { outputDir: 'blob-report' }]],       
+    // reporter: [['github']],                                    
+    // reporter: [ ['list'],['html', { outputFolder: 'playwright-report', open: 'never' }],['junit', { outputFile: 'results.xml' }] ],
+    wishlistUrl: '/hz/wishlist/ls/',
+
+
     use: {
         baseURL: 'https://www.amazon.in',
         browserName: 'chromium',
         headless: false,
         video: 'retain-on-failure',
         trace: 'retain-on-failure',
-        screenshot: 'only-on-failure', 
+        screenshot: 'only-on-failure',
     },
 
     projects: [
@@ -23,6 +30,13 @@ module.exports = defineConfig({
             use: {
                 ...devices['Desktop Chrome']
             }
+        },
+    
+        { 
+            name: 'Mobile Safari', 
+            use: { 
+                ...devices['iPhone 14'] 
+            } 
         },
     //     {
     //     name: 'Firefox',
@@ -38,6 +52,6 @@ module.exports = defineConfig({
     //     }
     // }
 
-    ]
+    ],
 
 });

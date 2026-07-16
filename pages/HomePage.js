@@ -1,8 +1,8 @@
 const { expect } = require('@playwright/test');
 const locators = {
     logo: 'a[id*="logo"]',
-    searchBox: '#twotabsearchtextbox',
-    searchButton: 'input[id*="submit"]',
+    searchBox: '[type="text"][placeholder*="Search"]',
+    searchButton: 'input[type*="submit"]',
     continueBtn: 'button:has-text("Continue shopping")',
 
     languageIcon: '#icp-nav-flyout',
@@ -16,9 +16,10 @@ const locators = {
 };
 
 class HomePage {
-    constructor(page){
-        this.page = page;
-    }
+    constructor(page, isMobile) {
+    this.page = page;
+    this.isMobile = isMobile;
+}
 
     async navigateToHomePage() {
     await this.page.goto('/');
@@ -27,17 +28,15 @@ class HomePage {
     
     async handleContinueShopping() {
     const continueButton = this.page.locator(locators.continueBtn);
-    try {
-        await continueButton.waitFor({ state: 'visible', timeout: 5000 });
+
+    if (await continueButton.isVisible()) {
         await continueButton.click();
-    } catch {
-        console.log('Continue Shopping page not displayed.');
     }
-    }
+}
     
     async validateHomePage(expectedTitle) {
     await expect(this.page).toHaveTitle(expectedTitle);
-    await expect(this.page.locator(locators.logo)).toBeVisible();
+    await expect(this.page.locator(locators.logo).first()).toBeVisible();
     await expect(this.page.locator(locators.searchBox)).toBeVisible();
     await expect(this.page.locator(locators.searchButton)).toBeVisible();
     }

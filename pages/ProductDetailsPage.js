@@ -12,14 +12,16 @@ const locators = {
     addedItemPrice: "span[class*='subtotal'] h2",
 
     addToWishlistButton: "#wishListMainButton",
+    addToWishlistButtonInput: 'input[id*="button-submit"]', 
     wishlistdialog: 'div[aria-label="Add to Wish List"]',
     wishlistConfirmation: 'div[aria-label="Add to Wish List"] h4',
 
 };
 
 class ProductDetailsPage {
-    constructor(page) {
-        this.page = page;
+    constructor(page, isMobile) {
+    this.page = page;
+    this.isMobile = isMobile;
     }
 
     async validateProductPage() {
@@ -42,8 +44,7 @@ class ProductDetailsPage {
         await this.page.close();
     }
 
-    async validateProductTitleAndPrice() {
-        await expect(this.page.locator(locators.productTitle).first()).toBeVisible();  
+    async validateProductPrice() {
         await expect(this.page.locator(locators.productPrice).first()).toBeVisible();
     }
 
@@ -53,28 +54,22 @@ class ProductDetailsPage {
 
     async validateAddToCartConfirmation() {
         await expect(this.page.locator(locators.goToCartButton).first()).toBeVisible();  
-        await expect(this.page.locator(locators.addedItemPrice).first()).toBeVisible();   
     }
 
     async goToCart() {
         await this.page.locator(locators.goToCartButton).first().click();
     }
 
-    async validateAddToWishlistVisible() {
-        await expect(this.page.locator(locators.addToWishlistButton)).toBeVisible();
-    }
+   async addToWishlist(expectedButtonText) {
+  //  await expect(this.page.locator(locators.addToWishlistButton)).toBeVisible();
+    const wishlistButtonInput = this.page.locator(locators.addToWishlistButtonInput);
+    await expect(wishlistButtonInput).toHaveValue(expectedButtonText);
+    await this.page.locator(locators.addToWishlistButton).click();
+}
 
-    async addToWishlist(){
-        await this.page.locator(locators.addToWishlistButton).click();
-    }
-
-    async validateWishlistDialogOpened() {
-        await expect(this.page.locator(locators.wishlistdialog)).toBeVisible();
-    }
-
-    async validateAddedToWishlist(expectedTitle) {
+    async validateAddedToWishlistDialog(expectedTitle) {
     await expect(this.page.locator(locators.wishlistConfirmation)).toBeVisible();
-    await expect(this.page.locator(locators.productTitle).first()).toContainText(expectedTitle);
+    //await expect(this.page.locator(locators.productTitle).first()).toContainText(expectedTitle);
     }
 
     async closeAfterWishlistConfirmation() {

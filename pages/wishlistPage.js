@@ -3,7 +3,7 @@ const { expect } = require('@playwright/test');
 const locators = {
     wishlistNavLink: '[id*="your-list"] a',
     wishlistItemTitle: 'a[id*="itemName_"]',
-    removeItemButton: '[name="submit.deleteItem"]', //[data-reg-item-delete*='Laptop'] [name="submit.deleteItem"]
+    removeItemButton: '[name="submit.deleteItem"]', 
     deletedAlert: '.a-alert-content',
     emptyWishlistMessage: 'div[class*="zero-items-text-section"] span',
     wishlistSearchBox: '#itemSearchTextInput',
@@ -22,8 +22,7 @@ class WishlistPage {
 
     async openWishlist(expectedUrl) {
         await this.page.locator(locators.wishlistNavLink).click();
-        const currentUrl = this.page.url();
-        await expect(currentUrl).toContain(expectedUrl)
+        await expect(this.page).toHaveURL(new RegExp(expectedUrl));
     }
 
     
@@ -46,6 +45,7 @@ class WishlistPage {
     const searchBox = this.page.locator(locators.wishlistSearchBox);
     await searchBox.fill('');
     await searchBox.press('Enter');
+    
     }
 
     async removeProductFromWishlist(index) {
@@ -61,7 +61,7 @@ class WishlistPage {
 
     async refreshAndValidateWishlistEmpty() {
         await this.page.reload();
-        await expect(this.page.locator(locators.emptyWishlistMessage)).toBeVisible();
+        await expect(this.page.locator(locators.emptyWishlistMessage)).toContainText('There are no items in this List.');
         await this.page.close();
     }
     
@@ -105,16 +105,27 @@ class WishlistPage {
     await this.page.locator(locators.wishlistItemTitle).nth(index).screenshot({ path: `screenshots/${fileName}.png` });
     }
 
+    // async validateVisualSnapshot(name) {
+    // await expect(this.page).toHaveScreenshot(`${name}.png`,{fullPage: true});
+    // }
+
     async clearAllWishlistItems() {
+    const searchBox = this.page.locator(locators.wishlistSearchBox);
+    await searchBox.fill('');
+    await searchBox.press('Enter');
+    await this.page.waitForLoadState('domcontentloaded');
+
     let remainingItemCount = await this.page.locator(locators.wishlistItemTitle).count();
     while (remainingItemCount > 0) {
         await this.removeProductFromWishlist(0);
-        await expect(this.page.locator(locators.deletedAlert, { hasText: 'Deleted' }).last()).toBeVisible();
+        await expect(this.page.locator(locators.deletedAlert, { hasText: 'Deleted' })).toBeVisible();
         await this.page.reload();
+        await this.page.waitForLoadState('domcontentloaded');
         remainingItemCount = await this.page.locator(locators.wishlistItemTitle).count();
-        
     }
+    await this.page.locator(locators.emptyWishlistMessage).waitFor({ state: 'visible' });
+    await expect(this.page.locator(locators.emptyWishlistMessage)).toContainText('There are no items in this List.');
     await this.page.close();
-}
+    }
 }
 module.exports = { WishlistPage };

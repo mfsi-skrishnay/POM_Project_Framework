@@ -1,0 +1,3040 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: wishlistAddRemove.spec.js >> Scenario 5 - Add Product to Wishlist and Remove It >> Test 2 - Remove a single item from the wishlist
+- Location: tests\wishlistAddRemove.spec.js:105:1
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded while running "beforeEach" hook.
+```
+
+```
+TimeoutError: locator.waitFor: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator('#nav-item-signout, a[href*="ref_=nav_signout"]') to be visible
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - navigation "Shortcuts menu" [ref=e3]:
+    - heading "Skip to" [level=2] [ref=e4]
+    - list "Skip to" [ref=e5]:
+      - listitem [ref=e6]:
+        - link "main content" [ref=e7] [cursor=pointer]:
+          - /url: "#skippedLink"
+          - text: Main content
+      - listitem [ref=e8]:
+        - link "Results" [ref=e9] [cursor=pointer]:
+          - /url: .s-asin a:has(h2)
+    - separator [ref=e10]
+    - heading "Keyboard shortcuts" [level=2] [ref=e11]
+    - list "Keyboard shortcuts" [ref=e12]:
+      - listitem [ref=e13]:
+        - link "Search, alt, forward slash" [ref=e14] [cursor=pointer]:
+          - /url: javascript:void(0)
+          - generic [ref=e15]:
+            - generic [ref=e16]: Search
+            - generic [ref=e17]:
+              - generic [ref=e18]: alt
+              - generic [ref=e19]: +
+              - generic [ref=e20]: /
+      - listitem [ref=e21]:
+        - link "Cart, shift, alt, c" [ref=e22] [cursor=pointer]:
+          - /url: javascript:void(0)
+          - generic [ref=e23]:
+            - generic [ref=e24]: Cart
+            - generic [ref=e25]:
+              - generic [ref=e26]: shift
+              - generic [ref=e27]: +
+              - generic [ref=e28]: alt
+              - generic [ref=e29]: +
+              - generic [ref=e30]: C
+      - listitem [ref=e31]:
+        - link "Home, shift, alt, h" [ref=e32] [cursor=pointer]:
+          - /url: javascript:void(0)
+          - generic [ref=e33]:
+            - generic [ref=e34]: Home
+            - generic [ref=e35]:
+              - generic [ref=e36]: shift
+              - generic [ref=e37]: +
+              - generic [ref=e38]: alt
+              - generic [ref=e39]: +
+              - generic [ref=e40]: H
+      - listitem [ref=e41]:
+        - link "Your orders, shift, alt, o" [ref=e42] [cursor=pointer]:
+          - /url: javascript:void(0)
+          - generic [ref=e43]:
+            - generic [ref=e44]: Orders
+            - generic [ref=e45]:
+              - generic [ref=e46]: shift
+              - generic [ref=e47]: +
+              - generic [ref=e48]: alt
+              - generic [ref=e49]: +
+              - generic [ref=e50]: O
+      - listitem [ref=e51]:
+        - button "Show/hide shortcuts, shift, alt, z" [ref=e52] [cursor=pointer]:
+          - generic [ref=e53]:
+            - generic [ref=e54]: Show/Hide shortcuts
+            - generic [ref=e55]:
+              - generic [ref=e56]: shift
+              - generic [ref=e57]: +
+              - generic [ref=e58]: alt
+              - generic [ref=e59]: +
+              - generic [ref=e60]: Z
+    - generic [ref=e66]: To move between items, use your keyboard's up or down arrows.
+  - banner [ref=e67]:
+    - navigation "Primary" [ref=e68]:
+      - generic [ref=e69]:
+        - generic [ref=e70]:
+          - link "Amazon.in" [ref=e72] [cursor=pointer]:
+            - /url: /ref=nav_logo
+            - generic: .in
+          - button "Deliver to Krishna Ghaziabad 201017‌" [ref=e75] [cursor=pointer]:
+            - generic [ref=e77]:
+              - generic [ref=e78]: Deliver to Krishna
+              - generic [ref=e79]: Ghaziabad 201017‌
+        - search [ref=e82]:
+          - generic [ref=e85]:
+            - generic [ref=e87]: All
+            - combobox "Select the department you want to search in" [ref=e89] [cursor=pointer]:
+              - option "All Categories" [selected]
+              - option "Alexa Skills"
+              - option "Amazon Devices"
+              - option "Amazon Fashion"
+              - option "Amazon Fresh"
+              - option "Amazon Fresh Meat"
+              - option "Amazon Pharmacy"
+              - option "Appliances"
+              - option "Apps & Games"
+              - option "Audible Audiobooks"
+              - option "Baby"
+              - option "Beauty"
+              - option "Books"
+              - option "Car & Motorbike"
+              - option "Clothing & Accessories"
+              - option "Collectibles"
+              - option "Computers & Accessories"
+              - option "Deals"
+              - option "Electronics"
+              - option "Furniture"
+              - option "Garden & Outdoors"
+              - option "Gift Cards"
+              - option "Grocery & Gourmet Foods"
+              - option "Health & Personal Care"
+              - option "Home & Kitchen"
+              - option "Industrial & Scientific"
+              - option "Jewellery"
+              - option "Kindle Store"
+              - option "Luggage & Bags"
+              - option "Luxury Beauty"
+              - option "Movies & TV Shows"
+              - option "MP3 Music"
+              - option "Music"
+              - option "Musical Instruments"
+              - option "Office Products"
+              - option "Pet Supplies"
+              - option "Prime Video"
+              - option "Shoes & Handbags"
+              - option "Software"
+              - option "Sports, Fitness & Outdoors"
+              - option "Subscribe & Save"
+              - option "Tools & Home Improvement"
+              - option "Toys & Games"
+              - option "Under ₹500"
+              - option "Video Games"
+              - option "Watches"
+          - searchbox "Search Amazon.in" [ref=e92]: TV
+          - generic "Go" [ref=e95] [cursor=pointer]:
+            - button "Go" [ref=e96]
+        - generic [ref=e98]:
+          - generic [ref=e99]:
+            - link "Choose a language for shopping in Amazon India. The current selection is English (EN)." [ref=e100] [cursor=pointer]:
+              - /url: /customer-preferences/edit?ie=UTF8&preferencesReturnUrl=%2F&ref_=topnav_lang
+              - generic [ref=e103]:
+                - img "India" [ref=e104]
+                - generic [ref=e105]: EN
+            - button "Expand to Change Language or Country" [ref=e106] [cursor=pointer]
+          - generic [ref=e107]:
+            - link "Hello, Krishna Account & Lists" [ref=e108] [cursor=pointer]:
+              - /url: https://www.amazon.in/gp/css/homepage.html?ref_=nav_youraccount_btn
+              - generic [ref=e110]: Hello, Krishna
+              - generic [ref=e111]: Account & Lists
+            - button "Expand Account and Lists" [ref=e112] [cursor=pointer]
+          - link "Returns & Orders" [ref=e113] [cursor=pointer]:
+            - /url: /gp/css/order-history?ref_=nav_orders_first
+            - generic [ref=e114]: Returns
+            - generic [ref=e115]: "& Orders"
+          - link "0 items in cart" [ref=e116] [cursor=pointer]:
+            - /url: /gp/cart/view.html?ref_=nav_cart
+            - generic [ref=e118]: "0"
+            - generic [ref=e121]: Cart
+      - generic [ref=e122]:
+        - generic [ref=e123]:
+          - button "Open All Categories Menu" [ref=e124] [cursor=pointer]:
+            - generic [ref=e126]: All
+          - button "Open Rufus panel" [ref=e127] [cursor=pointer]:
+            - generic [ref=e129]: Rufus
+        - list [ref=e133]:
+          - listitem [ref=e134]:
+            - generic [ref=e135]:
+              - link "Fresh" [ref=e136] [cursor=pointer]:
+                - /url: /tez/browse?qcbrand=ctnow&ref_=nav_cs_grocery
+              - button "Fresh Details" [ref=e137] [cursor=pointer]
+          - listitem [ref=e138]:
+            - link "MX Player" [ref=e140] [cursor=pointer]:
+              - /url: /minitv?ref_=nav_avod_desktop_topnav
+          - listitem [ref=e141]:
+            - link "Sell" [ref=e143] [cursor=pointer]:
+              - /url: /b/32702023031?node=32702023031&ld=AZINSOANavDesktop_T3&ref_=nav_cs_sell_T3
+          - listitem [ref=e144]:
+            - link "Gift Cards" [ref=e146] [cursor=pointer]:
+              - /url: /gift-card-store/b/?ie=UTF8&node=3704982031&ref_=nav_cs_gc
+          - listitem [ref=e147]:
+            - link "Amazon Pay" [ref=e149] [cursor=pointer]:
+              - /url: /gp/sva/dashboard?ref_=nav_cs_apay
+          - listitem [ref=e150]:
+            - link "Gift Ideas" [ref=e152] [cursor=pointer]:
+              - /url: /gcx/-/gfhz/?ref_=nav_cs_giftfinder
+          - listitem [ref=e153]:
+            - link "Buy Again" [ref=e155] [cursor=pointer]:
+              - /url: /gp/buyagain?ie=UTF8&ref_=nav_cs_buy_again
+          - listitem [ref=e156]:
+            - link "AmazonBasics" [ref=e158] [cursor=pointer]:
+              - /url: /b/?node=6637738031&ref_=nav_cs_amazonbasics
+          - listitem [ref=e159]:
+            - generic [ref=e160]:
+              - link "Prime" [ref=e161] [cursor=pointer]:
+                - /url: /prime?ref_=nav_cs_primelink_nonmember
+              - button "Prime Details" [ref=e162] [cursor=pointer]
+          - listitem [ref=e163]:
+            - link "Home Improvement" [ref=e165] [cursor=pointer]:
+              - /url: /Home-Improvement/b/?ie=UTF8&node=4286640031&ref_=nav_cs_hi
+          - listitem [ref=e166]:
+            - link "Audible" [ref=e168] [cursor=pointer]:
+              - /url: /Audible-Books-and-Originals/b/?ie=UTF8&node=17941593031&ref_=nav_cs_audible
+          - listitem [ref=e169]:
+            - link "Today's Deals" [ref=e171] [cursor=pointer]:
+              - /url: /deals?ref_=nav_cs_gb
+          - listitem [ref=e172]:
+            - link "Books" [ref=e174] [cursor=pointer]:
+              - /url: /Books/b/?ie=UTF8&node=976389031&ref_=nav_cs_books
+          - listitem [ref=e175]:
+            - link "Health, Household & Personal Care" [ref=e177] [cursor=pointer]:
+              - /url: /health-and-personal-care/b/?ie=UTF8&node=1350384031&ref_=nav_cs_hpc
+          - listitem [ref=e178]:
+            - generic [ref=e179]:
+              - link "Browsing History" [ref=e180] [cursor=pointer]:
+                - /url: /gp/history?ref_=nav_cs_timeline
+              - button "Browsing History Details" [ref=e181] [cursor=pointer]
+          - listitem [ref=e182]:
+            - link "Krishna 's Amazon.in" [ref=e184] [cursor=pointer]:
+              - /url: /gp/yourstore/home?ref_=nav_cs_ys
+              - generic [ref=e185]:
+                - generic [ref=e186]: Krishna
+                - text: "'s Amazon.in"
+          - listitem [ref=e187]:
+            - link "Customer Service" [ref=e189] [cursor=pointer]:
+              - /url: /gp/help/customer/display.html?nodeId=200507590&ref_=nav_cs_help
+          - listitem [ref=e190]:
+            - link "Bestsellers" [ref=e192] [cursor=pointer]:
+              - /url: /gp/bestsellers/?ref_=nav_cs_bestsellers
+          - listitem [ref=e193]:
+            - link "Pet Supplies" [ref=e195] [cursor=pointer]:
+              - /url: /Pet-Supplies/b/?ie=UTF8&node=2454181031&ref_=nav_cs_pets
+          - listitem [ref=e196]:
+            - link "Subscribe & Save" [ref=e198] [cursor=pointer]:
+              - /url: /auto-deliveries/landing?ref_=nav_cs_sns
+          - listitem [ref=e199]:
+            - link "Baby" [ref=e201] [cursor=pointer]:
+              - /url: /Baby/b/?ie=UTF8&node=1571274031&ref_=nav_cs_baby
+          - listitem [ref=e202]:
+            - link "Toys & Games" [ref=e204] [cursor=pointer]:
+              - /url: /Toys-Games/b/?ie=UTF8&node=1350380031&ref_=nav_cs_toys
+          - listitem [ref=e205]:
+            - link "New Releases" [ref=e207] [cursor=pointer]:
+              - /url: /gp/new-releases/?ref_=nav_cs_newreleases
+          - listitem [ref=e208]:
+            - link "Home & Kitchen" [ref=e210] [cursor=pointer]:
+              - /url: /Home-Kitchen/b/?ie=UTF8&node=976442031&ref_=nav_cs_home
+          - listitem [ref=e211]:
+            - link "Sports, Fitness & Outdoors" [ref=e213] [cursor=pointer]:
+              - /url: /Sports/b/?ie=UTF8&node=1984443031&ref_=nav_cs_sports
+          - listitem [ref=e214]:
+            - link "Car & Motorbike" [ref=e216] [cursor=pointer]:
+              - /url: /Car-Motorbike-Store/b/?ie=UTF8&node=4772060031&ref_=nav_cs_automotive
+          - listitem [ref=e217]:
+            - link "Kindle eBooks" [ref=e219] [cursor=pointer]:
+              - /url: /Kindle-eBooks/b/?ie=UTF8&node=1634753031&ref_=nav_cs_kindle_books
+          - listitem [ref=e220]:
+            - link "Beauty & Personal Care" [ref=e222] [cursor=pointer]:
+              - /url: /beauty/b/?ie=UTF8&node=1355016031&ref_=nav_cs_beauty
+          - listitem [ref=e223]:
+            - link "Electronics" [ref=e225] [cursor=pointer]:
+              - /url: /electronics/b/?ie=UTF8&node=976419031&ref_=nav_cs_electronics
+          - listitem [ref=e226]:
+            - link "Computers" [ref=e228] [cursor=pointer]:
+              - /url: /computers-and-accessories/b/?ie=UTF8&node=976392031&ref_=nav_cs_pc
+          - listitem [ref=e229]:
+            - link "Fashion" [ref=e231] [cursor=pointer]:
+              - /url: /gp/browse.html?node=6648217031&ref_=nav_cs_fashion
+          - listitem [ref=e232]:
+            - link "Video Games" [ref=e234] [cursor=pointer]:
+              - /url: /video-games/b/?ie=UTF8&node=976460031&ref_=nav_cs_video_games
+      - dialog [ref=e237]
+  - generic [ref=e239]:
+    - 'heading "1-16 of over 50,000 results for \"TV\" Sort by: Featured" [level=1] [ref=e242]':
+      - generic [ref=e243]:
+        - heading "1-16 of over 50,000 results for \"TV\"" [level=2] [ref=e248]
+        - generic [ref=e253]:
+          - generic [ref=e254]: "Sort by:"
+          - combobox "Sort by:" [ref=e255]:
+            - option "Featured" [selected]
+            - 'option "Price: Low to High"'
+            - 'option "Price: High to Low"'
+            - option "Avg. Customer Review"
+            - option "Newest Arrivals"
+            - option "Best Sellers"
+          - generic [ref=e258] [cursor=pointer]: Sort by:Featured
+    - generic [ref=e260]:
+      - generic [ref=e262]:
+        - generic [ref=e264]:
+          - generic [ref=e267]:
+            - link "Sponsored ad from 7 SEVEN. \"Wide range of tcl tv remote control.\" Shop 7 SEVEN." [ref=e268] [cursor=pointer]:
+              - /url: https://aax-eu-zaz.amazon.in/x/c/JFqig2VmZY5rIo-pUjUTR6cAAAGfZyhLLgoAAAH2AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICBuBlAE/clv1c_ek-IwoHXFdbSDdHYaoeZcwJZSrPTMo6Z5O0mFL8qH5rt7g7kxSOjMpeNz10Dzk1lU0hxK92Y7DeJgu0C2pUfvSWlXIC5IgZj-jCpOaoGoKoux_aLHa_vFwTo81i-3FgA2xyBO_4wvl0TIU6D6AZn-d7T4JxPFlNplvzj0ySsGJaJbdftA50-wtfJAm0okDGxmeiZxLlHGmdQc8zXpUz6r_tO1s9jBoBVsWcNhvgvLk8YnjRPkAaewxqNSFtK84EAVNrGNw5hgci2BpQ5J36pC5-v7uGx5uscWljUcZn3-VddwMNBhq88HuO14lCjU0slzZFP_WzZkwgSpMEK8mUN3vLsQRgu5CNntx1913Q2N8lrmwVPDwMFby6BXo3SnLh484SwtSxkOZoWEbLWvDCLRI-N5AYEtn3NOuLCXISeYsTAoC_inst5tKkUiurN_ZgK1WOrAQvP1CKDEAwmnwyr6z_feAR0nqobPSnJHoCaFBhCOYBj_F5O7bfOrDfDzqkaVcqlBdi3VGrjzl4bKpuYZcOWswbf0yjZgX6yNyVwnidWyGQ7MlEePHoVhP_sUYWgk362aoCTYHCfsnMcMUFORYRLOC_kizzvY3_n8qQfH-Pkse4Fnyrw0yQBjlKRaP958R8I_IPu9T8GRvJGjRw6hRKh49rUDnJRnV4onpG0XoeufZzKXv1aGRE5CvyeE3LQz_DeeZU7QtxkmLnS2uY8uNw85aeRCdHG2PdMnhBMQu-n0TnUM70yRTNlvvLKGovTI2GBmQP4tnr82imPq7L__VQKIZab-XYy5cYw-1kRHLo7txxu_L9LiQpqD7dKYKQVjmmxcFlxVkPQrO_2mvNfG3pmDtc-PLXOSD_oegUw0ZQ8MKI-EIBEiLg3rOOsk9gnybgxPQ3yHJzvFdBbzWBzoEoiAzvNSJ0DfkcY3mxU2tOQ2RZmtVMwnCLqQKb7Xik-DIfz0YJo-tlaJzbHEA8BsgZ83LUWiHBjdBc4iPHANbWanNDDYEMNS_OGcwBKk1jOe4hgOzcSqfxU7S11kRvpbmPIur2Cw3mBP9fBSDbuRjcz39idM6c6FtKdpiTIGW7UrQVD51I/https://www.amazon.in/stores/page/21C08466-258D-484E-BCC3-E555D923DA66/?_encoding=UTF8&store_ref=SB_A04214309DR6FVUMM9QQ-A0276624TJ8KI9159HYL&pd_rd_plhdr=t&aaxitk=dfbf7d0f6c405670b59d63ea2ff782a4&hsa_cr_id=0&lp_asins=B097ZQTDVZ%2CB09814LTYW%2CB0BTZ3GNSW&lp_query=TV&lp_slot=auto-sparkle-hsa-tetris&aref=AYBKlTEsyD&ref_=sbx_s_sparkle_sbtcd_bkgd&pd_rd_w=iSg50&content-id=amzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05%3Aamzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_p=9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=9fU55&pd_rd_r=4e21be3f-4c12-4d5e-807f-28919808cd37
+            - generic [ref=e269]:
+              - generic [ref=e271]:
+                - link "7 SEVEN" [ref=e273] [cursor=pointer]:
+                  - /url: https://aax-eu-zaz.amazon.in/x/c/JFqig2VmZY5rIo-pUjUTR6cAAAGfZyhLLgoAAAH2AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICBuBlAE/clv1c_ek-IwoHXFdbSDdHYaoeZcwJZSrPTMo6Z5O0mFL8qH5rt7g7kxSOjMpeNz10Dzk1lU0hxK92Y7DeJgu0C2pUfvSWlXIC5IgZj-jCpOaoGoKoux_aLHa_vFwTo81i-3FgA2xyBO_4wvl0TIU6D6AZn-d7T4JxPFlNplvzj0ySsGJaJbdftA50-wtfJAm0okDGxmeiZxLlHGmdQc8zXpUz6r_tO1s9jBoBVsWcNhvgvLk8YnjRPkAaewxqNSFtK84EAVNrGNw5hgci2BpQ5J36pC5-v7uGx5uscWljUcZn3-VddwMNBhq88HuO14lCjU0slzZFP_WzZkwgSpMEK8mUN3vLsQRgu5CNntx1913Q2N8lrmwVPDwMFby6BXo3SnLh484SwtSxkOZoWEbLWvDCLRI-N5AYEtn3NOuLCXISeYsTAoC_inst5tKkUiurN_ZgK1WOrAQvP1CKDEAwmnwyr6z_feAR0nqobPSnJHoCaFBhCOYBj_F5O7bfOrDfDzqkaVcqlBdi3VGrjzl4bKpuYZcOWswbf0yjZgX6yNyVwnidWyGQ7MlEePHoVhP_sUYWgk362aoCTYHCfsnMcMUFORYRLOC_kizzvY3_n8qQfH-Pkse4Fnyrw0yQBjlKRaP958R8I_IPu9T8GRvJGjRw6hRKh49rUDnJRnV4onpG0XoeufZzKXv1aGRE5CvyeE3LQz_DeeZU7QtxkmLnS2uY8uNw85aeRCdHG2PdMnhBMQu-n0TnUM70yRTNlvvLKGovTI2GBmQP4tnr82imPq7L__VQKIZab-XYy5cYw-1kRHLo7txxu_L9LiQpqD7dKYKQVjmmxcFlxVkPQrO_2mvNfG3pmDtc-PLXOSD_oegUw0ZQ8MKI-EIBEiLg3rOOsk9gnybgxPQ3yHJzvFdBbzWBzoEoiAzvNSJ0DfkcY3mxU2tOQ2RZmtVMwnCLqQKb7Xik-DIfz0YJo-tlaJzbHEA8BsgZ83LUWiHBjdBc4iPHANbWanNDDYEMNS_OGcwBKk1jOe4hgOzcSqfxU7S11kRvpbmPIur2Cw3mBP9fBSDbuRjcz39idM6c6FtKdpiTIGW7UrQVD51I/https://www.amazon.in/stores/page/21C08466-258D-484E-BCC3-E555D923DA66/?_encoding=UTF8&store_ref=SB_A04214309DR6FVUMM9QQ-A0276624TJ8KI9159HYL&pd_rd_plhdr=t&aaxitk=dfbf7d0f6c405670b59d63ea2ff782a4&hsa_cr_id=0&lp_asins=B097ZQTDVZ%2CB09814LTYW%2CB0BTZ3GNSW&lp_query=TV&lp_slot=auto-sparkle-hsa-tetris&aref=AYBKlTEsyD&ref_=sbx_s_sparkle_sbtcd_logo&pd_rd_w=iSg50&content-id=amzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05%3Aamzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_p=9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=9fU55&pd_rd_r=4e21be3f-4c12-4d5e-807f-28919808cd37
+                  - img "7 SEVEN" [ref=e275]
+                - generic [ref=e277]:
+                  - link "Wide range of tcl tv remote control" [ref=e278] [cursor=pointer]:
+                    - /url: https://aax-eu-zaz.amazon.in/x/c/JFqig2VmZY5rIo-pUjUTR6cAAAGfZyhLLgoAAAH2AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICBuBlAE/clv1c_ek-IwoHXFdbSDdHYaoeZcwJZSrPTMo6Z5O0mFL8qH5rt7g7kxSOjMpeNz10Dzk1lU0hxK92Y7DeJgu0C2pUfvSWlXIC5IgZj-jCpOaoGoKoux_aLHa_vFwTo81i-3FgA2xyBO_4wvl0TIU6D6AZn-d7T4JxPFlNplvzj0ySsGJaJbdftA50-wtfJAm0okDGxmeiZxLlHGmdQc8zXpUz6r_tO1s9jBoBVsWcNhvgvLk8YnjRPkAaewxqNSFtK84EAVNrGNw5hgci2BpQ5J36pC5-v7uGx5uscWljUcZn3-VddwMNBhq88HuO14lCjU0slzZFP_WzZkwgSpMEK8mUN3vLsQRgu5CNntx1913Q2N8lrmwVPDwMFby6BXo3SnLh484SwtSxkOZoWEbLWvDCLRI-N5AYEtn3NOuLCXISeYsTAoC_inst5tKkUiurN_ZgK1WOrAQvP1CKDEAwmnwyr6z_feAR0nqobPSnJHoCaFBhCOYBj_F5O7bfOrDfDzqkaVcqlBdi3VGrjzl4bKpuYZcOWswbf0yjZgX6yNyVwnidWyGQ7MlEePHoVhP_sUYWgk362aoCTYHCfsnMcMUFORYRLOC_kizzvY3_n8qQfH-Pkse4Fnyrw0yQBjlKRaP958R8I_IPu9T8GRvJGjRw6hRKh49rUDnJRnV4onpG0XoeufZzKXv1aGRE5CvyeE3LQz_DeeZU7QtxkmLnS2uY8uNw85aeRCdHG2PdMnhBMQu-n0TnUM70yRTNlvvLKGovTI2GBmQP4tnr82imPq7L__VQKIZab-XYy5cYw-1kRHLo7txxu_L9LiQpqD7dKYKQVjmmxcFlxVkPQrO_2mvNfG3pmDtc-PLXOSD_oegUw0ZQ8MKI-EIBEiLg3rOOsk9gnybgxPQ3yHJzvFdBbzWBzoEoiAzvNSJ0DfkcY3mxU2tOQ2RZmtVMwnCLqQKb7Xik-DIfz0YJo-tlaJzbHEA8BsgZ83LUWiHBjdBc4iPHANbWanNDDYEMNS_OGcwBKk1jOe4hgOzcSqfxU7S11kRvpbmPIur2Cw3mBP9fBSDbuRjcz39idM6c6FtKdpiTIGW7UrQVD51I/https://www.amazon.in/stores/page/21C08466-258D-484E-BCC3-E555D923DA66/?_encoding=UTF8&store_ref=SB_A04214309DR6FVUMM9QQ-A0276624TJ8KI9159HYL&pd_rd_plhdr=t&aaxitk=dfbf7d0f6c405670b59d63ea2ff782a4&hsa_cr_id=0&lp_asins=B097ZQTDVZ%2CB09814LTYW%2CB0BTZ3GNSW&lp_query=TV&lp_slot=auto-sparkle-hsa-tetris&aref=AYBKlTEsyD&ref_=sbx_s_sparkle_sbtcd_hl&pd_rd_w=iSg50&content-id=amzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05%3Aamzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_p=9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=9fU55&pd_rd_r=4e21be3f-4c12-4d5e-807f-28919808cd37
+                    - generic [ref=e279]:
+                      - generic [ref=e280]: Wide range of tcl tv remote control
+                      - generic [ref=e281]: Wide range of tcl tv remote control
+                  - generic [ref=e282]:
+                    - button "Leave feedback on Sponsored ad" [ref=e286] [cursor=pointer]: Sponsored
+                    - generic [ref=e288]: "|"
+                    - link "Shop 7 SEVEN" [ref=e290] [cursor=pointer]:
+                      - /url: https://aax-eu-zaz.amazon.in/x/c/JFqig2VmZY5rIo-pUjUTR6cAAAGfZyhLLgoAAAH2AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICBuBlAE/clv1c_ek-IwoHXFdbSDdHYaoeZcwJZSrPTMo6Z5O0mFL8qH5rt7g7kxSOjMpeNz10Dzk1lU0hxK92Y7DeJgu0C2pUfvSWlXIC5IgZj-jCpOaoGoKoux_aLHa_vFwTo81i-3FgA2xyBO_4wvl0TIU6D6AZn-d7T4JxPFlNplvzj0ySsGJaJbdftA50-wtfJAm0okDGxmeiZxLlHGmdQc8zXpUz6r_tO1s9jBoBVsWcNhvgvLk8YnjRPkAaewxqNSFtK84EAVNrGNw5hgci2BpQ5J36pC5-v7uGx5uscWljUcZn3-VddwMNBhq88HuO14lCjU0slzZFP_WzZkwgSpMEK8mUN3vLsQRgu5CNntx1913Q2N8lrmwVPDwMFby6BXo3SnLh484SwtSxkOZoWEbLWvDCLRI-N5AYEtn3NOuLCXISeYsTAoC_inst5tKkUiurN_ZgK1WOrAQvP1CKDEAwmnwyr6z_feAR0nqobPSnJHoCaFBhCOYBj_F5O7bfOrDfDzqkaVcqlBdi3VGrjzl4bKpuYZcOWswbf0yjZgX6yNyVwnidWyGQ7MlEePHoVhP_sUYWgk362aoCTYHCfsnMcMUFORYRLOC_kizzvY3_n8qQfH-Pkse4Fnyrw0yQBjlKRaP958R8I_IPu9T8GRvJGjRw6hRKh49rUDnJRnV4onpG0XoeufZzKXv1aGRE5CvyeE3LQz_DeeZU7QtxkmLnS2uY8uNw85aeRCdHG2PdMnhBMQu-n0TnUM70yRTNlvvLKGovTI2GBmQP4tnr82imPq7L__VQKIZab-XYy5cYw-1kRHLo7txxu_L9LiQpqD7dKYKQVjmmxcFlxVkPQrO_2mvNfG3pmDtc-PLXOSD_oegUw0ZQ8MKI-EIBEiLg3rOOsk9gnybgxPQ3yHJzvFdBbzWBzoEoiAzvNSJ0DfkcY3mxU2tOQ2RZmtVMwnCLqQKb7Xik-DIfz0YJo-tlaJzbHEA8BsgZ83LUWiHBjdBc4iPHANbWanNDDYEMNS_OGcwBKk1jOe4hgOzcSqfxU7S11kRvpbmPIur2Cw3mBP9fBSDbuRjcz39idM6c6FtKdpiTIGW7UrQVD51I/https://www.amazon.in/stores/page/21C08466-258D-484E-BCC3-E555D923DA66/?_encoding=UTF8&store_ref=SB_A04214309DR6FVUMM9QQ-A0276624TJ8KI9159HYL&pd_rd_plhdr=t&aaxitk=dfbf7d0f6c405670b59d63ea2ff782a4&hsa_cr_id=0&lp_asins=B097ZQTDVZ%2CB09814LTYW%2CB0BTZ3GNSW&lp_query=TV&lp_slot=auto-sparkle-hsa-tetris&aref=AYBKlTEsyD&ref_=sbx_s_sparkle_sbtcd_cta&pd_rd_w=iSg50&content-id=amzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05%3Aamzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_p=9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=9fU55&pd_rd_r=4e21be3f-4c12-4d5e-807f-28919808cd37
+                      - generic [ref=e293]:
+                        - text: Shop 7
+                        - generic [ref=e294]:
+                          - text: SEVEN
+                          - img [ref=e295]
+              - group [ref=e297]:
+                - group [ref=e301]:
+                  - list [ref=e302]:
+                    - listitem [ref=e303]:
+                      - generic [ref=e305]:
+                        - link [ref=e306] [cursor=pointer]:
+                          - /url: https://aax-eu-zaz.amazon.in/x/c/JFqig2VmZY5rIo-pUjUTR6cAAAGfZyhLLgoAAAH2AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICBuBlAE/clv1c_ek-IwoHXFdbSDdHYaoeZcwJZSrPTMo6Z5O0mFL8qH5rt7g7kxSOjMpeNz10Dzk1lU0hxK92Y7DeJgu0C2pUfvSWlXIC5IgZj-jCpOaoGoKoux_aLHa_vFwTo81i-3FgA2xyBO_4wvl0TIU6D6AZn-d7T4JxPFlNplvzj0ySsGJaJbdftA50-wtfJAm0okDGxmeiZxLlHGmdQc8zXpUz6r_tO1s9jBoBVsWcNhvgvLk8YnjRPkAaewxqNSFtK84EAVNrGNw5hgci2BpQ5J36pC5-v7uGx5uscWljUcZn3-VddwMNBhq88HuO14lCjU0slzZFP_WzZkwgSpMEK8mUN3vLsQRgu5CNntx1913Q2N8lrmwVPDwMFby6BXo3SnLh484SwtSxkOZoWEbLWvDCLRI-N5AYEtn3NOuLCXISeYsTAoC_inst5tKkUiurN_ZgK1WOrAQvP1CKDEAwmnwyr6z_feAR0nqobPSnJHoCaFBhCOYBj_F5O7bfOrDfDzqkaVcqlBdi3VGrjzl4bKpuYZcOWswbf0yjZgX6yNyVwnidWyGQ7MlEePHoVhP_sUYWgk362aoCTYHCfsnMcMUFORYRLOC_kizzvY3_n8qQfH-Pkse4Fnyrw0yQBjlKRaP958R8I_IPu9T8GRvJGjRw6hRKh49rUDnJRnV4onpG0XoeufZzKXv1aGRE5CvyeE3LQz_DeeZU7QtxkmLnS2uY8uNw85aeRCdHG2PdMnhBMQu-n0TnUM70yRTNlvvLKGovTI2GBmQP4tnr82imPq7L__VQKIZab-XYy5cYw-1kRHLo7txxu_L9LiQpqD7dKYKQVjmmxcFlxVkPQrO_2mvNfG3pmDtc-PLXOSD_oegUw0ZQ8MKI-EIBEiLg3rOOsk9gnybgxPQ3yHJzvFdBbzWBzoEoiAzvNSJ0DfkcY3mxU2tOQ2RZmtVMwnCLqQKb7Xik-DIfz0YJo-tlaJzbHEA8BsgZ83LUWiHBjdBc4iPHANbWanNDDYEMNS_OGcwBKk1jOe4hgOzcSqfxU7S11kRvpbmPIur2Cw3mBP9fBSDbuRjcz39idM6c6FtKdpiTIGW7UrQVD51I/https://www.amazon.in/gp/aw/d/B09814LTYW/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=dfbf7d0f6c405670b59d63ea2ff782a4&hsa_cr_id=0&qid=1784142121&sr=1-1-e0fa1fdd-d857-4087-adda-5bd576b25987&aref=AYBKlTEsyD&ref_=sbx_s_sparkle_sbtcd_asin_0_bkgd&pd_rd_w=iSg50&content-id=amzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05%3Aamzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_p=9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=9fU55&pd_rd_r=4e21be3f-4c12-4d5e-807f-28919808cd37
+                        - link "7SEVEN Compatible with TCL Smart TV Remote Original RC802V Model with Google Assistant, Netflix & Voice Command Compatible for 50P8 65P8 50T8 55T8 65T8 55C8 55P8S 43P8B 43P8E (P81) 43S6500FS 49S6500FS" [ref=e308] [cursor=pointer]:
+                          - /url: https://aax-eu-zaz.amazon.in/x/c/JFqig2VmZY5rIo-pUjUTR6cAAAGfZyhLLgoAAAH2AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICBuBlAE/clv1c_ek-IwoHXFdbSDdHYaoeZcwJZSrPTMo6Z5O0mFL8qH5rt7g7kxSOjMpeNz10Dzk1lU0hxK92Y7DeJgu0C2pUfvSWlXIC5IgZj-jCpOaoGoKoux_aLHa_vFwTo81i-3FgA2xyBO_4wvl0TIU6D6AZn-d7T4JxPFlNplvzj0ySsGJaJbdftA50-wtfJAm0okDGxmeiZxLlHGmdQc8zXpUz6r_tO1s9jBoBVsWcNhvgvLk8YnjRPkAaewxqNSFtK84EAVNrGNw5hgci2BpQ5J36pC5-v7uGx5uscWljUcZn3-VddwMNBhq88HuO14lCjU0slzZFP_WzZkwgSpMEK8mUN3vLsQRgu5CNntx1913Q2N8lrmwVPDwMFby6BXo3SnLh484SwtSxkOZoWEbLWvDCLRI-N5AYEtn3NOuLCXISeYsTAoC_inst5tKkUiurN_ZgK1WOrAQvP1CKDEAwmnwyr6z_feAR0nqobPSnJHoCaFBhCOYBj_F5O7bfOrDfDzqkaVcqlBdi3VGrjzl4bKpuYZcOWswbf0yjZgX6yNyVwnidWyGQ7MlEePHoVhP_sUYWgk362aoCTYHCfsnMcMUFORYRLOC_kizzvY3_n8qQfH-Pkse4Fnyrw0yQBjlKRaP958R8I_IPu9T8GRvJGjRw6hRKh49rUDnJRnV4onpG0XoeufZzKXv1aGRE5CvyeE3LQz_DeeZU7QtxkmLnS2uY8uNw85aeRCdHG2PdMnhBMQu-n0TnUM70yRTNlvvLKGovTI2GBmQP4tnr82imPq7L__VQKIZab-XYy5cYw-1kRHLo7txxu_L9LiQpqD7dKYKQVjmmxcFlxVkPQrO_2mvNfG3pmDtc-PLXOSD_oegUw0ZQ8MKI-EIBEiLg3rOOsk9gnybgxPQ3yHJzvFdBbzWBzoEoiAzvNSJ0DfkcY3mxU2tOQ2RZmtVMwnCLqQKb7Xik-DIfz0YJo-tlaJzbHEA8BsgZ83LUWiHBjdBc4iPHANbWanNDDYEMNS_OGcwBKk1jOe4hgOzcSqfxU7S11kRvpbmPIur2Cw3mBP9fBSDbuRjcz39idM6c6FtKdpiTIGW7UrQVD51I/https://www.amazon.in/gp/aw/d/B09814LTYW/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=dfbf7d0f6c405670b59d63ea2ff782a4&hsa_cr_id=0&qid=1784142121&sr=1-1-e0fa1fdd-d857-4087-adda-5bd576b25987&aref=AYBKlTEsyD&ref_=sbx_s_sparkle_sbtcd_asin_0_img&pd_rd_w=iSg50&content-id=amzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05%3Aamzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_p=9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=9fU55&pd_rd_r=4e21be3f-4c12-4d5e-807f-28919808cd37
+                          - img "7SEVEN Compatible with TCL Smart TV Remote Original RC802V Model with Google Assistant, Netflix & Voice Command Compatible for 50P8 65P8 50T8 55T8 65T8 55C8 55P8S 43P8B 43P8E (P81) 43S6500FS 49S6500FS" [ref=e311]
+                        - generic [ref=e313]:
+                          - link [ref=e314] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JFqig2VmZY5rIo-pUjUTR6cAAAGfZyhLLgoAAAH2AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICBuBlAE/clv1c_ek-IwoHXFdbSDdHYaoeZcwJZSrPTMo6Z5O0mFL8qH5rt7g7kxSOjMpeNz10Dzk1lU0hxK92Y7DeJgu0C2pUfvSWlXIC5IgZj-jCpOaoGoKoux_aLHa_vFwTo81i-3FgA2xyBO_4wvl0TIU6D6AZn-d7T4JxPFlNplvzj0ySsGJaJbdftA50-wtfJAm0okDGxmeiZxLlHGmdQc8zXpUz6r_tO1s9jBoBVsWcNhvgvLk8YnjRPkAaewxqNSFtK84EAVNrGNw5hgci2BpQ5J36pC5-v7uGx5uscWljUcZn3-VddwMNBhq88HuO14lCjU0slzZFP_WzZkwgSpMEK8mUN3vLsQRgu5CNntx1913Q2N8lrmwVPDwMFby6BXo3SnLh484SwtSxkOZoWEbLWvDCLRI-N5AYEtn3NOuLCXISeYsTAoC_inst5tKkUiurN_ZgK1WOrAQvP1CKDEAwmnwyr6z_feAR0nqobPSnJHoCaFBhCOYBj_F5O7bfOrDfDzqkaVcqlBdi3VGrjzl4bKpuYZcOWswbf0yjZgX6yNyVwnidWyGQ7MlEePHoVhP_sUYWgk362aoCTYHCfsnMcMUFORYRLOC_kizzvY3_n8qQfH-Pkse4Fnyrw0yQBjlKRaP958R8I_IPu9T8GRvJGjRw6hRKh49rUDnJRnV4onpG0XoeufZzKXv1aGRE5CvyeE3LQz_DeeZU7QtxkmLnS2uY8uNw85aeRCdHG2PdMnhBMQu-n0TnUM70yRTNlvvLKGovTI2GBmQP4tnr82imPq7L__VQKIZab-XYy5cYw-1kRHLo7txxu_L9LiQpqD7dKYKQVjmmxcFlxVkPQrO_2mvNfG3pmDtc-PLXOSD_oegUw0ZQ8MKI-EIBEiLg3rOOsk9gnybgxPQ3yHJzvFdBbzWBzoEoiAzvNSJ0DfkcY3mxU2tOQ2RZmtVMwnCLqQKb7Xik-DIfz0YJo-tlaJzbHEA8BsgZ83LUWiHBjdBc4iPHANbWanNDDYEMNS_OGcwBKk1jOe4hgOzcSqfxU7S11kRvpbmPIur2Cw3mBP9fBSDbuRjcz39idM6c6FtKdpiTIGW7UrQVD51I/https://www.amazon.in/gp/aw/d/B09814LTYW/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=dfbf7d0f6c405670b59d63ea2ff782a4&hsa_cr_id=0&qid=1784142121&sr=1-1-e0fa1fdd-d857-4087-adda-5bd576b25987&aref=AYBKlTEsyD&ref_=sbx_s_sparkle_sbtcd_asin_0_bkgd&pd_rd_w=iSg50&content-id=amzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05%3Aamzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_p=9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=9fU55&pd_rd_r=4e21be3f-4c12-4d5e-807f-28919808cd37
+                          - link "7SEVEN Compatible with TCL Smart TV Remote Original RC802V Model with Google Assistant, Netflix & Voice Command Compatible for 50P8 65P8 50T8 55T8 65T8 55C8 55P8S 43P8B 43P8E (P81) 43S6500FS 49S6500FS" [ref=e316] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JFqig2VmZY5rIo-pUjUTR6cAAAGfZyhLLgoAAAH2AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICBuBlAE/clv1c_ek-IwoHXFdbSDdHYaoeZcwJZSrPTMo6Z5O0mFL8qH5rt7g7kxSOjMpeNz10Dzk1lU0hxK92Y7DeJgu0C2pUfvSWlXIC5IgZj-jCpOaoGoKoux_aLHa_vFwTo81i-3FgA2xyBO_4wvl0TIU6D6AZn-d7T4JxPFlNplvzj0ySsGJaJbdftA50-wtfJAm0okDGxmeiZxLlHGmdQc8zXpUz6r_tO1s9jBoBVsWcNhvgvLk8YnjRPkAaewxqNSFtK84EAVNrGNw5hgci2BpQ5J36pC5-v7uGx5uscWljUcZn3-VddwMNBhq88HuO14lCjU0slzZFP_WzZkwgSpMEK8mUN3vLsQRgu5CNntx1913Q2N8lrmwVPDwMFby6BXo3SnLh484SwtSxkOZoWEbLWvDCLRI-N5AYEtn3NOuLCXISeYsTAoC_inst5tKkUiurN_ZgK1WOrAQvP1CKDEAwmnwyr6z_feAR0nqobPSnJHoCaFBhCOYBj_F5O7bfOrDfDzqkaVcqlBdi3VGrjzl4bKpuYZcOWswbf0yjZgX6yNyVwnidWyGQ7MlEePHoVhP_sUYWgk362aoCTYHCfsnMcMUFORYRLOC_kizzvY3_n8qQfH-Pkse4Fnyrw0yQBjlKRaP958R8I_IPu9T8GRvJGjRw6hRKh49rUDnJRnV4onpG0XoeufZzKXv1aGRE5CvyeE3LQz_DeeZU7QtxkmLnS2uY8uNw85aeRCdHG2PdMnhBMQu-n0TnUM70yRTNlvvLKGovTI2GBmQP4tnr82imPq7L__VQKIZab-XYy5cYw-1kRHLo7txxu_L9LiQpqD7dKYKQVjmmxcFlxVkPQrO_2mvNfG3pmDtc-PLXOSD_oegUw0ZQ8MKI-EIBEiLg3rOOsk9gnybgxPQ3yHJzvFdBbzWBzoEoiAzvNSJ0DfkcY3mxU2tOQ2RZmtVMwnCLqQKb7Xik-DIfz0YJo-tlaJzbHEA8BsgZ83LUWiHBjdBc4iPHANbWanNDDYEMNS_OGcwBKk1jOe4hgOzcSqfxU7S11kRvpbmPIur2Cw3mBP9fBSDbuRjcz39idM6c6FtKdpiTIGW7UrQVD51I/https://www.amazon.in/gp/aw/d/B09814LTYW/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=dfbf7d0f6c405670b59d63ea2ff782a4&hsa_cr_id=0&qid=1784142121&sr=1-1-e0fa1fdd-d857-4087-adda-5bd576b25987&aref=AYBKlTEsyD&ref_=sbx_s_sparkle_sbtcd_asin_0_title&pd_rd_w=iSg50&content-id=amzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05%3Aamzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_p=9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=9fU55&pd_rd_r=4e21be3f-4c12-4d5e-807f-28919808cd37
+                            - generic [ref=e317]:
+                              - generic [ref=e318]: 7SEVEN Compatible with TCL Smart TV Remote Original RC802V Model with Google Assistant, Netflix & Voice Command Compatible for 50P8 65P8 50T8 55T8 65T8 55C8 55P8S 43P8B 43P8E (P81) 43S6500FS 49S6500FS
+                              - generic [ref=e319]: 7SEVEN Compatible with TCL Smart TV Remote Original R…
+                          - link "Rated 3.4 out of 5 stars by 231 reviews. Go to review section." [ref=e320] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JFqig2VmZY5rIo-pUjUTR6cAAAGfZyhLLgoAAAH2AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICBuBlAE/clv1c_ek-IwoHXFdbSDdHYaoeZcwJZSrPTMo6Z5O0mFL8qH5rt7g7kxSOjMpeNz10Dzk1lU0hxK92Y7DeJgu0C2pUfvSWlXIC5IgZj-jCpOaoGoKoux_aLHa_vFwTo81i-3FgA2xyBO_4wvl0TIU6D6AZn-d7T4JxPFlNplvzj0ySsGJaJbdftA50-wtfJAm0okDGxmeiZxLlHGmdQc8zXpUz6r_tO1s9jBoBVsWcNhvgvLk8YnjRPkAaewxqNSFtK84EAVNrGNw5hgci2BpQ5J36pC5-v7uGx5uscWljUcZn3-VddwMNBhq88HuO14lCjU0slzZFP_WzZkwgSpMEK8mUN3vLsQRgu5CNntx1913Q2N8lrmwVPDwMFby6BXo3SnLh484SwtSxkOZoWEbLWvDCLRI-N5AYEtn3NOuLCXISeYsTAoC_inst5tKkUiurN_ZgK1WOrAQvP1CKDEAwmnwyr6z_feAR0nqobPSnJHoCaFBhCOYBj_F5O7bfOrDfDzqkaVcqlBdi3VGrjzl4bKpuYZcOWswbf0yjZgX6yNyVwnidWyGQ7MlEePHoVhP_sUYWgk362aoCTYHCfsnMcMUFORYRLOC_kizzvY3_n8qQfH-Pkse4Fnyrw0yQBjlKRaP958R8I_IPu9T8GRvJGjRw6hRKh49rUDnJRnV4onpG0XoeufZzKXv1aGRE5CvyeE3LQz_DeeZU7QtxkmLnS2uY8uNw85aeRCdHG2PdMnhBMQu-n0TnUM70yRTNlvvLKGovTI2GBmQP4tnr82imPq7L__VQKIZab-XYy5cYw-1kRHLo7txxu_L9LiQpqD7dKYKQVjmmxcFlxVkPQrO_2mvNfG3pmDtc-PLXOSD_oegUw0ZQ8MKI-EIBEiLg3rOOsk9gnybgxPQ3yHJzvFdBbzWBzoEoiAzvNSJ0DfkcY3mxU2tOQ2RZmtVMwnCLqQKb7Xik-DIfz0YJo-tlaJzbHEA8BsgZ83LUWiHBjdBc4iPHANbWanNDDYEMNS_OGcwBKk1jOe4hgOzcSqfxU7S11kRvpbmPIur2Cw3mBP9fBSDbuRjcz39idM6c6FtKdpiTIGW7UrQVD51I/https://www.amazon.in/gp/aw/d/B09814LTYW/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=dfbf7d0f6c405670b59d63ea2ff782a4&hsa_cr_id=0&qid=1784142121&sr=1-1-e0fa1fdd-d857-4087-adda-5bd576b25987&aref=AYBKlTEsyD&ref_=sbx_s_sparkle_sbtcd_asin_0_rating&pd_rd_w=iSg50&content-id=amzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05%3Aamzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_p=9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=9fU55&pd_rd_r=4e21be3f-4c12-4d5e-807f-28919808cd37#customerReviews
+                            - generic [ref=e321]:
+                              - generic [ref=e322]: "3.4"
+                              - generic [ref=e324]: 3.4 out of 5 stars.
+                              - generic [ref=e325]: (231)
+                          - link "Limited time deal" [ref=e327] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JFqig2VmZY5rIo-pUjUTR6cAAAGfZyhLLgoAAAH2AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICBuBlAE/clv1c_ek-IwoHXFdbSDdHYaoeZcwJZSrPTMo6Z5O0mFL8qH5rt7g7kxSOjMpeNz10Dzk1lU0hxK92Y7DeJgu0C2pUfvSWlXIC5IgZj-jCpOaoGoKoux_aLHa_vFwTo81i-3FgA2xyBO_4wvl0TIU6D6AZn-d7T4JxPFlNplvzj0ySsGJaJbdftA50-wtfJAm0okDGxmeiZxLlHGmdQc8zXpUz6r_tO1s9jBoBVsWcNhvgvLk8YnjRPkAaewxqNSFtK84EAVNrGNw5hgci2BpQ5J36pC5-v7uGx5uscWljUcZn3-VddwMNBhq88HuO14lCjU0slzZFP_WzZkwgSpMEK8mUN3vLsQRgu5CNntx1913Q2N8lrmwVPDwMFby6BXo3SnLh484SwtSxkOZoWEbLWvDCLRI-N5AYEtn3NOuLCXISeYsTAoC_inst5tKkUiurN_ZgK1WOrAQvP1CKDEAwmnwyr6z_feAR0nqobPSnJHoCaFBhCOYBj_F5O7bfOrDfDzqkaVcqlBdi3VGrjzl4bKpuYZcOWswbf0yjZgX6yNyVwnidWyGQ7MlEePHoVhP_sUYWgk362aoCTYHCfsnMcMUFORYRLOC_kizzvY3_n8qQfH-Pkse4Fnyrw0yQBjlKRaP958R8I_IPu9T8GRvJGjRw6hRKh49rUDnJRnV4onpG0XoeufZzKXv1aGRE5CvyeE3LQz_DeeZU7QtxkmLnS2uY8uNw85aeRCdHG2PdMnhBMQu-n0TnUM70yRTNlvvLKGovTI2GBmQP4tnr82imPq7L__VQKIZab-XYy5cYw-1kRHLo7txxu_L9LiQpqD7dKYKQVjmmxcFlxVkPQrO_2mvNfG3pmDtc-PLXOSD_oegUw0ZQ8MKI-EIBEiLg3rOOsk9gnybgxPQ3yHJzvFdBbzWBzoEoiAzvNSJ0DfkcY3mxU2tOQ2RZmtVMwnCLqQKb7Xik-DIfz0YJo-tlaJzbHEA8BsgZ83LUWiHBjdBc4iPHANbWanNDDYEMNS_OGcwBKk1jOe4hgOzcSqfxU7S11kRvpbmPIur2Cw3mBP9fBSDbuRjcz39idM6c6FtKdpiTIGW7UrQVD51I/https://www.amazon.in/gp/aw/d/B09814LTYW/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=dfbf7d0f6c405670b59d63ea2ff782a4&hsa_cr_id=0&qid=1784142121&sr=1-1-e0fa1fdd-d857-4087-adda-5bd576b25987&aref=AYBKlTEsyD&ref_=sbx_s_sparkle_sbtcd_asin_0_badge&pd_rd_w=iSg50&content-id=amzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05%3Aamzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_p=9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=9fU55&pd_rd_r=4e21be3f-4c12-4d5e-807f-28919808cd37
+                            - generic [ref=e330]: Limited time deal
+                          - link "-68% ₹642.00" [ref=e332] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JFqig2VmZY5rIo-pUjUTR6cAAAGfZyhLLgoAAAH2AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICBuBlAE/clv1c_ek-IwoHXFdbSDdHYaoeZcwJZSrPTMo6Z5O0mFL8qH5rt7g7kxSOjMpeNz10Dzk1lU0hxK92Y7DeJgu0C2pUfvSWlXIC5IgZj-jCpOaoGoKoux_aLHa_vFwTo81i-3FgA2xyBO_4wvl0TIU6D6AZn-d7T4JxPFlNplvzj0ySsGJaJbdftA50-wtfJAm0okDGxmeiZxLlHGmdQc8zXpUz6r_tO1s9jBoBVsWcNhvgvLk8YnjRPkAaewxqNSFtK84EAVNrGNw5hgci2BpQ5J36pC5-v7uGx5uscWljUcZn3-VddwMNBhq88HuO14lCjU0slzZFP_WzZkwgSpMEK8mUN3vLsQRgu5CNntx1913Q2N8lrmwVPDwMFby6BXo3SnLh484SwtSxkOZoWEbLWvDCLRI-N5AYEtn3NOuLCXISeYsTAoC_inst5tKkUiurN_ZgK1WOrAQvP1CKDEAwmnwyr6z_feAR0nqobPSnJHoCaFBhCOYBj_F5O7bfOrDfDzqkaVcqlBdi3VGrjzl4bKpuYZcOWswbf0yjZgX6yNyVwnidWyGQ7MlEePHoVhP_sUYWgk362aoCTYHCfsnMcMUFORYRLOC_kizzvY3_n8qQfH-Pkse4Fnyrw0yQBjlKRaP958R8I_IPu9T8GRvJGjRw6hRKh49rUDnJRnV4onpG0XoeufZzKXv1aGRE5CvyeE3LQz_DeeZU7QtxkmLnS2uY8uNw85aeRCdHG2PdMnhBMQu-n0TnUM70yRTNlvvLKGovTI2GBmQP4tnr82imPq7L__VQKIZab-XYy5cYw-1kRHLo7txxu_L9LiQpqD7dKYKQVjmmxcFlxVkPQrO_2mvNfG3pmDtc-PLXOSD_oegUw0ZQ8MKI-EIBEiLg3rOOsk9gnybgxPQ3yHJzvFdBbzWBzoEoiAzvNSJ0DfkcY3mxU2tOQ2RZmtVMwnCLqQKb7Xik-DIfz0YJo-tlaJzbHEA8BsgZ83LUWiHBjdBc4iPHANbWanNDDYEMNS_OGcwBKk1jOe4hgOzcSqfxU7S11kRvpbmPIur2Cw3mBP9fBSDbuRjcz39idM6c6FtKdpiTIGW7UrQVD51I/https://www.amazon.in/gp/aw/d/B09814LTYW/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=dfbf7d0f6c405670b59d63ea2ff782a4&hsa_cr_id=0&qid=1784142121&sr=1-1-e0fa1fdd-d857-4087-adda-5bd576b25987&aref=AYBKlTEsyD&ref_=sbx_s_sparkle_sbtcd_asin_0_price&pd_rd_w=iSg50&content-id=amzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05%3Aamzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_p=9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=9fU55&pd_rd_r=4e21be3f-4c12-4d5e-807f-28919808cd37
+                            - generic [ref=e333]:
+                              - generic [ref=e334]: "-68%"
+                              - generic [ref=e335]:
+                                - generic [ref=e336]: ₹642.00
+                                - generic [ref=e337]:
+                                  - text: ₹
+                                  - generic [ref=e338]:
+                                    - text: "642"
+                                    - generic [ref=e339]: .
+                                  - text: "00"
+                          - generic [ref=e342]: "M.R.P: ₹1,999.00"
+                          - img "Eligible for Prime." [ref=e344]
+                    - listitem [ref=e345]:
+                      - generic [ref=e347]:
+                        - link [ref=e348] [cursor=pointer]:
+                          - /url: https://aax-eu-zaz.amazon.in/x/c/JFqig2VmZY5rIo-pUjUTR6cAAAGfZyhLLgoAAAH2AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICBuBlAE/clv1c_ek-IwoHXFdbSDdHYaoeZcwJZSrPTMo6Z5O0mFL8qH5rt7g7kxSOjMpeNz10Dzk1lU0hxK92Y7DeJgu0C2pUfvSWlXIC5IgZj-jCpOaoGoKoux_aLHa_vFwTo81i-3FgA2xyBO_4wvl0TIU6D6AZn-d7T4JxPFlNplvzj0ySsGJaJbdftA50-wtfJAm0okDGxmeiZxLlHGmdQc8zXpUz6r_tO1s9jBoBVsWcNhvgvLk8YnjRPkAaewxqNSFtK84EAVNrGNw5hgci2BpQ5J36pC5-v7uGx5uscWljUcZn3-VddwMNBhq88HuO14lCjU0slzZFP_WzZkwgSpMEK8mUN3vLsQRgu5CNntx1913Q2N8lrmwVPDwMFby6BXo3SnLh484SwtSxkOZoWEbLWvDCLRI-N5AYEtn3NOuLCXISeYsTAoC_inst5tKkUiurN_ZgK1WOrAQvP1CKDEAwmnwyr6z_feAR0nqobPSnJHoCaFBhCOYBj_F5O7bfOrDfDzqkaVcqlBdi3VGrjzl4bKpuYZcOWswbf0yjZgX6yNyVwnidWyGQ7MlEePHoVhP_sUYWgk362aoCTYHCfsnMcMUFORYRLOC_kizzvY3_n8qQfH-Pkse4Fnyrw0yQBjlKRaP958R8I_IPu9T8GRvJGjRw6hRKh49rUDnJRnV4onpG0XoeufZzKXv1aGRE5CvyeE3LQz_DeeZU7QtxkmLnS2uY8uNw85aeRCdHG2PdMnhBMQu-n0TnUM70yRTNlvvLKGovTI2GBmQP4tnr82imPq7L__VQKIZab-XYy5cYw-1kRHLo7txxu_L9LiQpqD7dKYKQVjmmxcFlxVkPQrO_2mvNfG3pmDtc-PLXOSD_oegUw0ZQ8MKI-EIBEiLg3rOOsk9gnybgxPQ3yHJzvFdBbzWBzoEoiAzvNSJ0DfkcY3mxU2tOQ2RZmtVMwnCLqQKb7Xik-DIfz0YJo-tlaJzbHEA8BsgZ83LUWiHBjdBc4iPHANbWanNDDYEMNS_OGcwBKk1jOe4hgOzcSqfxU7S11kRvpbmPIur2Cw3mBP9fBSDbuRjcz39idM6c6FtKdpiTIGW7UrQVD51I/https://www.amazon.in/gp/aw/d/B0BTZ3GNSW/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=dfbf7d0f6c405670b59d63ea2ff782a4&hsa_cr_id=0&qid=1784142121&sr=1-2-e0fa1fdd-d857-4087-adda-5bd576b25987&aref=AYBKlTEsyD&ref_=sbx_s_sparkle_sbtcd_asin_1_bkgd&pd_rd_w=iSg50&content-id=amzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05%3Aamzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_p=9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=9fU55&pd_rd_r=4e21be3f-4c12-4d5e-807f-28919808cd37
+                        - link "7SEVEN® Compatible with TCL Google Smart Tv Remote Original RC902V Model Suitable C632 C655 P635 Pro V6B Series Bluetooth Voice Assistance QLED OLED Ultra HD FHD Television Control, Pairing Must" [ref=e350] [cursor=pointer]:
+                          - /url: https://aax-eu-zaz.amazon.in/x/c/JFqig2VmZY5rIo-pUjUTR6cAAAGfZyhLLgoAAAH2AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICBuBlAE/clv1c_ek-IwoHXFdbSDdHYaoeZcwJZSrPTMo6Z5O0mFL8qH5rt7g7kxSOjMpeNz10Dzk1lU0hxK92Y7DeJgu0C2pUfvSWlXIC5IgZj-jCpOaoGoKoux_aLHa_vFwTo81i-3FgA2xyBO_4wvl0TIU6D6AZn-d7T4JxPFlNplvzj0ySsGJaJbdftA50-wtfJAm0okDGxmeiZxLlHGmdQc8zXpUz6r_tO1s9jBoBVsWcNhvgvLk8YnjRPkAaewxqNSFtK84EAVNrGNw5hgci2BpQ5J36pC5-v7uGx5uscWljUcZn3-VddwMNBhq88HuO14lCjU0slzZFP_WzZkwgSpMEK8mUN3vLsQRgu5CNntx1913Q2N8lrmwVPDwMFby6BXo3SnLh484SwtSxkOZoWEbLWvDCLRI-N5AYEtn3NOuLCXISeYsTAoC_inst5tKkUiurN_ZgK1WOrAQvP1CKDEAwmnwyr6z_feAR0nqobPSnJHoCaFBhCOYBj_F5O7bfOrDfDzqkaVcqlBdi3VGrjzl4bKpuYZcOWswbf0yjZgX6yNyVwnidWyGQ7MlEePHoVhP_sUYWgk362aoCTYHCfsnMcMUFORYRLOC_kizzvY3_n8qQfH-Pkse4Fnyrw0yQBjlKRaP958R8I_IPu9T8GRvJGjRw6hRKh49rUDnJRnV4onpG0XoeufZzKXv1aGRE5CvyeE3LQz_DeeZU7QtxkmLnS2uY8uNw85aeRCdHG2PdMnhBMQu-n0TnUM70yRTNlvvLKGovTI2GBmQP4tnr82imPq7L__VQKIZab-XYy5cYw-1kRHLo7txxu_L9LiQpqD7dKYKQVjmmxcFlxVkPQrO_2mvNfG3pmDtc-PLXOSD_oegUw0ZQ8MKI-EIBEiLg3rOOsk9gnybgxPQ3yHJzvFdBbzWBzoEoiAzvNSJ0DfkcY3mxU2tOQ2RZmtVMwnCLqQKb7Xik-DIfz0YJo-tlaJzbHEA8BsgZ83LUWiHBjdBc4iPHANbWanNDDYEMNS_OGcwBKk1jOe4hgOzcSqfxU7S11kRvpbmPIur2Cw3mBP9fBSDbuRjcz39idM6c6FtKdpiTIGW7UrQVD51I/https://www.amazon.in/gp/aw/d/B0BTZ3GNSW/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=dfbf7d0f6c405670b59d63ea2ff782a4&hsa_cr_id=0&qid=1784142121&sr=1-2-e0fa1fdd-d857-4087-adda-5bd576b25987&aref=AYBKlTEsyD&ref_=sbx_s_sparkle_sbtcd_asin_1_img&pd_rd_w=iSg50&content-id=amzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05%3Aamzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_p=9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=9fU55&pd_rd_r=4e21be3f-4c12-4d5e-807f-28919808cd37
+                          - img "7SEVEN® Compatible with TCL Google Smart Tv Remote Original RC902V Model Suitable C632 C655 P635 Pro V6B Series Bluetooth Voice Assistance QLED OLED Ultra HD FHD Television Control, Pairing Must" [ref=e353]
+                        - generic [ref=e355]:
+                          - link [ref=e356] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JFqig2VmZY5rIo-pUjUTR6cAAAGfZyhLLgoAAAH2AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICBuBlAE/clv1c_ek-IwoHXFdbSDdHYaoeZcwJZSrPTMo6Z5O0mFL8qH5rt7g7kxSOjMpeNz10Dzk1lU0hxK92Y7DeJgu0C2pUfvSWlXIC5IgZj-jCpOaoGoKoux_aLHa_vFwTo81i-3FgA2xyBO_4wvl0TIU6D6AZn-d7T4JxPFlNplvzj0ySsGJaJbdftA50-wtfJAm0okDGxmeiZxLlHGmdQc8zXpUz6r_tO1s9jBoBVsWcNhvgvLk8YnjRPkAaewxqNSFtK84EAVNrGNw5hgci2BpQ5J36pC5-v7uGx5uscWljUcZn3-VddwMNBhq88HuO14lCjU0slzZFP_WzZkwgSpMEK8mUN3vLsQRgu5CNntx1913Q2N8lrmwVPDwMFby6BXo3SnLh484SwtSxkOZoWEbLWvDCLRI-N5AYEtn3NOuLCXISeYsTAoC_inst5tKkUiurN_ZgK1WOrAQvP1CKDEAwmnwyr6z_feAR0nqobPSnJHoCaFBhCOYBj_F5O7bfOrDfDzqkaVcqlBdi3VGrjzl4bKpuYZcOWswbf0yjZgX6yNyVwnidWyGQ7MlEePHoVhP_sUYWgk362aoCTYHCfsnMcMUFORYRLOC_kizzvY3_n8qQfH-Pkse4Fnyrw0yQBjlKRaP958R8I_IPu9T8GRvJGjRw6hRKh49rUDnJRnV4onpG0XoeufZzKXv1aGRE5CvyeE3LQz_DeeZU7QtxkmLnS2uY8uNw85aeRCdHG2PdMnhBMQu-n0TnUM70yRTNlvvLKGovTI2GBmQP4tnr82imPq7L__VQKIZab-XYy5cYw-1kRHLo7txxu_L9LiQpqD7dKYKQVjmmxcFlxVkPQrO_2mvNfG3pmDtc-PLXOSD_oegUw0ZQ8MKI-EIBEiLg3rOOsk9gnybgxPQ3yHJzvFdBbzWBzoEoiAzvNSJ0DfkcY3mxU2tOQ2RZmtVMwnCLqQKb7Xik-DIfz0YJo-tlaJzbHEA8BsgZ83LUWiHBjdBc4iPHANbWanNDDYEMNS_OGcwBKk1jOe4hgOzcSqfxU7S11kRvpbmPIur2Cw3mBP9fBSDbuRjcz39idM6c6FtKdpiTIGW7UrQVD51I/https://www.amazon.in/gp/aw/d/B0BTZ3GNSW/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=dfbf7d0f6c405670b59d63ea2ff782a4&hsa_cr_id=0&qid=1784142121&sr=1-2-e0fa1fdd-d857-4087-adda-5bd576b25987&aref=AYBKlTEsyD&ref_=sbx_s_sparkle_sbtcd_asin_1_bkgd&pd_rd_w=iSg50&content-id=amzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05%3Aamzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_p=9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=9fU55&pd_rd_r=4e21be3f-4c12-4d5e-807f-28919808cd37
+                          - link "7SEVEN® Compatible with TCL Google Smart Tv Remote Original RC902V Model Suitable C632 C655 P635 Pro V6B Series Bluetooth Voice Assistance QLED OLED Ultra HD FHD Television Control, Pairing Must" [ref=e358] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JFqig2VmZY5rIo-pUjUTR6cAAAGfZyhLLgoAAAH2AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICBuBlAE/clv1c_ek-IwoHXFdbSDdHYaoeZcwJZSrPTMo6Z5O0mFL8qH5rt7g7kxSOjMpeNz10Dzk1lU0hxK92Y7DeJgu0C2pUfvSWlXIC5IgZj-jCpOaoGoKoux_aLHa_vFwTo81i-3FgA2xyBO_4wvl0TIU6D6AZn-d7T4JxPFlNplvzj0ySsGJaJbdftA50-wtfJAm0okDGxmeiZxLlHGmdQc8zXpUz6r_tO1s9jBoBVsWcNhvgvLk8YnjRPkAaewxqNSFtK84EAVNrGNw5hgci2BpQ5J36pC5-v7uGx5uscWljUcZn3-VddwMNBhq88HuO14lCjU0slzZFP_WzZkwgSpMEK8mUN3vLsQRgu5CNntx1913Q2N8lrmwVPDwMFby6BXo3SnLh484SwtSxkOZoWEbLWvDCLRI-N5AYEtn3NOuLCXISeYsTAoC_inst5tKkUiurN_ZgK1WOrAQvP1CKDEAwmnwyr6z_feAR0nqobPSnJHoCaFBhCOYBj_F5O7bfOrDfDzqkaVcqlBdi3VGrjzl4bKpuYZcOWswbf0yjZgX6yNyVwnidWyGQ7MlEePHoVhP_sUYWgk362aoCTYHCfsnMcMUFORYRLOC_kizzvY3_n8qQfH-Pkse4Fnyrw0yQBjlKRaP958R8I_IPu9T8GRvJGjRw6hRKh49rUDnJRnV4onpG0XoeufZzKXv1aGRE5CvyeE3LQz_DeeZU7QtxkmLnS2uY8uNw85aeRCdHG2PdMnhBMQu-n0TnUM70yRTNlvvLKGovTI2GBmQP4tnr82imPq7L__VQKIZab-XYy5cYw-1kRHLo7txxu_L9LiQpqD7dKYKQVjmmxcFlxVkPQrO_2mvNfG3pmDtc-PLXOSD_oegUw0ZQ8MKI-EIBEiLg3rOOsk9gnybgxPQ3yHJzvFdBbzWBzoEoiAzvNSJ0DfkcY3mxU2tOQ2RZmtVMwnCLqQKb7Xik-DIfz0YJo-tlaJzbHEA8BsgZ83LUWiHBjdBc4iPHANbWanNDDYEMNS_OGcwBKk1jOe4hgOzcSqfxU7S11kRvpbmPIur2Cw3mBP9fBSDbuRjcz39idM6c6FtKdpiTIGW7UrQVD51I/https://www.amazon.in/gp/aw/d/B0BTZ3GNSW/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=dfbf7d0f6c405670b59d63ea2ff782a4&hsa_cr_id=0&qid=1784142121&sr=1-2-e0fa1fdd-d857-4087-adda-5bd576b25987&aref=AYBKlTEsyD&ref_=sbx_s_sparkle_sbtcd_asin_1_title&pd_rd_w=iSg50&content-id=amzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05%3Aamzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_p=9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=9fU55&pd_rd_r=4e21be3f-4c12-4d5e-807f-28919808cd37
+                            - generic [ref=e359]:
+                              - generic [ref=e360]: 7SEVEN® Compatible with TCL Google Smart Tv Remote Original RC902V Model Suitable C632 C655 P635 Pro V6B Series Bluetooth Voice Assistance QLED OLED Ultra HD FHD Television Control, Pairing Must
+                              - generic [ref=e361]: 7SEVEN® Compatible with TCL Google Smart Tv Remote Ori…
+                          - link "Rated 3.7 out of 5 stars by 42 reviews. Go to review section." [ref=e362] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JFqig2VmZY5rIo-pUjUTR6cAAAGfZyhLLgoAAAH2AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICBuBlAE/clv1c_ek-IwoHXFdbSDdHYaoeZcwJZSrPTMo6Z5O0mFL8qH5rt7g7kxSOjMpeNz10Dzk1lU0hxK92Y7DeJgu0C2pUfvSWlXIC5IgZj-jCpOaoGoKoux_aLHa_vFwTo81i-3FgA2xyBO_4wvl0TIU6D6AZn-d7T4JxPFlNplvzj0ySsGJaJbdftA50-wtfJAm0okDGxmeiZxLlHGmdQc8zXpUz6r_tO1s9jBoBVsWcNhvgvLk8YnjRPkAaewxqNSFtK84EAVNrGNw5hgci2BpQ5J36pC5-v7uGx5uscWljUcZn3-VddwMNBhq88HuO14lCjU0slzZFP_WzZkwgSpMEK8mUN3vLsQRgu5CNntx1913Q2N8lrmwVPDwMFby6BXo3SnLh484SwtSxkOZoWEbLWvDCLRI-N5AYEtn3NOuLCXISeYsTAoC_inst5tKkUiurN_ZgK1WOrAQvP1CKDEAwmnwyr6z_feAR0nqobPSnJHoCaFBhCOYBj_F5O7bfOrDfDzqkaVcqlBdi3VGrjzl4bKpuYZcOWswbf0yjZgX6yNyVwnidWyGQ7MlEePHoVhP_sUYWgk362aoCTYHCfsnMcMUFORYRLOC_kizzvY3_n8qQfH-Pkse4Fnyrw0yQBjlKRaP958R8I_IPu9T8GRvJGjRw6hRKh49rUDnJRnV4onpG0XoeufZzKXv1aGRE5CvyeE3LQz_DeeZU7QtxkmLnS2uY8uNw85aeRCdHG2PdMnhBMQu-n0TnUM70yRTNlvvLKGovTI2GBmQP4tnr82imPq7L__VQKIZab-XYy5cYw-1kRHLo7txxu_L9LiQpqD7dKYKQVjmmxcFlxVkPQrO_2mvNfG3pmDtc-PLXOSD_oegUw0ZQ8MKI-EIBEiLg3rOOsk9gnybgxPQ3yHJzvFdBbzWBzoEoiAzvNSJ0DfkcY3mxU2tOQ2RZmtVMwnCLqQKb7Xik-DIfz0YJo-tlaJzbHEA8BsgZ83LUWiHBjdBc4iPHANbWanNDDYEMNS_OGcwBKk1jOe4hgOzcSqfxU7S11kRvpbmPIur2Cw3mBP9fBSDbuRjcz39idM6c6FtKdpiTIGW7UrQVD51I/https://www.amazon.in/gp/aw/d/B0BTZ3GNSW/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=dfbf7d0f6c405670b59d63ea2ff782a4&hsa_cr_id=0&qid=1784142121&sr=1-2-e0fa1fdd-d857-4087-adda-5bd576b25987&aref=AYBKlTEsyD&ref_=sbx_s_sparkle_sbtcd_asin_1_rating&pd_rd_w=iSg50&content-id=amzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05%3Aamzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_p=9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=9fU55&pd_rd_r=4e21be3f-4c12-4d5e-807f-28919808cd37#customerReviews
+                            - generic [ref=e363]:
+                              - generic [ref=e364]: "3.7"
+                              - generic [ref=e366]: 3.7 out of 5 stars.
+                              - generic [ref=e367]: (42)
+                          - link "Limited time deal" [ref=e369] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JFqig2VmZY5rIo-pUjUTR6cAAAGfZyhLLgoAAAH2AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICBuBlAE/clv1c_ek-IwoHXFdbSDdHYaoeZcwJZSrPTMo6Z5O0mFL8qH5rt7g7kxSOjMpeNz10Dzk1lU0hxK92Y7DeJgu0C2pUfvSWlXIC5IgZj-jCpOaoGoKoux_aLHa_vFwTo81i-3FgA2xyBO_4wvl0TIU6D6AZn-d7T4JxPFlNplvzj0ySsGJaJbdftA50-wtfJAm0okDGxmeiZxLlHGmdQc8zXpUz6r_tO1s9jBoBVsWcNhvgvLk8YnjRPkAaewxqNSFtK84EAVNrGNw5hgci2BpQ5J36pC5-v7uGx5uscWljUcZn3-VddwMNBhq88HuO14lCjU0slzZFP_WzZkwgSpMEK8mUN3vLsQRgu5CNntx1913Q2N8lrmwVPDwMFby6BXo3SnLh484SwtSxkOZoWEbLWvDCLRI-N5AYEtn3NOuLCXISeYsTAoC_inst5tKkUiurN_ZgK1WOrAQvP1CKDEAwmnwyr6z_feAR0nqobPSnJHoCaFBhCOYBj_F5O7bfOrDfDzqkaVcqlBdi3VGrjzl4bKpuYZcOWswbf0yjZgX6yNyVwnidWyGQ7MlEePHoVhP_sUYWgk362aoCTYHCfsnMcMUFORYRLOC_kizzvY3_n8qQfH-Pkse4Fnyrw0yQBjlKRaP958R8I_IPu9T8GRvJGjRw6hRKh49rUDnJRnV4onpG0XoeufZzKXv1aGRE5CvyeE3LQz_DeeZU7QtxkmLnS2uY8uNw85aeRCdHG2PdMnhBMQu-n0TnUM70yRTNlvvLKGovTI2GBmQP4tnr82imPq7L__VQKIZab-XYy5cYw-1kRHLo7txxu_L9LiQpqD7dKYKQVjmmxcFlxVkPQrO_2mvNfG3pmDtc-PLXOSD_oegUw0ZQ8MKI-EIBEiLg3rOOsk9gnybgxPQ3yHJzvFdBbzWBzoEoiAzvNSJ0DfkcY3mxU2tOQ2RZmtVMwnCLqQKb7Xik-DIfz0YJo-tlaJzbHEA8BsgZ83LUWiHBjdBc4iPHANbWanNDDYEMNS_OGcwBKk1jOe4hgOzcSqfxU7S11kRvpbmPIur2Cw3mBP9fBSDbuRjcz39idM6c6FtKdpiTIGW7UrQVD51I/https://www.amazon.in/gp/aw/d/B0BTZ3GNSW/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=dfbf7d0f6c405670b59d63ea2ff782a4&hsa_cr_id=0&qid=1784142121&sr=1-2-e0fa1fdd-d857-4087-adda-5bd576b25987&aref=AYBKlTEsyD&ref_=sbx_s_sparkle_sbtcd_asin_1_badge&pd_rd_w=iSg50&content-id=amzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05%3Aamzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_p=9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=9fU55&pd_rd_r=4e21be3f-4c12-4d5e-807f-28919808cd37
+                            - generic [ref=e372]: Limited time deal
+                          - link "-53% ₹933.00" [ref=e374] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JFqig2VmZY5rIo-pUjUTR6cAAAGfZyhLLgoAAAH2AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICBuBlAE/clv1c_ek-IwoHXFdbSDdHYaoeZcwJZSrPTMo6Z5O0mFL8qH5rt7g7kxSOjMpeNz10Dzk1lU0hxK92Y7DeJgu0C2pUfvSWlXIC5IgZj-jCpOaoGoKoux_aLHa_vFwTo81i-3FgA2xyBO_4wvl0TIU6D6AZn-d7T4JxPFlNplvzj0ySsGJaJbdftA50-wtfJAm0okDGxmeiZxLlHGmdQc8zXpUz6r_tO1s9jBoBVsWcNhvgvLk8YnjRPkAaewxqNSFtK84EAVNrGNw5hgci2BpQ5J36pC5-v7uGx5uscWljUcZn3-VddwMNBhq88HuO14lCjU0slzZFP_WzZkwgSpMEK8mUN3vLsQRgu5CNntx1913Q2N8lrmwVPDwMFby6BXo3SnLh484SwtSxkOZoWEbLWvDCLRI-N5AYEtn3NOuLCXISeYsTAoC_inst5tKkUiurN_ZgK1WOrAQvP1CKDEAwmnwyr6z_feAR0nqobPSnJHoCaFBhCOYBj_F5O7bfOrDfDzqkaVcqlBdi3VGrjzl4bKpuYZcOWswbf0yjZgX6yNyVwnidWyGQ7MlEePHoVhP_sUYWgk362aoCTYHCfsnMcMUFORYRLOC_kizzvY3_n8qQfH-Pkse4Fnyrw0yQBjlKRaP958R8I_IPu9T8GRvJGjRw6hRKh49rUDnJRnV4onpG0XoeufZzKXv1aGRE5CvyeE3LQz_DeeZU7QtxkmLnS2uY8uNw85aeRCdHG2PdMnhBMQu-n0TnUM70yRTNlvvLKGovTI2GBmQP4tnr82imPq7L__VQKIZab-XYy5cYw-1kRHLo7txxu_L9LiQpqD7dKYKQVjmmxcFlxVkPQrO_2mvNfG3pmDtc-PLXOSD_oegUw0ZQ8MKI-EIBEiLg3rOOsk9gnybgxPQ3yHJzvFdBbzWBzoEoiAzvNSJ0DfkcY3mxU2tOQ2RZmtVMwnCLqQKb7Xik-DIfz0YJo-tlaJzbHEA8BsgZ83LUWiHBjdBc4iPHANbWanNDDYEMNS_OGcwBKk1jOe4hgOzcSqfxU7S11kRvpbmPIur2Cw3mBP9fBSDbuRjcz39idM6c6FtKdpiTIGW7UrQVD51I/https://www.amazon.in/gp/aw/d/B0BTZ3GNSW/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=dfbf7d0f6c405670b59d63ea2ff782a4&hsa_cr_id=0&qid=1784142121&sr=1-2-e0fa1fdd-d857-4087-adda-5bd576b25987&aref=AYBKlTEsyD&ref_=sbx_s_sparkle_sbtcd_asin_1_price&pd_rd_w=iSg50&content-id=amzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05%3Aamzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_p=9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=9fU55&pd_rd_r=4e21be3f-4c12-4d5e-807f-28919808cd37
+                            - generic [ref=e375]:
+                              - generic [ref=e376]: "-53%"
+                              - generic [ref=e377]:
+                                - generic [ref=e378]: ₹933.00
+                                - generic [ref=e379]:
+                                  - text: ₹
+                                  - generic [ref=e380]:
+                                    - text: "933"
+                                    - generic [ref=e381]: .
+                                  - text: "00"
+                          - generic [ref=e384]: "M.R.P: ₹1,999.00"
+                          - img "Eligible for Prime." [ref=e386]
+                    - listitem [ref=e387]:
+                      - generic [ref=e389]:
+                        - link [ref=e390] [cursor=pointer]:
+                          - /url: https://aax-eu-zaz.amazon.in/x/c/JFqig2VmZY5rIo-pUjUTR6cAAAGfZyhLLgoAAAH2AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICBuBlAE/clv1c_ek-IwoHXFdbSDdHYaoeZcwJZSrPTMo6Z5O0mFL8qH5rt7g7kxSOjMpeNz10Dzk1lU0hxK92Y7DeJgu0C2pUfvSWlXIC5IgZj-jCpOaoGoKoux_aLHa_vFwTo81i-3FgA2xyBO_4wvl0TIU6D6AZn-d7T4JxPFlNplvzj0ySsGJaJbdftA50-wtfJAm0okDGxmeiZxLlHGmdQc8zXpUz6r_tO1s9jBoBVsWcNhvgvLk8YnjRPkAaewxqNSFtK84EAVNrGNw5hgci2BpQ5J36pC5-v7uGx5uscWljUcZn3-VddwMNBhq88HuO14lCjU0slzZFP_WzZkwgSpMEK8mUN3vLsQRgu5CNntx1913Q2N8lrmwVPDwMFby6BXo3SnLh484SwtSxkOZoWEbLWvDCLRI-N5AYEtn3NOuLCXISeYsTAoC_inst5tKkUiurN_ZgK1WOrAQvP1CKDEAwmnwyr6z_feAR0nqobPSnJHoCaFBhCOYBj_F5O7bfOrDfDzqkaVcqlBdi3VGrjzl4bKpuYZcOWswbf0yjZgX6yNyVwnidWyGQ7MlEePHoVhP_sUYWgk362aoCTYHCfsnMcMUFORYRLOC_kizzvY3_n8qQfH-Pkse4Fnyrw0yQBjlKRaP958R8I_IPu9T8GRvJGjRw6hRKh49rUDnJRnV4onpG0XoeufZzKXv1aGRE5CvyeE3LQz_DeeZU7QtxkmLnS2uY8uNw85aeRCdHG2PdMnhBMQu-n0TnUM70yRTNlvvLKGovTI2GBmQP4tnr82imPq7L__VQKIZab-XYy5cYw-1kRHLo7txxu_L9LiQpqD7dKYKQVjmmxcFlxVkPQrO_2mvNfG3pmDtc-PLXOSD_oegUw0ZQ8MKI-EIBEiLg3rOOsk9gnybgxPQ3yHJzvFdBbzWBzoEoiAzvNSJ0DfkcY3mxU2tOQ2RZmtVMwnCLqQKb7Xik-DIfz0YJo-tlaJzbHEA8BsgZ83LUWiHBjdBc4iPHANbWanNDDYEMNS_OGcwBKk1jOe4hgOzcSqfxU7S11kRvpbmPIur2Cw3mBP9fBSDbuRjcz39idM6c6FtKdpiTIGW7UrQVD51I/https://www.amazon.in/gp/aw/d/B097ZQTDVZ/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=dfbf7d0f6c405670b59d63ea2ff782a4&hsa_cr_id=0&qid=1784142121&sr=1-3-e0fa1fdd-d857-4087-adda-5bd576b25987&aref=AYBKlTEsyD&ref_=sbx_s_sparkle_sbtcd_asin_2_bkgd&pd_rd_w=iSg50&content-id=amzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05%3Aamzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_p=9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=9fU55&pd_rd_r=4e21be3f-4c12-4d5e-807f-28919808cd37
+                        - link "7 SEVEN® Compatible With TCL Tv Remote Original RC802V Model Suitable For Any Iffalcon TCL Smart Android 4K FHD UHD QLED Television No Voice Command Or Google Assistance Feature" [ref=e392] [cursor=pointer]:
+                          - /url: https://aax-eu-zaz.amazon.in/x/c/JFqig2VmZY5rIo-pUjUTR6cAAAGfZyhLLgoAAAH2AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICBuBlAE/clv1c_ek-IwoHXFdbSDdHYaoeZcwJZSrPTMo6Z5O0mFL8qH5rt7g7kxSOjMpeNz10Dzk1lU0hxK92Y7DeJgu0C2pUfvSWlXIC5IgZj-jCpOaoGoKoux_aLHa_vFwTo81i-3FgA2xyBO_4wvl0TIU6D6AZn-d7T4JxPFlNplvzj0ySsGJaJbdftA50-wtfJAm0okDGxmeiZxLlHGmdQc8zXpUz6r_tO1s9jBoBVsWcNhvgvLk8YnjRPkAaewxqNSFtK84EAVNrGNw5hgci2BpQ5J36pC5-v7uGx5uscWljUcZn3-VddwMNBhq88HuO14lCjU0slzZFP_WzZkwgSpMEK8mUN3vLsQRgu5CNntx1913Q2N8lrmwVPDwMFby6BXo3SnLh484SwtSxkOZoWEbLWvDCLRI-N5AYEtn3NOuLCXISeYsTAoC_inst5tKkUiurN_ZgK1WOrAQvP1CKDEAwmnwyr6z_feAR0nqobPSnJHoCaFBhCOYBj_F5O7bfOrDfDzqkaVcqlBdi3VGrjzl4bKpuYZcOWswbf0yjZgX6yNyVwnidWyGQ7MlEePHoVhP_sUYWgk362aoCTYHCfsnMcMUFORYRLOC_kizzvY3_n8qQfH-Pkse4Fnyrw0yQBjlKRaP958R8I_IPu9T8GRvJGjRw6hRKh49rUDnJRnV4onpG0XoeufZzKXv1aGRE5CvyeE3LQz_DeeZU7QtxkmLnS2uY8uNw85aeRCdHG2PdMnhBMQu-n0TnUM70yRTNlvvLKGovTI2GBmQP4tnr82imPq7L__VQKIZab-XYy5cYw-1kRHLo7txxu_L9LiQpqD7dKYKQVjmmxcFlxVkPQrO_2mvNfG3pmDtc-PLXOSD_oegUw0ZQ8MKI-EIBEiLg3rOOsk9gnybgxPQ3yHJzvFdBbzWBzoEoiAzvNSJ0DfkcY3mxU2tOQ2RZmtVMwnCLqQKb7Xik-DIfz0YJo-tlaJzbHEA8BsgZ83LUWiHBjdBc4iPHANbWanNDDYEMNS_OGcwBKk1jOe4hgOzcSqfxU7S11kRvpbmPIur2Cw3mBP9fBSDbuRjcz39idM6c6FtKdpiTIGW7UrQVD51I/https://www.amazon.in/gp/aw/d/B097ZQTDVZ/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=dfbf7d0f6c405670b59d63ea2ff782a4&hsa_cr_id=0&qid=1784142121&sr=1-3-e0fa1fdd-d857-4087-adda-5bd576b25987&aref=AYBKlTEsyD&ref_=sbx_s_sparkle_sbtcd_asin_2_img&pd_rd_w=iSg50&content-id=amzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05%3Aamzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_p=9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=9fU55&pd_rd_r=4e21be3f-4c12-4d5e-807f-28919808cd37
+                          - img "7 SEVEN® Compatible With TCL Tv Remote Original RC802V Model Suitable For Any Iffalcon TCL Smart Android 4K FHD UHD QLED Television No Voice Command Or Google Assistance Feature" [ref=e395]
+                        - generic [ref=e397]:
+                          - link [ref=e398] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JFqig2VmZY5rIo-pUjUTR6cAAAGfZyhLLgoAAAH2AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICBuBlAE/clv1c_ek-IwoHXFdbSDdHYaoeZcwJZSrPTMo6Z5O0mFL8qH5rt7g7kxSOjMpeNz10Dzk1lU0hxK92Y7DeJgu0C2pUfvSWlXIC5IgZj-jCpOaoGoKoux_aLHa_vFwTo81i-3FgA2xyBO_4wvl0TIU6D6AZn-d7T4JxPFlNplvzj0ySsGJaJbdftA50-wtfJAm0okDGxmeiZxLlHGmdQc8zXpUz6r_tO1s9jBoBVsWcNhvgvLk8YnjRPkAaewxqNSFtK84EAVNrGNw5hgci2BpQ5J36pC5-v7uGx5uscWljUcZn3-VddwMNBhq88HuO14lCjU0slzZFP_WzZkwgSpMEK8mUN3vLsQRgu5CNntx1913Q2N8lrmwVPDwMFby6BXo3SnLh484SwtSxkOZoWEbLWvDCLRI-N5AYEtn3NOuLCXISeYsTAoC_inst5tKkUiurN_ZgK1WOrAQvP1CKDEAwmnwyr6z_feAR0nqobPSnJHoCaFBhCOYBj_F5O7bfOrDfDzqkaVcqlBdi3VGrjzl4bKpuYZcOWswbf0yjZgX6yNyVwnidWyGQ7MlEePHoVhP_sUYWgk362aoCTYHCfsnMcMUFORYRLOC_kizzvY3_n8qQfH-Pkse4Fnyrw0yQBjlKRaP958R8I_IPu9T8GRvJGjRw6hRKh49rUDnJRnV4onpG0XoeufZzKXv1aGRE5CvyeE3LQz_DeeZU7QtxkmLnS2uY8uNw85aeRCdHG2PdMnhBMQu-n0TnUM70yRTNlvvLKGovTI2GBmQP4tnr82imPq7L__VQKIZab-XYy5cYw-1kRHLo7txxu_L9LiQpqD7dKYKQVjmmxcFlxVkPQrO_2mvNfG3pmDtc-PLXOSD_oegUw0ZQ8MKI-EIBEiLg3rOOsk9gnybgxPQ3yHJzvFdBbzWBzoEoiAzvNSJ0DfkcY3mxU2tOQ2RZmtVMwnCLqQKb7Xik-DIfz0YJo-tlaJzbHEA8BsgZ83LUWiHBjdBc4iPHANbWanNDDYEMNS_OGcwBKk1jOe4hgOzcSqfxU7S11kRvpbmPIur2Cw3mBP9fBSDbuRjcz39idM6c6FtKdpiTIGW7UrQVD51I/https://www.amazon.in/gp/aw/d/B097ZQTDVZ/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=dfbf7d0f6c405670b59d63ea2ff782a4&hsa_cr_id=0&qid=1784142121&sr=1-3-e0fa1fdd-d857-4087-adda-5bd576b25987&aref=AYBKlTEsyD&ref_=sbx_s_sparkle_sbtcd_asin_2_bkgd&pd_rd_w=iSg50&content-id=amzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05%3Aamzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_p=9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=9fU55&pd_rd_r=4e21be3f-4c12-4d5e-807f-28919808cd37
+                          - link "7 SEVEN® Compatible With TCL Tv Remote Original RC802V Model Suitable For Any Iffalcon TCL Smart Android 4K FHD UHD QLED Television No Voice Command Or Google Assistance Feature" [ref=e400] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JFqig2VmZY5rIo-pUjUTR6cAAAGfZyhLLgoAAAH2AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICBuBlAE/clv1c_ek-IwoHXFdbSDdHYaoeZcwJZSrPTMo6Z5O0mFL8qH5rt7g7kxSOjMpeNz10Dzk1lU0hxK92Y7DeJgu0C2pUfvSWlXIC5IgZj-jCpOaoGoKoux_aLHa_vFwTo81i-3FgA2xyBO_4wvl0TIU6D6AZn-d7T4JxPFlNplvzj0ySsGJaJbdftA50-wtfJAm0okDGxmeiZxLlHGmdQc8zXpUz6r_tO1s9jBoBVsWcNhvgvLk8YnjRPkAaewxqNSFtK84EAVNrGNw5hgci2BpQ5J36pC5-v7uGx5uscWljUcZn3-VddwMNBhq88HuO14lCjU0slzZFP_WzZkwgSpMEK8mUN3vLsQRgu5CNntx1913Q2N8lrmwVPDwMFby6BXo3SnLh484SwtSxkOZoWEbLWvDCLRI-N5AYEtn3NOuLCXISeYsTAoC_inst5tKkUiurN_ZgK1WOrAQvP1CKDEAwmnwyr6z_feAR0nqobPSnJHoCaFBhCOYBj_F5O7bfOrDfDzqkaVcqlBdi3VGrjzl4bKpuYZcOWswbf0yjZgX6yNyVwnidWyGQ7MlEePHoVhP_sUYWgk362aoCTYHCfsnMcMUFORYRLOC_kizzvY3_n8qQfH-Pkse4Fnyrw0yQBjlKRaP958R8I_IPu9T8GRvJGjRw6hRKh49rUDnJRnV4onpG0XoeufZzKXv1aGRE5CvyeE3LQz_DeeZU7QtxkmLnS2uY8uNw85aeRCdHG2PdMnhBMQu-n0TnUM70yRTNlvvLKGovTI2GBmQP4tnr82imPq7L__VQKIZab-XYy5cYw-1kRHLo7txxu_L9LiQpqD7dKYKQVjmmxcFlxVkPQrO_2mvNfG3pmDtc-PLXOSD_oegUw0ZQ8MKI-EIBEiLg3rOOsk9gnybgxPQ3yHJzvFdBbzWBzoEoiAzvNSJ0DfkcY3mxU2tOQ2RZmtVMwnCLqQKb7Xik-DIfz0YJo-tlaJzbHEA8BsgZ83LUWiHBjdBc4iPHANbWanNDDYEMNS_OGcwBKk1jOe4hgOzcSqfxU7S11kRvpbmPIur2Cw3mBP9fBSDbuRjcz39idM6c6FtKdpiTIGW7UrQVD51I/https://www.amazon.in/gp/aw/d/B097ZQTDVZ/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=dfbf7d0f6c405670b59d63ea2ff782a4&hsa_cr_id=0&qid=1784142121&sr=1-3-e0fa1fdd-d857-4087-adda-5bd576b25987&aref=AYBKlTEsyD&ref_=sbx_s_sparkle_sbtcd_asin_2_title&pd_rd_w=iSg50&content-id=amzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05%3Aamzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_p=9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=9fU55&pd_rd_r=4e21be3f-4c12-4d5e-807f-28919808cd37
+                            - generic [ref=e401]:
+                              - generic [ref=e402]: 7 SEVEN® Compatible With TCL Tv Remote Original RC802V Model Suitable For Any Iffalcon TCL Smart Android 4K FHD UHD QLED Television No Voice Command Or Google Assistance Feature
+                              - generic [ref=e403]: 7 SEVEN® Compatible With TCL Tv Remote Original RC802V…
+                          - link "Rated 3.8 out of 5 stars by 1240 reviews. Go to review section." [ref=e404] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JFqig2VmZY5rIo-pUjUTR6cAAAGfZyhLLgoAAAH2AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICBuBlAE/clv1c_ek-IwoHXFdbSDdHYaoeZcwJZSrPTMo6Z5O0mFL8qH5rt7g7kxSOjMpeNz10Dzk1lU0hxK92Y7DeJgu0C2pUfvSWlXIC5IgZj-jCpOaoGoKoux_aLHa_vFwTo81i-3FgA2xyBO_4wvl0TIU6D6AZn-d7T4JxPFlNplvzj0ySsGJaJbdftA50-wtfJAm0okDGxmeiZxLlHGmdQc8zXpUz6r_tO1s9jBoBVsWcNhvgvLk8YnjRPkAaewxqNSFtK84EAVNrGNw5hgci2BpQ5J36pC5-v7uGx5uscWljUcZn3-VddwMNBhq88HuO14lCjU0slzZFP_WzZkwgSpMEK8mUN3vLsQRgu5CNntx1913Q2N8lrmwVPDwMFby6BXo3SnLh484SwtSxkOZoWEbLWvDCLRI-N5AYEtn3NOuLCXISeYsTAoC_inst5tKkUiurN_ZgK1WOrAQvP1CKDEAwmnwyr6z_feAR0nqobPSnJHoCaFBhCOYBj_F5O7bfOrDfDzqkaVcqlBdi3VGrjzl4bKpuYZcOWswbf0yjZgX6yNyVwnidWyGQ7MlEePHoVhP_sUYWgk362aoCTYHCfsnMcMUFORYRLOC_kizzvY3_n8qQfH-Pkse4Fnyrw0yQBjlKRaP958R8I_IPu9T8GRvJGjRw6hRKh49rUDnJRnV4onpG0XoeufZzKXv1aGRE5CvyeE3LQz_DeeZU7QtxkmLnS2uY8uNw85aeRCdHG2PdMnhBMQu-n0TnUM70yRTNlvvLKGovTI2GBmQP4tnr82imPq7L__VQKIZab-XYy5cYw-1kRHLo7txxu_L9LiQpqD7dKYKQVjmmxcFlxVkPQrO_2mvNfG3pmDtc-PLXOSD_oegUw0ZQ8MKI-EIBEiLg3rOOsk9gnybgxPQ3yHJzvFdBbzWBzoEoiAzvNSJ0DfkcY3mxU2tOQ2RZmtVMwnCLqQKb7Xik-DIfz0YJo-tlaJzbHEA8BsgZ83LUWiHBjdBc4iPHANbWanNDDYEMNS_OGcwBKk1jOe4hgOzcSqfxU7S11kRvpbmPIur2Cw3mBP9fBSDbuRjcz39idM6c6FtKdpiTIGW7UrQVD51I/https://www.amazon.in/gp/aw/d/B097ZQTDVZ/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=dfbf7d0f6c405670b59d63ea2ff782a4&hsa_cr_id=0&qid=1784142121&sr=1-3-e0fa1fdd-d857-4087-adda-5bd576b25987&aref=AYBKlTEsyD&ref_=sbx_s_sparkle_sbtcd_asin_2_rating&pd_rd_w=iSg50&content-id=amzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05%3Aamzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_p=9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=9fU55&pd_rd_r=4e21be3f-4c12-4d5e-807f-28919808cd37#customerReviews
+                            - generic [ref=e405]:
+                              - generic [ref=e406]: "3.8"
+                              - generic [ref=e408]: 3.8 out of 5 stars.
+                              - generic [ref=e409]: (1.2k)
+                          - link "₹279.00" [ref=e411] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JFqig2VmZY5rIo-pUjUTR6cAAAGfZyhLLgoAAAH2AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICBuBlAE/clv1c_ek-IwoHXFdbSDdHYaoeZcwJZSrPTMo6Z5O0mFL8qH5rt7g7kxSOjMpeNz10Dzk1lU0hxK92Y7DeJgu0C2pUfvSWlXIC5IgZj-jCpOaoGoKoux_aLHa_vFwTo81i-3FgA2xyBO_4wvl0TIU6D6AZn-d7T4JxPFlNplvzj0ySsGJaJbdftA50-wtfJAm0okDGxmeiZxLlHGmdQc8zXpUz6r_tO1s9jBoBVsWcNhvgvLk8YnjRPkAaewxqNSFtK84EAVNrGNw5hgci2BpQ5J36pC5-v7uGx5uscWljUcZn3-VddwMNBhq88HuO14lCjU0slzZFP_WzZkwgSpMEK8mUN3vLsQRgu5CNntx1913Q2N8lrmwVPDwMFby6BXo3SnLh484SwtSxkOZoWEbLWvDCLRI-N5AYEtn3NOuLCXISeYsTAoC_inst5tKkUiurN_ZgK1WOrAQvP1CKDEAwmnwyr6z_feAR0nqobPSnJHoCaFBhCOYBj_F5O7bfOrDfDzqkaVcqlBdi3VGrjzl4bKpuYZcOWswbf0yjZgX6yNyVwnidWyGQ7MlEePHoVhP_sUYWgk362aoCTYHCfsnMcMUFORYRLOC_kizzvY3_n8qQfH-Pkse4Fnyrw0yQBjlKRaP958R8I_IPu9T8GRvJGjRw6hRKh49rUDnJRnV4onpG0XoeufZzKXv1aGRE5CvyeE3LQz_DeeZU7QtxkmLnS2uY8uNw85aeRCdHG2PdMnhBMQu-n0TnUM70yRTNlvvLKGovTI2GBmQP4tnr82imPq7L__VQKIZab-XYy5cYw-1kRHLo7txxu_L9LiQpqD7dKYKQVjmmxcFlxVkPQrO_2mvNfG3pmDtc-PLXOSD_oegUw0ZQ8MKI-EIBEiLg3rOOsk9gnybgxPQ3yHJzvFdBbzWBzoEoiAzvNSJ0DfkcY3mxU2tOQ2RZmtVMwnCLqQKb7Xik-DIfz0YJo-tlaJzbHEA8BsgZ83LUWiHBjdBc4iPHANbWanNDDYEMNS_OGcwBKk1jOe4hgOzcSqfxU7S11kRvpbmPIur2Cw3mBP9fBSDbuRjcz39idM6c6FtKdpiTIGW7UrQVD51I/https://www.amazon.in/gp/aw/d/B097ZQTDVZ/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=dfbf7d0f6c405670b59d63ea2ff782a4&hsa_cr_id=0&qid=1784142121&sr=1-3-e0fa1fdd-d857-4087-adda-5bd576b25987&aref=AYBKlTEsyD&ref_=sbx_s_sparkle_sbtcd_asin_2_price&pd_rd_w=iSg50&content-id=amzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05%3Aamzn1.sym.9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_p=9269eab1-ae85-443b-9ec2-b2fa4ebaad05&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=9fU55&pd_rd_r=4e21be3f-4c12-4d5e-807f-28919808cd37
+                            - generic [ref=e413]:
+                              - generic [ref=e414]: ₹279.00
+                              - generic [ref=e415]:
+                                - text: ₹
+                                - generic [ref=e416]:
+                                  - text: "279"
+                                  - generic [ref=e417]: .
+                                - text: "00"
+                          - generic [ref=e420]: "M.R.P: ₹799.00"
+          - generic [ref=e422]:
+            - generic [ref=e425]:
+              - heading "Results" [level=2] [ref=e426]
+              - generic [ref=e427]: Check each product page for other buying options.
+            - generic:
+              - list:
+                - listitem [ref=e428]:
+                  - generic [ref=e436]:
+                    - link [ref=e442] [cursor=pointer]:
+                      - /url: /sspa/click?ie=UTF8&spc=MToyMzI0MjM1NDUzMDYyOTQ4OjE3ODQxNDIxMjE6c3BfYXRmOjMwMTEwNzA3MTE2OTkzMjo6MDo6&url=%2FHaier-165cm-Ultra-Google-65H6E%2Fdp%2FB0GPX3DV62%2Fref%3Dsr_1_1_sspa%3Fcrid%3D8XMTCS9DYB1P%26dib%3DeyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc%26dib_tag%3Dse%26keywords%3DTV%26qid%3D1784142121%26sprefix%3Dtv%252Caps%252C819%26sr%3D8-1-spons%26aref%3Dxlx0FZoGtl%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1&aref=xlx0FZoGtl&sp_cr=ZAZ
+                      - img [ref=e444]
+                    - generic [ref=e447]:
+                      - generic [ref=e448]:
+                        - button "View Sponsored information or leave ad feedback" [ref=e451] [cursor=pointer]:
+                          - generic [ref=e452]: Sponsored
+                        - link "Sponsored Ad - Haier H6E Series 165cm (65) 4K QLED Ultra HD Smart LED Google TV 65H6E" [ref=e454] [cursor=pointer]:
+                          - /url: /sspa/click?ie=UTF8&spc=MToyMzI0MjM1NDUzMDYyOTQ4OjE3ODQxNDIxMjE6c3BfYXRmOjMwMTEwNzA3MTE2OTkzMjo6MDo6&url=%2FHaier-165cm-Ultra-Google-65H6E%2Fdp%2FB0GPX3DV62%2Fref%3Dsr_1_1_sspa%3Fcrid%3D8XMTCS9DYB1P%26dib%3DeyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc%26dib_tag%3Dse%26keywords%3DTV%26qid%3D1784142121%26sprefix%3Dtv%252Caps%252C819%26sr%3D8-1-spons%26aref%3Dxlx0FZoGtl%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1&aref=xlx0FZoGtl&sp_cr=ZAZ
+                          - heading "Sponsored Ad - Haier H6E Series 165cm (65) 4K QLED Ultra HD Smart LED Google TV 65H6E" [level=2] [ref=e455]: Haier H6E Series 165cm (65) 4K QLED Ultra HD Smart LED Google TV 65H6E
+                      - generic [ref=e457]:
+                        - text: "4.0"
+                        - button "4.0 out of 5 stars, rating details" [ref=e459] [cursor=pointer]:
+                          - generic [ref=e461]: 4.0 out of 5 stars
+                        - link "7 ratings" [ref=e463] [cursor=pointer]:
+                          - /url: /sspa/click?ie=UTF8&spc=MToyMzI0MjM1NDUzMDYyOTQ4OjE3ODQxNDIxMjE6c3BfYXRmOjMwMTEwNzA3MTE2OTkzMjo6MDo6&url=%2FHaier-165cm-Ultra-Google-65H6E%2Fdp%2FB0GPX3DV62%2Fref%3Dsr_1_1_sspa%3Fcrid%3D8XMTCS9DYB1P%26dib%3DeyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc%26dib_tag%3Dse%26keywords%3DTV%26qid%3D1784142121%26sprefix%3Dtv%252Caps%252C819%26sr%3D8-1-spons%26aref%3Dxlx0FZoGtl%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1&aref=xlx0FZoGtl&sp_cr=ZAZ#customerReviews
+                          - text: (7)
+                      - generic [ref=e466]:
+                        - generic [ref=e467]:
+                          - generic [ref=e469]:
+                            - generic [ref=e470]: Price, product page
+                            - 'link "₹63,490 M.R.P: ₹91,990 M.R.P: ₹91,990" [ref=e471] [cursor=pointer]':
+                              - /url: /sspa/click?ie=UTF8&spc=MToyMzI0MjM1NDUzMDYyOTQ4OjE3ODQxNDIxMjE6c3BfYXRmOjMwMTEwNzA3MTE2OTkzMjo6MDo6&url=%2FHaier-165cm-Ultra-Google-65H6E%2Fdp%2FB0GPX3DV62%2Fref%3Dsr_1_1_sspa%3Fcrid%3D8XMTCS9DYB1P%26dib%3DeyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc%26dib_tag%3Dse%26keywords%3DTV%26qid%3D1784142121%26sprefix%3Dtv%252Caps%252C819%26sr%3D8-1-spons%26aref%3Dxlx0FZoGtl%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1&aref=xlx0FZoGtl&sp_cr=ZAZ
+                              - generic [ref=e472]:
+                                - generic [ref=e473]: ₹63,490
+                                - generic [ref=e474]: ₹63,490
+                              - generic [ref=e475]: "M.R.P: ₹91,990"
+                              - generic [ref=e476]:
+                                - text: "M.R.P:"
+                                - generic [ref=e477]:
+                                  - generic [ref=e478]: ₹91,990
+                                  - text: ₹91,990
+                            - text: (31% off)
+                          - generic [ref=e482]:
+                            - generic [ref=e483]: 10% Off on select cards
+                            - generic [ref=e484]: 10% Off on select cards
+                        - generic [ref=e485]:
+                          - generic [ref=e489]: FREE delivery as soon as Sat, 18 Jul, 7 am - 9 pm
+                          - generic "Only 1 left in stock." [ref=e491]
+                        - generic [ref=e493]: "Service: Brand Installation"
+                        - generic [ref=e507] [cursor=pointer]:
+                          - button "Add to cart" [ref=e508]
+                          - generic [ref=e509]: Add to cart
+                - listitem [ref=e512]:
+                  - generic [ref=e520]:
+                    - link [ref=e526] [cursor=pointer]:
+                      - /url: /sspa/click?ie=UTF8&spc=MToyMzI0MjM1NDUzMDYyOTQ4OjE3ODQxNDIxMjE6c3BfYXRmOjMwMDY5MDYzNDU2NTAzMjo6MDo6&url=%2FPhilips-inches-Google-65PQT8100-94%2Fdp%2FB0FDQRTXBC%2Fref%3Dsr_1_2_sspa%3Fcrid%3D8XMTCS9DYB1P%26dib%3DeyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc%26dib_tag%3Dse%26keywords%3DTV%26qid%3D1784142121%26sprefix%3Dtv%252Caps%252C819%26sr%3D8-2-spons%26aref%3DGnuRH4LHKi%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1&aref=GnuRH4LHKi&sp_cr=ZAZ
+                      - img [ref=e528]
+                    - generic [ref=e531]:
+                      - generic [ref=e532]:
+                        - button "View Sponsored information or leave ad feedback" [ref=e535] [cursor=pointer]:
+                          - generic [ref=e536]: Sponsored
+                        - link "Sponsored Ad - PHILIPS 165 cm (65 inches) 8100 Series 4K Ultra HD Smart QLED Google TV 65PQT8100/94" [ref=e538] [cursor=pointer]:
+                          - /url: /sspa/click?ie=UTF8&spc=MToyMzI0MjM1NDUzMDYyOTQ4OjE3ODQxNDIxMjE6c3BfYXRmOjMwMDY5MDYzNDU2NTAzMjo6MDo6&url=%2FPhilips-inches-Google-65PQT8100-94%2Fdp%2FB0FDQRTXBC%2Fref%3Dsr_1_2_sspa%3Fcrid%3D8XMTCS9DYB1P%26dib%3DeyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc%26dib_tag%3Dse%26keywords%3DTV%26qid%3D1784142121%26sprefix%3Dtv%252Caps%252C819%26sr%3D8-2-spons%26aref%3DGnuRH4LHKi%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1&aref=GnuRH4LHKi&sp_cr=ZAZ
+                          - heading "Sponsored Ad - PHILIPS 165 cm (65 inches) 8100 Series 4K Ultra HD Smart QLED Google TV 65PQT8100/94" [level=2] [ref=e539]: PHILIPS 165 cm (65 inches) 8100 Series 4K Ultra HD Smart QLED Google TV 65PQT8100/94
+                      - generic [ref=e540]:
+                        - generic [ref=e541]:
+                          - text: "4.1"
+                          - button "4.1 out of 5 stars, rating details" [ref=e543] [cursor=pointer]:
+                            - generic [ref=e545]: 4.1 out of 5 stars
+                          - link "1,576 ratings" [ref=e547] [cursor=pointer]:
+                            - /url: /sspa/click?ie=UTF8&spc=MToyMzI0MjM1NDUzMDYyOTQ4OjE3ODQxNDIxMjE6c3BfYXRmOjMwMDY5MDYzNDU2NTAzMjo6MDo6&url=%2FPhilips-inches-Google-65PQT8100-94%2Fdp%2FB0FDQRTXBC%2Fref%3Dsr_1_2_sspa%3Fcrid%3D8XMTCS9DYB1P%26dib%3DeyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc%26dib_tag%3Dse%26keywords%3DTV%26qid%3D1784142121%26sprefix%3Dtv%252Caps%252C819%26sr%3D8-2-spons%26aref%3DGnuRH4LHKi%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1&aref=GnuRH4LHKi&sp_cr=ZAZ#customerReviews
+                            - text: (1.5K)
+                        - generic [ref=e548]: 50+ bought in past month
+                      - generic [ref=e551]:
+                        - generic [ref=e552]:
+                          - generic [ref=e554]:
+                            - generic [ref=e555]: Price, product page
+                            - 'link "₹53,999 M.R.P: ₹64,990 M.R.P: ₹64,990" [ref=e556] [cursor=pointer]':
+                              - /url: /sspa/click?ie=UTF8&spc=MToyMzI0MjM1NDUzMDYyOTQ4OjE3ODQxNDIxMjE6c3BfYXRmOjMwMDY5MDYzNDU2NTAzMjo6MDo6&url=%2FPhilips-inches-Google-65PQT8100-94%2Fdp%2FB0FDQRTXBC%2Fref%3Dsr_1_2_sspa%3Fcrid%3D8XMTCS9DYB1P%26dib%3DeyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc%26dib_tag%3Dse%26keywords%3DTV%26qid%3D1784142121%26sprefix%3Dtv%252Caps%252C819%26sr%3D8-2-spons%26aref%3DGnuRH4LHKi%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1&aref=GnuRH4LHKi&sp_cr=ZAZ
+                              - generic [ref=e557]:
+                                - generic [ref=e558]: ₹53,999
+                                - generic [ref=e559]: ₹53,999
+                              - generic [ref=e560]: "M.R.P: ₹64,990"
+                              - generic [ref=e561]:
+                                - text: "M.R.P:"
+                                - generic [ref=e562]:
+                                  - generic [ref=e563]: ₹64,990
+                                  - text: ₹64,990
+                            - text: (17% off)
+                          - generic [ref=e567]:
+                            - generic [ref=e568]: Save extra with No Cost EMI
+                            - generic [ref=e569]: Save extra with No Cost EMI
+                        - generic [ref=e574]: FREE delivery as soon as Sat, 18 Jul, 7 am - 8 pm
+                        - generic [ref=e576]: "Service: Setup at delivery"
+                        - generic [ref=e590] [cursor=pointer]:
+                          - button "Add to cart" [ref=e591]
+                          - generic [ref=e592]: Add to cart
+                - listitem [ref=e595]:
+                  - generic [ref=e601]:
+                    - generic [ref=e603]:
+                      - group "Best sellerin Smart Televisions" [ref=e609]:
+                        - generic "Best seller" [ref=e611]
+                      - link [ref=e615] [cursor=pointer]:
+                        - /url: /inches-Spectra-Smart-Android-VW43AQ3/dp/B0GX52LD7V/ref=sr_1_3?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-3
+                        - img [ref=e617]
+                    - generic [ref=e620]:
+                      - link "VW 109 cm (43 inches) Spectra Series Full HD Smart QLED Android TV VW43AQ3" [ref=e622] [cursor=pointer]:
+                        - /url: /inches-Spectra-Smart-Android-VW43AQ3/dp/B0GX52LD7V/ref=sr_1_3?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-3
+                        - heading "VW 109 cm (43 inches) Spectra Series Full HD Smart QLED Android TV VW43AQ3" [level=2] [ref=e623]
+                      - generic [ref=e624]:
+                        - generic [ref=e625]:
+                          - text: "4.1"
+                          - button "4.1 out of 5 stars, rating details" [ref=e627] [cursor=pointer]:
+                            - generic [ref=e629]: 4.1 out of 5 stars
+                          - link "15,935 ratings" [ref=e631] [cursor=pointer]:
+                            - /url: /inches-Spectra-Smart-Android-VW43AQ3/dp/B0GX52LD7V/ref=sr_1_3?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-3#customerReviews
+                            - text: (15.9K)
+                        - generic [ref=e632]: 2K+ bought in past month
+                      - generic [ref=e635]:
+                        - generic [ref=e636]:
+                          - generic [ref=e638]:
+                            - generic [ref=e639]: Price, product page
+                            - 'link "₹15,499 M.R.P: ₹29,999 M.R.P: ₹29,999" [ref=e640] [cursor=pointer]':
+                              - /url: /inches-Spectra-Smart-Android-VW43AQ3/dp/B0GX52LD7V/ref=sr_1_3?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-3
+                              - generic [ref=e641]:
+                                - generic [ref=e642]: ₹15,499
+                                - generic [ref=e643]: ₹15,499
+                              - generic [ref=e644]: "M.R.P: ₹29,999"
+                              - generic [ref=e645]:
+                                - text: "M.R.P:"
+                                - generic [ref=e646]:
+                                  - generic [ref=e647]: ₹29,999
+                                  - text: ₹29,999
+                            - text: (48% off)
+                          - generic [ref=e651]:
+                            - generic [ref=e652]: Get 3% back with Amazon Pay ICICI card
+                            - generic [ref=e653]: Get 3% back with Amazon Pay ICICI...
+                        - generic [ref=e658]: FREE delivery as soon as Sat, 18 Jul, 7 am - 9 pm
+                        - generic [ref=e660]: "Service: Installation"
+                        - generic [ref=e674] [cursor=pointer]:
+                          - button "Add to cart" [ref=e675]
+                          - generic [ref=e676]: Add to cart
+                - listitem [ref=e679]:
+                  - generic [ref=e685]:
+                    - generic [ref=e687]:
+                      - group "Best sellerin Smart Televisions" [ref=e693]:
+                        - generic "Best seller" [ref=e695]
+                      - link [ref=e699] [cursor=pointer]:
+                        - /url: /inches-Spectra-Smart-Android-VW40AQ3/dp/B0GXNND5DS/ref=sr_1_4?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-4
+                        - img [ref=e701]
+                    - generic [ref=e704]:
+                      - link "VW 101 cm (40 inches) Spectra Series Full HD Smart QLED Android TV VW40AQ3" [ref=e706] [cursor=pointer]:
+                        - /url: /inches-Spectra-Smart-Android-VW40AQ3/dp/B0GXNND5DS/ref=sr_1_4?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-4
+                        - heading "VW 101 cm (40 inches) Spectra Series Full HD Smart QLED Android TV VW40AQ3" [level=2] [ref=e707]
+                      - generic [ref=e708]:
+                        - generic [ref=e709]:
+                          - text: "4.1"
+                          - button "4.1 out of 5 stars, rating details" [ref=e711] [cursor=pointer]:
+                            - generic [ref=e713]: 4.1 out of 5 stars
+                          - link "15,935 ratings" [ref=e715] [cursor=pointer]:
+                            - /url: /inches-Spectra-Smart-Android-VW40AQ3/dp/B0GXNND5DS/ref=sr_1_4?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-4#customerReviews
+                            - text: (15.9K)
+                        - generic [ref=e716]: 1K+ bought in past month
+                      - generic [ref=e719]:
+                        - generic [ref=e720]:
+                          - generic [ref=e722]:
+                            - generic [ref=e723]: Price, product page
+                            - 'link "₹13,499 M.R.P: ₹24,999 M.R.P: ₹24,999" [ref=e724] [cursor=pointer]':
+                              - /url: /inches-Spectra-Smart-Android-VW40AQ3/dp/B0GXNND5DS/ref=sr_1_4?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-4
+                              - generic [ref=e725]:
+                                - generic [ref=e726]: ₹13,499
+                                - generic [ref=e727]: ₹13,499
+                              - generic [ref=e728]: "M.R.P: ₹24,999"
+                              - generic [ref=e729]:
+                                - text: "M.R.P:"
+                                - generic [ref=e730]:
+                                  - generic [ref=e731]: ₹24,999
+                                  - text: ₹24,999
+                            - text: (46% off)
+                          - generic [ref=e735]:
+                            - generic [ref=e736]: Get 3% back with Amazon Pay ICICI card
+                            - generic [ref=e737]: Get 3% back with Amazon Pay ICICI...
+                        - generic [ref=e742]: FREE delivery as soon as Sat, 18 Jul, 7 am - 9 pm
+                        - generic [ref=e744]: "Service: Installation"
+                        - generic [ref=e758] [cursor=pointer]:
+                          - button "Add to cart" [ref=e759]
+                          - generic [ref=e760]: Add to cart
+                - listitem [ref=e763]:
+                  - generic [ref=e769]:
+                    - link [ref=e775] [cursor=pointer]:
+                      - /url: /Samsung-inches-Frame-Vision-QA65LS03HEULXL/dp/B0H2H71CN7/ref=sr_1_5?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-5
+                      - img [ref=e777]
+                    - generic [ref=e780]:
+                      - link "Samsung 65 inches The Frame 4K Samsung Vision AI Smart TV QA65LS03HEULXL" [ref=e782] [cursor=pointer]:
+                        - /url: /Samsung-inches-Frame-Vision-QA65LS03HEULXL/dp/B0H2H71CN7/ref=sr_1_5?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-5
+                        - heading "Samsung 65 inches The Frame 4K Samsung Vision AI Smart TV QA65LS03HEULXL" [level=2] [ref=e783]
+                      - generic [ref=e786]:
+                        - link "See options" [ref=e795] [cursor=pointer]:
+                          - /url: /Samsung-inches-Frame-Vision-QA65LS03HEULXL/dp/B0H2H71CN7/ref=sr_1_5_so_TELEVISION?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-5
+                        - generic [ref=e797]:
+                          - text: No featured offers available
+                          - text: ₹1,25,995
+                          - link "(1 new offer)" [ref=e799] [cursor=pointer]:
+                            - /url: /gp/offer-listing/B0H2H71CN7/ref=sr_1_5_olp?keywords=TV&crid=8XMTCS9DYB1P&sprefix=tv%2Caps%2C819&dib_tag=se&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&qid=1784142121&sr=8-5
+          - generic [ref=e805]:
+            - generic [ref=e810]:
+              - heading "Trending now" [level=2] [ref=e812]
+              - button "View Sponsored information or leave ad feedback" [ref=e815] [cursor=pointer]: Sponsored
+            - region "Trending now" [ref=e817]:
+              - list [ref=e823]:
+                - listitem "1 of 5" [ref=e824]:
+                  - generic [ref=e830]:
+                    - link [ref=e833] [cursor=pointer]:
+                      - /url: /sspa/click?ie=UTF8&spc=MTo3NzExNzcxODI5OTEyNDU2OjE3ODQxNDIxMjE6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMDY5MDQ4OTYwNzUzMjo6MDo6&url=%2FPhilips-inches-Google-55PQT8100-94%2Fdp%2FB0FDQVJQKB%2Fref%3Dsxin_14_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.f7d72a1e-5698-491d-8e4e-cca77b240640%253Aamzn1.sym.f7d72a1e-5698-491d-8e4e-cca77b240640%26crid%3D8XMTCS9DYB1P%26cv_ct_cx%3DTV%26keywords%3DTV%26pd_rd_i%3DB0FDQVJQKB%26pd_rd_r%3D556637de-0996-4fc4-9548-85acc23f5184%26pd_rd_w%3DQN84o%26pd_rd_wg%3DDGY9q%26pf_rd_p%3Df7d72a1e-5698-491d-8e4e-cca77b240640%26pf_rd_r%3DGWMP8VQ5M58D2JASAJNG%26qid%3D1784142121%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sprefix%3Dtv%252Caps%252C819%26sr%3D1-1-66673dcf-083f-43ba-b782-d4a436cc5cfb-spons%26aref%3DcYVXacTx2C%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=cYVXacTx2C&sp_cr=ZAZ
+                      - img [ref=e835]
+                    - generic [ref=e836]:
+                      - link "Sponsored Ad - PHILIPS 139 cm (55 inches) 8100 Series 4K Ultra HD Smart QLED Google TV 55PQT8100/94" [ref=e838] [cursor=pointer]:
+                        - /url: /sspa/click?ie=UTF8&spc=MTo3NzExNzcxODI5OTEyNDU2OjE3ODQxNDIxMjE6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMDY5MDQ4OTYwNzUzMjo6MDo6&url=%2FPhilips-inches-Google-55PQT8100-94%2Fdp%2FB0FDQVJQKB%2Fref%3Dsxin_14_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.f7d72a1e-5698-491d-8e4e-cca77b240640%253Aamzn1.sym.f7d72a1e-5698-491d-8e4e-cca77b240640%26crid%3D8XMTCS9DYB1P%26cv_ct_cx%3DTV%26keywords%3DTV%26pd_rd_i%3DB0FDQVJQKB%26pd_rd_r%3D556637de-0996-4fc4-9548-85acc23f5184%26pd_rd_w%3DQN84o%26pd_rd_wg%3DDGY9q%26pf_rd_p%3Df7d72a1e-5698-491d-8e4e-cca77b240640%26pf_rd_r%3DGWMP8VQ5M58D2JASAJNG%26qid%3D1784142121%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sprefix%3Dtv%252Caps%252C819%26sr%3D1-1-66673dcf-083f-43ba-b782-d4a436cc5cfb-spons%26aref%3DcYVXacTx2C%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=cYVXacTx2C&sp_cr=ZAZ
+                        - heading "Sponsored Ad - PHILIPS 139 cm (55 inches) 8100 Series 4K Ultra HD Smart QLED Google TV 55PQT8100/94" [level=2] [ref=e839]: PHILIPS 139 cm (55 inches) 8100 Series 4K Ultra HD Smart QLED Google TV 55PQT8100/94
+                      - generic [ref=e840]:
+                        - generic [ref=e841]:
+                          - text: "4.1"
+                          - button "4.1 out of 5 stars, rating details" [ref=e843] [cursor=pointer]:
+                            - generic [ref=e845]: 4.1 out of 5 stars
+                          - link "1,576 ratings" [ref=e847] [cursor=pointer]:
+                            - /url: /sspa/click?ie=UTF8&spc=MTo3NzExNzcxODI5OTEyNDU2OjE3ODQxNDIxMjE6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMDY5MDQ4OTYwNzUzMjo6MDo6&url=%2FPhilips-inches-Google-55PQT8100-94%2Fdp%2FB0FDQVJQKB%2Fref%3Dsxin_14_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.f7d72a1e-5698-491d-8e4e-cca77b240640%253Aamzn1.sym.f7d72a1e-5698-491d-8e4e-cca77b240640%26crid%3D8XMTCS9DYB1P%26cv_ct_cx%3DTV%26keywords%3DTV%26pd_rd_i%3DB0FDQVJQKB%26pd_rd_r%3D556637de-0996-4fc4-9548-85acc23f5184%26pd_rd_w%3DQN84o%26pd_rd_wg%3DDGY9q%26pf_rd_p%3Df7d72a1e-5698-491d-8e4e-cca77b240640%26pf_rd_r%3DGWMP8VQ5M58D2JASAJNG%26qid%3D1784142121%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sprefix%3Dtv%252Caps%252C819%26sr%3D1-1-66673dcf-083f-43ba-b782-d4a436cc5cfb-spons%26aref%3DcYVXacTx2C%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=cYVXacTx2C&sp_cr=ZAZ#customerReviews
+                            - text: (1.5K)
+                        - generic [ref=e848]: 400+ bought in past month
+                      - generic [ref=e849]:
+                        - generic [ref=e851]:
+                          - generic [ref=e852]: Price, product page
+                          - 'link "₹36,999 M.R.P: ₹49,999 M.R.P: ₹49,999" [ref=e853] [cursor=pointer]':
+                            - /url: /sspa/click?ie=UTF8&spc=MTo3NzExNzcxODI5OTEyNDU2OjE3ODQxNDIxMjE6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMDY5MDQ4OTYwNzUzMjo6MDo6&url=%2FPhilips-inches-Google-55PQT8100-94%2Fdp%2FB0FDQVJQKB%2Fref%3Dsxin_14_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.f7d72a1e-5698-491d-8e4e-cca77b240640%253Aamzn1.sym.f7d72a1e-5698-491d-8e4e-cca77b240640%26crid%3D8XMTCS9DYB1P%26cv_ct_cx%3DTV%26keywords%3DTV%26pd_rd_i%3DB0FDQVJQKB%26pd_rd_r%3D556637de-0996-4fc4-9548-85acc23f5184%26pd_rd_w%3DQN84o%26pd_rd_wg%3DDGY9q%26pf_rd_p%3Df7d72a1e-5698-491d-8e4e-cca77b240640%26pf_rd_r%3DGWMP8VQ5M58D2JASAJNG%26qid%3D1784142121%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sprefix%3Dtv%252Caps%252C819%26sr%3D1-1-66673dcf-083f-43ba-b782-d4a436cc5cfb-spons%26aref%3DcYVXacTx2C%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=cYVXacTx2C&sp_cr=ZAZ
+                            - generic [ref=e854]:
+                              - generic [ref=e855]: ₹36,999
+                              - generic [ref=e856]: ₹36,999
+                            - generic [ref=e857]: "M.R.P: ₹49,999"
+                            - generic [ref=e858]:
+                              - text: "M.R.P:"
+                              - generic [ref=e859]:
+                                - generic [ref=e860]: ₹49,999
+                                - text: ₹49,999
+                          - text: (26% off)
+                        - generic [ref=e864]:
+                          - generic [ref=e865]: Save extra with No Cost EMI
+                          - generic [ref=e866]: Save extra with No Cost EMI
+                      - generic [ref=e872]: FREE delivery as soon as Sat, 18 Jul, 7 am - 8 pm
+                      - generic [ref=e874]: "Service: Setup at delivery"
+                      - generic [ref=e888] [cursor=pointer]:
+                        - button "Add to cart" [ref=e889]
+                        - generic [ref=e890]: Add to cart
+                - listitem "2 of 5" [ref=e891]:
+                  - generic [ref=e897]:
+                    - link [ref=e900] [cursor=pointer]:
+                      - /url: /sspa/click?ie=UTF8&spc=MTo3NzExNzcxODI5OTEyNDU2OjE3ODQxNDIxMjE6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMDU4MDU3MTMzNjIzMjo6MTo6&url=%2FXiaomi-Ultra-Smart-Google-L43MB-AIN%2Fdp%2FB0F6ZLFNVT%2Fref%3Dsxin_14_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.f7d72a1e-5698-491d-8e4e-cca77b240640%253Aamzn1.sym.f7d72a1e-5698-491d-8e4e-cca77b240640%26crid%3D8XMTCS9DYB1P%26cv_ct_cx%3DTV%26keywords%3DTV%26pd_rd_i%3DB0F6ZLFNVT%26pd_rd_r%3D556637de-0996-4fc4-9548-85acc23f5184%26pd_rd_w%3DQN84o%26pd_rd_wg%3DDGY9q%26pf_rd_p%3Df7d72a1e-5698-491d-8e4e-cca77b240640%26pf_rd_r%3DGWMP8VQ5M58D2JASAJNG%26qid%3D1784142121%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sprefix%3Dtv%252Caps%252C819%26sr%3D1-2-66673dcf-083f-43ba-b782-d4a436cc5cfb-spons%26aref%3DysUZNH80zr%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=ysUZNH80zr&sp_cr=ZAZ
+                      - img [ref=e902]
+                    - generic [ref=e903]:
+                      - link "Sponsored Ad - Xiaomi 108 cm (43 inch) X Ultra HD 4K Smart Google LED TV L43MB-AIN" [ref=e905] [cursor=pointer]:
+                        - /url: /sspa/click?ie=UTF8&spc=MTo3NzExNzcxODI5OTEyNDU2OjE3ODQxNDIxMjE6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMDU4MDU3MTMzNjIzMjo6MTo6&url=%2FXiaomi-Ultra-Smart-Google-L43MB-AIN%2Fdp%2FB0F6ZLFNVT%2Fref%3Dsxin_14_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.f7d72a1e-5698-491d-8e4e-cca77b240640%253Aamzn1.sym.f7d72a1e-5698-491d-8e4e-cca77b240640%26crid%3D8XMTCS9DYB1P%26cv_ct_cx%3DTV%26keywords%3DTV%26pd_rd_i%3DB0F6ZLFNVT%26pd_rd_r%3D556637de-0996-4fc4-9548-85acc23f5184%26pd_rd_w%3DQN84o%26pd_rd_wg%3DDGY9q%26pf_rd_p%3Df7d72a1e-5698-491d-8e4e-cca77b240640%26pf_rd_r%3DGWMP8VQ5M58D2JASAJNG%26qid%3D1784142121%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sprefix%3Dtv%252Caps%252C819%26sr%3D1-2-66673dcf-083f-43ba-b782-d4a436cc5cfb-spons%26aref%3DysUZNH80zr%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=ysUZNH80zr&sp_cr=ZAZ
+                        - heading "Sponsored Ad - Xiaomi 108 cm (43 inch) X Ultra HD 4K Smart Google LED TV L43MB-AIN" [level=2] [ref=e906]: Xiaomi 108 cm (43 inch) X Ultra HD 4K Smart Google LED TV L43MB-AIN
+                      - generic [ref=e907]:
+                        - generic [ref=e908]:
+                          - text: "4.1"
+                          - button "4.1 out of 5 stars, rating details" [ref=e910] [cursor=pointer]:
+                            - generic [ref=e912]: 4.1 out of 5 stars
+                          - link "4,531 ratings" [ref=e914] [cursor=pointer]:
+                            - /url: /sspa/click?ie=UTF8&spc=MTo3NzExNzcxODI5OTEyNDU2OjE3ODQxNDIxMjE6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMDU4MDU3MTMzNjIzMjo6MTo6&url=%2FXiaomi-Ultra-Smart-Google-L43MB-AIN%2Fdp%2FB0F6ZLFNVT%2Fref%3Dsxin_14_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.f7d72a1e-5698-491d-8e4e-cca77b240640%253Aamzn1.sym.f7d72a1e-5698-491d-8e4e-cca77b240640%26crid%3D8XMTCS9DYB1P%26cv_ct_cx%3DTV%26keywords%3DTV%26pd_rd_i%3DB0F6ZLFNVT%26pd_rd_r%3D556637de-0996-4fc4-9548-85acc23f5184%26pd_rd_w%3DQN84o%26pd_rd_wg%3DDGY9q%26pf_rd_p%3Df7d72a1e-5698-491d-8e4e-cca77b240640%26pf_rd_r%3DGWMP8VQ5M58D2JASAJNG%26qid%3D1784142121%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sprefix%3Dtv%252Caps%252C819%26sr%3D1-2-66673dcf-083f-43ba-b782-d4a436cc5cfb-spons%26aref%3DysUZNH80zr%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=ysUZNH80zr&sp_cr=ZAZ#customerReviews
+                            - text: (4.5K)
+                        - generic [ref=e915]: 1K+ bought in past month
+                      - generic [ref=e916]:
+                        - generic [ref=e918]:
+                          - generic [ref=e919]: Price, product page
+                          - 'link "₹26,499 M.R.P: ₹37,999 M.R.P: ₹37,999" [ref=e920] [cursor=pointer]':
+                            - /url: /sspa/click?ie=UTF8&spc=MTo3NzExNzcxODI5OTEyNDU2OjE3ODQxNDIxMjE6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMDU4MDU3MTMzNjIzMjo6MTo6&url=%2FXiaomi-Ultra-Smart-Google-L43MB-AIN%2Fdp%2FB0F6ZLFNVT%2Fref%3Dsxin_14_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.f7d72a1e-5698-491d-8e4e-cca77b240640%253Aamzn1.sym.f7d72a1e-5698-491d-8e4e-cca77b240640%26crid%3D8XMTCS9DYB1P%26cv_ct_cx%3DTV%26keywords%3DTV%26pd_rd_i%3DB0F6ZLFNVT%26pd_rd_r%3D556637de-0996-4fc4-9548-85acc23f5184%26pd_rd_w%3DQN84o%26pd_rd_wg%3DDGY9q%26pf_rd_p%3Df7d72a1e-5698-491d-8e4e-cca77b240640%26pf_rd_r%3DGWMP8VQ5M58D2JASAJNG%26qid%3D1784142121%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sprefix%3Dtv%252Caps%252C819%26sr%3D1-2-66673dcf-083f-43ba-b782-d4a436cc5cfb-spons%26aref%3DysUZNH80zr%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=ysUZNH80zr&sp_cr=ZAZ
+                            - generic [ref=e921]:
+                              - generic [ref=e922]: ₹26,499
+                              - generic [ref=e923]: ₹26,499
+                            - generic [ref=e924]: "M.R.P: ₹37,999"
+                            - generic [ref=e925]:
+                              - text: "M.R.P:"
+                              - generic [ref=e926]:
+                                - generic [ref=e927]: ₹37,999
+                                - text: ₹37,999
+                          - text: (30% off)
+                        - generic [ref=e930]:
+                          - generic [ref=e931]: You pay ₹25,499
+                          - text: with coupon
+                      - generic [ref=e937]: FREE delivery as soon as Sat, 18 Jul, 7 am - 8 pm
+                      - generic [ref=e939]: "Service: Setup at delivery"
+                      - generic [ref=e953] [cursor=pointer]:
+                        - button "Add to cart" [ref=e954]
+                        - generic [ref=e955]: Add to cart
+                - listitem "3 of 5" [ref=e956]:
+                  - generic [ref=e962]:
+                    - generic [ref=e967]: Previously viewed
+                    - link [ref=e970] [cursor=pointer]:
+                      - /url: /sspa/click?ie=UTF8&spc=MTo3NzExNzcxODI5OTEyNDU2OjE3ODQxNDIxMjE6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMDU1ODI1Nzk5MjczMjo6Mjo6&url=%2FXiaomi-inch-Ultra-Smart-L55MB-FPIN%2Fdp%2FB0F3JL33DW%2Fref%3Dsxin_14_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.f7d72a1e-5698-491d-8e4e-cca77b240640%253Aamzn1.sym.f7d72a1e-5698-491d-8e4e-cca77b240640%26crid%3D8XMTCS9DYB1P%26cv_ct_cx%3DTV%26keywords%3DTV%26pd_rd_i%3DB0F3JL33DW%26pd_rd_r%3D556637de-0996-4fc4-9548-85acc23f5184%26pd_rd_w%3DQN84o%26pd_rd_wg%3DDGY9q%26pf_rd_p%3Df7d72a1e-5698-491d-8e4e-cca77b240640%26pf_rd_r%3DGWMP8VQ5M58D2JASAJNG%26qid%3D1784142121%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sprefix%3Dtv%252Caps%252C819%26sr%3D1-3-66673dcf-083f-43ba-b782-d4a436cc5cfb-spons%26aref%3DQd1EFqineo%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=Qd1EFqineo&sp_cr=ZAZ
+                      - img [ref=e972]
+                    - generic [ref=e973]:
+                      - link "Sponsored Ad - Xiaomi 138 cm (55 inch) FX Pro QLED Ultra HD 4K Smart Fire TV L55MB-FPIN" [ref=e975] [cursor=pointer]:
+                        - /url: /sspa/click?ie=UTF8&spc=MTo3NzExNzcxODI5OTEyNDU2OjE3ODQxNDIxMjE6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMDU1ODI1Nzk5MjczMjo6Mjo6&url=%2FXiaomi-inch-Ultra-Smart-L55MB-FPIN%2Fdp%2FB0F3JL33DW%2Fref%3Dsxin_14_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.f7d72a1e-5698-491d-8e4e-cca77b240640%253Aamzn1.sym.f7d72a1e-5698-491d-8e4e-cca77b240640%26crid%3D8XMTCS9DYB1P%26cv_ct_cx%3DTV%26keywords%3DTV%26pd_rd_i%3DB0F3JL33DW%26pd_rd_r%3D556637de-0996-4fc4-9548-85acc23f5184%26pd_rd_w%3DQN84o%26pd_rd_wg%3DDGY9q%26pf_rd_p%3Df7d72a1e-5698-491d-8e4e-cca77b240640%26pf_rd_r%3DGWMP8VQ5M58D2JASAJNG%26qid%3D1784142121%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sprefix%3Dtv%252Caps%252C819%26sr%3D1-3-66673dcf-083f-43ba-b782-d4a436cc5cfb-spons%26aref%3DQd1EFqineo%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=Qd1EFqineo&sp_cr=ZAZ
+                        - heading "Sponsored Ad - Xiaomi 138 cm (55 inch) FX Pro QLED Ultra HD 4K Smart Fire TV L55MB-FPIN" [level=2] [ref=e976]: Xiaomi 138 cm (55 inch) FX Pro QLED Ultra HD 4K Smart Fire TV L55MB-FPIN
+                      - generic [ref=e977]:
+                        - generic [ref=e978]:
+                          - text: "4.2"
+                          - button "4.2 out of 5 stars, rating details" [ref=e980] [cursor=pointer]:
+                            - generic [ref=e982]: 4.2 out of 5 stars
+                          - link "1,899 ratings" [ref=e984] [cursor=pointer]:
+                            - /url: /sspa/click?ie=UTF8&spc=MTo3NzExNzcxODI5OTEyNDU2OjE3ODQxNDIxMjE6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMDU1ODI1Nzk5MjczMjo6Mjo6&url=%2FXiaomi-inch-Ultra-Smart-L55MB-FPIN%2Fdp%2FB0F3JL33DW%2Fref%3Dsxin_14_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.f7d72a1e-5698-491d-8e4e-cca77b240640%253Aamzn1.sym.f7d72a1e-5698-491d-8e4e-cca77b240640%26crid%3D8XMTCS9DYB1P%26cv_ct_cx%3DTV%26keywords%3DTV%26pd_rd_i%3DB0F3JL33DW%26pd_rd_r%3D556637de-0996-4fc4-9548-85acc23f5184%26pd_rd_w%3DQN84o%26pd_rd_wg%3DDGY9q%26pf_rd_p%3Df7d72a1e-5698-491d-8e4e-cca77b240640%26pf_rd_r%3DGWMP8VQ5M58D2JASAJNG%26qid%3D1784142121%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sprefix%3Dtv%252Caps%252C819%26sr%3D1-3-66673dcf-083f-43ba-b782-d4a436cc5cfb-spons%26aref%3DQd1EFqineo%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=Qd1EFqineo&sp_cr=ZAZ#customerReviews
+                            - text: (1.8K)
+                        - generic [ref=e985]: 2K+ bought in past month
+                      - generic [ref=e986]:
+                        - generic [ref=e988]:
+                          - generic [ref=e989]: Price, product page
+                          - 'link "₹37,999 M.R.P: ₹62,999 M.R.P: ₹62,999" [ref=e990] [cursor=pointer]':
+                            - /url: /sspa/click?ie=UTF8&spc=MTo3NzExNzcxODI5OTEyNDU2OjE3ODQxNDIxMjE6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMDU1ODI1Nzk5MjczMjo6Mjo6&url=%2FXiaomi-inch-Ultra-Smart-L55MB-FPIN%2Fdp%2FB0F3JL33DW%2Fref%3Dsxin_14_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.f7d72a1e-5698-491d-8e4e-cca77b240640%253Aamzn1.sym.f7d72a1e-5698-491d-8e4e-cca77b240640%26crid%3D8XMTCS9DYB1P%26cv_ct_cx%3DTV%26keywords%3DTV%26pd_rd_i%3DB0F3JL33DW%26pd_rd_r%3D556637de-0996-4fc4-9548-85acc23f5184%26pd_rd_w%3DQN84o%26pd_rd_wg%3DDGY9q%26pf_rd_p%3Df7d72a1e-5698-491d-8e4e-cca77b240640%26pf_rd_r%3DGWMP8VQ5M58D2JASAJNG%26qid%3D1784142121%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sprefix%3Dtv%252Caps%252C819%26sr%3D1-3-66673dcf-083f-43ba-b782-d4a436cc5cfb-spons%26aref%3DQd1EFqineo%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=Qd1EFqineo&sp_cr=ZAZ
+                            - generic [ref=e991]:
+                              - generic [ref=e992]: ₹37,999
+                              - generic [ref=e993]: ₹37,999
+                            - generic [ref=e994]: "M.R.P: ₹62,999"
+                            - generic [ref=e995]:
+                              - text: "M.R.P:"
+                              - generic [ref=e996]:
+                                - generic [ref=e997]: ₹62,999
+                                - text: ₹62,999
+                          - text: (40% off)
+                        - generic [ref=e1000]:
+                          - generic [ref=e1001]: You pay ₹36,999
+                          - text: with coupon
+                      - generic [ref=e1007]: FREE delivery as soon as Sat, 18 Jul, 7 am - 8 pm
+                      - generic [ref=e1009]: "Service: Setup at delivery"
+                      - generic [ref=e1023] [cursor=pointer]:
+                        - button "Add to cart" [ref=e1024]
+                        - generic [ref=e1025]: Add to cart
+                - listitem "4 of 5" [ref=e1026]:
+                  - generic [ref=e1032]:
+                    - link [ref=e1035] [cursor=pointer]:
+                      - /url: /sspa/click?ie=UTF8&spc=MTo3NzExNzcxODI5OTEyNDU2OjE3ODQxNDIxMjE6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMTE3NzU0MzM3NzEzMjo6Mzo6&url=%2FAndroid-Smart-TV-Television-Frameless%2Fdp%2FB0H41B52S7%2Fref%3Dsxin_14_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.f7d72a1e-5698-491d-8e4e-cca77b240640%253Aamzn1.sym.f7d72a1e-5698-491d-8e4e-cca77b240640%26crid%3D8XMTCS9DYB1P%26cv_ct_cx%3DTV%26keywords%3DTV%26pd_rd_i%3DB0H41B52S7%26pd_rd_r%3D556637de-0996-4fc4-9548-85acc23f5184%26pd_rd_w%3DQN84o%26pd_rd_wg%3DDGY9q%26pf_rd_p%3Df7d72a1e-5698-491d-8e4e-cca77b240640%26pf_rd_r%3DGWMP8VQ5M58D2JASAJNG%26qid%3D1784142121%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sprefix%3Dtv%252Caps%252C819%26sr%3D1-4-66673dcf-083f-43ba-b782-d4a436cc5cfb-spons%26aref%3Dl3iDUPKW31%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=l3iDUPKW31&sp_cr=ZAZ
+                      - img [ref=e1037]
+                    - generic [ref=e1038]:
+                      - link "Sponsored Ad - TE 32 Inch Android Smart TV, HD Ready LED Television with WiFi, 30W Sound with Premium Frameless Design, Built in Apps" [ref=e1040] [cursor=pointer]:
+                        - /url: /sspa/click?ie=UTF8&spc=MTo3NzExNzcxODI5OTEyNDU2OjE3ODQxNDIxMjE6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMTE3NzU0MzM3NzEzMjo6Mzo6&url=%2FAndroid-Smart-TV-Television-Frameless%2Fdp%2FB0H41B52S7%2Fref%3Dsxin_14_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.f7d72a1e-5698-491d-8e4e-cca77b240640%253Aamzn1.sym.f7d72a1e-5698-491d-8e4e-cca77b240640%26crid%3D8XMTCS9DYB1P%26cv_ct_cx%3DTV%26keywords%3DTV%26pd_rd_i%3DB0H41B52S7%26pd_rd_r%3D556637de-0996-4fc4-9548-85acc23f5184%26pd_rd_w%3DQN84o%26pd_rd_wg%3DDGY9q%26pf_rd_p%3Df7d72a1e-5698-491d-8e4e-cca77b240640%26pf_rd_r%3DGWMP8VQ5M58D2JASAJNG%26qid%3D1784142121%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sprefix%3Dtv%252Caps%252C819%26sr%3D1-4-66673dcf-083f-43ba-b782-d4a436cc5cfb-spons%26aref%3Dl3iDUPKW31%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=l3iDUPKW31&sp_cr=ZAZ
+                        - heading "Sponsored Ad - TE 32 Inch Android Smart TV, HD Ready LED Television with WiFi, 30W Sound with Premium Frameless Design, Built in Apps" [level=2] [ref=e1041]: TE 32 Inch Android Smart TV, HD Ready LED Television with WiFi, 30W Sound with Premium Frameless Design, Built in Apps
+                      - generic [ref=e1043]:
+                        - text: "5.0"
+                        - button "5.0 out of 5 stars, rating details" [ref=e1045] [cursor=pointer]:
+                          - generic [ref=e1047]: 5.0 out of 5 stars
+                        - link "1 ratings" [ref=e1049] [cursor=pointer]:
+                          - /url: /sspa/click?ie=UTF8&spc=MTo3NzExNzcxODI5OTEyNDU2OjE3ODQxNDIxMjE6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMTE3NzU0MzM3NzEzMjo6Mzo6&url=%2FAndroid-Smart-TV-Television-Frameless%2Fdp%2FB0H41B52S7%2Fref%3Dsxin_14_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.f7d72a1e-5698-491d-8e4e-cca77b240640%253Aamzn1.sym.f7d72a1e-5698-491d-8e4e-cca77b240640%26crid%3D8XMTCS9DYB1P%26cv_ct_cx%3DTV%26keywords%3DTV%26pd_rd_i%3DB0H41B52S7%26pd_rd_r%3D556637de-0996-4fc4-9548-85acc23f5184%26pd_rd_w%3DQN84o%26pd_rd_wg%3DDGY9q%26pf_rd_p%3Df7d72a1e-5698-491d-8e4e-cca77b240640%26pf_rd_r%3DGWMP8VQ5M58D2JASAJNG%26qid%3D1784142121%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sprefix%3Dtv%252Caps%252C819%26sr%3D1-4-66673dcf-083f-43ba-b782-d4a436cc5cfb-spons%26aref%3Dl3iDUPKW31%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=l3iDUPKW31&sp_cr=ZAZ#customerReviews
+                          - text: (1)
+                      - generic [ref=e1050]:
+                        - generic [ref=e1052]:
+                          - generic [ref=e1053]: Price, product page
+                          - 'link "₹9,999 M.R.P: ₹17,999 M.R.P: ₹17,999" [ref=e1054] [cursor=pointer]':
+                            - /url: /sspa/click?ie=UTF8&spc=MTo3NzExNzcxODI5OTEyNDU2OjE3ODQxNDIxMjE6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMTE3NzU0MzM3NzEzMjo6Mzo6&url=%2FAndroid-Smart-TV-Television-Frameless%2Fdp%2FB0H41B52S7%2Fref%3Dsxin_14_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.f7d72a1e-5698-491d-8e4e-cca77b240640%253Aamzn1.sym.f7d72a1e-5698-491d-8e4e-cca77b240640%26crid%3D8XMTCS9DYB1P%26cv_ct_cx%3DTV%26keywords%3DTV%26pd_rd_i%3DB0H41B52S7%26pd_rd_r%3D556637de-0996-4fc4-9548-85acc23f5184%26pd_rd_w%3DQN84o%26pd_rd_wg%3DDGY9q%26pf_rd_p%3Df7d72a1e-5698-491d-8e4e-cca77b240640%26pf_rd_r%3DGWMP8VQ5M58D2JASAJNG%26qid%3D1784142121%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sprefix%3Dtv%252Caps%252C819%26sr%3D1-4-66673dcf-083f-43ba-b782-d4a436cc5cfb-spons%26aref%3Dl3iDUPKW31%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=l3iDUPKW31&sp_cr=ZAZ
+                            - generic [ref=e1055]:
+                              - generic [ref=e1056]: ₹9,999
+                              - generic [ref=e1057]: ₹9,999
+                            - generic [ref=e1058]: "M.R.P: ₹17,999"
+                            - generic [ref=e1059]:
+                              - text: "M.R.P:"
+                              - generic [ref=e1060]:
+                                - generic [ref=e1061]: ₹17,999
+                                - text: ₹17,999
+                          - text: (44% off)
+                        - generic [ref=e1064]:
+                          - generic [ref=e1065]: You pay ₹9,799
+                          - text: with coupon
+                      - generic [ref=e1069]:
+                        - generic [ref=e1073]: FREE delivery Wed, 22 Jul
+                        - generic [ref=e1075]: Or fastest delivery Tomorrow, 17 Jul
+                      - generic [ref=e1089] [cursor=pointer]:
+                        - button "Add to cart" [ref=e1090]
+                        - generic [ref=e1091]: Add to cart
+              - button "View next items" [ref=e1092] [cursor=pointer]:
+                - img "View next items" [ref=e1093]
+          - generic [ref=e1095]:
+            - heading "More results" [level=2] [ref=e1099]
+            - generic:
+              - list:
+                - listitem [ref=e1100]:
+                  - generic [ref=e1106]:
+                    - generic [ref=e1108]:
+                      - generic [ref=e1114]: Previously viewed
+                      - link [ref=e1118] [cursor=pointer]:
+                        - /url: /Samsung-108-inches-Smart-UA43F5550FUXXL/dp/B0F84DKX8K/ref=sr_1_6?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-6
+                        - img [ref=e1120]
+                    - generic [ref=e1123]:
+                      - link "Samsung 108 cm (43 inches) FHD Smart LED TV UA43F5550FUXXL" [active] [ref=e1125] [cursor=pointer]:
+                        - /url: /Samsung-108-inches-Smart-UA43F5550FUXXL/dp/B0F84DKX8K/ref=sr_1_6?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-6
+                        - heading "Samsung 108 cm (43 inches) FHD Smart LED TV UA43F5550FUXXL" [level=2] [ref=e1126]
+                      - generic [ref=e1127]:
+                        - generic [ref=e1128]:
+                          - text: "4.1"
+                          - button "4.1 out of 5 stars, rating details" [ref=e1130] [cursor=pointer]:
+                            - generic [ref=e1132]: 4.1 out of 5 stars
+                          - link "6,291 ratings" [ref=e1134] [cursor=pointer]:
+                            - /url: /Samsung-108-inches-Smart-UA43F5550FUXXL/dp/B0F84DKX8K/ref=sr_1_6?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-6#customerReviews
+                            - text: (6.2K)
+                        - generic [ref=e1135]: 1K+ bought in past month
+                      - generic [ref=e1138]:
+                        - generic [ref=e1139]:
+                          - generic [ref=e1141]:
+                            - generic [ref=e1142]: Price, product page
+                            - 'link "₹24,990 M.R.P: ₹27,500 M.R.P: ₹27,500" [ref=e1143] [cursor=pointer]':
+                              - /url: /Samsung-108-inches-Smart-UA43F5550FUXXL/dp/B0F84DKX8K/ref=sr_1_6?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-6
+                              - generic [ref=e1144]:
+                                - generic [ref=e1145]: ₹24,990
+                                - generic [ref=e1146]: ₹24,990
+                              - generic [ref=e1147]: "M.R.P: ₹27,500"
+                              - generic [ref=e1148]:
+                                - text: "M.R.P:"
+                                - generic [ref=e1149]:
+                                  - generic [ref=e1150]: ₹27,500
+                                  - text: ₹27,500
+                            - text: (9% off)
+                          - generic [ref=e1153]:
+                            - generic [ref=e1154]: You pay ₹23,990
+                            - text: with coupon
+                        - generic [ref=e1159]: FREE delivery as soon as Sat, 18 Jul, 7 am - 9 pm
+                        - generic [ref=e1161]: "Service: Brand Installation"
+                        - generic [ref=e1175] [cursor=pointer]:
+                          - button "Add to cart" [ref=e1176]
+                          - generic [ref=e1177]: Add to cart
+                - listitem [ref=e1180]:
+                  - generic [ref=e1186]:
+                    - generic [ref=e1188]:
+                      - generic "Amazon's Choice" [ref=e1191]:
+                        - group "Amazon's Choice for \"TV\"" [ref=e1194]:
+                          - generic [ref=e1196]: Amazon's Choice
+                      - link [ref=e1200] [cursor=pointer]:
+                        - /url: /Xiaomi-inch-Ready-Smart-L32MB-FIN/dp/B0F3JM1YP5/ref=sr_1_7?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-7
+                        - img [ref=e1202]
+                    - generic [ref=e1205]:
+                      - link "Xiaomi 80 cm (32 inch) F Series HD Ready Smart LED Fire TV L32MB-FIN" [ref=e1207] [cursor=pointer]:
+                        - /url: /Xiaomi-inch-Ready-Smart-L32MB-FIN/dp/B0F3JM1YP5/ref=sr_1_7?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-7
+                        - heading "Xiaomi 80 cm (32 inch) F Series HD Ready Smart LED Fire TV L32MB-FIN" [level=2] [ref=e1208]
+                      - generic [ref=e1209]:
+                        - generic [ref=e1210]:
+                          - text: "4.1"
+                          - button "4.1 out of 5 stars, rating details" [ref=e1212] [cursor=pointer]:
+                            - generic [ref=e1214]: 4.1 out of 5 stars
+                          - link "1,031 ratings" [ref=e1216] [cursor=pointer]:
+                            - /url: /Xiaomi-inch-Ready-Smart-L32MB-FIN/dp/B0F3JM1YP5/ref=sr_1_7?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-7#customerReviews
+                            - text: (1K)
+                        - generic [ref=e1217]: 2K+ bought in past month
+                      - generic [ref=e1220]:
+                        - generic [ref=e1221]:
+                          - generic [ref=e1223]:
+                            - generic [ref=e1224]: Price, product page
+                            - 'link "₹13,499 M.R.P: ₹24,999 M.R.P: ₹24,999" [ref=e1225] [cursor=pointer]':
+                              - /url: /Xiaomi-inch-Ready-Smart-L32MB-FIN/dp/B0F3JM1YP5/ref=sr_1_7?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-7
+                              - generic [ref=e1226]:
+                                - generic [ref=e1227]: ₹13,499
+                                - generic [ref=e1228]: ₹13,499
+                              - generic [ref=e1229]: "M.R.P: ₹24,999"
+                              - generic [ref=e1230]:
+                                - text: "M.R.P:"
+                                - generic [ref=e1231]:
+                                  - generic [ref=e1232]: ₹24,999
+                                  - text: ₹24,999
+                            - text: (46% off)
+                          - generic [ref=e1236]:
+                            - generic [ref=e1237]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=e1238]: Up to 5% back with Amazon Pay ICI...
+                        - generic [ref=e1243]: FREE delivery as soon as Sat, 18 Jul, 7 am - 8 pm
+                        - generic [ref=e1245]: "Service: Setup at delivery"
+                        - generic [ref=e1259] [cursor=pointer]:
+                          - button "Add to cart" [ref=e1260]
+                          - generic [ref=e1261]: Add to cart
+                - listitem [ref=e1264]:
+                  - generic [ref=e1270]:
+                    - link [ref=e1276] [cursor=pointer]:
+                      - /url: /VW-inches-Ultra-Google-VW43GQ1/dp/B0DRV6WTZY/ref=sr_1_8?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-8
+                      - img [ref=e1278]
+                    - generic [ref=e1281]:
+                      - link "VW 109 cm (43 inches) Pro Series 4K Ultra HD Smart QLED Google TV VW43GQ1" [ref=e1283] [cursor=pointer]:
+                        - /url: /VW-inches-Ultra-Google-VW43GQ1/dp/B0DRV6WTZY/ref=sr_1_8?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-8
+                        - heading "VW 109 cm (43 inches) Pro Series 4K Ultra HD Smart QLED Google TV VW43GQ1" [level=2] [ref=e1284]
+                      - generic [ref=e1285]:
+                        - generic [ref=e1286]:
+                          - text: "4.2"
+                          - button "4.2 out of 5 stars, rating details" [ref=e1288] [cursor=pointer]:
+                            - generic [ref=e1290]: 4.2 out of 5 stars
+                          - link "1,816 ratings" [ref=e1292] [cursor=pointer]:
+                            - /url: /VW-inches-Ultra-Google-VW43GQ1/dp/B0DRV6WTZY/ref=sr_1_8?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-8#customerReviews
+                            - text: (1.8K)
+                        - generic [ref=e1293]: 200+ bought in past month
+                      - generic [ref=e1296]:
+                        - generic [ref=e1297]:
+                          - generic [ref=e1299]:
+                            - generic [ref=e1300]: Price, product page
+                            - 'link "₹21,999 M.R.P: ₹49,999 M.R.P: ₹49,999" [ref=e1301] [cursor=pointer]':
+                              - /url: /VW-inches-Ultra-Google-VW43GQ1/dp/B0DRV6WTZY/ref=sr_1_8?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-8
+                              - generic [ref=e1302]:
+                                - generic [ref=e1303]: ₹21,999
+                                - generic [ref=e1304]: ₹21,999
+                              - generic [ref=e1305]: "M.R.P: ₹49,999"
+                              - generic [ref=e1306]:
+                                - text: "M.R.P:"
+                                - generic [ref=e1307]:
+                                  - generic [ref=e1308]: ₹49,999
+                                  - text: ₹49,999
+                            - text: (56% off)
+                          - generic [ref=e1312]:
+                            - generic [ref=e1313]: Get 3% back with Amazon Pay ICICI card
+                            - generic [ref=e1314]: Get 3% back with Amazon Pay ICICI...
+                        - generic [ref=e1319]: FREE delivery as soon as Sat, 18 Jul, 7 am - 8 pm
+                        - generic [ref=e1321]: "Service: Setup at delivery"
+                        - generic [ref=e1335] [cursor=pointer]:
+                          - button "Add to cart" [ref=e1336]
+                          - generic [ref=e1337]: Add to cart
+                - listitem [ref=e1340]:
+                  - generic [ref=e1346]:
+                    - link [ref=e1352] [cursor=pointer]:
+                      - /url: /Hisense-Ultra-Vision-Upscaler-65A6S/dp/B0H6S492FC/ref=sr_1_9?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-9
+                      - img [ref=e1354]
+                    - generic [ref=e1357]:
+                      - link "Hisense 164 cm (65 Inch) A6 Series 4K Ultra HD Smart LED TV | Dolby Vision | AI 4K Upscaler | Game Mode Plus | VIDAA Smart OS | 65A6S" [ref=e1359] [cursor=pointer]:
+                        - /url: /Hisense-Ultra-Vision-Upscaler-65A6S/dp/B0H6S492FC/ref=sr_1_9?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-9
+                        - heading "Hisense 164 cm (65 Inch) A6 Series 4K Ultra HD Smart LED TV | Dolby Vision | AI 4K Upscaler | Game Mode Plus | VIDAA Smart OS | 65A6S" [level=2] [ref=e1360]
+                      - generic [ref=e1363]:
+                        - generic [ref=e1364]:
+                          - generic [ref=e1366]:
+                            - generic [ref=e1367]: Price, product page
+                            - 'link "₹54,900 M.R.P: ₹82,999 M.R.P: ₹82,999" [ref=e1368] [cursor=pointer]':
+                              - /url: /Hisense-Ultra-Vision-Upscaler-65A6S/dp/B0H6S492FC/ref=sr_1_9?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-9
+                              - generic [ref=e1369]:
+                                - generic [ref=e1370]: ₹54,900
+                                - generic [ref=e1371]: ₹54,900
+                              - generic [ref=e1372]: "M.R.P: ₹82,999"
+                              - generic [ref=e1373]:
+                                - text: "M.R.P:"
+                                - generic [ref=e1374]:
+                                  - generic [ref=e1375]: ₹82,999
+                                  - text: ₹82,999
+                            - text: (34% off)
+                          - generic [ref=e1379]:
+                            - generic [ref=e1380]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=e1381]: Up to 5% back with Amazon Pay ICI...
+                        - generic [ref=e1382]:
+                          - generic [ref=e1384]:
+                            - generic [ref=e1388]: FREE delivery Mon, 20 Jul
+                            - generic [ref=e1390]: Or Prime members get FREE delivery Today
+                          - generic "Only 1 left in stock." [ref=e1392]
+                        - generic [ref=e1406] [cursor=pointer]:
+                          - button "Add to cart" [ref=e1407]
+                          - generic [ref=e1408]: Add to cart
+                - listitem [ref=e1411]:
+                  - generic [ref=e1417]:
+                    - generic [ref=e1419]:
+                      - group "Best sellerin Smart Televisions" [ref=e1425]:
+                        - generic "Best seller" [ref=e1427]
+                      - link [ref=e1431] [cursor=pointer]:
+                        - /url: /inches-Spectra-Ready-Android-VW32AQ3/dp/B0GX5BF141/ref=sr_1_10?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-10
+                        - img [ref=e1433]
+                    - generic [ref=e1436]:
+                      - link "VW 80 cm (32 inches) Spectra Series HD Ready Smart QLED Android TV VW32AQ3" [ref=e1438] [cursor=pointer]:
+                        - /url: /inches-Spectra-Ready-Android-VW32AQ3/dp/B0GX5BF141/ref=sr_1_10?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-10
+                        - heading "VW 80 cm (32 inches) Spectra Series HD Ready Smart QLED Android TV VW32AQ3" [level=2] [ref=e1439]
+                      - generic [ref=e1440]:
+                        - generic [ref=e1441]:
+                          - text: "4.1"
+                          - button "4.1 out of 5 stars, rating details" [ref=e1443] [cursor=pointer]:
+                            - generic [ref=e1445]: 4.1 out of 5 stars
+                          - link "15,935 ratings" [ref=e1447] [cursor=pointer]:
+                            - /url: /inches-Spectra-Ready-Android-VW32AQ3/dp/B0GX5BF141/ref=sr_1_10?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-10#customerReviews
+                            - text: (15.9K)
+                        - generic [ref=e1448]: 1K+ bought in past month
+                      - generic [ref=e1451]:
+                        - generic [ref=e1452]:
+                          - link "Limited time deal" [ref=e1454] [cursor=pointer]:
+                            - /url: /deals
+                            - generic [ref=e1457]: Limited time deal
+                          - generic [ref=e1459]:
+                            - generic [ref=e1460]: Price, product page
+                            - 'link "₹9,699 M.R.P: ₹19,999 M.R.P: ₹19,999" [ref=e1461] [cursor=pointer]':
+                              - /url: /inches-Spectra-Ready-Android-VW32AQ3/dp/B0GX5BF141/ref=sr_1_10?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-10
+                              - generic [ref=e1462]:
+                                - generic [ref=e1463]: ₹9,699
+                                - generic [ref=e1464]: ₹9,699
+                              - generic [ref=e1465]: "M.R.P: ₹19,999"
+                              - generic [ref=e1466]:
+                                - text: "M.R.P:"
+                                - generic [ref=e1467]:
+                                  - generic [ref=e1468]: ₹19,999
+                                  - text: ₹19,999
+                            - text: (52% off)
+                          - generic [ref=e1472]:
+                            - generic [ref=e1473]: Get 3% back with Amazon Pay ICICI card
+                            - generic [ref=e1474]: Get 3% back with Amazon Pay ICICI...
+                        - generic [ref=e1479]: FREE delivery as soon as Sat, 18 Jul, 7 am - 8 pm
+                        - generic [ref=e1481]: "Service: Setup at delivery"
+                        - generic [ref=e1495] [cursor=pointer]:
+                          - button "Add to cart" [ref=e1496]
+                          - generic [ref=e1497]: Add to cart
+                - listitem [ref=e1500]:
+                  - generic [ref=e1508]:
+                    - link [ref=e1514] [cursor=pointer]:
+                      - /url: /sspa/click?ie=UTF8&spc=MToyMzI0MjM1NDUzMDYyOTQ4OjE3ODQxNDIxMjE6c3BfbXRmOjMwMDU4MDU3MTMzNjIzMjo6MDo6&url=%2FXiaomi-Ultra-Smart-Google-L43MB-AIN%2Fdp%2FB0F6ZLFNVT%2Fref%3Dsr_1_11_sspa%3Fcrid%3D8XMTCS9DYB1P%26dib%3DeyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc%26dib_tag%3Dse%26keywords%3DTV%26qid%3D1784142121%26sprefix%3Dtv%252Caps%252C819%26sr%3D8-11-spons%26aref%3DysUZNH80zr%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=ysUZNH80zr&sp_cr=ZAZ
+                      - img [ref=e1516]
+                    - generic [ref=e1519]:
+                      - generic [ref=e1520]:
+                        - button "View Sponsored information or leave ad feedback" [ref=e1523] [cursor=pointer]:
+                          - generic [ref=e1524]: Sponsored
+                        - link "Sponsored Ad - Xiaomi 108 cm (43 inch) X Ultra HD 4K Smart Google LED TV L43MB-AIN" [ref=e1526] [cursor=pointer]:
+                          - /url: /sspa/click?ie=UTF8&spc=MToyMzI0MjM1NDUzMDYyOTQ4OjE3ODQxNDIxMjE6c3BfbXRmOjMwMDU4MDU3MTMzNjIzMjo6MDo6&url=%2FXiaomi-Ultra-Smart-Google-L43MB-AIN%2Fdp%2FB0F6ZLFNVT%2Fref%3Dsr_1_11_sspa%3Fcrid%3D8XMTCS9DYB1P%26dib%3DeyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc%26dib_tag%3Dse%26keywords%3DTV%26qid%3D1784142121%26sprefix%3Dtv%252Caps%252C819%26sr%3D8-11-spons%26aref%3DysUZNH80zr%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=ysUZNH80zr&sp_cr=ZAZ
+                          - heading "Sponsored Ad - Xiaomi 108 cm (43 inch) X Ultra HD 4K Smart Google LED TV L43MB-AIN" [level=2] [ref=e1527]: Xiaomi 108 cm (43 inch) X Ultra HD 4K Smart Google LED TV L43MB-AIN
+                      - generic [ref=e1528]:
+                        - generic [ref=e1529]:
+                          - text: "4.1"
+                          - button "4.1 out of 5 stars, rating details" [ref=e1531] [cursor=pointer]:
+                            - generic [ref=e1533]: 4.1 out of 5 stars
+                          - link "4,531 ratings" [ref=e1535] [cursor=pointer]:
+                            - /url: /sspa/click?ie=UTF8&spc=MToyMzI0MjM1NDUzMDYyOTQ4OjE3ODQxNDIxMjE6c3BfbXRmOjMwMDU4MDU3MTMzNjIzMjo6MDo6&url=%2FXiaomi-Ultra-Smart-Google-L43MB-AIN%2Fdp%2FB0F6ZLFNVT%2Fref%3Dsr_1_11_sspa%3Fcrid%3D8XMTCS9DYB1P%26dib%3DeyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc%26dib_tag%3Dse%26keywords%3DTV%26qid%3D1784142121%26sprefix%3Dtv%252Caps%252C819%26sr%3D8-11-spons%26aref%3DysUZNH80zr%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=ysUZNH80zr&sp_cr=ZAZ#customerReviews
+                            - text: (4.5K)
+                        - generic [ref=e1536]: 1K+ bought in past month
+                      - generic [ref=e1539]:
+                        - generic [ref=e1540]:
+                          - generic [ref=e1542]:
+                            - generic [ref=e1543]: Price, product page
+                            - 'link "₹26,499 M.R.P: ₹37,999 M.R.P: ₹37,999" [ref=e1544] [cursor=pointer]':
+                              - /url: /sspa/click?ie=UTF8&spc=MToyMzI0MjM1NDUzMDYyOTQ4OjE3ODQxNDIxMjE6c3BfbXRmOjMwMDU4MDU3MTMzNjIzMjo6MDo6&url=%2FXiaomi-Ultra-Smart-Google-L43MB-AIN%2Fdp%2FB0F6ZLFNVT%2Fref%3Dsr_1_11_sspa%3Fcrid%3D8XMTCS9DYB1P%26dib%3DeyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc%26dib_tag%3Dse%26keywords%3DTV%26qid%3D1784142121%26sprefix%3Dtv%252Caps%252C819%26sr%3D8-11-spons%26aref%3DysUZNH80zr%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=ysUZNH80zr&sp_cr=ZAZ
+                              - generic [ref=e1545]:
+                                - generic [ref=e1546]: ₹26,499
+                                - generic [ref=e1547]: ₹26,499
+                              - generic [ref=e1548]: "M.R.P: ₹37,999"
+                              - generic [ref=e1549]:
+                                - text: "M.R.P:"
+                                - generic [ref=e1550]:
+                                  - generic [ref=e1551]: ₹37,999
+                                  - text: ₹37,999
+                            - text: (30% off)
+                          - generic [ref=e1554]:
+                            - generic [ref=e1555]: You pay ₹25,499
+                            - text: with coupon
+                        - generic [ref=e1560]: FREE delivery as soon as Sat, 18 Jul, 7 am - 8 pm
+                        - generic [ref=e1562]: "Service: Setup at delivery"
+                        - generic [ref=e1576] [cursor=pointer]:
+                          - button "Add to cart" [ref=e1577]
+                          - generic [ref=e1578]: Add to cart
+                - listitem [ref=e1581]:
+                  - generic [ref=e1589]:
+                    - link [ref=e1595] [cursor=pointer]:
+                      - /url: /sspa/click?ie=UTF8&spc=MToyMzI0MjM1NDUzMDYyOTQ4OjE3ODQxNDIxMjE6c3BfbXRmOjMwMTEwNzgzNjY1MzkzMjo6MDo6&url=%2FLG-inches-Ultra-Smart-43NU870BPLA%2Fdp%2FB0GTZ9TSDJ%2Fref%3Dsr_1_12_sspa%3Fcrid%3D8XMTCS9DYB1P%26dib%3DeyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc%26dib_tag%3Dse%26keywords%3DTV%26qid%3D1784142121%26sprefix%3Dtv%252Caps%252C819%26sr%3D8-12-spons%26aref%3Dp1mSrxSDnC%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=p1mSrxSDnC&sp_cr=ZAZ
+                      - img [ref=e1597]
+                    - generic [ref=e1600]:
+                      - generic [ref=e1601]:
+                        - button "View Sponsored information or leave ad feedback" [ref=e1604] [cursor=pointer]:
+                          - generic [ref=e1605]: Sponsored
+                        - link "Sponsored Ad - LG 108 cms (43 inches) U8 AI Series 4K Ultra HD (3840 x 2160) Smart webOS LED TV 43NU870BPLA" [ref=e1607] [cursor=pointer]:
+                          - /url: /sspa/click?ie=UTF8&spc=MToyMzI0MjM1NDUzMDYyOTQ4OjE3ODQxNDIxMjE6c3BfbXRmOjMwMTEwNzgzNjY1MzkzMjo6MDo6&url=%2FLG-inches-Ultra-Smart-43NU870BPLA%2Fdp%2FB0GTZ9TSDJ%2Fref%3Dsr_1_12_sspa%3Fcrid%3D8XMTCS9DYB1P%26dib%3DeyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc%26dib_tag%3Dse%26keywords%3DTV%26qid%3D1784142121%26sprefix%3Dtv%252Caps%252C819%26sr%3D8-12-spons%26aref%3Dp1mSrxSDnC%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=p1mSrxSDnC&sp_cr=ZAZ
+                          - heading "Sponsored Ad - LG 108 cms (43 inches) U8 AI Series 4K Ultra HD (3840 x 2160) Smart webOS LED TV 43NU870BPLA" [level=2] [ref=e1608]: LG 108 cms (43 inches) U8 AI Series 4K Ultra HD (3840 x 2160) Smart webOS LED TV 43NU870BPLA
+                      - generic [ref=e1609]:
+                        - generic [ref=e1610]:
+                          - text: "3.8"
+                          - button "3.8 out of 5 stars, rating details" [ref=e1612] [cursor=pointer]:
+                            - generic [ref=e1614]: 3.8 out of 5 stars
+                          - link "1,480 ratings" [ref=e1616] [cursor=pointer]:
+                            - /url: /sspa/click?ie=UTF8&spc=MToyMzI0MjM1NDUzMDYyOTQ4OjE3ODQxNDIxMjE6c3BfbXRmOjMwMTEwNzgzNjY1MzkzMjo6MDo6&url=%2FLG-inches-Ultra-Smart-43NU870BPLA%2Fdp%2FB0GTZ9TSDJ%2Fref%3Dsr_1_12_sspa%3Fcrid%3D8XMTCS9DYB1P%26dib%3DeyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc%26dib_tag%3Dse%26keywords%3DTV%26qid%3D1784142121%26sprefix%3Dtv%252Caps%252C819%26sr%3D8-12-spons%26aref%3Dp1mSrxSDnC%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=p1mSrxSDnC&sp_cr=ZAZ#customerReviews
+                            - text: (1.4K)
+                        - generic [ref=e1617]: 1K+ bought in past month
+                      - generic [ref=e1620]:
+                        - generic [ref=e1621]:
+                          - generic [ref=e1623]:
+                            - generic [ref=e1624]: Price, product page
+                            - 'link "₹32,990 M.R.P: ₹45,990 M.R.P: ₹45,990" [ref=e1625] [cursor=pointer]':
+                              - /url: /sspa/click?ie=UTF8&spc=MToyMzI0MjM1NDUzMDYyOTQ4OjE3ODQxNDIxMjE6c3BfbXRmOjMwMTEwNzgzNjY1MzkzMjo6MDo6&url=%2FLG-inches-Ultra-Smart-43NU870BPLA%2Fdp%2FB0GTZ9TSDJ%2Fref%3Dsr_1_12_sspa%3Fcrid%3D8XMTCS9DYB1P%26dib%3DeyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc%26dib_tag%3Dse%26keywords%3DTV%26qid%3D1784142121%26sprefix%3Dtv%252Caps%252C819%26sr%3D8-12-spons%26aref%3Dp1mSrxSDnC%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=p1mSrxSDnC&sp_cr=ZAZ
+                              - generic [ref=e1626]:
+                                - generic [ref=e1627]: ₹32,990
+                                - generic [ref=e1628]: ₹32,990
+                              - generic [ref=e1629]: "M.R.P: ₹45,990"
+                              - generic [ref=e1630]:
+                                - text: "M.R.P:"
+                                - generic [ref=e1631]:
+                                  - generic [ref=e1632]: ₹45,990
+                                  - text: ₹45,990
+                            - text: (28% off)
+                          - generic [ref=e1635]:
+                            - generic [ref=e1636]: You pay ₹32,490
+                            - text: with coupon
+                        - generic [ref=e1641]: FREE delivery as soon as Sat, 18 Jul, 7 am - 9 pm
+                        - generic [ref=e1643]: "Service: Brand Installation"
+                        - generic [ref=e1657] [cursor=pointer]:
+                          - button "Add to cart" [ref=e1658]
+                          - generic [ref=e1659]: Add to cart
+                - listitem [ref=e1662]:
+                  - generic [ref=e1668]:
+                    - link [ref=e1674] [cursor=pointer]:
+                      - /url: /Philips-inches-Frameless-32PFT6130-94/dp/B0FBWG1Z6Q/ref=sr_1_13?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-13
+                      - img [ref=e1676]
+                    - generic [ref=e1679]:
+                      - link "PHILIPS 80 cm (32 inches) 6100 Series Frameless HD Smart LED Google TV 32PFT6130/94" [ref=e1681] [cursor=pointer]:
+                        - /url: /Philips-inches-Frameless-32PFT6130-94/dp/B0FBWG1Z6Q/ref=sr_1_13?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-13
+                        - heading "PHILIPS 80 cm (32 inches) 6100 Series Frameless HD Smart LED Google TV 32PFT6130/94" [level=2] [ref=e1682]
+                      - generic [ref=e1683]:
+                        - generic [ref=e1684]:
+                          - text: "4.1"
+                          - button "4.1 out of 5 stars, rating details" [ref=e1686] [cursor=pointer]:
+                            - generic [ref=e1688]: 4.1 out of 5 stars
+                          - link "833 ratings" [ref=e1690] [cursor=pointer]:
+                            - /url: /Philips-inches-Frameless-32PFT6130-94/dp/B0FBWG1Z6Q/ref=sr_1_13?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-13#customerReviews
+                            - text: (833)
+                        - generic [ref=e1691]: 500+ bought in past month
+                      - generic [ref=e1694]:
+                        - generic [ref=e1695]:
+                          - generic [ref=e1697]:
+                            - generic [ref=e1698]: Price, product page
+                            - 'link "₹13,999 M.R.P: ₹22,999 M.R.P: ₹22,999" [ref=e1699] [cursor=pointer]':
+                              - /url: /Philips-inches-Frameless-32PFT6130-94/dp/B0FBWG1Z6Q/ref=sr_1_13?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-13
+                              - generic [ref=e1700]:
+                                - generic [ref=e1701]: ₹13,999
+                                - generic [ref=e1702]: ₹13,999
+                              - generic [ref=e1703]: "M.R.P: ₹22,999"
+                              - generic [ref=e1704]:
+                                - text: "M.R.P:"
+                                - generic [ref=e1705]:
+                                  - generic [ref=e1706]: ₹22,999
+                                  - text: ₹22,999
+                            - text: (39% off)
+                          - generic [ref=e1710]:
+                            - generic [ref=e1711]: Get 3% back with Amazon Pay ICICI card
+                            - generic [ref=e1712]: Get 3% back with Amazon Pay ICICI...
+                        - generic [ref=e1717]: FREE delivery as soon as Sat, 18 Jul, 7 am - 8 pm
+                        - generic [ref=e1719]: "Service: Setup at delivery"
+                        - generic [ref=e1733] [cursor=pointer]:
+                          - button "Add to cart" [ref=e1734]
+                          - generic [ref=e1735]: Add to cart
+          - generic [ref=e1745]:
+            - link "Sponsored video; click to navigate to featured product page. Oboe Silicone TV Remote Cover Compatible with Sony Bravia Smart Tv 2023 Voice Remote RMF-TX910U Remote Protective Cover with Lanyard (D-Black) [Remote NOT Included]" [ref=e1749] [cursor=pointer]:
+              - /url: https://aax-eu-zaz.amazon.in/x/c/JEF3HzfgHmXqc0BDPR3P2yYAAAGfZyhLKwoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICB9JDpg/clv1c_ek-IggHWFcbSiwAfN5lHnHvqkKA5CtBK1df-CbzZhrsfnsnS1bwVq1hWnTrMvyXx8NAa5R5au4SC4GvgVMvdwFGeYdwSPsW7UntpPiplEPapkgs493A4iOny5K0wjs57y8MC8uoW5ZW0f_fQD8rl-MGLAF2YmlnnjOji33sKVVa_PcqW0Rds8HzswLfeNmY4w77bJ2lqPQhY1GWTvcrksMpIOMPTNAq5O3bagJcdxK_4l3UfXLJThJ4vVeDkM7JFk9k3uaipDBgYifGwuS8hJjUL5639aZcDZjFDuVW4rUYHQ58Zx3K6hO6aGUnvlQZHL0bm0BLWl5l9JnmPnvSHSta2lxvln3-Xc5z-UIrkMh4tR19J6a5Eis2akxfEj6ZMC9zSJ02uc1UKMDYgxZqefSQxS8PysZZM-hm121QMx7M36qwmf7yKqhN-LfWvwT4cTHMTYWbH0CKL0OuRn4u1ojs5MRtiHAOdCta5Xb6o-yO-6lONo7wwqG-yg5EIz8lkLbzjSFCCL4b77fGUORUOYTViozvUkdEEZ4WHHaHtQBQ2eQgBFVlPIm8nJYJQ5rUmz7nXi0c6BYCccIx4m0ynztZkYxrvXi3lHbY3a-S4yjumAMPp9qk02Ne6YgPgHb1ZhzwBm_obwBxklcD3TNij8LJEjWEkB82jcgM5T6FDVxL02j538JuNxub8k5-UR1B8Pv8Ju1g_k4LZ1-gH3VNkjXONFevPQrn4rhu-xtfLlgE30KL4n9gZ3z6Lb1SWXK9LhN1RN1jzgfeQhqvPKms16iw0it75DAIMraGDEtg7uixA02BSp4h1euYc613Vw1ilcBSKzkAJ9fzarbEuOSB3TDGA9ElV97sjJ9-G49XudQNrI7JGV6OETiTErK-OhEZPUq1hSGAI5lth4-SczGuMZPN1u2wVT7QBgbDA1Hvjk6-JIWVMSXhyRCWqWfiwItQmoeiVg39fN6lRs89kNFNRQXs4EkRGejolGxy6V9GtZK-pdKWMlRze-R3UxJViDxQcFEjBMV4zxZQ6KRM14rgru8wBbVQVgbe3U4-xNiGaBMO9jfF5UBbBaHDEwOzudSjZ1y639I7Xf7dgxH8/https://www.amazon.in/dp/B0C9JRZLPJ?aref=qUtENW3MMI&pd_rd_i=B0C9JRZLPJ&pf_rd_p=99dedbe4-593f-43df-83ad-e695f25cb916&pd_rd_wg=DGY9q&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_w=CnMuM&pd_rd_r=556637de-0996-4fc4-9548-85acc23f5184
+              - generic "Sponsored video; click to navigate to featured product page. Oboe Silicone TV Remote Cover Compatible with Sony Bravia Smart Tv 2023 Voice Remote RMF-TX910U Remote Protective Cover with Lanyard (D-Black) [Remote NOT Included]" [ref=e1750]
+            - generic [ref=e1758]:
+              - link [ref=e1764] [cursor=pointer]:
+                - /url: https://aax-eu-zaz.amazon.in/x/c/JEF3HzfgHmXqc0BDPR3P2yYAAAGfZyhLKwoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICB9JDpg/clv1c_ek-IggHWFcbSiwAfN5lHnHvqkKA5CtBK1df-CbzZhrsfnsnS1bwVq1hWnTrMvyXx8NAa5R5au4SC4GvgVMvdwFGeYdwSPsW7UntpPiplEPapkgs493A4iOny5K0wjs57y8MC8uoW5ZW0f_fQD8rl-MGLAF2YmlnnjOji33sKVVa_PcqW0Rds8HzswLfeNmY4w77bJ2lqPQhY1GWTvcrksMpIOMPTNAq5O3bagJcdxK_4l3UfXLJThJ4vVeDkM7JFk9k3uaipDBgYifGwuS8hJjUL5639aZcDZjFDuVW4rUYHQ58Zx3K6hO6aGUnvlQZHL0bm0BLWl5l9JnmPnvSHSta2lxvln3-Xc5z-UIrkMh4tR19J6a5Eis2akxfEj6ZMC9zSJ02uc1UKMDYgxZqefSQxS8PysZZM-hm121QMx7M36qwmf7yKqhN-LfWvwT4cTHMTYWbH0CKL0OuRn4u1ojs5MRtiHAOdCta5Xb6o-yO-6lONo7wwqG-yg5EIz8lkLbzjSFCCL4b77fGUORUOYTViozvUkdEEZ4WHHaHtQBQ2eQgBFVlPIm8nJYJQ5rUmz7nXi0c6BYCccIx4m0ynztZkYxrvXi3lHbY3a-S4yjumAMPp9qk02Ne6YgPgHb1ZhzwBm_obwBxklcD3TNij8LJEjWEkB82jcgM5T6FDVxL02j538JuNxub8k5-UR1B8Pv8Ju1g_k4LZ1-gH3VNkjXONFevPQrn4rhu-xtfLlgE30KL4n9gZ3z6Lb1SWXK9LhN1RN1jzgfeQhqvPKms16iw0it75DAIMraGDEtg7uixA02BSp4h1euYc613Vw1ilcBSKzkAJ9fzarbEuOSB3TDGA9ElV97sjJ9-G49XudQNrI7JGV6OETiTErK-OhEZPUq1hSGAI5lth4-SczGuMZPN1u2wVT7QBgbDA1Hvjk6-JIWVMSXhyRCWqWfiwItQmoeiVg39fN6lRs89kNFNRQXs4EkRGejolGxy6V9GtZK-pdKWMlRze-R3UxJViDxQcFEjBMV4zxZQ6KRM14rgru8wBbVQVgbe3U4-xNiGaBMO9jfF5UBbBaHDEwOzudSjZ1y639I7Xf7dgxH8/https://www.amazon.in/Silicone-Compatible-RMF-TX910U-Protective-Included/dp/B0C9JRZLPJ/ref=sxin_24_sbv_search_btf?aref=qUtENW3MMI&content-id=amzn1.sym.99dedbe4-593f-43df-83ad-e695f25cb916%3Aamzn1.sym.99dedbe4-593f-43df-83ad-e695f25cb916&crid=8XMTCS9DYB1P&cv_ct_cx=TV&keywords=TV&pd_rd_i=B0C9JRZLPJ&pd_rd_r=556637de-0996-4fc4-9548-85acc23f5184&pd_rd_w=CnMuM&pd_rd_wg=DGY9q&pf_rd_p=99dedbe4-593f-43df-83ad-e695f25cb916&pf_rd_r=GWMP8VQ5M58D2JASAJNG&qid=1784142121&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=tv%2Caps%2C819&sr=1-1-9131241a-a358-4619-a7b8-0f5a65d91d81
+                - img [ref=e1766]
+              - generic [ref=e1769]:
+                - generic [ref=e1770]:
+                  - generic [ref=e1773] [cursor=pointer]: Sponsored
+                  - link "Oboe Silicone TV Remote Cover Compatible with Sony Bravia Smart Tv 2023 Voice Remote RMF-TX910U Remote Protective Cover with Lanyard (D-Black) [Remote NOT Included]" [ref=e1775] [cursor=pointer]:
+                    - /url: https://aax-eu-zaz.amazon.in/x/c/JEF3HzfgHmXqc0BDPR3P2yYAAAGfZyhLKwoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICB9JDpg/clv1c_ek-IggHWFcbSiwAfN5lHnHvqkKA5CtBK1df-CbzZhrsfnsnS1bwVq1hWnTrMvyXx8NAa5R5au4SC4GvgVMvdwFGeYdwSPsW7UntpPiplEPapkgs493A4iOny5K0wjs57y8MC8uoW5ZW0f_fQD8rl-MGLAF2YmlnnjOji33sKVVa_PcqW0Rds8HzswLfeNmY4w77bJ2lqPQhY1GWTvcrksMpIOMPTNAq5O3bagJcdxK_4l3UfXLJThJ4vVeDkM7JFk9k3uaipDBgYifGwuS8hJjUL5639aZcDZjFDuVW4rUYHQ58Zx3K6hO6aGUnvlQZHL0bm0BLWl5l9JnmPnvSHSta2lxvln3-Xc5z-UIrkMh4tR19J6a5Eis2akxfEj6ZMC9zSJ02uc1UKMDYgxZqefSQxS8PysZZM-hm121QMx7M36qwmf7yKqhN-LfWvwT4cTHMTYWbH0CKL0OuRn4u1ojs5MRtiHAOdCta5Xb6o-yO-6lONo7wwqG-yg5EIz8lkLbzjSFCCL4b77fGUORUOYTViozvUkdEEZ4WHHaHtQBQ2eQgBFVlPIm8nJYJQ5rUmz7nXi0c6BYCccIx4m0ynztZkYxrvXi3lHbY3a-S4yjumAMPp9qk02Ne6YgPgHb1ZhzwBm_obwBxklcD3TNij8LJEjWEkB82jcgM5T6FDVxL02j538JuNxub8k5-UR1B8Pv8Ju1g_k4LZ1-gH3VNkjXONFevPQrn4rhu-xtfLlgE30KL4n9gZ3z6Lb1SWXK9LhN1RN1jzgfeQhqvPKms16iw0it75DAIMraGDEtg7uixA02BSp4h1euYc613Vw1ilcBSKzkAJ9fzarbEuOSB3TDGA9ElV97sjJ9-G49XudQNrI7JGV6OETiTErK-OhEZPUq1hSGAI5lth4-SczGuMZPN1u2wVT7QBgbDA1Hvjk6-JIWVMSXhyRCWqWfiwItQmoeiVg39fN6lRs89kNFNRQXs4EkRGejolGxy6V9GtZK-pdKWMlRze-R3UxJViDxQcFEjBMV4zxZQ6KRM14rgru8wBbVQVgbe3U4-xNiGaBMO9jfF5UBbBaHDEwOzudSjZ1y639I7Xf7dgxH8/https://www.amazon.in/Silicone-Compatible-RMF-TX910U-Protective-Included/dp/B0C9JRZLPJ/ref=sxin_24_sbv_search_btf?aref=qUtENW3MMI&content-id=amzn1.sym.99dedbe4-593f-43df-83ad-e695f25cb916%3Aamzn1.sym.99dedbe4-593f-43df-83ad-e695f25cb916&crid=8XMTCS9DYB1P&cv_ct_cx=TV&keywords=TV&pd_rd_i=B0C9JRZLPJ&pd_rd_r=556637de-0996-4fc4-9548-85acc23f5184&pd_rd_w=CnMuM&pd_rd_wg=DGY9q&pf_rd_p=99dedbe4-593f-43df-83ad-e695f25cb916&pf_rd_r=GWMP8VQ5M58D2JASAJNG&qid=1784142121&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=tv%2Caps%2C819&sr=1-1-9131241a-a358-4619-a7b8-0f5a65d91d81
+                    - heading "Oboe Silicone TV Remote Cover Compatible with Sony Bravia Smart Tv 2023 Voice Remote RMF-TX910U Remote Protective Cover with Lanyard (D-Black) [Remote NOT Included]" [level=2] [ref=e1776]
+                - generic [ref=e1777]:
+                  - generic [ref=e1778]:
+                    - text: "4.2"
+                    - button "4.2 out of 5 stars, rating details" [ref=e1780] [cursor=pointer]:
+                      - generic [ref=e1782]: 4.2 out of 5 stars
+                    - link "2,857 ratings" [ref=e1784] [cursor=pointer]:
+                      - /url: https://aax-eu-zaz.amazon.in/x/c/JEF3HzfgHmXqc0BDPR3P2yYAAAGfZyhLKwoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICB9JDpg/clv1c_ek-IggHWFcbSiwAfN5lHnHvqkKA5CtBK1df-CbzZhrsfnsnS1bwVq1hWnTrMvyXx8NAa5R5au4SC4GvgVMvdwFGeYdwSPsW7UntpPiplEPapkgs493A4iOny5K0wjs57y8MC8uoW5ZW0f_fQD8rl-MGLAF2YmlnnjOji33sKVVa_PcqW0Rds8HzswLfeNmY4w77bJ2lqPQhY1GWTvcrksMpIOMPTNAq5O3bagJcdxK_4l3UfXLJThJ4vVeDkM7JFk9k3uaipDBgYifGwuS8hJjUL5639aZcDZjFDuVW4rUYHQ58Zx3K6hO6aGUnvlQZHL0bm0BLWl5l9JnmPnvSHSta2lxvln3-Xc5z-UIrkMh4tR19J6a5Eis2akxfEj6ZMC9zSJ02uc1UKMDYgxZqefSQxS8PysZZM-hm121QMx7M36qwmf7yKqhN-LfWvwT4cTHMTYWbH0CKL0OuRn4u1ojs5MRtiHAOdCta5Xb6o-yO-6lONo7wwqG-yg5EIz8lkLbzjSFCCL4b77fGUORUOYTViozvUkdEEZ4WHHaHtQBQ2eQgBFVlPIm8nJYJQ5rUmz7nXi0c6BYCccIx4m0ynztZkYxrvXi3lHbY3a-S4yjumAMPp9qk02Ne6YgPgHb1ZhzwBm_obwBxklcD3TNij8LJEjWEkB82jcgM5T6FDVxL02j538JuNxub8k5-UR1B8Pv8Ju1g_k4LZ1-gH3VNkjXONFevPQrn4rhu-xtfLlgE30KL4n9gZ3z6Lb1SWXK9LhN1RN1jzgfeQhqvPKms16iw0it75DAIMraGDEtg7uixA02BSp4h1euYc613Vw1ilcBSKzkAJ9fzarbEuOSB3TDGA9ElV97sjJ9-G49XudQNrI7JGV6OETiTErK-OhEZPUq1hSGAI5lth4-SczGuMZPN1u2wVT7QBgbDA1Hvjk6-JIWVMSXhyRCWqWfiwItQmoeiVg39fN6lRs89kNFNRQXs4EkRGejolGxy6V9GtZK-pdKWMlRze-R3UxJViDxQcFEjBMV4zxZQ6KRM14rgru8wBbVQVgbe3U4-xNiGaBMO9jfF5UBbBaHDEwOzudSjZ1y639I7Xf7dgxH8/https://www.amazon.in/Silicone-Compatible-RMF-TX910U-Protective-Included/dp/B0C9JRZLPJ/ref=sxin_24_sbv_search_btf?aref=qUtENW3MMI&content-id=amzn1.sym.99dedbe4-593f-43df-83ad-e695f25cb916%3Aamzn1.sym.99dedbe4-593f-43df-83ad-e695f25cb916&crid=8XMTCS9DYB1P&cv_ct_cx=TV&keywords=TV&pd_rd_i=B0C9JRZLPJ&pd_rd_r=556637de-0996-4fc4-9548-85acc23f5184&pd_rd_w=CnMuM&pd_rd_wg=DGY9q&pf_rd_p=99dedbe4-593f-43df-83ad-e695f25cb916&pf_rd_r=GWMP8VQ5M58D2JASAJNG&qid=1784142121&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=tv%2Caps%2C819&sr=1-1-9131241a-a358-4619-a7b8-0f5a65d91d81#customerReviews
+                      - text: (2.8K)
+                  - generic [ref=e1785]: 400+ bought in past month
+                - generic [ref=e1788]:
+                  - generic [ref=e1789]:
+                    - generic [ref=e1791]:
+                      - generic [ref=e1792]: Price, product page
+                      - 'link "₹496 M.R.P: ₹1,999 M.R.P: ₹1,999" [ref=e1793] [cursor=pointer]':
+                        - /url: https://aax-eu-zaz.amazon.in/x/c/JEF3HzfgHmXqc0BDPR3P2yYAAAGfZyhLKwoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICB9JDpg/clv1c_ek-IggHWFcbSiwAfN5lHnHvqkKA5CtBK1df-CbzZhrsfnsnS1bwVq1hWnTrMvyXx8NAa5R5au4SC4GvgVMvdwFGeYdwSPsW7UntpPiplEPapkgs493A4iOny5K0wjs57y8MC8uoW5ZW0f_fQD8rl-MGLAF2YmlnnjOji33sKVVa_PcqW0Rds8HzswLfeNmY4w77bJ2lqPQhY1GWTvcrksMpIOMPTNAq5O3bagJcdxK_4l3UfXLJThJ4vVeDkM7JFk9k3uaipDBgYifGwuS8hJjUL5639aZcDZjFDuVW4rUYHQ58Zx3K6hO6aGUnvlQZHL0bm0BLWl5l9JnmPnvSHSta2lxvln3-Xc5z-UIrkMh4tR19J6a5Eis2akxfEj6ZMC9zSJ02uc1UKMDYgxZqefSQxS8PysZZM-hm121QMx7M36qwmf7yKqhN-LfWvwT4cTHMTYWbH0CKL0OuRn4u1ojs5MRtiHAOdCta5Xb6o-yO-6lONo7wwqG-yg5EIz8lkLbzjSFCCL4b77fGUORUOYTViozvUkdEEZ4WHHaHtQBQ2eQgBFVlPIm8nJYJQ5rUmz7nXi0c6BYCccIx4m0ynztZkYxrvXi3lHbY3a-S4yjumAMPp9qk02Ne6YgPgHb1ZhzwBm_obwBxklcD3TNij8LJEjWEkB82jcgM5T6FDVxL02j538JuNxub8k5-UR1B8Pv8Ju1g_k4LZ1-gH3VNkjXONFevPQrn4rhu-xtfLlgE30KL4n9gZ3z6Lb1SWXK9LhN1RN1jzgfeQhqvPKms16iw0it75DAIMraGDEtg7uixA02BSp4h1euYc613Vw1ilcBSKzkAJ9fzarbEuOSB3TDGA9ElV97sjJ9-G49XudQNrI7JGV6OETiTErK-OhEZPUq1hSGAI5lth4-SczGuMZPN1u2wVT7QBgbDA1Hvjk6-JIWVMSXhyRCWqWfiwItQmoeiVg39fN6lRs89kNFNRQXs4EkRGejolGxy6V9GtZK-pdKWMlRze-R3UxJViDxQcFEjBMV4zxZQ6KRM14rgru8wBbVQVgbe3U4-xNiGaBMO9jfF5UBbBaHDEwOzudSjZ1y639I7Xf7dgxH8/https://www.amazon.in/Silicone-Compatible-RMF-TX910U-Protective-Included/dp/B0C9JRZLPJ/ref=sxin_24_sbv_search_btf?aref=qUtENW3MMI&content-id=amzn1.sym.99dedbe4-593f-43df-83ad-e695f25cb916%3Aamzn1.sym.99dedbe4-593f-43df-83ad-e695f25cb916&crid=8XMTCS9DYB1P&cv_ct_cx=TV&keywords=TV&pd_rd_i=B0C9JRZLPJ&pd_rd_r=556637de-0996-4fc4-9548-85acc23f5184&pd_rd_w=CnMuM&pd_rd_wg=DGY9q&pf_rd_p=99dedbe4-593f-43df-83ad-e695f25cb916&pf_rd_r=GWMP8VQ5M58D2JASAJNG&qid=1784142121&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=tv%2Caps%2C819&sr=1-1-9131241a-a358-4619-a7b8-0f5a65d91d81
+                        - generic [ref=e1794]:
+                          - generic [ref=e1795]: ₹496
+                          - generic [ref=e1796]: ₹496
+                        - generic [ref=e1797]: "M.R.P: ₹1,999"
+                        - generic [ref=e1798]:
+                          - text: "M.R.P:"
+                          - generic [ref=e1799]:
+                            - generic [ref=e1800]: ₹1,999
+                            - text: ₹1,999
+                      - text: (75% off)
+                    - generic [ref=e1804]:
+                      - generic [ref=e1805]: Up to 5% back with Amazon Pay ICICI card
+                      - generic [ref=e1806]: Up to 5% back with Amazon Pay ICI...
+                  - generic [ref=e1809]:
+                    - generic [ref=e1811]: FREE delivery Sat, 18 Jul
+                    - generic [ref=e1813]: Or Prime members get FREE delivery Today
+          - generic [ref=e1815]:
+            - heading "More results" [level=2] [ref=e1819]
+            - generic:
+              - list:
+                - listitem [ref=e1820]:
+                  - generic [ref=e1826]:
+                    - link [ref=e1832] [cursor=pointer]:
+                      - /url: /Uniboom_Optima-Series102-Speakers-Certified-40S-ULT-AED/dp/B0GJGCNL3B/ref=sr_1_14?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-14
+                      - img [ref=e1834]
+                    - generic [ref=e1837]:
+                      - link "Uniboom_Optima Series102 cm (40 inch)HD Smart LED TV | Android TV with Voice Command App |5000+ Free Movies |30W Sonic Boom Speakers| 500+ Certified Apps |Mobile Remote |Mobile Screen Cast 40S-ULT-AED" [ref=e1839] [cursor=pointer]:
+                        - /url: /Uniboom_Optima-Series102-Speakers-Certified-40S-ULT-AED/dp/B0GJGCNL3B/ref=sr_1_14?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-14
+                        - heading "Uniboom_Optima Series102 cm (40 inch)HD Smart LED TV | Android TV with Voice Command App |5000+ Free Movies |30W Sonic Boom Speakers| 500+ Certified Apps |Mobile Remote |Mobile Screen Cast 40S-ULT-AED" [level=2] [ref=e1840]
+                      - generic [ref=e1841]:
+                        - generic [ref=e1842]:
+                          - text: "4.2"
+                          - button "4.2 out of 5 stars, rating details" [ref=e1844] [cursor=pointer]:
+                            - generic [ref=e1846]: 4.2 out of 5 stars
+                          - link "207 ratings" [ref=e1848] [cursor=pointer]:
+                            - /url: /Uniboom_Optima-Series102-Speakers-Certified-40S-ULT-AED/dp/B0GJGCNL3B/ref=sr_1_14?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-14#customerReviews
+                            - text: (207)
+                        - generic [ref=e1849]: 100+ bought in past month
+                      - generic [ref=e1852]:
+                        - generic [ref=e1853]:
+                          - generic [ref=e1855]:
+                            - generic [ref=e1856]: Price, product page
+                            - 'link "₹13,190 M.R.P: ₹37,990 M.R.P: ₹37,990" [ref=e1857] [cursor=pointer]':
+                              - /url: /Uniboom_Optima-Series102-Speakers-Certified-40S-ULT-AED/dp/B0GJGCNL3B/ref=sr_1_14?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-14
+                              - generic [ref=e1858]:
+                                - generic [ref=e1859]: ₹13,190
+                                - generic [ref=e1860]: ₹13,190
+                              - generic [ref=e1861]: "M.R.P: ₹37,990"
+                              - generic [ref=e1862]:
+                                - text: "M.R.P:"
+                                - generic [ref=e1863]:
+                                  - generic [ref=e1864]: ₹37,990
+                                  - text: ₹37,990
+                            - text: (65% off)
+                          - generic [ref=e1868]:
+                            - generic [ref=e1869]: Get 3% back with Amazon Pay ICICI card
+                            - generic [ref=e1870]: Get 3% back with Amazon Pay ICICI...
+                        - generic [ref=e1875]: FREE delivery as soon as Sat, 18 Jul, 7 am - 9 pm
+                        - generic [ref=e1877]: "Service: Brand Installation"
+                        - generic [ref=e1891] [cursor=pointer]:
+                          - button "Add to cart" [ref=e1892]
+                          - generic [ref=e1893]: Add to cart
+                - listitem [ref=e1896]:
+                  - generic [ref=e1902]:
+                    - link [ref=e1908] [cursor=pointer]:
+                      - /url: /Xiaomi-inch-Smart-Google-L43MB-AFIN/dp/B0F6ZCRGG5/ref=sr_1_15?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-15
+                      - img [ref=e1910]
+                    - generic [ref=e1913]:
+                      - link "Xiaomi 108 cm (43 inch) A Full HD Smart Google LED TV L43MB-AFIN" [ref=e1915] [cursor=pointer]:
+                        - /url: /Xiaomi-inch-Smart-Google-L43MB-AFIN/dp/B0F6ZCRGG5/ref=sr_1_15?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-15
+                        - heading "Xiaomi 108 cm (43 inch) A Full HD Smart Google LED TV L43MB-AFIN" [level=2] [ref=e1916]
+                      - generic [ref=e1917]:
+                        - generic [ref=e1918]:
+                          - text: "4.1"
+                          - button "4.1 out of 5 stars, rating details" [ref=e1920] [cursor=pointer]:
+                            - generic [ref=e1922]: 4.1 out of 5 stars
+                          - link "481 ratings" [ref=e1924] [cursor=pointer]:
+                            - /url: /Xiaomi-inch-Smart-Google-L43MB-AFIN/dp/B0F6ZCRGG5/ref=sr_1_15?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-15#customerReviews
+                            - text: (481)
+                        - generic [ref=e1925]: 100+ bought in past month
+                      - generic [ref=e1928]:
+                        - generic [ref=e1929]:
+                          - generic [ref=e1931]:
+                            - generic [ref=e1932]: Price, product page
+                            - 'link "₹21,999 M.R.P: ₹30,999 M.R.P: ₹30,999" [ref=e1933] [cursor=pointer]':
+                              - /url: /Xiaomi-inch-Smart-Google-L43MB-AFIN/dp/B0F6ZCRGG5/ref=sr_1_15?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-15
+                              - generic [ref=e1934]:
+                                - generic [ref=e1935]: ₹21,999
+                                - generic [ref=e1936]: ₹21,999
+                              - generic [ref=e1937]: "M.R.P: ₹30,999"
+                              - generic [ref=e1938]:
+                                - text: "M.R.P:"
+                                - generic [ref=e1939]:
+                                  - generic [ref=e1940]: ₹30,999
+                                  - text: ₹30,999
+                            - text: (29% off)
+                          - generic [ref=e1944]:
+                            - generic [ref=e1945]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=e1946]: Up to 5% back with Amazon Pay ICI...
+                        - generic [ref=e1951]: FREE delivery as soon as Sat, 18 Jul, 7 am - 8 pm
+                        - generic [ref=e1953]: "Service: Setup at delivery"
+                        - generic [ref=e1967] [cursor=pointer]:
+                          - button "Add to cart" [ref=e1968]
+                          - generic [ref=e1969]: Add to cart
+                - listitem [ref=e1972]:
+                  - generic [ref=e1978]:
+                    - link [ref=e1984] [cursor=pointer]:
+                      - /url: /Kodak-QLED-Smart-Linux-43QSE5073/dp/B0FN7NVFPM/ref=sr_1_16?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-16
+                      - img [ref=e1986]
+                    - generic [ref=e1989]:
+                      - link "Kodak QLED SE 108 cm (43 inch) QLED Full HD Smart Linux TV 2025 Edition (43QSE5073)" [ref=e1991] [cursor=pointer]:
+                        - /url: /Kodak-QLED-Smart-Linux-43QSE5073/dp/B0FN7NVFPM/ref=sr_1_16?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-16
+                        - heading "Kodak QLED SE 108 cm (43 inch) QLED Full HD Smart Linux TV 2025 Edition (43QSE5073)" [level=2] [ref=e1992]
+                      - generic [ref=e1994]:
+                        - text: "3.8"
+                        - button "3.8 out of 5 stars, rating details" [ref=e1996] [cursor=pointer]:
+                          - generic [ref=e1998]: 3.8 out of 5 stars
+                        - link "3,078 ratings" [ref=e2000] [cursor=pointer]:
+                          - /url: /Kodak-QLED-Smart-Linux-43QSE5073/dp/B0FN7NVFPM/ref=sr_1_16?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-16#customerReviews
+                          - text: (3K)
+                      - generic [ref=e2003]:
+                        - generic [ref=e2004]:
+                          - generic [ref=e2006]:
+                            - generic [ref=e2007]: Price, product page
+                            - 'link "₹15,499 M.R.P: ₹22,999 M.R.P: ₹22,999" [ref=e2008] [cursor=pointer]':
+                              - /url: /Kodak-QLED-Smart-Linux-43QSE5073/dp/B0FN7NVFPM/ref=sr_1_16?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-16
+                              - generic [ref=e2009]:
+                                - generic [ref=e2010]: ₹15,499
+                                - generic [ref=e2011]: ₹15,499
+                              - generic [ref=e2012]: "M.R.P: ₹22,999"
+                              - generic [ref=e2013]:
+                                - text: "M.R.P:"
+                                - generic [ref=e2014]:
+                                  - generic [ref=e2015]: ₹22,999
+                                  - text: ₹22,999
+                            - text: (33% off)
+                          - generic [ref=e2019]:
+                            - generic [ref=e2020]: Get 3% back with Amazon Pay ICICI card
+                            - generic [ref=e2021]: Get 3% back with Amazon Pay ICICI...
+                        - generic [ref=e2026]: FREE delivery as soon as Sat, 18 Jul, 7 am - 9 pm
+                        - generic [ref=e2028]: "Service: Brand Installation"
+                        - generic [ref=e2042] [cursor=pointer]:
+                          - button "Add to cart" [ref=e2043]
+                          - generic [ref=e2044]: Add to cart
+                - listitem [ref=e2047]:
+                  - generic [ref=e2053]:
+                    - link [ref=e2059] [cursor=pointer]:
+                      - /url: /acer-inches-Ultra-Google-AR50UDGGU2875BD/dp/B0FDW7819M/ref=sr_1_17?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-17
+                      - img [ref=e2061]
+                    - generic [ref=e2064]:
+                      - link "Acer 127 cm (50 inches) Ultra I Series 4K Ultra HD Smart LED Google TV AR50UDGGU2875BD" [ref=e2066] [cursor=pointer]:
+                        - /url: /acer-inches-Ultra-Google-AR50UDGGU2875BD/dp/B0FDW7819M/ref=sr_1_17?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-17
+                        - heading "Acer 127 cm (50 inches) Ultra I Series 4K Ultra HD Smart LED Google TV AR50UDGGU2875BD" [level=2] [ref=e2067]
+                      - generic [ref=e2068]:
+                        - generic [ref=e2069]:
+                          - text: "3.4"
+                          - button "3.4 out of 5 stars, rating details" [ref=e2071] [cursor=pointer]:
+                            - generic [ref=e2073]: 3.4 out of 5 stars
+                          - link "237 ratings" [ref=e2075] [cursor=pointer]:
+                            - /url: /acer-inches-Ultra-Google-AR50UDGGU2875BD/dp/B0FDW7819M/ref=sr_1_17?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-17#customerReviews
+                            - text: (237)
+                        - generic [ref=e2076]: 200+ bought in past month
+                      - generic [ref=e2079]:
+                        - generic [ref=e2080]:
+                          - generic [ref=e2082]:
+                            - generic [ref=e2083]: Price, product page
+                            - 'link "₹24,999 M.R.P: ₹63,999 M.R.P: ₹63,999" [ref=e2084] [cursor=pointer]':
+                              - /url: /acer-inches-Ultra-Google-AR50UDGGU2875BD/dp/B0FDW7819M/ref=sr_1_17?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-17
+                              - generic [ref=e2085]:
+                                - generic [ref=e2086]: ₹24,999
+                                - generic [ref=e2087]: ₹24,999
+                              - generic [ref=e2088]: "M.R.P: ₹63,999"
+                              - generic [ref=e2089]:
+                                - text: "M.R.P:"
+                                - generic [ref=e2090]:
+                                  - generic [ref=e2091]: ₹63,999
+                                  - text: ₹63,999
+                            - text: (61% off)
+                          - generic [ref=e2095]:
+                            - generic [ref=e2096]: Get 3% back with Amazon Pay ICICI card
+                            - generic [ref=e2097]: Get 3% back with Amazon Pay ICICI...
+                        - generic [ref=e2102]: FREE delivery as soon as Sat, 18 Jul, 7 am - 9 pm
+                        - generic [ref=e2104]: "Service: Setup at delivery"
+                        - generic [ref=e2118] [cursor=pointer]:
+                          - button "Add to cart" [ref=e2119]
+                          - generic [ref=e2120]: Add to cart
+                - listitem [ref=e2123]:
+                  - generic [ref=e2129]:
+                    - link [ref=e2135] [cursor=pointer]:
+                      - /url: /Onida-inch-Ultra-Smart-43UFD/dp/B0GQBX1NZB/ref=sr_1_18?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-18
+                      - img [ref=e2137]
+                    - generic [ref=e2140]:
+                      - link "Onida 108 cm (43 inch) Ultra HD 4K Smart LED Fire TV 43UFD" [ref=e2142] [cursor=pointer]:
+                        - /url: /Onida-inch-Ultra-Smart-43UFD/dp/B0GQBX1NZB/ref=sr_1_18?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-18
+                        - heading "Onida 108 cm (43 inch) Ultra HD 4K Smart LED Fire TV 43UFD" [level=2] [ref=e2143]
+                      - generic [ref=e2144]:
+                        - generic [ref=e2145]:
+                          - text: "3.9"
+                          - button "3.9 out of 5 stars, rating details" [ref=e2147] [cursor=pointer]:
+                            - generic [ref=e2149]: 3.9 out of 5 stars
+                          - link "9 ratings" [ref=e2151] [cursor=pointer]:
+                            - /url: /Onida-inch-Ultra-Smart-43UFD/dp/B0GQBX1NZB/ref=sr_1_18?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-18#customerReviews
+                            - text: (9)
+                        - generic [ref=e2152]: 50+ bought in past month
+                      - generic [ref=e2155]:
+                        - generic [ref=e2156]:
+                          - generic [ref=e2158]:
+                            - generic [ref=e2159]: Price, product page
+                            - 'link "₹22,999 M.R.P: ₹33,190 M.R.P: ₹33,190" [ref=e2160] [cursor=pointer]':
+                              - /url: /Onida-inch-Ultra-Smart-43UFD/dp/B0GQBX1NZB/ref=sr_1_18?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-18
+                              - generic [ref=e2161]:
+                                - generic [ref=e2162]: ₹22,999
+                                - generic [ref=e2163]: ₹22,999
+                              - generic [ref=e2164]: "M.R.P: ₹33,190"
+                              - generic [ref=e2165]:
+                                - text: "M.R.P:"
+                                - generic [ref=e2166]:
+                                  - generic [ref=e2167]: ₹33,190
+                                  - text: ₹33,190
+                            - text: (31% off)
+                          - generic [ref=e2171]:
+                            - generic [ref=e2172]: Get 3% back with Amazon Pay ICICI card
+                            - generic [ref=e2173]: Get 3% back with Amazon Pay ICICI...
+                        - generic [ref=e2178]: FREE delivery as soon as Sat, 18 Jul, 7 am - 9 pm
+                        - generic [ref=e2180]: "Service: Brand Installation"
+                        - generic [ref=e2194] [cursor=pointer]:
+                          - button "Add to cart" [ref=e2195]
+                          - generic [ref=e2196]: Add to cart
+                - listitem [ref=e2199]:
+                  - generic [ref=e2205]:
+                    - link [ref=e2211] [cursor=pointer]:
+                      - /url: /inches-Frameless-Ready-QLED-VW32MAX/dp/B0GXK5K633/ref=sr_1_19?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-19
+                      - img [ref=e2213]
+                    - generic [ref=e2216]:
+                      - link "VW 80 cm (32 inches) Frameless Series HD Ready QLED TV VW32MAX" [ref=e2218] [cursor=pointer]:
+                        - /url: /inches-Frameless-Ready-QLED-VW32MAX/dp/B0GXK5K633/ref=sr_1_19?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-19
+                        - heading "VW 80 cm (32 inches) Frameless Series HD Ready QLED TV VW32MAX" [level=2] [ref=e2219]
+                      - generic [ref=e2221]:
+                        - text: "3.7"
+                        - button "3.7 out of 5 stars, rating details" [ref=e2223] [cursor=pointer]:
+                          - generic [ref=e2225]: 3.7 out of 5 stars
+                        - link "93 ratings" [ref=e2227] [cursor=pointer]:
+                          - /url: /inches-Frameless-Ready-QLED-VW32MAX/dp/B0GXK5K633/ref=sr_1_19?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-19#customerReviews
+                          - text: (93)
+                      - generic [ref=e2230]:
+                        - generic [ref=e2231]:
+                          - link "Limited time deal" [ref=e2233] [cursor=pointer]:
+                            - /url: /deals
+                            - generic [ref=e2236]: Limited time deal
+                          - generic [ref=e2238]:
+                            - generic [ref=e2239]: Price, product page
+                            - 'link "₹7,999 M.R.P: ₹14,999 M.R.P: ₹14,999" [ref=e2240] [cursor=pointer]':
+                              - /url: /inches-Frameless-Ready-QLED-VW32MAX/dp/B0GXK5K633/ref=sr_1_19?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-19
+                              - generic [ref=e2241]:
+                                - generic [ref=e2242]: ₹7,999
+                                - generic [ref=e2243]: ₹7,999
+                              - generic [ref=e2244]: "M.R.P: ₹14,999"
+                              - generic [ref=e2245]:
+                                - text: "M.R.P:"
+                                - generic [ref=e2246]:
+                                  - generic [ref=e2247]: ₹14,999
+                                  - text: ₹14,999
+                            - text: (47% off)
+                          - generic [ref=e2251]:
+                            - generic [ref=e2252]: Get 3% back with Amazon Pay ICICI card
+                            - generic [ref=e2253]: Get 3% back with Amazon Pay ICICI...
+                        - generic [ref=e2258]: FREE delivery as soon as Sat, 18 Jul, 7 am - 8 pm
+                        - generic [ref=e2260]: "Service: Setup at delivery"
+                        - generic [ref=e2274] [cursor=pointer]:
+                          - button "Add to cart" [ref=e2275]
+                          - generic [ref=e2276]: Add to cart
+                - listitem [ref=e2279]:
+                  - generic [ref=e2285]:
+                    - link [ref=e2291] [cursor=pointer]:
+                      - /url: /LG-inches-LR570-Smart-32LR570B6LA/dp/B0DY7FPFLH/ref=sr_1_20?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-20
+                      - img [ref=e2293]
+                    - generic [ref=e2296]:
+                      - link "LG 80 cms (32 inches) LR570 AI Series HD Ready Smart webOS LED TV 32LR570B6LA" [ref=e2298] [cursor=pointer]:
+                        - /url: /LG-inches-LR570-Smart-32LR570B6LA/dp/B0DY7FPFLH/ref=sr_1_20?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-20
+                        - heading "LG 80 cms (32 inches) LR570 AI Series HD Ready Smart webOS LED TV 32LR570B6LA" [level=2] [ref=e2299]
+                      - generic [ref=e2301]:
+                        - text: "4.1"
+                        - button "4.1 out of 5 stars, rating details" [ref=e2303] [cursor=pointer]:
+                          - generic [ref=e2305]: 4.1 out of 5 stars
+                        - link "734 ratings" [ref=e2307] [cursor=pointer]:
+                          - /url: /LG-inches-LR570-Smart-32LR570B6LA/dp/B0DY7FPFLH/ref=sr_1_20?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-20#customerReviews
+                          - text: (734)
+                      - generic [ref=e2310]:
+                        - generic [ref=e2311]:
+                          - generic [ref=e2313]:
+                            - generic [ref=e2314]: Price, product page
+                            - 'link "₹14,990 M.R.P: ₹21,240 M.R.P: ₹21,240" [ref=e2315] [cursor=pointer]':
+                              - /url: /LG-inches-LR570-Smart-32LR570B6LA/dp/B0DY7FPFLH/ref=sr_1_20?crid=8XMTCS9DYB1P&dib=eyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc&dib_tag=se&keywords=TV&qid=1784142121&sprefix=tv%2Caps%2C819&sr=8-20
+                              - generic [ref=e2316]:
+                                - generic [ref=e2317]: ₹14,990
+                                - generic [ref=e2318]: ₹14,990
+                              - generic [ref=e2319]: "M.R.P: ₹21,240"
+                              - generic [ref=e2320]:
+                                - text: "M.R.P:"
+                                - generic [ref=e2321]:
+                                  - generic [ref=e2322]: ₹21,240
+                                  - text: ₹21,240
+                            - text: (29% off)
+                          - generic [ref=e2326]:
+                            - generic [ref=e2327]: Save extra with No Cost EMI
+                            - generic [ref=e2328]: Save extra with No Cost EMI
+                        - generic [ref=e2333]: FREE delivery as soon as Sat, 18 Jul, 7 am - 9 pm
+                        - generic [ref=e2335]: "Service: Brand Installation"
+                        - generic [ref=e2349] [cursor=pointer]:
+                          - button "Add to cart" [ref=e2350]
+                          - generic [ref=e2351]: Add to cart
+                - listitem [ref=e2354]:
+                  - generic [ref=e2362]:
+                    - link [ref=e2368] [cursor=pointer]:
+                      - /url: /sspa/click?ie=UTF8&spc=MToyMzI0MjM1NDUzMDYyOTQ4OjE3ODQxNDIxMjE6c3BfYnRmOjMwMTAzMDA0OTc1NzYzMjo6MDo6&url=%2FCoolita-Display-Soundbar-Surround-JSS32CSQLED%2Fdp%2FB0FKGKDJTK%2Fref%3Dsr_1_21_sspa%3Fcrid%3D8XMTCS9DYB1P%26dib%3DeyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc%26dib_tag%3Dse%26keywords%3DTV%26qid%3D1784142121%26sprefix%3Dtv%252Caps%252C819%26sr%3D8-21-spons%26aref%3DMmGMRHSE1h%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1&aref=MmGMRHSE1h&sp_cr=ZAZ
+                      - img [ref=e2370]
+                    - generic [ref=e2373]:
+                      - generic [ref=e2374]:
+                        - button "View Sponsored information or leave ad feedback" [ref=e2377] [cursor=pointer]:
+                          - generic [ref=e2378]: Sponsored
+                        - link "Sponsored Ad - Sansui 80cm (32) Smart Coolita TV, QLED Display, HD Ready, Dolby Audio, Built-in Soundbar, Surround Sound, 60Hz Refresh Rate JSS32CSQLED (Black)" [ref=e2380] [cursor=pointer]:
+                          - /url: /sspa/click?ie=UTF8&spc=MToyMzI0MjM1NDUzMDYyOTQ4OjE3ODQxNDIxMjE6c3BfYnRmOjMwMTAzMDA0OTc1NzYzMjo6MDo6&url=%2FCoolita-Display-Soundbar-Surround-JSS32CSQLED%2Fdp%2FB0FKGKDJTK%2Fref%3Dsr_1_21_sspa%3Fcrid%3D8XMTCS9DYB1P%26dib%3DeyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc%26dib_tag%3Dse%26keywords%3DTV%26qid%3D1784142121%26sprefix%3Dtv%252Caps%252C819%26sr%3D8-21-spons%26aref%3DMmGMRHSE1h%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1&aref=MmGMRHSE1h&sp_cr=ZAZ
+                          - heading "Sponsored Ad - Sansui 80cm (32) Smart Coolita TV, QLED Display, HD Ready, Dolby Audio, Built-in Soundbar, Surround Sound, 60Hz Refresh Rate JSS32CSQLED (Black)" [level=2] [ref=e2381]: Sansui 80cm (32) Smart Coolita TV, QLED Display, HD Ready, Dolby Audio, Built-in Soundbar, Surround Sound, 60Hz Refresh Rate JSS32CSQLED (Black)
+                      - generic [ref=e2383]:
+                        - text: "3.8"
+                        - button "3.8 out of 5 stars, rating details" [ref=e2385] [cursor=pointer]:
+                          - generic [ref=e2387]: 3.8 out of 5 stars
+                        - link "36 ratings" [ref=e2389] [cursor=pointer]:
+                          - /url: /sspa/click?ie=UTF8&spc=MToyMzI0MjM1NDUzMDYyOTQ4OjE3ODQxNDIxMjE6c3BfYnRmOjMwMTAzMDA0OTc1NzYzMjo6MDo6&url=%2FCoolita-Display-Soundbar-Surround-JSS32CSQLED%2Fdp%2FB0FKGKDJTK%2Fref%3Dsr_1_21_sspa%3Fcrid%3D8XMTCS9DYB1P%26dib%3DeyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc%26dib_tag%3Dse%26keywords%3DTV%26qid%3D1784142121%26sprefix%3Dtv%252Caps%252C819%26sr%3D8-21-spons%26aref%3DMmGMRHSE1h%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1&aref=MmGMRHSE1h&sp_cr=ZAZ#customerReviews
+                          - text: (36)
+                      - generic [ref=e2392]:
+                        - generic [ref=e2393]:
+                          - generic [ref=e2395]:
+                            - generic [ref=e2396]: Price, product page
+                            - 'link "₹13,990 M.R.P: ₹20,990 M.R.P: ₹20,990" [ref=e2397] [cursor=pointer]':
+                              - /url: /sspa/click?ie=UTF8&spc=MToyMzI0MjM1NDUzMDYyOTQ4OjE3ODQxNDIxMjE6c3BfYnRmOjMwMTAzMDA0OTc1NzYzMjo6MDo6&url=%2FCoolita-Display-Soundbar-Surround-JSS32CSQLED%2Fdp%2FB0FKGKDJTK%2Fref%3Dsr_1_21_sspa%3Fcrid%3D8XMTCS9DYB1P%26dib%3DeyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc%26dib_tag%3Dse%26keywords%3DTV%26qid%3D1784142121%26sprefix%3Dtv%252Caps%252C819%26sr%3D8-21-spons%26aref%3DMmGMRHSE1h%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1&aref=MmGMRHSE1h&sp_cr=ZAZ
+                              - generic [ref=e2398]:
+                                - generic [ref=e2399]: ₹13,990
+                                - generic [ref=e2400]: ₹13,990
+                              - generic [ref=e2401]: "M.R.P: ₹20,990"
+                              - generic [ref=e2402]:
+                                - text: "M.R.P:"
+                                - generic [ref=e2403]:
+                                  - generic [ref=e2404]: ₹20,990
+                                  - text: ₹20,990
+                            - text: (33% off)
+                          - generic [ref=e2408]:
+                            - generic [ref=e2409]: Get 3% back with Amazon Pay ICICI card
+                            - generic [ref=e2410]: Get 3% back with Amazon Pay ICICI...
+                        - generic [ref=e2415]: FREE delivery as soon as Sat, 18 Jul, 7 am - 8 pm
+                        - generic [ref=e2417]: "Service: Setup at delivery"
+                        - generic [ref=e2431] [cursor=pointer]:
+                          - button "Add to cart" [ref=e2432]
+                          - generic [ref=e2433]: Add to cart
+                - listitem [ref=e2436]:
+                  - generic [ref=e2444]:
+                    - generic [ref=e2446]:
+                      - generic [ref=e2452]: Previously viewed
+                      - link [ref=e2456] [cursor=pointer]:
+                        - /url: /sspa/click?ie=UTF8&spc=MToyMzI0MjM1NDUzMDYyOTQ4OjE3ODQxNDIxMjE6c3BfYnRmOjMwMTE0MDE4MTY3MTIzMjo6MDo6&url=%2FXiaomi-inch-Ultra-Smart-L43MB-FPIN%2Fdp%2FB0F3JKY28G%2Fref%3Dsr_1_22_sspa%3Fcrid%3D8XMTCS9DYB1P%26dib%3DeyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc%26dib_tag%3Dse%26keywords%3DTV%26qid%3D1784142121%26sprefix%3Dtv%252Caps%252C819%26sr%3D8-22-spons%26aref%3D6v6fRLaa7Y%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1&aref=6v6fRLaa7Y&sp_cr=ZAZ
+                        - img [ref=e2458]
+                    - generic [ref=e2461]:
+                      - generic [ref=e2462]:
+                        - button "View Sponsored information or leave ad feedback" [ref=e2465] [cursor=pointer]:
+                          - generic [ref=e2466]: Sponsored
+                        - link "Sponsored Ad - Xiaomi 108 cm (43 inch) FX Pro QLED Ultra HD 4K Smart Fire TV L43MB-FPIN" [ref=e2468] [cursor=pointer]:
+                          - /url: /sspa/click?ie=UTF8&spc=MToyMzI0MjM1NDUzMDYyOTQ4OjE3ODQxNDIxMjE6c3BfYnRmOjMwMTE0MDE4MTY3MTIzMjo6MDo6&url=%2FXiaomi-inch-Ultra-Smart-L43MB-FPIN%2Fdp%2FB0F3JKY28G%2Fref%3Dsr_1_22_sspa%3Fcrid%3D8XMTCS9DYB1P%26dib%3DeyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc%26dib_tag%3Dse%26keywords%3DTV%26qid%3D1784142121%26sprefix%3Dtv%252Caps%252C819%26sr%3D8-22-spons%26aref%3D6v6fRLaa7Y%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1&aref=6v6fRLaa7Y&sp_cr=ZAZ
+                          - heading "Sponsored Ad - Xiaomi 108 cm (43 inch) FX Pro QLED Ultra HD 4K Smart Fire TV L43MB-FPIN" [level=2] [ref=e2469]: Xiaomi 108 cm (43 inch) FX Pro QLED Ultra HD 4K Smart Fire TV L43MB-FPIN
+                      - generic [ref=e2470]:
+                        - generic [ref=e2471]:
+                          - text: "4.2"
+                          - button "4.2 out of 5 stars, rating details" [ref=e2473] [cursor=pointer]:
+                            - generic [ref=e2475]: 4.2 out of 5 stars
+                          - link "1,899 ratings" [ref=e2477] [cursor=pointer]:
+                            - /url: /sspa/click?ie=UTF8&spc=MToyMzI0MjM1NDUzMDYyOTQ4OjE3ODQxNDIxMjE6c3BfYnRmOjMwMTE0MDE4MTY3MTIzMjo6MDo6&url=%2FXiaomi-inch-Ultra-Smart-L43MB-FPIN%2Fdp%2FB0F3JKY28G%2Fref%3Dsr_1_22_sspa%3Fcrid%3D8XMTCS9DYB1P%26dib%3DeyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc%26dib_tag%3Dse%26keywords%3DTV%26qid%3D1784142121%26sprefix%3Dtv%252Caps%252C819%26sr%3D8-22-spons%26aref%3D6v6fRLaa7Y%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1&aref=6v6fRLaa7Y&sp_cr=ZAZ#customerReviews
+                            - text: (1.8K)
+                        - generic [ref=e2478]: 2K+ bought in past month
+                      - generic [ref=e2481]:
+                        - generic [ref=e2482]:
+                          - generic [ref=e2484]:
+                            - generic [ref=e2485]: Price, product page
+                            - 'link "₹27,499 M.R.P: ₹44,999 M.R.P: ₹44,999" [ref=e2486] [cursor=pointer]':
+                              - /url: /sspa/click?ie=UTF8&spc=MToyMzI0MjM1NDUzMDYyOTQ4OjE3ODQxNDIxMjE6c3BfYnRmOjMwMTE0MDE4MTY3MTIzMjo6MDo6&url=%2FXiaomi-inch-Ultra-Smart-L43MB-FPIN%2Fdp%2FB0F3JKY28G%2Fref%3Dsr_1_22_sspa%3Fcrid%3D8XMTCS9DYB1P%26dib%3DeyJ2IjoiMSJ9.lmhX-N8xqJMj5YJJWMGIR0F23XWnVBgXXFUolysRT1fdyAyWqmy-eB25ZTd3-yMyhxkcNuji0qrWKKmbZYpNlMU2y92F6kPWZ3RExm3EI2wQJ__9XC9ZZvqQ4aNxSukpent_DIO9t-OyqGUg8qlXzEm3MZ2hmfLq98U7uqpM9aYu-E4ejhQCpAT4jbGLHrwn7s_wBHRu43VyszHtsl-kLPES0Cw3hVh46PbgEr1si_M.FbppONK_jltZwtS9aEooQ5pfb3gSOFQrzapXtASBSHc%26dib_tag%3Dse%26keywords%3DTV%26qid%3D1784142121%26sprefix%3Dtv%252Caps%252C819%26sr%3D8-22-spons%26aref%3D6v6fRLaa7Y%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1&aref=6v6fRLaa7Y&sp_cr=ZAZ
+                              - generic [ref=e2487]:
+                                - generic [ref=e2488]: ₹27,499
+                                - generic [ref=e2489]: ₹27,499
+                              - generic [ref=e2490]: "M.R.P: ₹44,999"
+                              - generic [ref=e2491]:
+                                - text: "M.R.P:"
+                                - generic [ref=e2492]:
+                                  - generic [ref=e2493]: ₹44,999
+                                  - text: ₹44,999
+                            - text: (39% off)
+                          - generic [ref=e2497]:
+                            - generic [ref=e2498]: Flat INR 750 Off on all banks txns
+                            - generic [ref=e2499]: Flat INR 750 Off on all banks txns
+                        - generic [ref=e2504]: FREE delivery as soon as Sat, 18 Jul, 7 am - 8 pm
+                        - generic [ref=e2506]: "Service: Setup at delivery"
+                        - generic [ref=e2520] [cursor=pointer]:
+                          - button "Add to cart" [ref=e2521]
+                          - generic [ref=e2522]: Add to cart
+          - generic [ref=e2532]:
+            - link "Sponsored video; click to navigate to featured product page. Noir Aqua 5pcs PP Spun Filter/Cartridge with Spanner for All Types RO Water purifiers (10 Inch, 5 Micron) | RO Water Purifier Cartridge,RO Spun Filter Cartridge Sponge Replacement Water Filter Candle" [ref=e2536] [cursor=pointer]:
+              - /url: https://aax-eu-zaz.amazon.in/x/c/JITRiOG7FNNHj_5Bt8MvNPYAAAGfZyhLKQoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICBNCsEb/clv1c_ek-wwgH2bdbSTBWshtnx5hyRnqBGjljrlHviXDyvO14XUF5FsS5JVqezi9D7FUjfKTBKZlp8ZIP7eYBu0EMJDoV_zibPZYu4hox8w0a_u_Q6LWY7HqfvN1QoA1ipAtM51WOumh_FYxvj51ukgeZl_dyLIF7HvrX7EqDyArOrAfxyGp64ahux0olHsZbdyqizidiJ2qlDCldQQ8w3pbi0SObKQdnbZ5s2AyobWoiZhWnF7bz2pkG-WxkOHOJPSn90d0piY6FrF8tapLmtkpRxXPKvE01mkJm1h_cnyXVGYznUdOUGsIO9_GhqEEXMwq-l762nb-04YM0BrcQJ9GflrEE3A49EZOPZd43psAXxZLvYMHCELZUZqe3xvmXfWcpGyoIhCiHyCcTc-JkCyz9c-gH7ZwwQRBufaBrMwwonXoluKK5pZd6KIu9XNv7_EjDr53T6ALPjP9BLsQt5cuY578TvwmV5shgRGIvKID3cWP0dI55Qzfc1GX1CygkGMcUOqYIaRNEG8GJd6FCFZKhs1XOANeKuuZS_Y0xKsX_yWlWtAcY0N27wYBZNfqyr41Ap9FdLjSXo7YBd5du-E0upbWY3qy-3b50uezsUfVqqrqXDjxZgPE6YGgkElcOBEcX-c_pDkbyY5cVuKaeyitcCQ0Iz3CM-RmrfZWWIhjq1F2w5jNR8m1zybfNsfoSNDoOaN2IgEsMq3uQJJo9t6xHwZ62tGrn9uaAuDokiQcnD4uMovwHGZ2dx8JPWcc4tO9pcln5FEoMWuqc7RKsiiz2k9wBFna_P5NR0nJeCSkMumklCT1nEf-4OxaarLp_1B76_oAk9vE_j1mZtsg2agPTo7Qo1BH9ZKTSPjNxBBhk0v9bXEMY0xlwaoMb_sXUmZKSjSAHpuTxx3xvVa56lwWiPi9a5699No7-keuZvZyyx1PouI2TNs3jaGfftiOUwCuuUJZox1nSjUhwhcwJFHaSf5rlp2bwRNJV_r4wAkKvCMSMvpll9Ixn2eNJ1HVD2uWWTLLe-qgP5RjoZz6yyZoPrbFAKOC5Lo3sdelz9wzdKA7U_sbudfEN4QYWi-vFHzE68RAlHKiw/https://www.amazon.in/dp/B08L7J3T31?aref=HRIVjYf8oF&pd_rd_i=B08L7J3T31&pf_rd_p=2a10787e-cd6a-4538-8307-70bc4d12c644&pd_rd_wg=IqMAl&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_w=xAu39&pd_rd_r=fa7a4fd3-fe51-4759-879f-1ed5396c56cc
+              - generic "Sponsored video; click to navigate to featured product page. Noir Aqua 5pcs PP Spun Filter/Cartridge with Spanner for All Types RO Water purifiers (10 Inch, 5 Micron) | RO Water Purifier Cartridge,RO Spun Filter Cartridge Sponge Replacement Water Filter Candle" [ref=e2537]
+            - generic [ref=e2545]:
+              - link [ref=e2551] [cursor=pointer]:
+                - /url: https://aax-eu-zaz.amazon.in/x/c/JITRiOG7FNNHj_5Bt8MvNPYAAAGfZyhLKQoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICBNCsEb/clv1c_ek-wwgH2bdbSTBWshtnx5hyRnqBGjljrlHviXDyvO14XUF5FsS5JVqezi9D7FUjfKTBKZlp8ZIP7eYBu0EMJDoV_zibPZYu4hox8w0a_u_Q6LWY7HqfvN1QoA1ipAtM51WOumh_FYxvj51ukgeZl_dyLIF7HvrX7EqDyArOrAfxyGp64ahux0olHsZbdyqizidiJ2qlDCldQQ8w3pbi0SObKQdnbZ5s2AyobWoiZhWnF7bz2pkG-WxkOHOJPSn90d0piY6FrF8tapLmtkpRxXPKvE01mkJm1h_cnyXVGYznUdOUGsIO9_GhqEEXMwq-l762nb-04YM0BrcQJ9GflrEE3A49EZOPZd43psAXxZLvYMHCELZUZqe3xvmXfWcpGyoIhCiHyCcTc-JkCyz9c-gH7ZwwQRBufaBrMwwonXoluKK5pZd6KIu9XNv7_EjDr53T6ALPjP9BLsQt5cuY578TvwmV5shgRGIvKID3cWP0dI55Qzfc1GX1CygkGMcUOqYIaRNEG8GJd6FCFZKhs1XOANeKuuZS_Y0xKsX_yWlWtAcY0N27wYBZNfqyr41Ap9FdLjSXo7YBd5du-E0upbWY3qy-3b50uezsUfVqqrqXDjxZgPE6YGgkElcOBEcX-c_pDkbyY5cVuKaeyitcCQ0Iz3CM-RmrfZWWIhjq1F2w5jNR8m1zybfNsfoSNDoOaN2IgEsMq3uQJJo9t6xHwZ62tGrn9uaAuDokiQcnD4uMovwHGZ2dx8JPWcc4tO9pcln5FEoMWuqc7RKsiiz2k9wBFna_P5NR0nJeCSkMumklCT1nEf-4OxaarLp_1B76_oAk9vE_j1mZtsg2agPTo7Qo1BH9ZKTSPjNxBBhk0v9bXEMY0xlwaoMb_sXUmZKSjSAHpuTxx3xvVa56lwWiPi9a5699No7-keuZvZyyx1PouI2TNs3jaGfftiOUwCuuUJZox1nSjUhwhcwJFHaSf5rlp2bwRNJV_r4wAkKvCMSMvpll9Ixn2eNJ1HVD2uWWTLLe-qgP5RjoZz6yyZoPrbFAKOC5Lo3sdelz9wzdKA7U_sbudfEN4QYWi-vFHzE68RAlHKiw/https://www.amazon.in/Noir-Aqua-Spanner-Purifiers-cartridge/dp/B08L7J3T31/ref=sxbs_sbv_search_btf?aref=HRIVjYf8oF&content-id=amzn1.sym.2a10787e-cd6a-4538-8307-70bc4d12c644%3Aamzn1.sym.2a10787e-cd6a-4538-8307-70bc4d12c644&crid=8XMTCS9DYB1P&cv_ct_cx=TV&keywords=TV&pd_rd_i=B08L7J3T31&pd_rd_r=fa7a4fd3-fe51-4759-879f-1ed5396c56cc&pd_rd_w=xAu39&pd_rd_wg=IqMAl&pf_rd_p=2a10787e-cd6a-4538-8307-70bc4d12c644&pf_rd_r=GWMP8VQ5M58D2JASAJNG&qid=1784142121&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=tv%2Caps%2C819&sr=1-1-f1821008-9dea-4812-b2b6-4a6e4a4f2d55
+                - img [ref=e2553]
+              - generic [ref=e2556]:
+                - generic [ref=e2557]:
+                  - generic [ref=e2560] [cursor=pointer]: Sponsored
+                  - link "Noir Aqua 5pcs PP Spun Filter/Cartridge with Spanner for All Types RO Water purifiers (10 Inch, 5 Micron) | RO Water Purifier Cartridge,RO Spun Filter Cartridge Sponge Replacement Water Filter Candle" [ref=e2562] [cursor=pointer]:
+                    - /url: https://aax-eu-zaz.amazon.in/x/c/JITRiOG7FNNHj_5Bt8MvNPYAAAGfZyhLKQoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICBNCsEb/clv1c_ek-wwgH2bdbSTBWshtnx5hyRnqBGjljrlHviXDyvO14XUF5FsS5JVqezi9D7FUjfKTBKZlp8ZIP7eYBu0EMJDoV_zibPZYu4hox8w0a_u_Q6LWY7HqfvN1QoA1ipAtM51WOumh_FYxvj51ukgeZl_dyLIF7HvrX7EqDyArOrAfxyGp64ahux0olHsZbdyqizidiJ2qlDCldQQ8w3pbi0SObKQdnbZ5s2AyobWoiZhWnF7bz2pkG-WxkOHOJPSn90d0piY6FrF8tapLmtkpRxXPKvE01mkJm1h_cnyXVGYznUdOUGsIO9_GhqEEXMwq-l762nb-04YM0BrcQJ9GflrEE3A49EZOPZd43psAXxZLvYMHCELZUZqe3xvmXfWcpGyoIhCiHyCcTc-JkCyz9c-gH7ZwwQRBufaBrMwwonXoluKK5pZd6KIu9XNv7_EjDr53T6ALPjP9BLsQt5cuY578TvwmV5shgRGIvKID3cWP0dI55Qzfc1GX1CygkGMcUOqYIaRNEG8GJd6FCFZKhs1XOANeKuuZS_Y0xKsX_yWlWtAcY0N27wYBZNfqyr41Ap9FdLjSXo7YBd5du-E0upbWY3qy-3b50uezsUfVqqrqXDjxZgPE6YGgkElcOBEcX-c_pDkbyY5cVuKaeyitcCQ0Iz3CM-RmrfZWWIhjq1F2w5jNR8m1zybfNsfoSNDoOaN2IgEsMq3uQJJo9t6xHwZ62tGrn9uaAuDokiQcnD4uMovwHGZ2dx8JPWcc4tO9pcln5FEoMWuqc7RKsiiz2k9wBFna_P5NR0nJeCSkMumklCT1nEf-4OxaarLp_1B76_oAk9vE_j1mZtsg2agPTo7Qo1BH9ZKTSPjNxBBhk0v9bXEMY0xlwaoMb_sXUmZKSjSAHpuTxx3xvVa56lwWiPi9a5699No7-keuZvZyyx1PouI2TNs3jaGfftiOUwCuuUJZox1nSjUhwhcwJFHaSf5rlp2bwRNJV_r4wAkKvCMSMvpll9Ixn2eNJ1HVD2uWWTLLe-qgP5RjoZz6yyZoPrbFAKOC5Lo3sdelz9wzdKA7U_sbudfEN4QYWi-vFHzE68RAlHKiw/https://www.amazon.in/Noir-Aqua-Spanner-Purifiers-cartridge/dp/B08L7J3T31/ref=sxbs_sbv_search_btf?aref=HRIVjYf8oF&content-id=amzn1.sym.2a10787e-cd6a-4538-8307-70bc4d12c644%3Aamzn1.sym.2a10787e-cd6a-4538-8307-70bc4d12c644&crid=8XMTCS9DYB1P&cv_ct_cx=TV&keywords=TV&pd_rd_i=B08L7J3T31&pd_rd_r=fa7a4fd3-fe51-4759-879f-1ed5396c56cc&pd_rd_w=xAu39&pd_rd_wg=IqMAl&pf_rd_p=2a10787e-cd6a-4538-8307-70bc4d12c644&pf_rd_r=GWMP8VQ5M58D2JASAJNG&qid=1784142121&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=tv%2Caps%2C819&sr=1-1-f1821008-9dea-4812-b2b6-4a6e4a4f2d55
+                    - heading "Noir Aqua 5pcs PP Spun Filter/Cartridge with Spanner for All Types RO Water purifiers (10 Inch, 5 Micron) | RO Water Purifier Cartridge,RO Spun Filter Cartridge Sponge Replacement Water Filter Candle" [level=2] [ref=e2563]
+                - generic [ref=e2564]:
+                  - generic [ref=e2565]:
+                    - text: "4.0"
+                    - button "4.0 out of 5 stars, rating details" [ref=e2567] [cursor=pointer]:
+                      - generic [ref=e2569]: 4.0 out of 5 stars
+                    - link "2,340 ratings" [ref=e2571] [cursor=pointer]:
+                      - /url: https://aax-eu-zaz.amazon.in/x/c/JITRiOG7FNNHj_5Bt8MvNPYAAAGfZyhLKQoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICBNCsEb/clv1c_ek-wwgH2bdbSTBWshtnx5hyRnqBGjljrlHviXDyvO14XUF5FsS5JVqezi9D7FUjfKTBKZlp8ZIP7eYBu0EMJDoV_zibPZYu4hox8w0a_u_Q6LWY7HqfvN1QoA1ipAtM51WOumh_FYxvj51ukgeZl_dyLIF7HvrX7EqDyArOrAfxyGp64ahux0olHsZbdyqizidiJ2qlDCldQQ8w3pbi0SObKQdnbZ5s2AyobWoiZhWnF7bz2pkG-WxkOHOJPSn90d0piY6FrF8tapLmtkpRxXPKvE01mkJm1h_cnyXVGYznUdOUGsIO9_GhqEEXMwq-l762nb-04YM0BrcQJ9GflrEE3A49EZOPZd43psAXxZLvYMHCELZUZqe3xvmXfWcpGyoIhCiHyCcTc-JkCyz9c-gH7ZwwQRBufaBrMwwonXoluKK5pZd6KIu9XNv7_EjDr53T6ALPjP9BLsQt5cuY578TvwmV5shgRGIvKID3cWP0dI55Qzfc1GX1CygkGMcUOqYIaRNEG8GJd6FCFZKhs1XOANeKuuZS_Y0xKsX_yWlWtAcY0N27wYBZNfqyr41Ap9FdLjSXo7YBd5du-E0upbWY3qy-3b50uezsUfVqqrqXDjxZgPE6YGgkElcOBEcX-c_pDkbyY5cVuKaeyitcCQ0Iz3CM-RmrfZWWIhjq1F2w5jNR8m1zybfNsfoSNDoOaN2IgEsMq3uQJJo9t6xHwZ62tGrn9uaAuDokiQcnD4uMovwHGZ2dx8JPWcc4tO9pcln5FEoMWuqc7RKsiiz2k9wBFna_P5NR0nJeCSkMumklCT1nEf-4OxaarLp_1B76_oAk9vE_j1mZtsg2agPTo7Qo1BH9ZKTSPjNxBBhk0v9bXEMY0xlwaoMb_sXUmZKSjSAHpuTxx3xvVa56lwWiPi9a5699No7-keuZvZyyx1PouI2TNs3jaGfftiOUwCuuUJZox1nSjUhwhcwJFHaSf5rlp2bwRNJV_r4wAkKvCMSMvpll9Ixn2eNJ1HVD2uWWTLLe-qgP5RjoZz6yyZoPrbFAKOC5Lo3sdelz9wzdKA7U_sbudfEN4QYWi-vFHzE68RAlHKiw/https://www.amazon.in/Noir-Aqua-Spanner-Purifiers-cartridge/dp/B08L7J3T31/ref=sxbs_sbv_search_btf?aref=HRIVjYf8oF&content-id=amzn1.sym.2a10787e-cd6a-4538-8307-70bc4d12c644%3Aamzn1.sym.2a10787e-cd6a-4538-8307-70bc4d12c644&crid=8XMTCS9DYB1P&cv_ct_cx=TV&keywords=TV&pd_rd_i=B08L7J3T31&pd_rd_r=fa7a4fd3-fe51-4759-879f-1ed5396c56cc&pd_rd_w=xAu39&pd_rd_wg=IqMAl&pf_rd_p=2a10787e-cd6a-4538-8307-70bc4d12c644&pf_rd_r=GWMP8VQ5M58D2JASAJNG&qid=1784142121&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=tv%2Caps%2C819&sr=1-1-f1821008-9dea-4812-b2b6-4a6e4a4f2d55#customerReviews
+                      - text: (2.3K)
+                  - generic [ref=e2572]: 300+ bought in past month
+                - generic [ref=e2575]:
+                  - generic [ref=e2576]:
+                    - generic [ref=e2578]:
+                      - generic [ref=e2579]: Price, product page
+                      - 'link "₹419 ( ₹83.80 /count) M.R.P: ₹919 M.R.P: ₹919" [ref=e2580] [cursor=pointer]':
+                        - /url: https://aax-eu-zaz.amazon.in/x/c/JITRiOG7FNNHj_5Bt8MvNPYAAAGfZyhLKQoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICBNCsEb/clv1c_ek-wwgH2bdbSTBWshtnx5hyRnqBGjljrlHviXDyvO14XUF5FsS5JVqezi9D7FUjfKTBKZlp8ZIP7eYBu0EMJDoV_zibPZYu4hox8w0a_u_Q6LWY7HqfvN1QoA1ipAtM51WOumh_FYxvj51ukgeZl_dyLIF7HvrX7EqDyArOrAfxyGp64ahux0olHsZbdyqizidiJ2qlDCldQQ8w3pbi0SObKQdnbZ5s2AyobWoiZhWnF7bz2pkG-WxkOHOJPSn90d0piY6FrF8tapLmtkpRxXPKvE01mkJm1h_cnyXVGYznUdOUGsIO9_GhqEEXMwq-l762nb-04YM0BrcQJ9GflrEE3A49EZOPZd43psAXxZLvYMHCELZUZqe3xvmXfWcpGyoIhCiHyCcTc-JkCyz9c-gH7ZwwQRBufaBrMwwonXoluKK5pZd6KIu9XNv7_EjDr53T6ALPjP9BLsQt5cuY578TvwmV5shgRGIvKID3cWP0dI55Qzfc1GX1CygkGMcUOqYIaRNEG8GJd6FCFZKhs1XOANeKuuZS_Y0xKsX_yWlWtAcY0N27wYBZNfqyr41Ap9FdLjSXo7YBd5du-E0upbWY3qy-3b50uezsUfVqqrqXDjxZgPE6YGgkElcOBEcX-c_pDkbyY5cVuKaeyitcCQ0Iz3CM-RmrfZWWIhjq1F2w5jNR8m1zybfNsfoSNDoOaN2IgEsMq3uQJJo9t6xHwZ62tGrn9uaAuDokiQcnD4uMovwHGZ2dx8JPWcc4tO9pcln5FEoMWuqc7RKsiiz2k9wBFna_P5NR0nJeCSkMumklCT1nEf-4OxaarLp_1B76_oAk9vE_j1mZtsg2agPTo7Qo1BH9ZKTSPjNxBBhk0v9bXEMY0xlwaoMb_sXUmZKSjSAHpuTxx3xvVa56lwWiPi9a5699No7-keuZvZyyx1PouI2TNs3jaGfftiOUwCuuUJZox1nSjUhwhcwJFHaSf5rlp2bwRNJV_r4wAkKvCMSMvpll9Ixn2eNJ1HVD2uWWTLLe-qgP5RjoZz6yyZoPrbFAKOC5Lo3sdelz9wzdKA7U_sbudfEN4QYWi-vFHzE68RAlHKiw/https://www.amazon.in/Noir-Aqua-Spanner-Purifiers-cartridge/dp/B08L7J3T31/ref=sxbs_sbv_search_btf?aref=HRIVjYf8oF&content-id=amzn1.sym.2a10787e-cd6a-4538-8307-70bc4d12c644%3Aamzn1.sym.2a10787e-cd6a-4538-8307-70bc4d12c644&crid=8XMTCS9DYB1P&cv_ct_cx=TV&keywords=TV&pd_rd_i=B08L7J3T31&pd_rd_r=fa7a4fd3-fe51-4759-879f-1ed5396c56cc&pd_rd_w=xAu39&pd_rd_wg=IqMAl&pf_rd_p=2a10787e-cd6a-4538-8307-70bc4d12c644&pf_rd_r=GWMP8VQ5M58D2JASAJNG&qid=1784142121&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=tv%2Caps%2C819&sr=1-1-f1821008-9dea-4812-b2b6-4a6e4a4f2d55
+                        - generic [ref=e2581]:
+                          - generic [ref=e2582]: ₹419
+                          - generic [ref=e2583]: ₹419
+                        - generic [ref=e2584]:
+                          - text: (
+                          - generic [ref=e2585]:
+                            - generic [ref=e2586]: ₹83.80
+                            - text: ₹83.80
+                          - text: /count)
+                        - generic [ref=e2587]: "M.R.P: ₹919"
+                        - generic [ref=e2588]:
+                          - text: "M.R.P:"
+                          - generic [ref=e2589]:
+                            - generic [ref=e2590]: ₹919
+                            - text: ₹919
+                      - text: (54% off)
+                    - generic [ref=e2593]:
+                      - generic [ref=e2594]: You pay ₹410
+                      - text: with coupon
+                  - generic [ref=e2597]:
+                    - generic [ref=e2599]: FREE delivery Sat, 18 Jul
+                    - generic [ref=e2601]: Or Prime members get FREE delivery Today
+          - generic [ref=e2607]:
+            - generic "Related searches in TV" [ref=e2608]:
+              - heading "Related searches" [level=2] [ref=e2611]
+            - list [ref=e2613]:
+              - generic [ref=e2614]:
+                - listitem [ref=e2615]:
+                  - link "tv 43 inch" [ref=e2617] [cursor=pointer]:
+                    - /url: /s?k=tv+43+inch&ref=rsl_sug_0_0&pd_rd_w=Quz3p&content-id=amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01:amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_p=c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=IqMAl&pd_rd_r=fa7a4fd3-fe51-4759-879f-1ed5396c56cc&qid=1784142121
+                    - generic [ref=e2622]: tv 43 inch
+                - listitem [ref=e2623]:
+                  - link "sony tv" [ref=e2625] [cursor=pointer]:
+                    - /url: /s?k=sony+tv&ref=rsl_sug_0_3&pd_rd_w=Quz3p&content-id=amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01:amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_p=c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=IqMAl&pd_rd_r=fa7a4fd3-fe51-4759-879f-1ed5396c56cc&qid=1784142121
+                    - generic [ref=e2630]: sony tv
+              - generic [ref=e2631]:
+                - listitem [ref=e2632]:
+                  - link "samsung tv" [ref=e2634] [cursor=pointer]:
+                    - /url: /s?k=samsung+tv&ref=rsl_sug_0_1&pd_rd_w=Quz3p&content-id=amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01:amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_p=c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=IqMAl&pd_rd_r=fa7a4fd3-fe51-4759-879f-1ed5396c56cc&qid=1784142121
+                    - generic [ref=e2639]: samsung tv
+                - listitem [ref=e2640]:
+                  - link "tv 55 inch" [ref=e2642] [cursor=pointer]:
+                    - /url: /s?k=tv+55+inch&ref=rsl_sug_0_4&pd_rd_w=Quz3p&content-id=amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01:amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_p=c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=IqMAl&pd_rd_r=fa7a4fd3-fe51-4759-879f-1ed5396c56cc&qid=1784142121
+                    - generic [ref=e2647]: tv 55 inch
+              - generic [ref=e2648]:
+                - listitem [ref=e2649]:
+                  - link "mi tv" [ref=e2651] [cursor=pointer]:
+                    - /url: /s?k=mi+tv&ref=rsl_sug_0_2&pd_rd_w=Quz3p&content-id=amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01:amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_p=c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=IqMAl&pd_rd_r=fa7a4fd3-fe51-4759-879f-1ed5396c56cc&qid=1784142121
+                    - generic [ref=e2656]: mi tv
+                - listitem [ref=e2657]:
+                  - link "lg tv" [ref=e2659] [cursor=pointer]:
+                    - /url: /s?k=lg+tv&ref=rsl_sug_0_5&pd_rd_w=Quz3p&content-id=amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01:amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_p=c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=IqMAl&pd_rd_r=fa7a4fd3-fe51-4759-879f-1ed5396c56cc&qid=1784142121
+                    - generic [ref=e2664]: lg tv
+          - navigation "pagination" [ref=e2667]:
+            - list [ref=e2669]:
+              - listitem [ref=e2670]:
+                - button "Previous" [disabled] [ref=e2672]:
+                  - img [ref=e2673]
+                  - text: Previous
+              - listitem [ref=e2675]:
+                - button "Page 1" [ref=e2677]: "1"
+              - listitem [ref=e2678]:
+                - button "Go to page 2" [ref=e2680] [cursor=pointer]: "2"
+              - listitem [ref=e2681]:
+                - button "Go to page 3" [ref=e2683] [cursor=pointer]: "3"
+              - button [disabled] [ref=e2684]:
+                - img [ref=e2685]: ...
+              - button "20" [disabled] [ref=e2687]
+              - listitem [ref=e2688]:
+                - button "Go to next page, page 2" [ref=e2690] [cursor=pointer]:
+                  - text: Next
+                  - img [ref=e2691]
+          - generic [ref=e2695]:
+            - separator [ref=e2696]
+            - generic [ref=e2697]:
+              - heading "Brands related to your search" [ref=e2698]
+              - button "Leave feedback on Sponsored ad" [ref=e2703] [cursor=pointer]: Sponsored
+              - generic [ref=e2707]:
+                - generic [ref=e2709]:
+                  - generic:
+                    - generic:
+                      - link:
+                        - /url: https://aax-eu-zaz.amazon.in/x/c/JKhZPDZvdyd77YudhqmJt9YAAAGfZyhMAAoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDIgICC0wjvx/clv1c_ek-wwgHWFcbWDtHYaoeZcwJZSrPTMo6ZfLs9TxLQ_49hK8uO5XB3JtYQ7Apdco1OLNWWa2wLrpcEq9LnweLn0FAcf5G0nqKydVlq_vRCP-86COzl1lDxrO359-Be0yKY3Hcvp3mo16DM7AyKesR0mxDbpeWEkEDGmFScb-6abKRLc17ACoZjTpUyyyBvOvam4Yzrt9saZC9IF1iW1g1IvkzNj3KpjHkiG5-D8f2k2fxqFHshCJCB9FbXnhFS3cqozHkdX-o6FvfK4C4a0R-xFPiU1MRV3BVlXcEM1FCqbrozzoe574olce6V83HfGVAGN02-XXuMKLWAyrQEsGdLidsydrx1ITUnUXA5Hi7JEqFZ_dmVDq2R8OjDPshnmSd1XQ7k8xPj4r_2Kj1Us-dML22EsFqENB1b-lyE1e4gHUbE5gRNmL1sQB7z2h5Yu6ZmCU1KtStlNCVhzPOi8L4iAbAb-ZvT1KnuhOk1UpQnjOjlJVcb-RwiyAm6RV838Vizt9amCckpYhEqaWbdYisr403rlyOF8qUV-Vqm8BUfJ5RI02bNmujBC7Gf09WzwB6tFBv-KWxQDT0CBytMViC13jpMYaomVkdLtxjdxlg9hZfJ3qN-lpNci4mBaimmxaM8mwN1inuI5nD_-FOQR2R3lEu061zinbEpJiZk15Wt5vj3lAFYc87vva73MZ9Tiv2IaSzYhNMsvbFaBOhasyw8rVfekqEfaYjmmXkjQzmTGBOza0ZKe6icQy8726iX65kcl8H9cRrC8pxL_2InAoAqR8B8vv2DuVg2Gq3C-rZGwkVdi0Yh2bADMSkcjUsbix8pcGIZvgnxiVnzlowXV0t_4pM-S_H_ag_AVkSj66YTs-8nnKIuurZ0i8uuFOgBAq9R2SkjDB_U1KCeUz5AZmoG-pIA0nUpEk7pnh2v_ZSYOapef-757OQVjdyB0ycIYhoeXDhsuhQkbPngOltZ5gYFBodP3eJpE7BLI_jZVN6xNLXESrLl7kMauC1o-9q71dwJ6Sl5jUAPchFBHx_LEVbbe0uW15zQUW8F5jsKPIOM7_AbBAw9QHf8pmc1_xL8JJHhUlODECA1b-k3XPqKm_OhU6sZ/https://www.amazon.in/stores/page/21C08466-258D-484E-BCC3-E555D923DA66/?_encoding=UTF8&store_ref=SB_A04214309DR6FVUMM9QQ-A0276624TJ8KI9159HYL&pd_rd_plhdr=t&aaxitk=dfbf7d0f6c405670b59d63ea2ff782a4&hsa_cr_id=0&lp_asins=B097ZQTDVZ%2CB09814LTYW%2CB0BTZ3GNSW&lp_query=TV&lp_slot=desktop-hsa-3psl&aref=AYBKlTEsyD&ref_=sbx_be_s_3psl_mbd_mb0_bkgd&pd_rd_w=TIvYY&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=8MN3Y&pd_rd_r=b5e5f4ca-b963-4c74-a84c-675a15e81e8b
+                      - link "7 SEVEN" [ref=e2710] [cursor=pointer]:
+                        - /url: https://aax-eu-zaz.amazon.in/x/c/JKhZPDZvdyd77YudhqmJt9YAAAGfZyhMAAoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDIgICC0wjvx/clv1c_ek-wwgHWFcbWDtHYaoeZcwJZSrPTMo6ZfLs9TxLQ_49hK8uO5XB3JtYQ7Apdco1OLNWWa2wLrpcEq9LnweLn0FAcf5G0nqKydVlq_vRCP-86COzl1lDxrO359-Be0yKY3Hcvp3mo16DM7AyKesR0mxDbpeWEkEDGmFScb-6abKRLc17ACoZjTpUyyyBvOvam4Yzrt9saZC9IF1iW1g1IvkzNj3KpjHkiG5-D8f2k2fxqFHshCJCB9FbXnhFS3cqozHkdX-o6FvfK4C4a0R-xFPiU1MRV3BVlXcEM1FCqbrozzoe574olce6V83HfGVAGN02-XXuMKLWAyrQEsGdLidsydrx1ITUnUXA5Hi7JEqFZ_dmVDq2R8OjDPshnmSd1XQ7k8xPj4r_2Kj1Us-dML22EsFqENB1b-lyE1e4gHUbE5gRNmL1sQB7z2h5Yu6ZmCU1KtStlNCVhzPOi8L4iAbAb-ZvT1KnuhOk1UpQnjOjlJVcb-RwiyAm6RV838Vizt9amCckpYhEqaWbdYisr403rlyOF8qUV-Vqm8BUfJ5RI02bNmujBC7Gf09WzwB6tFBv-KWxQDT0CBytMViC13jpMYaomVkdLtxjdxlg9hZfJ3qN-lpNci4mBaimmxaM8mwN1inuI5nD_-FOQR2R3lEu061zinbEpJiZk15Wt5vj3lAFYc87vva73MZ9Tiv2IaSzYhNMsvbFaBOhasyw8rVfekqEfaYjmmXkjQzmTGBOza0ZKe6icQy8726iX65kcl8H9cRrC8pxL_2InAoAqR8B8vv2DuVg2Gq3C-rZGwkVdi0Yh2bADMSkcjUsbix8pcGIZvgnxiVnzlowXV0t_4pM-S_H_ag_AVkSj66YTs-8nnKIuurZ0i8uuFOgBAq9R2SkjDB_U1KCeUz5AZmoG-pIA0nUpEk7pnh2v_ZSYOapef-757OQVjdyB0ycIYhoeXDhsuhQkbPngOltZ5gYFBodP3eJpE7BLI_jZVN6xNLXESrLl7kMauC1o-9q71dwJ6Sl5jUAPchFBHx_LEVbbe0uW15zQUW8F5jsKPIOM7_AbBAw9QHf8pmc1_xL8JJHhUlODECA1b-k3XPqKm_OhU6sZ/https://www.amazon.in/stores/page/21C08466-258D-484E-BCC3-E555D923DA66/?_encoding=UTF8&store_ref=SB_A04214309DR6FVUMM9QQ-A0276624TJ8KI9159HYL&pd_rd_plhdr=t&aaxitk=dfbf7d0f6c405670b59d63ea2ff782a4&hsa_cr_id=0&lp_asins=B097ZQTDVZ%2CB09814LTYW%2CB0BTZ3GNSW&lp_query=TV&lp_slot=desktop-hsa-3psl&aref=AYBKlTEsyD&ref_=sbx_be_s_3psl_mbd_mb0_ls&pd_rd_w=TIvYY&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=8MN3Y&pd_rd_r=b5e5f4ca-b963-4c74-a84c-675a15e81e8b
+                        - img "7 SEVEN" [ref=e2711]
+                      - generic [ref=e2713]:
+                        - generic [ref=e2714]:
+                          - link [ref=e2715] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JKhZPDZvdyd77YudhqmJt9YAAAGfZyhMAAoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDIgICC0wjvx/clv1c_ek-wwgHWFcbWDtHYaoeZcwJZSrPTMo6ZfLs9TxLQ_49hK8uO5XB3JtYQ7Apdco1OLNWWa2wLrpcEq9LnweLn0FAcf5G0nqKydVlq_vRCP-86COzl1lDxrO359-Be0yKY3Hcvp3mo16DM7AyKesR0mxDbpeWEkEDGmFScb-6abKRLc17ACoZjTpUyyyBvOvam4Yzrt9saZC9IF1iW1g1IvkzNj3KpjHkiG5-D8f2k2fxqFHshCJCB9FbXnhFS3cqozHkdX-o6FvfK4C4a0R-xFPiU1MRV3BVlXcEM1FCqbrozzoe574olce6V83HfGVAGN02-XXuMKLWAyrQEsGdLidsydrx1ITUnUXA5Hi7JEqFZ_dmVDq2R8OjDPshnmSd1XQ7k8xPj4r_2Kj1Us-dML22EsFqENB1b-lyE1e4gHUbE5gRNmL1sQB7z2h5Yu6ZmCU1KtStlNCVhzPOi8L4iAbAb-ZvT1KnuhOk1UpQnjOjlJVcb-RwiyAm6RV838Vizt9amCckpYhEqaWbdYisr403rlyOF8qUV-Vqm8BUfJ5RI02bNmujBC7Gf09WzwB6tFBv-KWxQDT0CBytMViC13jpMYaomVkdLtxjdxlg9hZfJ3qN-lpNci4mBaimmxaM8mwN1inuI5nD_-FOQR2R3lEu061zinbEpJiZk15Wt5vj3lAFYc87vva73MZ9Tiv2IaSzYhNMsvbFaBOhasyw8rVfekqEfaYjmmXkjQzmTGBOza0ZKe6icQy8726iX65kcl8H9cRrC8pxL_2InAoAqR8B8vv2DuVg2Gq3C-rZGwkVdi0Yh2bADMSkcjUsbix8pcGIZvgnxiVnzlowXV0t_4pM-S_H_ag_AVkSj66YTs-8nnKIuurZ0i8uuFOgBAq9R2SkjDB_U1KCeUz5AZmoG-pIA0nUpEk7pnh2v_ZSYOapef-757OQVjdyB0ycIYhoeXDhsuhQkbPngOltZ5gYFBodP3eJpE7BLI_jZVN6xNLXESrLl7kMauC1o-9q71dwJ6Sl5jUAPchFBHx_LEVbbe0uW15zQUW8F5jsKPIOM7_AbBAw9QHf8pmc1_xL8JJHhUlODECA1b-k3XPqKm_OhU6sZ/https://www.amazon.in/stores/page/21C08466-258D-484E-BCC3-E555D923DA66/?_encoding=UTF8&store_ref=SB_A04214309DR6FVUMM9QQ-A0276624TJ8KI9159HYL&pd_rd_plhdr=t&aaxitk=dfbf7d0f6c405670b59d63ea2ff782a4&hsa_cr_id=0&lp_asins=B097ZQTDVZ%2CB09814LTYW%2CB0BTZ3GNSW&lp_query=TV&lp_slot=desktop-hsa-3psl&aref=AYBKlTEsyD&ref_=sbx_be_s_3psl_mbd_mb0_bkgd&pd_rd_w=TIvYY&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=8MN3Y&pd_rd_r=b5e5f4ca-b963-4c74-a84c-675a15e81e8b
+                          - link "7 SEVEN" [ref=e2716] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JKhZPDZvdyd77YudhqmJt9YAAAGfZyhMAAoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDIgICC0wjvx/clv1c_ek-wwgHWFcbWDtHYaoeZcwJZSrPTMo6ZfLs9TxLQ_49hK8uO5XB3JtYQ7Apdco1OLNWWa2wLrpcEq9LnweLn0FAcf5G0nqKydVlq_vRCP-86COzl1lDxrO359-Be0yKY3Hcvp3mo16DM7AyKesR0mxDbpeWEkEDGmFScb-6abKRLc17ACoZjTpUyyyBvOvam4Yzrt9saZC9IF1iW1g1IvkzNj3KpjHkiG5-D8f2k2fxqFHshCJCB9FbXnhFS3cqozHkdX-o6FvfK4C4a0R-xFPiU1MRV3BVlXcEM1FCqbrozzoe574olce6V83HfGVAGN02-XXuMKLWAyrQEsGdLidsydrx1ITUnUXA5Hi7JEqFZ_dmVDq2R8OjDPshnmSd1XQ7k8xPj4r_2Kj1Us-dML22EsFqENB1b-lyE1e4gHUbE5gRNmL1sQB7z2h5Yu6ZmCU1KtStlNCVhzPOi8L4iAbAb-ZvT1KnuhOk1UpQnjOjlJVcb-RwiyAm6RV838Vizt9amCckpYhEqaWbdYisr403rlyOF8qUV-Vqm8BUfJ5RI02bNmujBC7Gf09WzwB6tFBv-KWxQDT0CBytMViC13jpMYaomVkdLtxjdxlg9hZfJ3qN-lpNci4mBaimmxaM8mwN1inuI5nD_-FOQR2R3lEu061zinbEpJiZk15Wt5vj3lAFYc87vva73MZ9Tiv2IaSzYhNMsvbFaBOhasyw8rVfekqEfaYjmmXkjQzmTGBOza0ZKe6icQy8726iX65kcl8H9cRrC8pxL_2InAoAqR8B8vv2DuVg2Gq3C-rZGwkVdi0Yh2bADMSkcjUsbix8pcGIZvgnxiVnzlowXV0t_4pM-S_H_ag_AVkSj66YTs-8nnKIuurZ0i8uuFOgBAq9R2SkjDB_U1KCeUz5AZmoG-pIA0nUpEk7pnh2v_ZSYOapef-757OQVjdyB0ycIYhoeXDhsuhQkbPngOltZ5gYFBodP3eJpE7BLI_jZVN6xNLXESrLl7kMauC1o-9q71dwJ6Sl5jUAPchFBHx_LEVbbe0uW15zQUW8F5jsKPIOM7_AbBAw9QHf8pmc1_xL8JJHhUlODECA1b-k3XPqKm_OhU6sZ/https://www.amazon.in/stores/page/21C08466-258D-484E-BCC3-E555D923DA66/?_encoding=UTF8&store_ref=SB_A04214309DR6FVUMM9QQ-A0276624TJ8KI9159HYL&pd_rd_plhdr=t&aaxitk=dfbf7d0f6c405670b59d63ea2ff782a4&hsa_cr_id=0&lp_asins=B097ZQTDVZ%2CB09814LTYW%2CB0BTZ3GNSW&lp_query=TV&lp_slot=desktop-hsa-3psl&aref=AYBKlTEsyD&ref_=sbx_be_s_3psl_mbd_mb0_logo&pd_rd_w=TIvYY&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=8MN3Y&pd_rd_r=b5e5f4ca-b963-4c74-a84c-675a15e81e8b
+                            - img "7 SEVEN" [ref=e2718]
+                        - generic [ref=e2719]:
+                          - link [ref=e2720] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JKhZPDZvdyd77YudhqmJt9YAAAGfZyhMAAoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDIgICC0wjvx/clv1c_ek-wwgHWFcbWDtHYaoeZcwJZSrPTMo6ZfLs9TxLQ_49hK8uO5XB3JtYQ7Apdco1OLNWWa2wLrpcEq9LnweLn0FAcf5G0nqKydVlq_vRCP-86COzl1lDxrO359-Be0yKY3Hcvp3mo16DM7AyKesR0mxDbpeWEkEDGmFScb-6abKRLc17ACoZjTpUyyyBvOvam4Yzrt9saZC9IF1iW1g1IvkzNj3KpjHkiG5-D8f2k2fxqFHshCJCB9FbXnhFS3cqozHkdX-o6FvfK4C4a0R-xFPiU1MRV3BVlXcEM1FCqbrozzoe574olce6V83HfGVAGN02-XXuMKLWAyrQEsGdLidsydrx1ITUnUXA5Hi7JEqFZ_dmVDq2R8OjDPshnmSd1XQ7k8xPj4r_2Kj1Us-dML22EsFqENB1b-lyE1e4gHUbE5gRNmL1sQB7z2h5Yu6ZmCU1KtStlNCVhzPOi8L4iAbAb-ZvT1KnuhOk1UpQnjOjlJVcb-RwiyAm6RV838Vizt9amCckpYhEqaWbdYisr403rlyOF8qUV-Vqm8BUfJ5RI02bNmujBC7Gf09WzwB6tFBv-KWxQDT0CBytMViC13jpMYaomVkdLtxjdxlg9hZfJ3qN-lpNci4mBaimmxaM8mwN1inuI5nD_-FOQR2R3lEu061zinbEpJiZk15Wt5vj3lAFYc87vva73MZ9Tiv2IaSzYhNMsvbFaBOhasyw8rVfekqEfaYjmmXkjQzmTGBOza0ZKe6icQy8726iX65kcl8H9cRrC8pxL_2InAoAqR8B8vv2DuVg2Gq3C-rZGwkVdi0Yh2bADMSkcjUsbix8pcGIZvgnxiVnzlowXV0t_4pM-S_H_ag_AVkSj66YTs-8nnKIuurZ0i8uuFOgBAq9R2SkjDB_U1KCeUz5AZmoG-pIA0nUpEk7pnh2v_ZSYOapef-757OQVjdyB0ycIYhoeXDhsuhQkbPngOltZ5gYFBodP3eJpE7BLI_jZVN6xNLXESrLl7kMauC1o-9q71dwJ6Sl5jUAPchFBHx_LEVbbe0uW15zQUW8F5jsKPIOM7_AbBAw9QHf8pmc1_xL8JJHhUlODECA1b-k3XPqKm_OhU6sZ/https://www.amazon.in/stores/page/21C08466-258D-484E-BCC3-E555D923DA66/?_encoding=UTF8&store_ref=SB_A04214309DR6FVUMM9QQ-A0276624TJ8KI9159HYL&pd_rd_plhdr=t&aaxitk=dfbf7d0f6c405670b59d63ea2ff782a4&hsa_cr_id=0&lp_asins=B097ZQTDVZ%2CB09814LTYW%2CB0BTZ3GNSW&lp_query=TV&lp_slot=desktop-hsa-3psl&aref=AYBKlTEsyD&ref_=sbx_be_s_3psl_mbd_mb0_bkgd&pd_rd_w=TIvYY&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=8MN3Y&pd_rd_r=b5e5f4ca-b963-4c74-a84c-675a15e81e8b
+                          - link "Wide range of tcl tv remote control" [ref=e2721] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JKhZPDZvdyd77YudhqmJt9YAAAGfZyhMAAoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDIgICC0wjvx/clv1c_ek-wwgHWFcbWDtHYaoeZcwJZSrPTMo6ZfLs9TxLQ_49hK8uO5XB3JtYQ7Apdco1OLNWWa2wLrpcEq9LnweLn0FAcf5G0nqKydVlq_vRCP-86COzl1lDxrO359-Be0yKY3Hcvp3mo16DM7AyKesR0mxDbpeWEkEDGmFScb-6abKRLc17ACoZjTpUyyyBvOvam4Yzrt9saZC9IF1iW1g1IvkzNj3KpjHkiG5-D8f2k2fxqFHshCJCB9FbXnhFS3cqozHkdX-o6FvfK4C4a0R-xFPiU1MRV3BVlXcEM1FCqbrozzoe574olce6V83HfGVAGN02-XXuMKLWAyrQEsGdLidsydrx1ITUnUXA5Hi7JEqFZ_dmVDq2R8OjDPshnmSd1XQ7k8xPj4r_2Kj1Us-dML22EsFqENB1b-lyE1e4gHUbE5gRNmL1sQB7z2h5Yu6ZmCU1KtStlNCVhzPOi8L4iAbAb-ZvT1KnuhOk1UpQnjOjlJVcb-RwiyAm6RV838Vizt9amCckpYhEqaWbdYisr403rlyOF8qUV-Vqm8BUfJ5RI02bNmujBC7Gf09WzwB6tFBv-KWxQDT0CBytMViC13jpMYaomVkdLtxjdxlg9hZfJ3qN-lpNci4mBaimmxaM8mwN1inuI5nD_-FOQR2R3lEu061zinbEpJiZk15Wt5vj3lAFYc87vva73MZ9Tiv2IaSzYhNMsvbFaBOhasyw8rVfekqEfaYjmmXkjQzmTGBOza0ZKe6icQy8726iX65kcl8H9cRrC8pxL_2InAoAqR8B8vv2DuVg2Gq3C-rZGwkVdi0Yh2bADMSkcjUsbix8pcGIZvgnxiVnzlowXV0t_4pM-S_H_ag_AVkSj66YTs-8nnKIuurZ0i8uuFOgBAq9R2SkjDB_U1KCeUz5AZmoG-pIA0nUpEk7pnh2v_ZSYOapef-757OQVjdyB0ycIYhoeXDhsuhQkbPngOltZ5gYFBodP3eJpE7BLI_jZVN6xNLXESrLl7kMauC1o-9q71dwJ6Sl5jUAPchFBHx_LEVbbe0uW15zQUW8F5jsKPIOM7_AbBAw9QHf8pmc1_xL8JJHhUlODECA1b-k3XPqKm_OhU6sZ/https://www.amazon.in/stores/page/21C08466-258D-484E-BCC3-E555D923DA66/?_encoding=UTF8&store_ref=SB_A04214309DR6FVUMM9QQ-A0276624TJ8KI9159HYL&pd_rd_plhdr=t&aaxitk=dfbf7d0f6c405670b59d63ea2ff782a4&hsa_cr_id=0&lp_asins=B097ZQTDVZ%2CB09814LTYW%2CB0BTZ3GNSW&lp_query=TV&lp_slot=desktop-hsa-3psl&aref=AYBKlTEsyD&ref_=sbx_be_s_3psl_mbd_mb0_hl&pd_rd_w=TIvYY&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=8MN3Y&pd_rd_r=b5e5f4ca-b963-4c74-a84c-675a15e81e8b
+                            - generic [ref=e2723]:
+                              - generic [ref=e2724]: Wide range of tcl tv remote control
+                              - generic [ref=e2725]: Wide range of tcl tv remote control
+                - generic [ref=e2727]:
+                  - generic:
+                    - generic:
+                      - link:
+                        - /url: https://aax-eu-zaz.amazon.in/x/c/JGdAKSpeM6Uo8lGX7CT5vpIAAAGfZyhMAQoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDIgICB79ilN/clv1c_ek-wwvHTEtbSDfnKXA1ymhPAGbNzuMVUNmm7QJqWX4_A57VQBusLBwB7y_NzOsjoVXiGznrZQByElGR6AhQO0KV83plqnibLh3kgc9w2qZku_-artvWZ5Yw4pn_yktt5a39u3yXAr6is_AhLI8Vzi7Bapt-Ak1zWmJSEr9-abDt6zWOa0ogkSEO2g5x23W7zfATadhoMt4cJ4ZyjpQhgoE_Kaze9Y2ehv4btSGAFK-MymXxx0x0b2sU51oipVbTJpKHBsSgqzsO0uxBWb0VkiY_ZSuwKWVbKAHWF95HW_XKyLY_m8MV9v7fciV14OS_wB12wt_m2FIasQ1LniPwseQ-_zkSS2h-Y-SFaWqdc1B56hyiPZbpSJVd7QsjwkrcoAREzx9zdmgyhDkynxJqPI7zQNtcD2Bg8Qz-zHBWV4eXx_wIqMipjqQ2nTxVbobrkhMqzRTGr_Y3kBsncRWrnzcM7bMpvrce-VamyKw4kZRTTaJ5i_oa5rubK1WOIlFgGhQu-iJBXeb5_tgPROQiQttpp_UY_8pE3B1vyIdv-dCnqGxeUUcES_cMD1oiLsPt4MWfxX1dCLgoZ0tVmWhwGGE8fy232WBpzKf9EZ6fykOb7Wep1wqjBFRteZoe9R7I6mWDWdwwSx01AaiewxV0VF4M0tVa1dl-YbHKjWAMp7MF1I8BZc7pHwSWntKtPKPRoo5SirIC5nvaSi89FHG-cBNpBi2wOfGRKvdgxCfsOT5G9ZhJDKRIj7H3kodJ1Jf9Zy50JogqH55Ktn5HjEfWQgPRfBAeyU7FaxSQ9ezN8bWBin43SITUv8hk5mx64cN9lNL62-Zc6Si0MnsARinmT95hadIW9A8K23VqJU9-hQdsnU5pY79cq8fcvAHNyJGGjmHcWGAaA5do-aYnlpQOurLQ9ylExQ-zpSGOds3tb3YZm8Jpw88wF_u441mr1OPy77M2zTbzl2sWjNbrI2cOn3X6qN2dRmsIv-JhCQ0LitXX3_GLw-W_l6jKC3kATp9EELmrstwq_Upb163_eIi3LBfsCZP_CKlChAMPJRhnuGL3VaVXXWxuSq9OImSorQIgXIWlsQtsLx_M/https://www.amazon.in/stores/page/8BF40B64-3E2B-4A4C-90E2-35C01B52BDA9/?_encoding=UTF8&store_ref=SB_A0845724127LWV5NBHN9B-A05766993I7P2MH3XRUXC&pd_rd_plhdr=t&aaxitk=08c7c1faa0e73b78a58d765fd2203bd5&hsa_cr_id=0&lp_asins=B0CQSY918P&lp_query=TV&lp_slot=desktop-hsa-3psl&aref=q6BtjSdL8r&ref_=sbx_be_s_3psl_mbd_mb1_bkgd&pd_rd_w=TIvYY&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=8MN3Y&pd_rd_r=b5e5f4ca-b963-4c74-a84c-675a15e81e8b
+                      - link "NoiseXBose" [ref=e2728] [cursor=pointer]:
+                        - /url: https://aax-eu-zaz.amazon.in/x/c/JGdAKSpeM6Uo8lGX7CT5vpIAAAGfZyhMAQoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDIgICB79ilN/clv1c_ek-wwvHTEtbSDfnKXA1ymhPAGbNzuMVUNmm7QJqWX4_A57VQBusLBwB7y_NzOsjoVXiGznrZQByElGR6AhQO0KV83plqnibLh3kgc9w2qZku_-artvWZ5Yw4pn_yktt5a39u3yXAr6is_AhLI8Vzi7Bapt-Ak1zWmJSEr9-abDt6zWOa0ogkSEO2g5x23W7zfATadhoMt4cJ4ZyjpQhgoE_Kaze9Y2ehv4btSGAFK-MymXxx0x0b2sU51oipVbTJpKHBsSgqzsO0uxBWb0VkiY_ZSuwKWVbKAHWF95HW_XKyLY_m8MV9v7fciV14OS_wB12wt_m2FIasQ1LniPwseQ-_zkSS2h-Y-SFaWqdc1B56hyiPZbpSJVd7QsjwkrcoAREzx9zdmgyhDkynxJqPI7zQNtcD2Bg8Qz-zHBWV4eXx_wIqMipjqQ2nTxVbobrkhMqzRTGr_Y3kBsncRWrnzcM7bMpvrce-VamyKw4kZRTTaJ5i_oa5rubK1WOIlFgGhQu-iJBXeb5_tgPROQiQttpp_UY_8pE3B1vyIdv-dCnqGxeUUcES_cMD1oiLsPt4MWfxX1dCLgoZ0tVmWhwGGE8fy232WBpzKf9EZ6fykOb7Wep1wqjBFRteZoe9R7I6mWDWdwwSx01AaiewxV0VF4M0tVa1dl-YbHKjWAMp7MF1I8BZc7pHwSWntKtPKPRoo5SirIC5nvaSi89FHG-cBNpBi2wOfGRKvdgxCfsOT5G9ZhJDKRIj7H3kodJ1Jf9Zy50JogqH55Ktn5HjEfWQgPRfBAeyU7FaxSQ9ezN8bWBin43SITUv8hk5mx64cN9lNL62-Zc6Si0MnsARinmT95hadIW9A8K23VqJU9-hQdsnU5pY79cq8fcvAHNyJGGjmHcWGAaA5do-aYnlpQOurLQ9ylExQ-zpSGOds3tb3YZm8Jpw88wF_u441mr1OPy77M2zTbzl2sWjNbrI2cOn3X6qN2dRmsIv-JhCQ0LitXX3_GLw-W_l6jKC3kATp9EELmrstwq_Upb163_eIi3LBfsCZP_CKlChAMPJRhnuGL3VaVXXWxuSq9OImSorQIgXIWlsQtsLx_M/https://www.amazon.in/stores/page/8BF40B64-3E2B-4A4C-90E2-35C01B52BDA9/?_encoding=UTF8&store_ref=SB_A0845724127LWV5NBHN9B-A05766993I7P2MH3XRUXC&pd_rd_plhdr=t&aaxitk=08c7c1faa0e73b78a58d765fd2203bd5&hsa_cr_id=0&lp_asins=B0CQSY918P&lp_query=TV&lp_slot=desktop-hsa-3psl&aref=q6BtjSdL8r&ref_=sbx_be_s_3psl_mbd_mb1_ls&pd_rd_w=TIvYY&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=8MN3Y&pd_rd_r=b5e5f4ca-b963-4c74-a84c-675a15e81e8b
+                        - img "NoiseXBose" [ref=e2729]
+                      - generic [ref=e2731]:
+                        - generic [ref=e2732]:
+                          - link [ref=e2733] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JGdAKSpeM6Uo8lGX7CT5vpIAAAGfZyhMAQoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDIgICB79ilN/clv1c_ek-wwvHTEtbSDfnKXA1ymhPAGbNzuMVUNmm7QJqWX4_A57VQBusLBwB7y_NzOsjoVXiGznrZQByElGR6AhQO0KV83plqnibLh3kgc9w2qZku_-artvWZ5Yw4pn_yktt5a39u3yXAr6is_AhLI8Vzi7Bapt-Ak1zWmJSEr9-abDt6zWOa0ogkSEO2g5x23W7zfATadhoMt4cJ4ZyjpQhgoE_Kaze9Y2ehv4btSGAFK-MymXxx0x0b2sU51oipVbTJpKHBsSgqzsO0uxBWb0VkiY_ZSuwKWVbKAHWF95HW_XKyLY_m8MV9v7fciV14OS_wB12wt_m2FIasQ1LniPwseQ-_zkSS2h-Y-SFaWqdc1B56hyiPZbpSJVd7QsjwkrcoAREzx9zdmgyhDkynxJqPI7zQNtcD2Bg8Qz-zHBWV4eXx_wIqMipjqQ2nTxVbobrkhMqzRTGr_Y3kBsncRWrnzcM7bMpvrce-VamyKw4kZRTTaJ5i_oa5rubK1WOIlFgGhQu-iJBXeb5_tgPROQiQttpp_UY_8pE3B1vyIdv-dCnqGxeUUcES_cMD1oiLsPt4MWfxX1dCLgoZ0tVmWhwGGE8fy232WBpzKf9EZ6fykOb7Wep1wqjBFRteZoe9R7I6mWDWdwwSx01AaiewxV0VF4M0tVa1dl-YbHKjWAMp7MF1I8BZc7pHwSWntKtPKPRoo5SirIC5nvaSi89FHG-cBNpBi2wOfGRKvdgxCfsOT5G9ZhJDKRIj7H3kodJ1Jf9Zy50JogqH55Ktn5HjEfWQgPRfBAeyU7FaxSQ9ezN8bWBin43SITUv8hk5mx64cN9lNL62-Zc6Si0MnsARinmT95hadIW9A8K23VqJU9-hQdsnU5pY79cq8fcvAHNyJGGjmHcWGAaA5do-aYnlpQOurLQ9ylExQ-zpSGOds3tb3YZm8Jpw88wF_u441mr1OPy77M2zTbzl2sWjNbrI2cOn3X6qN2dRmsIv-JhCQ0LitXX3_GLw-W_l6jKC3kATp9EELmrstwq_Upb163_eIi3LBfsCZP_CKlChAMPJRhnuGL3VaVXXWxuSq9OImSorQIgXIWlsQtsLx_M/https://www.amazon.in/stores/page/8BF40B64-3E2B-4A4C-90E2-35C01B52BDA9/?_encoding=UTF8&store_ref=SB_A0845724127LWV5NBHN9B-A05766993I7P2MH3XRUXC&pd_rd_plhdr=t&aaxitk=08c7c1faa0e73b78a58d765fd2203bd5&hsa_cr_id=0&lp_asins=B0CQSY918P&lp_query=TV&lp_slot=desktop-hsa-3psl&aref=q6BtjSdL8r&ref_=sbx_be_s_3psl_mbd_mb1_bkgd&pd_rd_w=TIvYY&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=8MN3Y&pd_rd_r=b5e5f4ca-b963-4c74-a84c-675a15e81e8b
+                          - link "NoiseXBose" [ref=e2734] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JGdAKSpeM6Uo8lGX7CT5vpIAAAGfZyhMAQoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDIgICB79ilN/clv1c_ek-wwvHTEtbSDfnKXA1ymhPAGbNzuMVUNmm7QJqWX4_A57VQBusLBwB7y_NzOsjoVXiGznrZQByElGR6AhQO0KV83plqnibLh3kgc9w2qZku_-artvWZ5Yw4pn_yktt5a39u3yXAr6is_AhLI8Vzi7Bapt-Ak1zWmJSEr9-abDt6zWOa0ogkSEO2g5x23W7zfATadhoMt4cJ4ZyjpQhgoE_Kaze9Y2ehv4btSGAFK-MymXxx0x0b2sU51oipVbTJpKHBsSgqzsO0uxBWb0VkiY_ZSuwKWVbKAHWF95HW_XKyLY_m8MV9v7fciV14OS_wB12wt_m2FIasQ1LniPwseQ-_zkSS2h-Y-SFaWqdc1B56hyiPZbpSJVd7QsjwkrcoAREzx9zdmgyhDkynxJqPI7zQNtcD2Bg8Qz-zHBWV4eXx_wIqMipjqQ2nTxVbobrkhMqzRTGr_Y3kBsncRWrnzcM7bMpvrce-VamyKw4kZRTTaJ5i_oa5rubK1WOIlFgGhQu-iJBXeb5_tgPROQiQttpp_UY_8pE3B1vyIdv-dCnqGxeUUcES_cMD1oiLsPt4MWfxX1dCLgoZ0tVmWhwGGE8fy232WBpzKf9EZ6fykOb7Wep1wqjBFRteZoe9R7I6mWDWdwwSx01AaiewxV0VF4M0tVa1dl-YbHKjWAMp7MF1I8BZc7pHwSWntKtPKPRoo5SirIC5nvaSi89FHG-cBNpBi2wOfGRKvdgxCfsOT5G9ZhJDKRIj7H3kodJ1Jf9Zy50JogqH55Ktn5HjEfWQgPRfBAeyU7FaxSQ9ezN8bWBin43SITUv8hk5mx64cN9lNL62-Zc6Si0MnsARinmT95hadIW9A8K23VqJU9-hQdsnU5pY79cq8fcvAHNyJGGjmHcWGAaA5do-aYnlpQOurLQ9ylExQ-zpSGOds3tb3YZm8Jpw88wF_u441mr1OPy77M2zTbzl2sWjNbrI2cOn3X6qN2dRmsIv-JhCQ0LitXX3_GLw-W_l6jKC3kATp9EELmrstwq_Upb163_eIi3LBfsCZP_CKlChAMPJRhnuGL3VaVXXWxuSq9OImSorQIgXIWlsQtsLx_M/https://www.amazon.in/stores/page/8BF40B64-3E2B-4A4C-90E2-35C01B52BDA9/?_encoding=UTF8&store_ref=SB_A0845724127LWV5NBHN9B-A05766993I7P2MH3XRUXC&pd_rd_plhdr=t&aaxitk=08c7c1faa0e73b78a58d765fd2203bd5&hsa_cr_id=0&lp_asins=B0CQSY918P&lp_query=TV&lp_slot=desktop-hsa-3psl&aref=q6BtjSdL8r&ref_=sbx_be_s_3psl_mbd_mb1_logo&pd_rd_w=TIvYY&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=8MN3Y&pd_rd_r=b5e5f4ca-b963-4c74-a84c-675a15e81e8b
+                            - img "NoiseXBose" [ref=e2736]
+                        - generic [ref=e2737]:
+                          - link [ref=e2738] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JGdAKSpeM6Uo8lGX7CT5vpIAAAGfZyhMAQoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDIgICB79ilN/clv1c_ek-wwvHTEtbSDfnKXA1ymhPAGbNzuMVUNmm7QJqWX4_A57VQBusLBwB7y_NzOsjoVXiGznrZQByElGR6AhQO0KV83plqnibLh3kgc9w2qZku_-artvWZ5Yw4pn_yktt5a39u3yXAr6is_AhLI8Vzi7Bapt-Ak1zWmJSEr9-abDt6zWOa0ogkSEO2g5x23W7zfATadhoMt4cJ4ZyjpQhgoE_Kaze9Y2ehv4btSGAFK-MymXxx0x0b2sU51oipVbTJpKHBsSgqzsO0uxBWb0VkiY_ZSuwKWVbKAHWF95HW_XKyLY_m8MV9v7fciV14OS_wB12wt_m2FIasQ1LniPwseQ-_zkSS2h-Y-SFaWqdc1B56hyiPZbpSJVd7QsjwkrcoAREzx9zdmgyhDkynxJqPI7zQNtcD2Bg8Qz-zHBWV4eXx_wIqMipjqQ2nTxVbobrkhMqzRTGr_Y3kBsncRWrnzcM7bMpvrce-VamyKw4kZRTTaJ5i_oa5rubK1WOIlFgGhQu-iJBXeb5_tgPROQiQttpp_UY_8pE3B1vyIdv-dCnqGxeUUcES_cMD1oiLsPt4MWfxX1dCLgoZ0tVmWhwGGE8fy232WBpzKf9EZ6fykOb7Wep1wqjBFRteZoe9R7I6mWDWdwwSx01AaiewxV0VF4M0tVa1dl-YbHKjWAMp7MF1I8BZc7pHwSWntKtPKPRoo5SirIC5nvaSi89FHG-cBNpBi2wOfGRKvdgxCfsOT5G9ZhJDKRIj7H3kodJ1Jf9Zy50JogqH55Ktn5HjEfWQgPRfBAeyU7FaxSQ9ezN8bWBin43SITUv8hk5mx64cN9lNL62-Zc6Si0MnsARinmT95hadIW9A8K23VqJU9-hQdsnU5pY79cq8fcvAHNyJGGjmHcWGAaA5do-aYnlpQOurLQ9ylExQ-zpSGOds3tb3YZm8Jpw88wF_u441mr1OPy77M2zTbzl2sWjNbrI2cOn3X6qN2dRmsIv-JhCQ0LitXX3_GLw-W_l6jKC3kATp9EELmrstwq_Upb163_eIi3LBfsCZP_CKlChAMPJRhnuGL3VaVXXWxuSq9OImSorQIgXIWlsQtsLx_M/https://www.amazon.in/stores/page/8BF40B64-3E2B-4A4C-90E2-35C01B52BDA9/?_encoding=UTF8&store_ref=SB_A0845724127LWV5NBHN9B-A05766993I7P2MH3XRUXC&pd_rd_plhdr=t&aaxitk=08c7c1faa0e73b78a58d765fd2203bd5&hsa_cr_id=0&lp_asins=B0CQSY918P&lp_query=TV&lp_slot=desktop-hsa-3psl&aref=q6BtjSdL8r&ref_=sbx_be_s_3psl_mbd_mb1_bkgd&pd_rd_w=TIvYY&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=8MN3Y&pd_rd_r=b5e5f4ca-b963-4c74-a84c-675a15e81e8b
+                          - link "World-Class Wireless Speakers from Bose" [ref=e2739] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JGdAKSpeM6Uo8lGX7CT5vpIAAAGfZyhMAQoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDIgICB79ilN/clv1c_ek-wwvHTEtbSDfnKXA1ymhPAGbNzuMVUNmm7QJqWX4_A57VQBusLBwB7y_NzOsjoVXiGznrZQByElGR6AhQO0KV83plqnibLh3kgc9w2qZku_-artvWZ5Yw4pn_yktt5a39u3yXAr6is_AhLI8Vzi7Bapt-Ak1zWmJSEr9-abDt6zWOa0ogkSEO2g5x23W7zfATadhoMt4cJ4ZyjpQhgoE_Kaze9Y2ehv4btSGAFK-MymXxx0x0b2sU51oipVbTJpKHBsSgqzsO0uxBWb0VkiY_ZSuwKWVbKAHWF95HW_XKyLY_m8MV9v7fciV14OS_wB12wt_m2FIasQ1LniPwseQ-_zkSS2h-Y-SFaWqdc1B56hyiPZbpSJVd7QsjwkrcoAREzx9zdmgyhDkynxJqPI7zQNtcD2Bg8Qz-zHBWV4eXx_wIqMipjqQ2nTxVbobrkhMqzRTGr_Y3kBsncRWrnzcM7bMpvrce-VamyKw4kZRTTaJ5i_oa5rubK1WOIlFgGhQu-iJBXeb5_tgPROQiQttpp_UY_8pE3B1vyIdv-dCnqGxeUUcES_cMD1oiLsPt4MWfxX1dCLgoZ0tVmWhwGGE8fy232WBpzKf9EZ6fykOb7Wep1wqjBFRteZoe9R7I6mWDWdwwSx01AaiewxV0VF4M0tVa1dl-YbHKjWAMp7MF1I8BZc7pHwSWntKtPKPRoo5SirIC5nvaSi89FHG-cBNpBi2wOfGRKvdgxCfsOT5G9ZhJDKRIj7H3kodJ1Jf9Zy50JogqH55Ktn5HjEfWQgPRfBAeyU7FaxSQ9ezN8bWBin43SITUv8hk5mx64cN9lNL62-Zc6Si0MnsARinmT95hadIW9A8K23VqJU9-hQdsnU5pY79cq8fcvAHNyJGGjmHcWGAaA5do-aYnlpQOurLQ9ylExQ-zpSGOds3tb3YZm8Jpw88wF_u441mr1OPy77M2zTbzl2sWjNbrI2cOn3X6qN2dRmsIv-JhCQ0LitXX3_GLw-W_l6jKC3kATp9EELmrstwq_Upb163_eIi3LBfsCZP_CKlChAMPJRhnuGL3VaVXXWxuSq9OImSorQIgXIWlsQtsLx_M/https://www.amazon.in/stores/page/8BF40B64-3E2B-4A4C-90E2-35C01B52BDA9/?_encoding=UTF8&store_ref=SB_A0845724127LWV5NBHN9B-A05766993I7P2MH3XRUXC&pd_rd_plhdr=t&aaxitk=08c7c1faa0e73b78a58d765fd2203bd5&hsa_cr_id=0&lp_asins=B0CQSY918P&lp_query=TV&lp_slot=desktop-hsa-3psl&aref=q6BtjSdL8r&ref_=sbx_be_s_3psl_mbd_mb1_hl&pd_rd_w=TIvYY&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=8MN3Y&pd_rd_r=b5e5f4ca-b963-4c74-a84c-675a15e81e8b
+                            - generic [ref=e2741]:
+                              - generic [ref=e2742]: World-Class Wireless Speakers from Bose
+                              - generic [ref=e2743]: World-Class Wireless Speakers from Bose
+                - generic [ref=e2745]:
+                  - generic:
+                    - generic:
+                      - link:
+                        - /url: https://aax-eu-zaz.amazon.in/x/c/JAlOQrHzNxILRJ7g9MxOnA0AAAGfZyhMAgoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDIgICA3bAeL/clv1c_ek-IwoHXFcbWDdHYaoeZcwJZSrPTMo6ZfMtzzKYoH5rtkotMpj70Xr5ZxULyMIIsXeI6_YCzB77y--4CfSwIqU_qdQxZSyCPUleFMelubUI3B3Cbl6GP_YxZY_9tv1jjBIlfMNCot8FRjyaLuOBsiMDbpcfUVhVZAgRQz_avRo0cM9iEk4SVYqGj8R2UaWQ4wwNbJutrvHGY1WWUPursswooeOPddmopNIh-4SOa3PhqPM07hb30unsXWMyxkMjvlRzOvkd-U7I-EO_7glVCy55qA9RHN-87SnYf9eJ9BTYZxv8p23G0vC8RO-5EWMM_25fsvstOOqhT5-S13FHo9pWHkEtDTRvWY5ptV8krbSx6v0Pbo9BSIO-zFNrQxnJIl0GkDhJrt-c3rXOzLc0gXOBlVJesIHcmTSIVMDO1-vpC64vvwqJImKwZjvR7mhz3xXlqph_nlmST2XUjsup2cXvFHYZbKya3KMHyISQU9VVBboMqMsGz2GoyBg12Kz-32HqSPzfHhyVJK59vw6zaQTZlPvb4jEiIg65f4pVPV79VRR9l_tIvmztj85cyCYVND_rV7YjFlwSi8gKQdeLemYnDQ4ZWkEqxf6trxKd9rhSqXC5exypwTyTL8gSiSdrE0Y0zho8ggb4UEj4YnbSAVt7AHiuOKKcSNLT7XMiLtR-yqLggY90Fd3zbV2YcNvLUCBWykxd0gfSdTZmmmL0Afr-9VVB6XqiJq1CpZFaKY8uVxOWnr8L_eQjNbHxnovLtqCwY5HdX61lrNwv9OOTQemEH45__RBXv2y4C0pFzTelK13juWecK8AbM4nScrCyYce8Ci_RjFytgh-VgJIhdLGrWAf-ib_X7lYQt-sxla4LyrundYpVKTmgEl3FZraUFWmuGXmIawamgUMDoEVmy7ko07NHGFU2jLzJLVYKnPpBcA_Lzu2NAzCAOjJ2uYXST6Jjry2XRGpQvtG_HVZkwngbGHmhki8_fbto-uMjm2wb3sXV05CDVDp1_WLJcq5lcpePI91i3Y_x-coxR0xhxV0H-j73SA_1aaiRNXD6c1vq6XV8ETZk_mrdVpjnj_OrQA3KpWKW8Z7LamdeiEQlqat8LWJRJ/https://www.amazon.in/stores/page/F620E2AB-DD27-4A01-9B9F-23009D0558C7/?_encoding=UTF8&store_ref=SB_A09800863NEAIU30LI3FM-A0555050818GVOVQO14X&pd_rd_plhdr=t&aaxitk=85bb192710dbae4a9dc835c22b2d8d40&hsa_cr_id=6932451340702&lp_query=TV&lp_slot=desktop-hsa-3psl&aref=n36IivAURM&ref_=sbx_be_s_3psl_mbd_mb2_bkgd&pd_rd_w=TIvYY&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=8MN3Y&pd_rd_r=b5e5f4ca-b963-4c74-a84c-675a15e81e8b
+                      - link "DigiReach India" [ref=e2746] [cursor=pointer]:
+                        - /url: https://aax-eu-zaz.amazon.in/x/c/JAlOQrHzNxILRJ7g9MxOnA0AAAGfZyhMAgoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDIgICA3bAeL/clv1c_ek-IwoHXFcbWDdHYaoeZcwJZSrPTMo6ZfMtzzKYoH5rtkotMpj70Xr5ZxULyMIIsXeI6_YCzB77y--4CfSwIqU_qdQxZSyCPUleFMelubUI3B3Cbl6GP_YxZY_9tv1jjBIlfMNCot8FRjyaLuOBsiMDbpcfUVhVZAgRQz_avRo0cM9iEk4SVYqGj8R2UaWQ4wwNbJutrvHGY1WWUPursswooeOPddmopNIh-4SOa3PhqPM07hb30unsXWMyxkMjvlRzOvkd-U7I-EO_7glVCy55qA9RHN-87SnYf9eJ9BTYZxv8p23G0vC8RO-5EWMM_25fsvstOOqhT5-S13FHo9pWHkEtDTRvWY5ptV8krbSx6v0Pbo9BSIO-zFNrQxnJIl0GkDhJrt-c3rXOzLc0gXOBlVJesIHcmTSIVMDO1-vpC64vvwqJImKwZjvR7mhz3xXlqph_nlmST2XUjsup2cXvFHYZbKya3KMHyISQU9VVBboMqMsGz2GoyBg12Kz-32HqSPzfHhyVJK59vw6zaQTZlPvb4jEiIg65f4pVPV79VRR9l_tIvmztj85cyCYVND_rV7YjFlwSi8gKQdeLemYnDQ4ZWkEqxf6trxKd9rhSqXC5exypwTyTL8gSiSdrE0Y0zho8ggb4UEj4YnbSAVt7AHiuOKKcSNLT7XMiLtR-yqLggY90Fd3zbV2YcNvLUCBWykxd0gfSdTZmmmL0Afr-9VVB6XqiJq1CpZFaKY8uVxOWnr8L_eQjNbHxnovLtqCwY5HdX61lrNwv9OOTQemEH45__RBXv2y4C0pFzTelK13juWecK8AbM4nScrCyYce8Ci_RjFytgh-VgJIhdLGrWAf-ib_X7lYQt-sxla4LyrundYpVKTmgEl3FZraUFWmuGXmIawamgUMDoEVmy7ko07NHGFU2jLzJLVYKnPpBcA_Lzu2NAzCAOjJ2uYXST6Jjry2XRGpQvtG_HVZkwngbGHmhki8_fbto-uMjm2wb3sXV05CDVDp1_WLJcq5lcpePI91i3Y_x-coxR0xhxV0H-j73SA_1aaiRNXD6c1vq6XV8ETZk_mrdVpjnj_OrQA3KpWKW8Z7LamdeiEQlqat8LWJRJ/https://www.amazon.in/stores/page/F620E2AB-DD27-4A01-9B9F-23009D0558C7/?_encoding=UTF8&store_ref=SB_A09800863NEAIU30LI3FM-A0555050818GVOVQO14X&pd_rd_plhdr=t&aaxitk=85bb192710dbae4a9dc835c22b2d8d40&hsa_cr_id=6932451340702&lp_query=TV&lp_slot=desktop-hsa-3psl&aref=n36IivAURM&ref_=sbx_be_s_3psl_mbd_mb2_ls&pd_rd_w=TIvYY&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=8MN3Y&pd_rd_r=b5e5f4ca-b963-4c74-a84c-675a15e81e8b
+                        - img "DigiReach India" [ref=e2747]
+                      - generic [ref=e2749]:
+                        - generic [ref=e2750]:
+                          - link [ref=e2751] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JAlOQrHzNxILRJ7g9MxOnA0AAAGfZyhMAgoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDIgICA3bAeL/clv1c_ek-IwoHXFcbWDdHYaoeZcwJZSrPTMo6ZfMtzzKYoH5rtkotMpj70Xr5ZxULyMIIsXeI6_YCzB77y--4CfSwIqU_qdQxZSyCPUleFMelubUI3B3Cbl6GP_YxZY_9tv1jjBIlfMNCot8FRjyaLuOBsiMDbpcfUVhVZAgRQz_avRo0cM9iEk4SVYqGj8R2UaWQ4wwNbJutrvHGY1WWUPursswooeOPddmopNIh-4SOa3PhqPM07hb30unsXWMyxkMjvlRzOvkd-U7I-EO_7glVCy55qA9RHN-87SnYf9eJ9BTYZxv8p23G0vC8RO-5EWMM_25fsvstOOqhT5-S13FHo9pWHkEtDTRvWY5ptV8krbSx6v0Pbo9BSIO-zFNrQxnJIl0GkDhJrt-c3rXOzLc0gXOBlVJesIHcmTSIVMDO1-vpC64vvwqJImKwZjvR7mhz3xXlqph_nlmST2XUjsup2cXvFHYZbKya3KMHyISQU9VVBboMqMsGz2GoyBg12Kz-32HqSPzfHhyVJK59vw6zaQTZlPvb4jEiIg65f4pVPV79VRR9l_tIvmztj85cyCYVND_rV7YjFlwSi8gKQdeLemYnDQ4ZWkEqxf6trxKd9rhSqXC5exypwTyTL8gSiSdrE0Y0zho8ggb4UEj4YnbSAVt7AHiuOKKcSNLT7XMiLtR-yqLggY90Fd3zbV2YcNvLUCBWykxd0gfSdTZmmmL0Afr-9VVB6XqiJq1CpZFaKY8uVxOWnr8L_eQjNbHxnovLtqCwY5HdX61lrNwv9OOTQemEH45__RBXv2y4C0pFzTelK13juWecK8AbM4nScrCyYce8Ci_RjFytgh-VgJIhdLGrWAf-ib_X7lYQt-sxla4LyrundYpVKTmgEl3FZraUFWmuGXmIawamgUMDoEVmy7ko07NHGFU2jLzJLVYKnPpBcA_Lzu2NAzCAOjJ2uYXST6Jjry2XRGpQvtG_HVZkwngbGHmhki8_fbto-uMjm2wb3sXV05CDVDp1_WLJcq5lcpePI91i3Y_x-coxR0xhxV0H-j73SA_1aaiRNXD6c1vq6XV8ETZk_mrdVpjnj_OrQA3KpWKW8Z7LamdeiEQlqat8LWJRJ/https://www.amazon.in/stores/page/F620E2AB-DD27-4A01-9B9F-23009D0558C7/?_encoding=UTF8&store_ref=SB_A09800863NEAIU30LI3FM-A0555050818GVOVQO14X&pd_rd_plhdr=t&aaxitk=85bb192710dbae4a9dc835c22b2d8d40&hsa_cr_id=6932451340702&lp_query=TV&lp_slot=desktop-hsa-3psl&aref=n36IivAURM&ref_=sbx_be_s_3psl_mbd_mb2_bkgd&pd_rd_w=TIvYY&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=8MN3Y&pd_rd_r=b5e5f4ca-b963-4c74-a84c-675a15e81e8b
+                          - link "DigiReach India" [ref=e2752] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JAlOQrHzNxILRJ7g9MxOnA0AAAGfZyhMAgoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDIgICA3bAeL/clv1c_ek-IwoHXFcbWDdHYaoeZcwJZSrPTMo6ZfMtzzKYoH5rtkotMpj70Xr5ZxULyMIIsXeI6_YCzB77y--4CfSwIqU_qdQxZSyCPUleFMelubUI3B3Cbl6GP_YxZY_9tv1jjBIlfMNCot8FRjyaLuOBsiMDbpcfUVhVZAgRQz_avRo0cM9iEk4SVYqGj8R2UaWQ4wwNbJutrvHGY1WWUPursswooeOPddmopNIh-4SOa3PhqPM07hb30unsXWMyxkMjvlRzOvkd-U7I-EO_7glVCy55qA9RHN-87SnYf9eJ9BTYZxv8p23G0vC8RO-5EWMM_25fsvstOOqhT5-S13FHo9pWHkEtDTRvWY5ptV8krbSx6v0Pbo9BSIO-zFNrQxnJIl0GkDhJrt-c3rXOzLc0gXOBlVJesIHcmTSIVMDO1-vpC64vvwqJImKwZjvR7mhz3xXlqph_nlmST2XUjsup2cXvFHYZbKya3KMHyISQU9VVBboMqMsGz2GoyBg12Kz-32HqSPzfHhyVJK59vw6zaQTZlPvb4jEiIg65f4pVPV79VRR9l_tIvmztj85cyCYVND_rV7YjFlwSi8gKQdeLemYnDQ4ZWkEqxf6trxKd9rhSqXC5exypwTyTL8gSiSdrE0Y0zho8ggb4UEj4YnbSAVt7AHiuOKKcSNLT7XMiLtR-yqLggY90Fd3zbV2YcNvLUCBWykxd0gfSdTZmmmL0Afr-9VVB6XqiJq1CpZFaKY8uVxOWnr8L_eQjNbHxnovLtqCwY5HdX61lrNwv9OOTQemEH45__RBXv2y4C0pFzTelK13juWecK8AbM4nScrCyYce8Ci_RjFytgh-VgJIhdLGrWAf-ib_X7lYQt-sxla4LyrundYpVKTmgEl3FZraUFWmuGXmIawamgUMDoEVmy7ko07NHGFU2jLzJLVYKnPpBcA_Lzu2NAzCAOjJ2uYXST6Jjry2XRGpQvtG_HVZkwngbGHmhki8_fbto-uMjm2wb3sXV05CDVDp1_WLJcq5lcpePI91i3Y_x-coxR0xhxV0H-j73SA_1aaiRNXD6c1vq6XV8ETZk_mrdVpjnj_OrQA3KpWKW8Z7LamdeiEQlqat8LWJRJ/https://www.amazon.in/stores/page/F620E2AB-DD27-4A01-9B9F-23009D0558C7/?_encoding=UTF8&store_ref=SB_A09800863NEAIU30LI3FM-A0555050818GVOVQO14X&pd_rd_plhdr=t&aaxitk=85bb192710dbae4a9dc835c22b2d8d40&hsa_cr_id=6932451340702&lp_query=TV&lp_slot=desktop-hsa-3psl&aref=n36IivAURM&ref_=sbx_be_s_3psl_mbd_mb2_logo&pd_rd_w=TIvYY&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=8MN3Y&pd_rd_r=b5e5f4ca-b963-4c74-a84c-675a15e81e8b
+                            - img "DigiReach India" [ref=e2754]
+                        - generic [ref=e2755]:
+                          - link [ref=e2756] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JAlOQrHzNxILRJ7g9MxOnA0AAAGfZyhMAgoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDIgICA3bAeL/clv1c_ek-IwoHXFcbWDdHYaoeZcwJZSrPTMo6ZfMtzzKYoH5rtkotMpj70Xr5ZxULyMIIsXeI6_YCzB77y--4CfSwIqU_qdQxZSyCPUleFMelubUI3B3Cbl6GP_YxZY_9tv1jjBIlfMNCot8FRjyaLuOBsiMDbpcfUVhVZAgRQz_avRo0cM9iEk4SVYqGj8R2UaWQ4wwNbJutrvHGY1WWUPursswooeOPddmopNIh-4SOa3PhqPM07hb30unsXWMyxkMjvlRzOvkd-U7I-EO_7glVCy55qA9RHN-87SnYf9eJ9BTYZxv8p23G0vC8RO-5EWMM_25fsvstOOqhT5-S13FHo9pWHkEtDTRvWY5ptV8krbSx6v0Pbo9BSIO-zFNrQxnJIl0GkDhJrt-c3rXOzLc0gXOBlVJesIHcmTSIVMDO1-vpC64vvwqJImKwZjvR7mhz3xXlqph_nlmST2XUjsup2cXvFHYZbKya3KMHyISQU9VVBboMqMsGz2GoyBg12Kz-32HqSPzfHhyVJK59vw6zaQTZlPvb4jEiIg65f4pVPV79VRR9l_tIvmztj85cyCYVND_rV7YjFlwSi8gKQdeLemYnDQ4ZWkEqxf6trxKd9rhSqXC5exypwTyTL8gSiSdrE0Y0zho8ggb4UEj4YnbSAVt7AHiuOKKcSNLT7XMiLtR-yqLggY90Fd3zbV2YcNvLUCBWykxd0gfSdTZmmmL0Afr-9VVB6XqiJq1CpZFaKY8uVxOWnr8L_eQjNbHxnovLtqCwY5HdX61lrNwv9OOTQemEH45__RBXv2y4C0pFzTelK13juWecK8AbM4nScrCyYce8Ci_RjFytgh-VgJIhdLGrWAf-ib_X7lYQt-sxla4LyrundYpVKTmgEl3FZraUFWmuGXmIawamgUMDoEVmy7ko07NHGFU2jLzJLVYKnPpBcA_Lzu2NAzCAOjJ2uYXST6Jjry2XRGpQvtG_HVZkwngbGHmhki8_fbto-uMjm2wb3sXV05CDVDp1_WLJcq5lcpePI91i3Y_x-coxR0xhxV0H-j73SA_1aaiRNXD6c1vq6XV8ETZk_mrdVpjnj_OrQA3KpWKW8Z7LamdeiEQlqat8LWJRJ/https://www.amazon.in/stores/page/F620E2AB-DD27-4A01-9B9F-23009D0558C7/?_encoding=UTF8&store_ref=SB_A09800863NEAIU30LI3FM-A0555050818GVOVQO14X&pd_rd_plhdr=t&aaxitk=85bb192710dbae4a9dc835c22b2d8d40&hsa_cr_id=6932451340702&lp_query=TV&lp_slot=desktop-hsa-3psl&aref=n36IivAURM&ref_=sbx_be_s_3psl_mbd_mb2_bkgd&pd_rd_w=TIvYY&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=8MN3Y&pd_rd_r=b5e5f4ca-b963-4c74-a84c-675a15e81e8b
+                          - link "DigiReach Premium HDMI 8K / 4K" [ref=e2757] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JAlOQrHzNxILRJ7g9MxOnA0AAAGfZyhMAgoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDIgICA3bAeL/clv1c_ek-IwoHXFcbWDdHYaoeZcwJZSrPTMo6ZfMtzzKYoH5rtkotMpj70Xr5ZxULyMIIsXeI6_YCzB77y--4CfSwIqU_qdQxZSyCPUleFMelubUI3B3Cbl6GP_YxZY_9tv1jjBIlfMNCot8FRjyaLuOBsiMDbpcfUVhVZAgRQz_avRo0cM9iEk4SVYqGj8R2UaWQ4wwNbJutrvHGY1WWUPursswooeOPddmopNIh-4SOa3PhqPM07hb30unsXWMyxkMjvlRzOvkd-U7I-EO_7glVCy55qA9RHN-87SnYf9eJ9BTYZxv8p23G0vC8RO-5EWMM_25fsvstOOqhT5-S13FHo9pWHkEtDTRvWY5ptV8krbSx6v0Pbo9BSIO-zFNrQxnJIl0GkDhJrt-c3rXOzLc0gXOBlVJesIHcmTSIVMDO1-vpC64vvwqJImKwZjvR7mhz3xXlqph_nlmST2XUjsup2cXvFHYZbKya3KMHyISQU9VVBboMqMsGz2GoyBg12Kz-32HqSPzfHhyVJK59vw6zaQTZlPvb4jEiIg65f4pVPV79VRR9l_tIvmztj85cyCYVND_rV7YjFlwSi8gKQdeLemYnDQ4ZWkEqxf6trxKd9rhSqXC5exypwTyTL8gSiSdrE0Y0zho8ggb4UEj4YnbSAVt7AHiuOKKcSNLT7XMiLtR-yqLggY90Fd3zbV2YcNvLUCBWykxd0gfSdTZmmmL0Afr-9VVB6XqiJq1CpZFaKY8uVxOWnr8L_eQjNbHxnovLtqCwY5HdX61lrNwv9OOTQemEH45__RBXv2y4C0pFzTelK13juWecK8AbM4nScrCyYce8Ci_RjFytgh-VgJIhdLGrWAf-ib_X7lYQt-sxla4LyrundYpVKTmgEl3FZraUFWmuGXmIawamgUMDoEVmy7ko07NHGFU2jLzJLVYKnPpBcA_Lzu2NAzCAOjJ2uYXST6Jjry2XRGpQvtG_HVZkwngbGHmhki8_fbto-uMjm2wb3sXV05CDVDp1_WLJcq5lcpePI91i3Y_x-coxR0xhxV0H-j73SA_1aaiRNXD6c1vq6XV8ETZk_mrdVpjnj_OrQA3KpWKW8Z7LamdeiEQlqat8LWJRJ/https://www.amazon.in/stores/page/F620E2AB-DD27-4A01-9B9F-23009D0558C7/?_encoding=UTF8&store_ref=SB_A09800863NEAIU30LI3FM-A0555050818GVOVQO14X&pd_rd_plhdr=t&aaxitk=85bb192710dbae4a9dc835c22b2d8d40&hsa_cr_id=6932451340702&lp_query=TV&lp_slot=desktop-hsa-3psl&aref=n36IivAURM&ref_=sbx_be_s_3psl_mbd_mb2_hl&pd_rd_w=TIvYY&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=GWMP8VQ5M58D2JASAJNG&pd_rd_wg=8MN3Y&pd_rd_r=b5e5f4ca-b963-4c74-a84c-675a15e81e8b
+                            - generic [ref=e2759]:
+                              - generic [ref=e2760]: DigiReach Premium HDMI 8K / 4K
+                              - generic [ref=e2761]: DigiReach Premium HDMI 8K / 4K
+          - generic [ref=e2767]:
+            - heading "Need help?" [level=2] [ref=e2770]
+            - generic [ref=e2771]:
+              - link "Visit the help section" [ref=e2772] [cursor=pointer]:
+                - /url: /gp/help/customer/display.html?nodeId=201889520
+              - text: or
+              - link "contact us" [ref=e2773] [cursor=pointer]:
+                - /url: /gp/help/customer/contact-us
+          - generic [ref=e2776]:
+            - iframe [ref=e2777]:
+              - generic [ref=f18e4]:
+                - generic [ref=f18e5]: "Click to navigate to product detail page Sponsored Ad. Product image. Branded image. PHILIPS 138 cm (55 inches) 4K Ultra HD QLED Smart QD-Mini LED Google TV 55MLED610/94. Price: ₹43,999.00."
+                - generic [ref=f18e8]:
+                  - img "Brand logo" [ref=f18e13]
+                  - img "Product image" [ref=f18e18]
+                  - generic [ref=f18e21]:
+                    - generic [ref=f18e22]:
+                      - generic [ref=f18e25]: PHILIPS 138 cm (55 inches) 4K Ultra HD QLED Smart QD-Mini LED Google TV 55MLED610/94
+                      - img "4.3 out of 5 stars., 211 customer reviews." [ref=f18e27]:
+                        - generic [ref=f18e28]: "4.3"
+                        - img [ref=f18e31]
+                        - img [ref=f18e36]
+                        - img [ref=f18e41]
+                        - img [ref=f18e46]
+                        - img [ref=f18e51]
+                        - generic [ref=f18e55]: "211"
+                    - generic [ref=f18e59]:
+                      - generic "with 48% savings" [ref=f18e60]: "-48%"
+                      - generic [ref=f18e61]: "Price: ₹43,999.00"
+                      - generic [ref=f18e62]:
+                        - generic [ref=f18e63]: ₹
+                        - generic [ref=f18e64]: 43,999
+                        - generic [ref=f18e65]: "00"
+                      - 'generic "M.R.P.: ₹84,999.00" [ref=f18e67]'
+                - link "Click to navigate to product detail page" [ref=f18e69] [cursor=pointer]:
+                  - /url: https://aax-eu-zaz.amazon.in/x/c/RGRq3zbeMvVsWvj7ci-lK9wAAAGfZyhL3goAAAH_AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICBNvJ_z/clv1c_ek-4wnXyLdTaTXnsJBKQ7i4ok4pSvNNksYwdRsfRr8PPfukxM0yEWINuHK9cZsV4hhOvjcUMnjS0K3hxfY6uHbYlW4g2nuhLlBlLy7y51xlhuwSVIrJjrevZwuUNxsULD0CbzuOprBL3-AVsVFDKVNrI1uWA0n_jrmSwyCKu7KwHgc6CXXRlhfsFP2s_M7iXE-eQZ3z3s2TY23lFyZLJOkg_TEpnRCzVVqMmqT627u-Lm0ZVx_aosRczcS6d-rEextGXnXI8B0RNJxDi2yeni690794me6zyeSGzlvbMGmi8og816doM4ULm56f9AGzwuELutjbsaRknh0__bCIRqSUwlCPpRmxBGF2YzK7YyELObbNC1PHeLy8xwB5AKailxy03d6brZY1BPUDuI2xciAp3K3fQ3d68xcz4w00Xed1Ya44z9jyFbKJVft_MuLVXScfO7MNlCe-dhCfNHQO0Tl6UzmUInVpw3mscjDWKJ5iZrOtXQTXJE_-a9MDz5OKUd_oDFtm6xUpOMxnCkd71dG7w9CTzhBNDYc9GWtmEcb_rg46KkhR1-7Zkj-yYbhJjFYf3kneuStfV-13a_rI2FWtZlBbUbOgAlcEjTUVGhZg0TXwWEjG6s3IdDL3gfO_nDDQwTRWbJuXtfqwHz-RNsm2qcH7yiEpG6QsMMEVJfyrHxrTwnyqFvxkLoCRqv4U3glcEd15D7fST2RdNC5nqw95OBttDZK5UgE-93vh6cQXJYbgJPgwYQWXE5oledGgbKGLpuosFb_-ek7yz4oUgehkZphcwoM1l987nEib_hn7aW310JJGKTpsL1hjmcGRlxqpLXyv_rRK08bJsarGz9Xng9PEiSSZZSFzgXrwDbUnNmZmXAQ15bim5BVRmDkEOiAgtynEtnyZz65jsmezMTJU20QnoZZCo6YMbKTOCMSNumgCD-_u8wPRvjIcgfs2Cb6Aq3yiDdknEWTF9-8DQl-EEX2rfOHpZTgkPjApJU3vQeL9vaLOCr_pjuAzKTXAdTTN5uZc0OTreb2gvZ5geeYtLuKzUcHUkDNbu7Ix-G0y_LRhlsn4F7r9Xhx-8OsLZfTVyy9QJ3PSoA0s-D8iV4nHQKzb0QgipVhDoZyn24v0NAFKYQCOqMU424iSlmY0GKsbSoGHajIYXnB5ltjMkvFIY_mmvVQvgt-LRFbDso0roFQ/http://www.amazon.in/dp/B0G6LTHMLF/ref=syn_sd_onsite_desktop_0?ie=UTF8&psc=1&pd_rd_plhdr=t&aref=mEF2NaxtgO
+            - button "Leave feedback on Sponsored advertisement" [ref=e2779] [cursor=pointer]:
+              - generic [ref=e2780]: Sponsored
+        - link "Go back to filtering menu" [ref=e2782] [cursor=pointer]:
+          - /url: "#s-skipLinkTargetForFilterOptions"
+      - dialog "Filters" [ref=e2783]:
+        - generic [ref=e2784]:
+          - link "Skip to main search results" [ref=e2785] [cursor=pointer]:
+            - /url: "#s-skipLinkTargetForMainSearchResults"
+          - generic [ref=e2787]:
+            - generic [ref=e2791]:
+              - group [ref=e2792]:
+                - heading "Popular Shopping Ideas" [level=2] [ref=e2793]
+                - list [ref=e2794]:
+                  - listitem [ref=e2795]:
+                    - link "43-inch" [ref=e2797] [cursor=pointer]:
+                      - /url: /s?k=tv+43+inch&ref=sr_nr_p_rag_integrated_qb_0
+                  - listitem [ref=e2798]:
+                    - link "55-inch 4k" [ref=e2800] [cursor=pointer]:
+                      - /url: /s?k=4k+tv+55+inch&ref=sr_nr_p_rag_integrated_qb_1
+                  - listitem [ref=e2801]:
+                    - link "32-inch Android" [ref=e2803] [cursor=pointer]:
+                      - /url: /s?k=tv+32+android&ref=sr_nr_p_rag_integrated_qb_2
+                  - listitem [ref=e2804]:
+                    - link "75-inch+" [ref=e2806] [cursor=pointer]:
+                      - /url: /s?k=tv+75%2B+inch&ref=sr_nr_p_rag_integrated_qb_3
+                  - listitem [ref=e2807]:
+                    - button "See more" [ref=e2810] [cursor=pointer]: See more
+              - separator [ref=e2812]
+              - group "Eligible for Free Delivery" [ref=e2813]:
+                - heading "Eligible for Free Delivery" [level=2] [ref=e2814]
+                - list "Eligible for Free Delivery" [ref=e2815]:
+                  - listitem "Popular Shopping Ideas" [ref=e2816]:
+                    - link "Apply the filter Free Shipping to narrow results" [ref=e2818] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_free_shipping_eligible%3A205563695031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=205563694031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_free_shipping_eligible_1&ds=v1%3A%2BAj6WR4TKZ%2FtTQtAYNimi5uBT4ZdrghKdu4MePX2aG4
+                      - checkbox [ref=e2821]
+                      - text: Free Shipping
+                      - generic [ref=e2823]: Get FREE Shipping on eligible orders shipped by Amazon
+              - group "Screen Size" [ref=e2824]:
+                - heading "Screen Size" [level=2] [ref=e2825]
+                - list "Screen Size" [ref=e2826]:
+                  - listitem "Popular Shopping Ideas" [ref=e2827]:
+                    - link "Apply the filter Up to 25.9 in to narrow results" [ref=e2829] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_feature_five_browse-bin%3A213268013031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=213268009031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_feature_five_browse-bin_1&ds=v1%3AbvMfzjQSjUTxIVIu28ZDeNDD%2BVagAuoPD61tt7kfyRM
+                      - checkbox [ref=e2832]
+                      - text: Up to 25.9 in
+                  - listitem "Popular Shopping Ideas" [ref=e2834]:
+                    - link "Apply the filter 26.0 to 34.9 in to narrow results" [ref=e2836] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_feature_five_browse-bin%3A213268011031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=213268009031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_feature_five_browse-bin_2&ds=v1%3An25WGdf1TJ95Yq0fQJLYWZCG4BVW2RDJVT4WGUzGlOA
+                      - checkbox [ref=e2839]
+                      - text: 26.0 to 34.9 in
+                  - listitem "Popular Shopping Ideas" [ref=e2841]:
+                    - link "Apply the filter 35.0 to 43.9 in to narrow results" [ref=e2843] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_feature_five_browse-bin%3A213268016031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=213268009031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_feature_five_browse-bin_3&ds=v1%3AiN7v5y%2BZrzXRTEu3CveIv3u2umK2dbWQLgtWDYu0UF8
+                      - checkbox [ref=e2846]
+                      - text: 35.0 to 43.9 in
+                  - listitem "Popular Shopping Ideas" [ref=e2848]:
+                    - link "Apply the filter 44.0 to 52.9 in to narrow results" [ref=e2850] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_feature_five_browse-bin%3A213268015031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=213268009031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_feature_five_browse-bin_4&ds=v1%3Ac6ZVgBLhmSwZJHIGFnI33CTFKNXjrr0vBQAlAJN8xDU
+                      - checkbox [ref=e2853]
+                      - text: 44.0 to 52.9 in
+                  - listitem "Popular Shopping Ideas" [ref=e2855]:
+                    - link "Apply the filter 53.0 to 61.9 in to narrow results" [ref=e2857] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_feature_five_browse-bin%3A213268012031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=213268009031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_feature_five_browse-bin_5&ds=v1%3AXyJeiwc2gkMXNa0F%2BlFRLn8hwvCyFTI3SK9lzYryoUI
+                      - checkbox [ref=e2860]
+                      - text: 53.0 to 61.9 in
+                  - listitem "Popular Shopping Ideas" [ref=e2862]:
+                    - link "Apply the filter 62.0 to 70.9 in to narrow results" [ref=e2864] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_feature_five_browse-bin%3A213268014031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=213268009031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_feature_five_browse-bin_6&ds=v1%3AO9vP5Sc%2F%2BM3eE7R4UwkPHbdVl78qC7K1ZJYTp8eqYtE
+                      - checkbox [ref=e2867]
+                      - text: 62.0 to 70.9 in
+                  - listitem "Popular Shopping Ideas" [ref=e2869]:
+                    - link "Apply the filter 71.0 in & above to narrow results" [ref=e2871] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_feature_five_browse-bin%3A213268010031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=213268009031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_feature_five_browse-bin_7&ds=v1%3AcXOQ3aWUrTh2ciNa3QqAEC7qB%2FhZRoN1pu8uDX0bQDc
+                      - checkbox [ref=e2874]
+                      - text: 71.0 in & above
+              - group [ref=e2876]:
+                - generic [ref=e2877]:
+                  - generic [ref=e2878]: Price
+                  - generic [ref=e2881]:
+                    - generic [ref=e2882]:
+                      - generic [ref=e2883]: ₹295
+                      - generic [ref=e2884]: –
+                      - generic [ref=e2885]: ₹193,500+
+                    - generic [ref=e2887]:
+                      - generic:
+                        - slider "Minimum price": "0"
+                      - generic [ref=e2888]:
+                        - slider "Maximum price": "188"
+                - list [ref=e2889]:
+                  - listitem [ref=e2890]:
+                    - link "Up to ₹8,500" [ref=e2892] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_36%3A-850000&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=14076159031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_36_1&ds=v1%3A4GaorYd1u1wgrKLjhcD7RMy0WRZbg%2F3cUb04jXin3ic
+                  - listitem [ref=e2893]:
+                    - link "₹8,500 - ₹31,000" [ref=e2895] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_36%3A850000-3100000&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=14076159031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_36_2&ds=v1%3Ab%2FGGXAM9YXJjyKY7QVqboRN7Mbk2t1MIqCpcCDyzOW8
+                  - listitem [ref=e2896]:
+                    - link "₹31,000 - ₹42,500" [ref=e2898] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_36%3A3100000-4250000&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=14076159031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_36_3&ds=v1%3AsUmHXlqT5F9QKnfpNipX3qx0VaHD6OqJcgS8M6jr62k
+                  - listitem [ref=e2899]:
+                    - link "₹42,500 - ₹120,000" [ref=e2901] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_36%3A4250000-12000000&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=14076159031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_36_4&ds=v1%3ANqDuwq5vmax1gLrEZrxQ7%2FFjuW9IkeRaXUxTpaGS3XE
+                  - listitem [ref=e2902]:
+                    - link "Over ₹120,000" [ref=e2904] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_36%3A12000000-&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=14076159031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_36_5&ds=v1%3A0BvAygObMacj8L9ZrVp%2FkmQRlXlzYQdzacViWQRHk%2FA
+                - heading "Deals & Discounts" [level=2] [ref=e2905]
+                - list "Deals & Discounts" [ref=e2906]:
+                  - listitem [ref=e2907]:
+                    - link "All Discounts" [ref=e2909] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_deal_type%3A26921226031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=26921223031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_deal_type_1&ds=v1%3Ad0MHe%2Bu8%2BWmCqMyTplGde6%2B3z1fqP54QJOLKwoftEco
+                  - listitem [ref=e2910]:
+                    - link "Buy More, Save More" [ref=e2912] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_deal_type%3A210770213031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=26921223031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_deal_type_2&ds=v1%3AXwZERIdDTHBgrovZjxa0vg2Uk1DN2X1uDK%2BrYVcV2Eg
+                  - listitem [ref=e2913]:
+                    - link "Coupons" [ref=e2915] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_deal_type%3A210770212031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=26921223031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_deal_type_3&ds=v1%3A92ykt3w9XU3q%2Bnz3pXUa1KVquce6RUJU3Pd8sFHg6%2Bo
+                  - listitem [ref=e2916]:
+                    - link "Today's Deals" [ref=e2918] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_deal_type%3A26921224031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=26921223031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_deal_type_4&ds=v1%3A6RUjAzMAtDFTa1xiewc56fNz8TFZwi98193Cf34OAmY
+              - group "Brands" [ref=e2919]:
+                - heading "Brands" [level=2] [ref=e2920]
+                - list "Brands" [ref=e2921]:
+                  - listitem "Popular Shopping Ideas" [ref=e2922]:
+                    - link "Apply the filter XIAOMI to narrow results" [ref=e2924] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_123%3A338933&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=91049095031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_123_1&ds=v1%3APrlGc8rxF2yj4uaTNiSKAAWalpODl30KKqIaFyl2JUQ
+                      - checkbox [ref=e2927]
+                      - text: XIAOMI
+                  - listitem "Popular Shopping Ideas" [ref=e2929]:
+                    - link "Apply the filter Samsung to narrow results" [ref=e2931] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_123%3A46655&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=91049095031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_123_2&ds=v1%3A%2FpBH4mMSnvfGZ9J87pACVuieK%2FZRPBCH9qfV%2B%2F%2FWXn0
+                      - checkbox [ref=e2934]
+                      - text: Samsung
+                  - listitem "Popular Shopping Ideas" [ref=e2936]:
+                    - link "Apply the filter Visio World to narrow results" [ref=e2938] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_123%3A1012252&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=91049095031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_123_3&ds=v1%3AY2CMzptF11lri8Ws2Z5GpVXtOSuLAiJc6py0GEmNuMU
+                      - checkbox [ref=e2941]
+                      - text: Visio World
+                  - listitem "Popular Shopping Ideas" [ref=e2943]:
+                    - link "Apply the filter LG to narrow results" [ref=e2945] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_123%3A46658&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=91049095031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_123_4&ds=v1%3AFMjOE8DaS6swWjuLMy4vC77ocyMthJ807TbCZR4FfB8
+                      - checkbox [ref=e2948]
+                      - text: LG
+                  - listitem "Popular Shopping Ideas" [ref=e2950]:
+                    - link "Apply the filter Hisense to narrow results" [ref=e2952] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_123%3A248315&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=91049095031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_123_5&ds=v1%3AO8i4aApiA5Vak1BNytgNzDsGO%2FfCnN2suzbtX6o72yI
+                      - checkbox [ref=e2955]
+                      - text: Hisense
+                  - listitem "Popular Shopping Ideas" [ref=e2957]:
+                    - link "Apply the filter Uniboom to narrow results" [ref=e2959] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_123%3A16782497&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=91049095031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_123_6&ds=v1%3AzRTr%2Fie%2FJZa79oFsQFHgmhV8t6qNlomskLwNNnTCyCQ
+                      - checkbox [ref=e2962]
+                      - text: Uniboom
+                  - listitem "Popular Shopping Ideas" [ref=e2964]:
+                    - link "Apply the filter Acer to narrow results" [ref=e2966] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_123%3A247341&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=91049095031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_123_7&ds=v1%3Ax08pY2j%2B%2FOZiWWtAePGu%2BObqGSZMPxB3xx2r1e%2BDcww
+                      - checkbox [ref=e2969]
+                      - text: Acer
+                  - listitem [ref=e2971]:
+                    - button "See more, Brands" [ref=e2974] [cursor=pointer]: See more
+              - group "Customer Reviews" [ref=e2976]:
+                - heading "Customer Reviews" [level=2] [ref=e2977]
+                - list "Customer Reviews" [ref=e2978]:
+                  - listitem [ref=e2979]:
+                    - link "Apply the filter 4 Stars & Up to narrow results" [ref=e2982] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_72%3A1318476031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=1318475031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_72_1&ds=v1%3A3lQZ%2Bbh%2FqECQN7aOr3dCVslYEn9u8SdWx4TZRdn3kFw
+                      - generic [ref=e2984]: 4 Stars
+                      - text: "& Up"
+              - group "Display Resolution" [ref=e2985]:
+                - heading "Display Resolution" [level=2] [ref=e2986]
+                - list "Display Resolution" [ref=e2987]:
+                  - listitem "Popular Shopping Ideas" [ref=e2988]:
+                    - link "Apply the filter 4K to narrow results" [ref=e2990] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1003296671111%3A28239715031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=28239708031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1003296671111_1&ds=v1%3A2P447bi4KC0HsL0Q0qCRR%2FTXKAZbjhzcifGFYFsTIWg
+                      - checkbox [ref=e2993]
+                      - text: 4K
+                  - listitem "Popular Shopping Ideas" [ref=e2995]:
+                    - link "Apply the filter 1080p to narrow results" [ref=e2997] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1003296671111%3A28239711031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=28239708031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1003296671111_2&ds=v1%3AQIFsxbl2xsMjYVz3GoMz%2BAFqWJvUjhFy5QwFHFnWRkE
+                      - checkbox [ref=e3000]
+                      - text: 1080p
+                  - listitem "Popular Shopping Ideas" [ref=e3002]:
+                    - link "Apply the filter 720p to narrow results" [ref=e3004] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1003296671111%3A28239709031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=28239708031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1003296671111_3&ds=v1%3A3E34Tdc4FkPXlWPIAjBUuGpn6mNjpW2kGRpxNZohxyw
+                      - checkbox [ref=e3007]
+                      - text: 720p
+              - group "Operating System" [ref=e3009]:
+                - heading "Operating System" [level=2] [ref=e3010]
+                - list "Operating System" [ref=e3011]:
+                  - listitem "Popular Shopping Ideas" [ref=e3012]:
+                    - link "Apply the filter Android to narrow results" [ref=e3014] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101016028402111%3A205632779031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=205632772031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101016028402111_1&ds=v1%3AxgRJB06SwbKxnVhyqCzmT0Tv5QaFvAYFMZKsrLUm8Qk
+                      - checkbox [ref=e3017]
+                      - text: Android
+                  - listitem "Popular Shopping Ideas" [ref=e3019]:
+                    - link "Apply the filter FireOS to narrow results" [ref=e3021] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101016028402111%3A205632777031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=205632772031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101016028402111_2&ds=v1%3A2nldpAaJdSu7nVWL9xhJOcjkg2S%2BqKvJ1dqfLyK82SI
+                      - checkbox [ref=e3024]
+                      - text: FireOS
+                  - listitem "Popular Shopping Ideas" [ref=e3026]:
+                    - link "Apply the filter Google TV to narrow results" [ref=e3028] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101016028402111%3A205632783031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=205632772031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101016028402111_3&ds=v1%3AIEiGBET3QnzAI6aaV3rCzGtSn54ZpA%2FpnTyWqYIqCw0
+                      - checkbox [ref=e3031]
+                      - text: Google TV
+                  - listitem "Popular Shopping Ideas" [ref=e3033]:
+                    - link "Apply the filter Tizen to narrow results" [ref=e3035] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101016028402111%3A205632784031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=205632772031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101016028402111_4&ds=v1%3ApUTF8tbv2hDHbK%2Btg5lgGx9o9o9zPYszrIKXOKXw%2FQk
+                      - checkbox [ref=e3038]
+                      - text: Tizen
+                  - listitem "Popular Shopping Ideas" [ref=e3040]:
+                    - link "Apply the filter VIDAA U to narrow results" [ref=e3042] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101016028402111%3A205632778031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=205632772031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101016028402111_5&ds=v1%3AWmhmEs0yPF4idoAgEwZjR9MTpmANb8oYHwRWI4AAM3M
+                      - checkbox [ref=e3045]
+                      - text: VIDAA U
+                  - listitem "Popular Shopping Ideas" [ref=e3047]:
+                    - link "Apply the filter WebOS to narrow results" [ref=e3049] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101016028402111%3A205632782031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=205632772031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101016028402111_6&ds=v1%3AJWqny%2B7gNzP1FrzXiUw9aGUdvxwhhwwVMTFdmAgmfT8
+                      - checkbox [ref=e3052]
+                      - text: WebOS
+              - group "Model Year" [ref=e3054]:
+                - heading "Model Year" [level=2] [ref=e3055]
+                - list "Model Year" [ref=e3056]:
+                  - listitem "Popular Shopping Ideas" [ref=e3057]:
+                    - link "Apply the filter 2024 to narrow results" [ref=e3059] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1004218864091%3A14354457031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=14354437031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1004218864091_1&ds=v1%3AdKPLY3KZl%2BcroI7ril%2FyA5Ew%2FNHbzQBy5zAcpzdjv74
+                      - checkbox [ref=e3062]
+                      - text: "2024"
+                  - listitem "Popular Shopping Ideas" [ref=e3064]:
+                    - link "Apply the filter 2023 to narrow results" [ref=e3066] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1004218864091%3A14354456031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=14354437031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1004218864091_2&ds=v1%3ADBLWBmtPCAGHWwUChZ%2FkMM31%2FY7pBurpC1naZc6nFDE
+                      - checkbox [ref=e3069]
+                      - text: "2023"
+                  - listitem "Popular Shopping Ideas" [ref=e3071]:
+                    - link "Apply the filter 2022 to narrow results" [ref=e3073] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1004218864091%3A14354455031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=14354437031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1004218864091_3&ds=v1%3A2Pt79%2FmW08xtH%2F9xq%2FFGyJEroRqhLb8oobq2yyPEFSA
+                      - checkbox [ref=e3076]
+                      - text: "2022"
+                  - listitem "Popular Shopping Ideas" [ref=e3078]:
+                    - link "Apply the filter 2021 to narrow results" [ref=e3080] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1004218864091%3A14354454031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=14354437031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1004218864091_4&ds=v1%3Ad2saIHQqmzr08ZXo889AZ9ayTZdKeosKN%2BrEGKz81%2BA
+                      - checkbox [ref=e3083]
+                      - text: "2021"
+                  - listitem "Popular Shopping Ideas" [ref=e3085]:
+                    - link "Apply the filter 2020 to narrow results" [ref=e3087] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1004218864091%3A14354453031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=14354437031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1004218864091_5&ds=v1%3AsPE7CZimh97Lwd2UxYroOmnJ6aP8Huw5acZgvUhqcH4
+                      - checkbox [ref=e3090]
+                      - text: "2020"
+                  - listitem "Popular Shopping Ideas" [ref=e3092]:
+                    - link "Apply the filter 2019 to narrow results" [ref=e3094] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1004218864091%3A14354452031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=14354437031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1004218864091_6&ds=v1%3AxfcAqKT%2FGI5gszw8IH9tnZbtCph3xnHNMmP4fQZdZz4
+                      - checkbox [ref=e3097]
+                      - text: "2019"
+              - group "Display Technology" [ref=e3099]:
+                - heading "Display Technology" [level=2] [ref=e3100]
+                - list "Display Technology" [ref=e3101]:
+                  - listitem "Popular Shopping Ideas" [ref=e3102]:
+                    - link "Apply the filter LED to narrow results" [ref=e3104] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_feature_browse-bin%3A1485062031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=1485060031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_feature_browse-bin_1&ds=v1%3AS93CXAeaQOuAtVh9SCtnbZzjKQ5dZyfQQjxySBMhZSU
+                      - checkbox [ref=e3107]
+                      - text: LED
+                  - listitem "Popular Shopping Ideas" [ref=e3109]:
+                    - link "Apply the filter QLED to narrow results" [ref=e3111] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_feature_browse-bin%3A13466811031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=1485060031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_feature_browse-bin_2&ds=v1%3ADNxx4wUrYmbuAmKWr0tRl9Rg6hcIer%2FA3a4ut0wUkcI
+                      - checkbox [ref=e3114]
+                      - text: QLED
+                  - listitem "Popular Shopping Ideas" [ref=e3116]:
+                    - link "Apply the filter LCD to narrow results" [ref=e3118] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_feature_browse-bin%3A1485061031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=1485060031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_feature_browse-bin_3&ds=v1%3AfD%2Fv6aelT6LpmiyhfIxjIdgggw35OVyPKVKE0Qos%2FCQ
+                      - checkbox [ref=e3121]
+                      - text: LCD
+                  - listitem "Popular Shopping Ideas" [ref=e3123]:
+                    - link "Apply the filter OLED to narrow results" [ref=e3125] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_feature_browse-bin%3A15430914031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=1485060031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_feature_browse-bin_4&ds=v1%3ALbX0B7PMyH6M7G%2BWIRItDjMlkTSjSSIWvz8SvIwu9W8
+                      - checkbox [ref=e3128]
+                      - text: OLED
+              - group "Home Entertainment Brands" [ref=e3130]:
+                - heading "Home Entertainment Brands" [level=2] [ref=e3131]
+                - list "Home Entertainment Brands" [ref=e3132]:
+                  - listitem "Popular Shopping Ideas" [ref=e3133]:
+                    - link "Apply the filter Made for Amazon to narrow results" [ref=e3135] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_format_browse-bin%3A30678582031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=30678574031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_format_browse-bin_1&ds=v1%3ACj7GqjTxu0O4w11FEJ0DSjoxEb9ZC5%2F2J3TMUaPNKhk
+                      - checkbox [ref=e3138]
+                      - text: Made for Amazon
+                  - listitem "Popular Shopping Ideas" [ref=e3140]:
+                    - link "Apply the filter Top Brands to narrow results" [ref=e3142] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_format_browse-bin%3A30678583031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=30678574031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_format_browse-bin_2&ds=v1%3AbAO25YnDWn5CdwJvAIT8rSt4BwHVAM%2BUA1wBqsf5oN4
+                      - checkbox [ref=e3145]
+                      - text: Top Brands
+              - group "Connectivity" [ref=e3147]:
+                - heading "Connectivity" [level=2] [ref=e3148]
+                - list "Connectivity" [ref=e3149]:
+                  - listitem "Popular Shopping Ideas" [ref=e3150]:
+                    - link "Apply the filter HDMI to narrow results" [ref=e3152] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1003207971111%3A27961045031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=27961041031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1003207971111_1&ds=v1%3Af0nQruhojZ335f8hBfN9TUSNihdaf%2FtN7l89gRWt86c
+                      - checkbox [ref=e3155]
+                      - text: HDMI
+                  - listitem "Popular Shopping Ideas" [ref=e3157]:
+                    - link "Apply the filter Wi-Fi to narrow results" [ref=e3159] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1003207971111%3A56613348031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=27961041031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1003207971111_2&ds=v1%3AQqyr9kScYn4p0bQDE4lisB%2BtynrhKGBKqW5UFATJqfk
+                      - checkbox [ref=e3162]
+                      - text: Wi-Fi
+                  - listitem "Popular Shopping Ideas" [ref=e3164]:
+                    - link "Apply the filter USB to narrow results" [ref=e3166] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1003207971111%3A27961047031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=27961041031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1003207971111_3&ds=v1%3ABFSbaDAQx18LZWMq2vwU7AIYX8%2F%2FPsFnf%2FGQMYSTMMQ
+                      - checkbox [ref=e3169]
+                      - text: USB
+                  - listitem "Popular Shopping Ideas" [ref=e3171]:
+                    - link "Apply the filter AV to narrow results" [ref=e3173] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1003207971111%3A216301676031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=27961041031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1003207971111_4&ds=v1%3AnTTtb%2B4KL5G7bUlCFp7jto87YJfHMmpvUAHC7M2aIuo
+                      - checkbox [ref=e3176]
+                      - text: AV
+                  - listitem "Popular Shopping Ideas" [ref=e3178]:
+                    - link "Apply the filter Bluetooth to narrow results" [ref=e3180] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1003207971111%3A27961042031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=27961041031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1003207971111_5&ds=v1%3Aw%2F%2FVDs3%2BZ446aWDuiap7VRb1c7beY1SSdPO1wcFc%2Fig
+                      - checkbox [ref=e3183]
+                      - text: Bluetooth
+                  - listitem "Popular Shopping Ideas" [ref=e3185]:
+                    - link "Apply the filter Ethernet to narrow results" [ref=e3187] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1003207971111%3A27961048031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=27961041031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1003207971111_6&ds=v1%3AX96b67J2ODkNXlZRdC%2F%2FgwgVS%2FhAyirdZcm5g5M8kS0
+                      - checkbox [ref=e3190]
+                      - text: Ethernet
+                  - listitem "Popular Shopping Ideas" [ref=e3192]:
+                    - link "Apply the filter RF to narrow results" [ref=e3194] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1003207971111%3A27961046031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=27961041031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1003207971111_7&ds=v1%3AFIOGjwV5Xcdi8HQoc5p7HPHPc4C%2FCeTCz68YXGArs%2Bo
+                      - checkbox [ref=e3197]
+                      - text: RF
+              - group "Discount" [ref=e3199]:
+                - heading "Discount" [level=2] [ref=e3200]
+                - list "Discount" [ref=e3201]:
+                  - listitem [ref=e3202]:
+                    - link "10% Off or more" [ref=e3204] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_pct-off-with-tax%3A2665399031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=2665398031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_pct-off-with-tax_1&ds=v1%3A3gTA5iilsbKJ0cnFyg02ZdQ4DwVo5I5XnYtVH6%2F07K4
+                  - listitem [ref=e3205]:
+                    - link "25% Off or more" [ref=e3207] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_pct-off-with-tax%3A2665400031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=2665398031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_pct-off-with-tax_2&ds=v1%3ADv2fQHBMB2npBv%2F1ELoOYFLxVOUAcgYKtDQeghQTP2s
+                  - listitem [ref=e3208]:
+                    - link "35% Off or more" [ref=e3210] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_pct-off-with-tax%3A2665402031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=2665398031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_pct-off-with-tax_3&ds=v1%3A7YpVmxe6m0h%2Bmut9Di82fehm%2Fsa8QV3JhpUVAgH5XqI
+                  - listitem [ref=e3211]:
+                    - link "50% Off or more" [ref=e3213] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_pct-off-with-tax%3A2665401031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=2665398031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_pct-off-with-tax_4&ds=v1%3ApSo9DPmC7UN0TKrfInHCIAYm4YGp5Au2dskEEuNKUGk
+                  - listitem [ref=e3214]:
+                    - link "60% Off or more" [ref=e3216] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_pct-off-with-tax%3A27060456031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=2665398031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_pct-off-with-tax_5&ds=v1%3A8d2VgIetR0dCJv9Epa6jl9iXvYawCha1kmZzCkyz6d8
+                  - listitem [ref=e3217]:
+                    - link "70% Off or more" [ref=e3219] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_pct-off-with-tax%3A27060457031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=2665398031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_pct-off-with-tax_6&ds=v1%3AbP34FWDoVIt5Xv5zCM3YKq0HKWDdn2CqgOR%2F4SP7N7U
+              - group "Ideal Viewing Distance" [ref=e3220]:
+                - heading "Ideal Viewing Distance" [level=2] [ref=e3221]
+                - list "Ideal Viewing Distance" [ref=e3222]:
+                  - listitem "Popular Shopping Ideas" [ref=e3223]:
+                    - link "Apply the filter 4.1 to 6ft to narrow results" [ref=e3225] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_feature_twelve_browse-bin%3A15747877031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=15747875031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_feature_twelve_browse-bin_1&ds=v1%3Ay4%2BoIuYySpo7teDLQKVcWVqhCvMqGNylG4EtzpWvsSg
+                      - checkbox [ref=e3228]
+                      - text: 4.1 to 6ft
+                  - listitem "Popular Shopping Ideas" [ref=e3230]:
+                    - link "Apply the filter 6.1 to 8ft to narrow results" [ref=e3232] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_feature_twelve_browse-bin%3A15747878031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=15747875031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_feature_twelve_browse-bin_2&ds=v1%3AOktXKSYv9V4vx6jI67Pzy%2BLpNdi%2B%2FRp97Ni6IDqMX88
+                      - checkbox [ref=e3235]
+                      - text: 6.1 to 8ft
+                  - listitem "Popular Shopping Ideas" [ref=e3237]:
+                    - link "Apply the filter 8.1 to 10ft to narrow results" [ref=e3239] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_feature_twelve_browse-bin%3A15747879031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=15747875031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_feature_twelve_browse-bin_3&ds=v1%3A9eWk1zzOQl137z6c0HDhTqnGWVjlit5pkccD1UTZN8w
+                      - checkbox [ref=e3242]
+                      - text: 8.1 to 10ft
+                  - listitem "Popular Shopping Ideas" [ref=e3244]:
+                    - link "Apply the filter 10.1 to 12ft to narrow results" [ref=e3246] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_feature_twelve_browse-bin%3A15747880031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=15747875031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_feature_twelve_browse-bin_4&ds=v1%3AZKQjyxtFEWMFwpBnfyIfDUXewnHr%2B9OKPZr9yHWK7SM
+                      - checkbox [ref=e3249]
+                      - text: 10.1 to 12ft
+                  - listitem "Popular Shopping Ideas" [ref=e3251]:
+                    - link "Apply the filter Above 15ft to narrow results" [ref=e3253] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_feature_twelve_browse-bin%3A15747882031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=15747875031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_feature_twelve_browse-bin_5&ds=v1%3A%2BBlfcwY7s5eKpn0L0GvM4hp7e4XSjWjEn1EsC2ij2vk
+                      - checkbox [ref=e3256]
+                      - text: Above 15ft
+              - group "Item Condition" [ref=e3258]:
+                - heading "Item Condition" [level=2] [ref=e3259]
+                - list "Item Condition" [ref=e3260]:
+                  - listitem "Popular Shopping Ideas" [ref=e3261]:
+                    - link "Apply the filter New to narrow results" [ref=e3263] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_condition-type%3A8609960031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=8609959031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_condition-type_1&ds=v1%3AibjsQFbCow3Su2Z9YkoA%2FkfGZ7t0RN468jClw%2B5wAiI
+                      - checkbox [ref=e3266]
+                      - text: New
+              - group "Supported Internet Services" [ref=e3268]:
+                - heading "Supported Internet Services" [level=2] [ref=e3269]
+                - list "Supported Internet Services" [ref=e3270]:
+                  - listitem "Popular Shopping Ideas" [ref=e3271]:
+                    - link "Apply the filter YouTube to narrow results" [ref=e3273] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1003330408111%3A28265036031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=28265031031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1003330408111_1&ds=v1%3AGg2PpYydrxOkMQKWk6loFtdM74mQvczmNJIs3HRzokU
+                      - checkbox [ref=e3276]
+                      - text: YouTube
+                  - listitem "Popular Shopping Ideas" [ref=e3278]:
+                    - link "Apply the filter Netflix to narrow results" [ref=e3280] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1003330408111%3A28265045031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=28265031031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1003330408111_2&ds=v1%3A9vq9fWuWP8aPZtYQX03stpl7m2PQzptEgTkGwXnQmCU
+                      - checkbox [ref=e3283]
+                      - text: Netflix
+                  - listitem "Popular Shopping Ideas" [ref=e3285]:
+                    - link "Apply the filter Prime Video to narrow results" [ref=e3287] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1003330408111%3A28265043031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=28265031031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1003330408111_3&ds=v1%3AIO2XBwCdgYA%2FxAqS1%2BW%2BhjaBZv3FUnwwMMBG4%2FKTAPw
+                      - checkbox [ref=e3290]
+                      - text: Prime Video
+                  - listitem "Popular Shopping Ideas" [ref=e3292]:
+                    - link "Apply the filter Apple TV to narrow results" [ref=e3294] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1003330408111%3A28265051031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=28265031031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1003330408111_4&ds=v1%3Auyu48z%2FCUtycKsqIj8iStcpE1tzsd9FN6XWhFG2er9k
+                      - checkbox [ref=e3297]
+                      - text: Apple TV
+                  - listitem "Popular Shopping Ideas" [ref=e3299]:
+                    - link "Apply the filter Browser to narrow results" [ref=e3301] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1003330408111%3A28265044031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=28265031031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1003330408111_5&ds=v1%3AVc%2BNScp1o8GEis18lf5Bi%2BIHkyNIuBY9MbV7X%2FSnlWs
+                      - checkbox [ref=e3304]
+                      - text: Browser
+                  - listitem "Popular Shopping Ideas" [ref=e3306]:
+                    - link "Apply the filter Google TV to narrow results" [ref=e3308] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1003330408111%3A28265032031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=28265031031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1003330408111_6&ds=v1%3A7zBs2Y8mVy62vQu5P3WX3K7wN2U9bZjT%2BnzolpAJXKM
+                      - checkbox [ref=e3311]
+                      - text: Google TV
+                  - listitem "Popular Shopping Ideas" [ref=e3313]:
+                    - link "Apply the filter Pandora to narrow results" [ref=e3315] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1003330408111%3A28265042031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=28265031031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1003330408111_7&ds=v1%3AiQN%2BnI3ErKG6DwXpUr4n%2F96JFekiZ6TwInZrXjzTDzU
+                      - checkbox [ref=e3318]
+                      - text: Pandora
+                  - listitem [ref=e3320]:
+                    - button "See more, Supported Internet Services" [ref=e3323] [cursor=pointer]: See more
+              - group "Mounting Type" [ref=e3325]:
+                - heading "Mounting Type" [level=2] [ref=e3326]
+                - list "Mounting Type" [ref=e3327]:
+                  - listitem "Popular Shopping Ideas" [ref=e3328]:
+                    - link "Apply the filter Table Mount to narrow results" [ref=e3330] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1003291775111%3A28215139031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=28215100031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1003291775111_1&ds=v1%3APym6AZQXdftNi7y7bZbk1pXlFQepk%2F1MHGJszikfBuU
+                      - checkbox [ref=e3333]
+                      - text: Table Mount
+                  - listitem "Popular Shopping Ideas" [ref=e3335]:
+                    - link "Apply the filter Wall Mount to narrow results" [ref=e3337] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1003291775111%3A28215138031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=28215100031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1003291775111_2&ds=v1%3AQW8A1SoS1IIh%2FFCwPXRDKxACsjC5E4A8qiV%2FOKfDimM
+                      - checkbox [ref=e3340]
+                      - text: Wall Mount
+              - group "Control Method" [ref=e3342]:
+                - heading "Control Method" [level=2] [ref=e3343]
+                - list "Control Method" [ref=e3344]:
+                  - listitem "Popular Shopping Ideas" [ref=e3345]:
+                    - link "Apply the filter App to narrow results" [ref=e3347] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1002085548111%3A27179563031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=27179527031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1002085548111_1&ds=v1%3AOFUuhzsaIN%2B9h%2FJSfp%2FuYUMRzyNM3hEkC7nSkJck5Gw
+                      - checkbox [ref=e3350]
+                      - text: App
+                  - listitem "Popular Shopping Ideas" [ref=e3352]:
+                    - link "Apply the filter Remote to narrow results" [ref=e3354] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1002085548111%3A27179560031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=27179527031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1002085548111_2&ds=v1%3AhJ460OPcIsnWF1SFHVxRRh7504Vqffe3KDjBlmbaSnE
+                      - checkbox [ref=e3357]
+                      - text: Remote
+                  - listitem "Popular Shopping Ideas" [ref=e3359]:
+                    - link "Apply the filter Touch to narrow results" [ref=e3361] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1002085548111%3A27179561031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=27179527031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1002085548111_3&ds=v1%3Arw%2FJn2j1iBnD4y8Mq8uT4CyfGg76yCx0yTsM%2Flj8XDs
+                      - checkbox [ref=e3364]
+                      - text: Touch
+                  - listitem "Popular Shopping Ideas" [ref=e3366]:
+                    - link "Apply the filter Voice to narrow results" [ref=e3368] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1002085548111%3A27179562031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=27179527031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1002085548111_4&ds=v1%3Ach6VgTGss4jENuRLHhPR75Ej1IOfQkxppq5%2BgWjs1dY
+                      - checkbox [ref=e3371]
+                      - text: Voice
+              - group "New Arrivals" [ref=e3373]:
+                - heading "New Arrivals" [level=2] [ref=e3374]
+                - list "New Arrivals" [ref=e3375]:
+                  - listitem [ref=e3376]:
+                    - link "Last 30 days" [ref=e3378] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_date_first_available_absolute%3A1318487031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=1318486031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_date_first_available_absolute_1&ds=v1%3ASxQVjO3xeOhrqqiEQj%2FE4EYSC3lqO%2Fh%2FJ9lAx6v7acg
+                  - listitem [ref=e3379]:
+                    - link "Last 90 days" [ref=e3381] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_date_first_available_absolute%3A1318488031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=1318486031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_date_first_available_absolute_2&ds=v1%3An%2BuLdwYv1dSPp%2FjDa0JUeqb%2FSfeXbzaBFs4TUdnQHOE
+              - group "Pay On Delivery" [ref=e3382]:
+                - heading "Pay On Delivery" [level=2] [ref=e3383]
+                - list "Pay On Delivery" [ref=e3384]:
+                  - listitem "Popular Shopping Ideas" [ref=e3385]:
+                    - link "Apply the filter Eligible for Pay On Delivery to narrow results" [ref=e3387] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_is_cod_eligible%3A4931671031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=4931670031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_is_cod_eligible_1&ds=v1%3AN42vnFP4tu2eXsayvBiPbCNp1s%2FPpZ7ecCTiFRtRv48
+                      - checkbox [ref=e3390]
+                      - text: Eligible for Pay On Delivery
+              - group "HDMI Ports" [ref=e3392]:
+                - heading "HDMI Ports" [level=2] [ref=e3393]
+                - list "HDMI Ports" [ref=e3394]:
+                  - listitem "Popular Shopping Ideas" [ref=e3395]:
+                    - link "Apply the filter 1 to narrow results" [ref=e3397] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1003293678111%3A28239870031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=28239860031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1003293678111_1&ds=v1%3AJ%2FdnIxbvaU15%2FUcZMSHKxaBMVol4R43Vq0C8d65kG%2F8
+                      - checkbox [ref=e3400]
+                      - text: "1"
+                  - listitem "Popular Shopping Ideas" [ref=e3402]:
+                    - link "Apply the filter 2 to narrow results" [ref=e3404] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1003293678111%3A28239872031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=28239860031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1003293678111_2&ds=v1%3ADrBqBYlW0DlD0ZkKvf7soG24E6XRn%2BFIZcFSLje0esM
+                      - checkbox [ref=e3407]
+                      - text: "2"
+                  - listitem "Popular Shopping Ideas" [ref=e3409]:
+                    - link "Apply the filter 3 to narrow results" [ref=e3411] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1003293678111%3A28239868031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=28239860031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1003293678111_3&ds=v1%3ARFlPTKh295QA%2Fx6plqDQUseaFbN8Dwrr608KJ7Mr8Y0
+                      - checkbox [ref=e3414]
+                      - text: "3"
+                  - listitem "Popular Shopping Ideas" [ref=e3416]:
+                    - link "Apply the filter 4 to narrow results" [ref=e3418] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1003293678111%3A28239871031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=28239860031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1003293678111_4&ds=v1%3APridmEk1wb92pPppUJQMXE7HHtycA3h%2BdB6udM5%2F0L4
+                      - checkbox [ref=e3421]
+                      - text: "4"
+              - group "Max Power Output" [ref=e3423]:
+                - heading "Max Power Output" [level=2] [ref=e3424]
+                - list "Max Power Output" [ref=e3425]:
+                  - listitem "Popular Shopping Ideas" [ref=e3426]:
+                    - link "Apply the filter Up to 14 W to narrow results" [ref=e3428] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1003523554111%3A56164438031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=56162820031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1003523554111_1&ds=v1%3AFup4ctroWgrANIO48X2w1Q8pze6cD3rJ9XGUM2OiZHk
+                      - checkbox [ref=e3431]
+                      - text: Up to 14 W
+                  - listitem "Popular Shopping Ideas" [ref=e3433]:
+                    - link "Apply the filter 15 to 17 W to narrow results" [ref=e3435] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1003523554111%3A56164440031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=56162820031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1003523554111_2&ds=v1%3AnFSL%2BdflfcVG%2F5gVJrAMbgaFCV8PrJIOI6l6BcIgDd0
+                      - checkbox [ref=e3438]
+                      - text: 15 to 17 W
+                  - listitem "Popular Shopping Ideas" [ref=e3440]:
+                    - link "Apply the filter 18 to 20 W to narrow results" [ref=e3442] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1003523554111%3A56164441031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=56162820031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1003523554111_3&ds=v1%3Ag9TCS4VEIsLNrT%2F%2FH2%2Bm%2B6Oi%2FxG24HYBZIKnBxtTRuQ
+                      - checkbox [ref=e3445]
+                      - text: 18 to 20 W
+                  - listitem "Popular Shopping Ideas" [ref=e3447]:
+                    - link "Apply the filter 21 W & above to narrow results" [ref=e3449] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-1003523554111%3A56164439031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=56162820031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-1003523554111_4&ds=v1%3Ay5kEz4CKMjf%2FScUO%2B1OPGYa5EpfijjaFOSlyyDFPVrw
+                      - checkbox [ref=e3452]
+                      - text: 21 W & above
+              - group "HDR Format Supported" [ref=e3454]:
+                - heading "HDR Format Supported" [level=2] [ref=e3455]
+                - list "HDR Format Supported" [ref=e3456]:
+                  - listitem "Popular Shopping Ideas" [ref=e3457]:
+                    - link "Apply the filter HDR10 to narrow results" [ref=e3459] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101014793910111%3A85886136031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=85886089031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101014793910111_1&ds=v1%3AVNm%2FRHq1YVNW1LrF9mSSduJ7yrB2qXXrs49%2FY9cPnSs
+                      - checkbox [ref=e3462]
+                      - text: HDR10
+                  - listitem "Popular Shopping Ideas" [ref=e3464]:
+                    - link "Apply the filter HLG to narrow results" [ref=e3466] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101014793910111%3A85886137031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=85886089031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101014793910111_2&ds=v1%3A241LY7aqZ4npjm4r1zxPKoldx0UjS6mi6etGJpkSTYQ
+                      - checkbox [ref=e3469]
+                      - text: HLG
+                  - listitem "Popular Shopping Ideas" [ref=e3471]:
+                    - link "Apply the filter Dolby Vision to narrow results" [ref=e3473] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101014793910111%3A85886134031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=85886089031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101014793910111_3&ds=v1%3A0dq3I8X1arkS%2Bv72%2F0kLATEp8Lgq0p%2Btl5Xbuvkamcs
+                      - checkbox [ref=e3476]
+                      - text: Dolby Vision
+                  - listitem "Popular Shopping Ideas" [ref=e3478]:
+                    - link "Apply the filter HDR10+ to narrow results" [ref=e3480] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101014793910111%3A85886133031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=85886089031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101014793910111_4&ds=v1%3AoP7ArVD2w5WLmMwohyPhWl0wA4T0JIyHAltv0j8p%2FZU
+                      - checkbox [ref=e3483]
+                      - text: HDR10+
+              - group "Purpose" [ref=e3485]:
+                - heading "Purpose" [level=2] [ref=e3486]
+                - list "Purpose" [ref=e3487]:
+                  - listitem "Popular Shopping Ideas" [ref=e3488]:
+                    - link "Apply the filter Streaming to narrow results" [ref=e3490] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101016695292111%3A207250417031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=207250416031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101016695292111_1&ds=v1%3A0vYWSrn7ye%2BQgnAgiUsX5K4IA4iS4f9GGtd%2BUb8itWg
+                      - checkbox [ref=e3493]
+                      - text: Streaming
+                  - listitem "Popular Shopping Ideas" [ref=e3495]:
+                    - link "Apply the filter Video Gaming to narrow results" [ref=e3497] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101016695292111%3A210762002031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=207250416031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101016695292111_2&ds=v1%3AKGsbiXnkvoS0pu3eb8HLsXGAJBwd2bhzIF9BxPnhZ6g
+                      - checkbox [ref=e3500]
+                      - text: Video Gaming
+              - group "Voltage" [ref=e3502]:
+                - heading "Voltage" [level=2] [ref=e3503]
+                - list "Voltage" [ref=e3504]:
+                  - listitem "Popular Shopping Ideas" [ref=e3505]:
+                    - link "Apply the filter Up to 118 V to narrow results" [ref=e3507] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015502188111%3A100428912031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100428894031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015502188111_1&ds=v1%3AqCmIscsihqLkbcBs83wNiOdMDicNBOZvN9PwMnbKf8I
+                      - checkbox [ref=e3510]
+                      - text: Up to 118 V
+                  - listitem "Popular Shopping Ideas" [ref=e3512]:
+                    - link "Apply the filter 121 V & above to narrow results" [ref=e3514] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015502188111%3A100428914031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100428894031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015502188111_2&ds=v1%3Au5wjauqXqQAJ5AkIGT5T3DAuzq2Kg8WhkImegxW4v5A
+                      - checkbox [ref=e3517]
+                      - text: 121 V & above
+              - group "Depth" [ref=e3519]:
+                - heading "Depth" [level=2] [ref=e3520]
+                - list "Depth" [ref=e3521]:
+                  - listitem "Popular Shopping Ideas" [ref=e3522]:
+                    - link "Apply the filter Up to 24 cm to narrow results" [ref=e3524] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015506708111%3A100445449031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100445373031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015506708111_1&ds=v1%3AeTi9aa3LGSKhjivWuQCsJeXlDDLJbrGc5u9ICiCHz38
+                      - checkbox [ref=e3527]
+                      - text: Up to 24 cm
+                  - listitem "Popular Shopping Ideas" [ref=e3529]:
+                    - link "Apply the filter 25 to 29 cm to narrow results" [ref=e3531] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015506708111%3A100445448031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100445373031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015506708111_2&ds=v1%3AOWZm0Mn34NVmsrd9yZUcgkXfERy29UO4j5ETwqVpBLc
+                      - checkbox [ref=e3534]
+                      - text: 25 to 29 cm
+                  - listitem "Popular Shopping Ideas" [ref=e3536]:
+                    - link "Apply the filter 30 to 34 cm to narrow results" [ref=e3538] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015506708111%3A100445451031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100445373031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015506708111_3&ds=v1%3Aj%2B9Ln5jF1WOvZVsIJ039vXh7iqmQycx724xAwTkM0lA
+                      - checkbox [ref=e3541]
+                      - text: 30 to 34 cm
+                  - listitem "Popular Shopping Ideas" [ref=e3543]:
+                    - link "Apply the filter 35 cm & above to narrow results" [ref=e3545] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015506708111%3A100445450031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100445373031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015506708111_4&ds=v1%3AuNtduGL%2FvqoF9%2BGgDPgchFLYvKBHlVwA5iQLxieEoLY
+                      - checkbox [ref=e3548]
+                      - text: 35 cm & above
+              - group "Availability" [ref=e3550]:
+                - heading "Availability" [level=2] [ref=e3551]
+                - list "Availability" [ref=e3552]:
+                  - listitem "Popular Shopping Ideas" [ref=e3553]:
+                    - link "Apply the filter Include Out of Stock to narrow results" [ref=e3555] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_availability%3A1318485031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=1318483031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_availability_2&ds=v1%3AUQ6%2BlKSG4JdCnly2eItS7acfm3vdOeg3aJUVRM8e178
+                      - checkbox [ref=e3558]
+                      - text: Include Out of Stock
+              - group "Video Encoding" [ref=e3560]:
+                - heading "Video Encoding" [level=2] [ref=e3561]
+                - list "Video Encoding" [ref=e3562]:
+                  - listitem "Popular Shopping Ideas" [ref=e3563]:
+                    - link "Apply the filter MP4 to narrow results" [ref=e3565] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015501924111%3A100428932031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100428897031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015501924111_1&ds=v1%3ApgkWJkUfOTJXqLIS4gns46KFUe%2BqWiTWRTJ%2Bh01mQVQ
+                      - checkbox [ref=e3568]
+                      - text: MP4
+                  - listitem "Popular Shopping Ideas" [ref=e3570]:
+                    - link "Apply the filter AVC to narrow results" [ref=e3572] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015501924111%3A100428925031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100428897031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015501924111_2&ds=v1%3ALjikD7tLDaMiLryOfOqRMUJJID%2FbLJ8uCkrZjHf6DBE
+                      - checkbox [ref=e3575]
+                      - text: AVC
+                  - listitem "Popular Shopping Ideas" [ref=e3577]:
+                    - link "Apply the filter AVI to narrow results" [ref=e3579] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015501924111%3A100428945031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100428897031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015501924111_3&ds=v1%3AoM8gUAHb7KZLTHv%2BWfG2ywunr006xKBNv9Wj9G%2BCK3Q
+                      - checkbox [ref=e3582]
+                      - text: AVI
+                  - listitem "Popular Shopping Ideas" [ref=e3584]:
+                    - link "Apply the filter MPEG-1 to narrow results" [ref=e3586] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015501924111%3A100428929031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100428897031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015501924111_4&ds=v1%3AiiMSQxSke1ouey7ECeHurL6tw5jMoWdhBYIjKZbK32Q
+                      - checkbox [ref=e3589]
+                      - text: MPEG-1
+              - group "Audio Output Mode" [ref=e3591]:
+                - heading "Audio Output Mode" [level=2] [ref=e3592]
+                - list "Audio Output Mode" [ref=e3593]:
+                  - listitem "Popular Shopping Ideas" [ref=e3594]:
+                    - link "Apply the filter Digital to narrow results" [ref=e3596] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015503279111%3A100430209031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100430205031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015503279111_1&ds=v1%3Amky0GnOVn51X0WxgrU8JkBJExv8iDKfiGXRtrw7RwVA
+                      - checkbox [ref=e3599]
+                      - text: Digital
+                  - listitem "Popular Shopping Ideas" [ref=e3601]:
+                    - link "Apply the filter Stereo to narrow results" [ref=e3603] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015503279111%3A100430210031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100430205031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015503279111_2&ds=v1%3AqO0NXQ7BffD01n3sj9RbJGvfD65n0ooeYCBy4biVbeo
+                      - checkbox [ref=e3606]
+                      - text: Stereo
+                  - listitem "Popular Shopping Ideas" [ref=e3608]:
+                    - link "Apply the filter Surround to narrow results" [ref=e3610] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015503279111%3A100430208031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100430205031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015503279111_3&ds=v1%3A8ssRZB1Q6%2FaLO9jlESwT4CvWsfDziNu%2FdQrchvI%2F6Ow
+                      - checkbox [ref=e3613]
+                      - text: Surround
+              - group "Wireless Technology" [ref=e3615]:
+                - heading "Wireless Technology" [level=2] [ref=e3616]
+                - list "Wireless Technology" [ref=e3617]:
+                  - listitem "Popular Shopping Ideas" [ref=e3618]:
+                    - link "Apply the filter Bluetooth to narrow results" [ref=e3620] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015502298111%3A100436315031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100436146031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015502298111_1&ds=v1%3AR9KmcN0ydtG0Ub%2BQo73pft%2F5Il6w28K1o%2BJCdEXQ2kA
+                      - checkbox [ref=e3623]
+                      - text: Bluetooth
+                  - listitem "Popular Shopping Ideas" [ref=e3625]:
+                    - link "Apply the filter Infrared to narrow results" [ref=e3627] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015502298111%3A100436316031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100436146031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015502298111_2&ds=v1%3AUVPkl%2FjbtnNOSQ7WYS1hO1pu48mqqNeE5eVDn4u4bXM
+                      - checkbox [ref=e3630]
+                      - text: Infrared
+                  - listitem "Popular Shopping Ideas" [ref=e3632]:
+                    - link "Apply the filter Radio Frequency to narrow results" [ref=e3634] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015502298111%3A100436314031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100436146031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015502298111_3&ds=v1%3Aw9C6DdNfKDbDyDVqRMa3Z6oUNJKLSZfoYElA%2BjOWR2Q
+                      - checkbox [ref=e3637]
+                      - text: Radio Frequency
+                  - listitem "Popular Shopping Ideas" [ref=e3639]:
+                    - link "Apply the filter Wi-Fi to narrow results" [ref=e3641] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015502298111%3A100436317031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100436146031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015502298111_4&ds=v1%3AzMaQ%2F3o0l7CYIN7Dz3%2FSP6%2FRhuePDauC1ZwBXlr2aNg
+                      - checkbox [ref=e3644]
+                      - text: Wi-Fi
+              - group "Width" [ref=e3646]:
+                - heading "Width" [level=2] [ref=e3647]
+                - list "Width" [ref=e3648]:
+                  - listitem "Popular Shopping Ideas" [ref=e3649]:
+                    - link "Apply the filter Up to 99 cm to narrow results" [ref=e3651] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015506805111%3A100445442031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100445371031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015506805111_1&ds=v1%3AMbCFlbRURCb%2B9PJGWHKqItt5pi08I8mTxgZUOPeIz18
+                      - checkbox [ref=e3654]
+                      - text: Up to 99 cm
+                  - listitem "Popular Shopping Ideas" [ref=e3656]:
+                    - link "Apply the filter 100 to 149 cm to narrow results" [ref=e3658] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015506805111%3A100445441031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100445371031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015506805111_2&ds=v1%3AiCGhjwMUod6bANK%2BFg6gSPiyHTFdYLVWzOQ4jZxjaJ4
+                      - checkbox [ref=e3661]
+                      - text: 100 to 149 cm
+                  - listitem "Popular Shopping Ideas" [ref=e3663]:
+                    - link "Apply the filter 150 cm & above to narrow results" [ref=e3665] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015506805111%3A100445443031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100445371031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015506805111_3&ds=v1%3Aydgfe7W9MpP8Snf9CGzqPOHMMXnDfOwszaPdWkaj0Ow
+                      - checkbox [ref=e3668]
+                      - text: 150 cm & above
+              - group "Smart Home Compatibility" [ref=e3670]:
+                - heading "Smart Home Compatibility" [level=2] [ref=e3671]
+                - list "Smart Home Compatibility" [ref=e3672]:
+                  - listitem "Popular Shopping Ideas" [ref=e3673]:
+                    - link "Apply the filter Not Smart Home Compatible to narrow results" [ref=e3675] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101017806282111%3A219570190031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=219570188031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101017806282111_1&ds=v1%3AIQlS4K0VY5khXa64KgzZ2GNzQ3n7X%2BX6%2FiC%2FugtYeQA
+                      - checkbox [ref=e3678]
+                      - text: Not Smart Home Compatible
+                  - listitem "Popular Shopping Ideas" [ref=e3680]:
+                    - link "Apply the filter Smart Home Compatible to narrow results" [ref=e3682] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101017806282111%3A219570189031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=219570188031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101017806282111_2&ds=v1%3AYo6L2PFv7fDsEEO7kzZpo8WNp854Y8KoeSkMr8HAZTA
+                      - checkbox [ref=e3685]
+                      - text: Smart Home Compatible
+              - group "Height" [ref=e3687]:
+                - heading "Height" [level=2] [ref=e3688]
+                - list "Height" [ref=e3689]:
+                  - listitem "Popular Shopping Ideas" [ref=e3690]:
+                    - link "Apply the filter Up to 69 cm to narrow results" [ref=e3692] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015506821111%3A100445440031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100445370031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015506821111_1&ds=v1%3AXU51DOlz40L02%2Be5c8oh4zaJeohshfceLYx0aejNOMY
+                      - checkbox [ref=e3695]
+                      - text: Up to 69 cm
+                  - listitem "Popular Shopping Ideas" [ref=e3697]:
+                    - link "Apply the filter 70 to 84 cm to narrow results" [ref=e3699] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015506821111%3A100445437031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100445370031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015506821111_2&ds=v1%3AgINVVAb9I6iIAyHOvA0YrV3TJ9dRmOWuHfzt7VoUjZM
+                      - checkbox [ref=e3702]
+                      - text: 70 to 84 cm
+                  - listitem "Popular Shopping Ideas" [ref=e3704]:
+                    - link "Apply the filter 85 to 99 cm to narrow results" [ref=e3706] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015506821111%3A100445438031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100445370031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015506821111_3&ds=v1%3A0jGVOnOQ1cHGKMLBF9ebdvlwaWgD0e51B27qOkdlVBw
+                      - checkbox [ref=e3709]
+                      - text: 85 to 99 cm
+                  - listitem "Popular Shopping Ideas" [ref=e3711]:
+                    - link "Apply the filter 100 cm & above to narrow results" [ref=e3713] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015506821111%3A100445439031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100445370031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015506821111_4&ds=v1%3A9KgcZjybl3z2CLifHcdOpoLuH%2BmsDrU8%2Fer0Y5w3L4g
+                      - checkbox [ref=e3716]
+                      - text: 100 cm & above
+              - group "Warranty Type" [ref=e3718]:
+                - heading "Warranty Type" [level=2] [ref=e3719]
+                - list "Warranty Type" [ref=e3720]:
+                  - listitem "Popular Shopping Ideas" [ref=e3721]:
+                    - link "Apply the filter Limited to narrow results" [ref=e3723] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015364782111%3A96329178031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=96329170031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015364782111_1&ds=v1%3AN8i9PPzA1Vj9Fpem%2BCstl4OiitdzGwVp3yQzveOXiww
+                      - checkbox [ref=e3726]
+                      - text: Limited
+              - group "Parental Control Technology" [ref=e3728]:
+                - heading "Parental Control Technology" [level=2] [ref=e3729]
+                - list "Parental Control Technology" [ref=e3730]:
+                  - listitem "Popular Shopping Ideas" [ref=e3731]:
+                    - link "Apply the filter Blocking Devices to narrow results" [ref=e3733] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015501845111%3A100428234031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100428218031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015501845111_1&ds=v1%3AkSzy9ZAnJZ7c4XXLs1g6J8coYeFY1AQ1ZtCCm54XMOI
+                      - checkbox [ref=e3736]
+                      - text: Blocking Devices
+                  - listitem "Popular Shopping Ideas" [ref=e3738]:
+                    - link "Apply the filter Filters to narrow results" [ref=e3740] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015501845111%3A100428236031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100428218031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015501845111_2&ds=v1%3Av4ma14xOmYPTIyd9l%2B1C17bSkr7727fnSsEAqH3CSao
+                      - checkbox [ref=e3743]
+                      - text: Filters
+              - group "Display Backlight Configuration" [ref=e3745]:
+                - heading "Display Backlight Configuration" [level=2] [ref=e3746]
+                - list "Display Backlight Configuration" [ref=e3747]:
+                  - listitem "Popular Shopping Ideas" [ref=e3748]:
+                    - link "Apply the filter Direct LED to narrow results" [ref=e3750] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101017394918111%3A214884398031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=214884396031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101017394918111_1&ds=v1%3AdPi6QK1LOKhRDIm0w8%2FpxXkGc88HRsWNOScxon4wUW8
+                      - checkbox [ref=e3753]
+                      - text: Direct LED
+                  - listitem "Popular Shopping Ideas" [ref=e3755]:
+                    - link "Apply the filter Edge LED to narrow results" [ref=e3757] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101017394918111%3A214884400031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=214884396031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101017394918111_2&ds=v1%3ARhtVzJd1dybON%2Fv1iMV5jBhfbpQYXSG1ODFZ21Q4ybU
+                      - checkbox [ref=e3760]
+                      - text: Edge LED
+                  - listitem "Popular Shopping Ideas" [ref=e3762]:
+                    - link "Apply the filter Mini LED to narrow results" [ref=e3764] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101017394918111%3A214884399031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=214884396031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101017394918111_3&ds=v1%3AD%2FRZ%2BXVEanCX1VKjCFeINTP7%2FKjCUdGqBo5dkn6Yc4I
+                      - checkbox [ref=e3767]
+                      - text: Mini LED
+              - group "Line Voltage" [ref=e3769]:
+                - heading "Line Voltage" [level=2] [ref=e3770]
+                - list "Line Voltage" [ref=e3771]:
+                  - listitem "Popular Shopping Ideas" [ref=e3772]:
+                    - link "Apply the filter 100-240 VAC 50-60 Hz to narrow results" [ref=e3774] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015503550111%3A100430800031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100430799031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015503550111_1&ds=v1%3AG0qVn46Hf3xDjVOoVZtRJ8UurMuOOQkQqrt%2FQ0t33cc
+                      - checkbox [ref=e3777]
+                      - text: 100-240 VAC 50-60 Hz
+                  - listitem "Popular Shopping Ideas" [ref=e3779]:
+                    - link "Apply the filter 110 VAC 60 Hz to narrow results" [ref=e3781] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015503550111%3A100430803031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100430799031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015503550111_2&ds=v1%3A4D8r8J8LqbG25gtZwax3tDqUrjTM%2BlZiXPLtnABb8%2BQ
+                      - checkbox [ref=e3784]
+                      - text: 110 VAC 60 Hz
+                  - listitem "Popular Shopping Ideas" [ref=e3786]:
+                    - link "Apply the filter 220 VAC 50 Hz to narrow results" [ref=e3788] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015503550111%3A100430802031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100430799031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015503550111_3&ds=v1%3AU8JC%2FWzyo4PpeVRy6wqCbCng7AAl%2Bc500NLE9BICfYk
+                      - checkbox [ref=e3791]
+                      - text: 220 VAC 50 Hz
+              - group "Screen Mirroring Technology" [ref=e3793]:
+                - heading "Screen Mirroring Technology" [level=2] [ref=e3794]
+                - list "Screen Mirroring Technology" [ref=e3795]:
+                  - listitem "Popular Shopping Ideas" [ref=e3796]:
+                    - link "Apply the filter Miracast to narrow results" [ref=e3798] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015501903111%3A100436385031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100436148031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015501903111_1&ds=v1%3AgZPagH6%2Frt%2Bh71YNKiAvvXBLLwtGamyvzJvyYCWEcmg
+                      - checkbox [ref=e3801]
+                      - text: Miracast
+                  - listitem "Popular Shopping Ideas" [ref=e3803]:
+                    - link "Apply the filter AirPlay 2 to narrow results" [ref=e3805] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015501903111%3A100436383031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100436148031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015501903111_2&ds=v1%3Ayc7PLAo3%2FdoYBL5gYjNXlYNC2txT0M0kRSXP8MThP%2FU
+                      - checkbox [ref=e3808]
+                      - text: AirPlay 2
+                  - listitem "Popular Shopping Ideas" [ref=e3810]:
+                    - link "Apply the filter AirPlay to narrow results" [ref=e3812] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015501903111%3A100436384031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100436148031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015501903111_3&ds=v1%3AQYKoTAF2xXse2vYGYCGKBVA1dgGZTZ3DhdCTt%2FfmwEU
+                      - checkbox [ref=e3815]
+                      - text: AirPlay
+                  - listitem "Popular Shopping Ideas" [ref=e3817]:
+                    - link "Apply the filter Google Cast to narrow results" [ref=e3819] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015501903111%3A100436382031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100436148031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015501903111_4&ds=v1%3Am56IkhrBuGXwtD1oph5zxThLhpY34OOO2InSNplXn6Q
+                      - checkbox [ref=e3822]
+                      - text: Google Cast
+                  - listitem "Popular Shopping Ideas" [ref=e3824]:
+                    - link "Apply the filter Smart View to narrow results" [ref=e3826] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015501903111%3A100436381031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100436148031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015501903111_5&ds=v1%3A1%2Bq0UDAdC0WhjnNUejfmWa2mZ%2BAvunGIh4pbvUahq8M
+                      - checkbox [ref=e3829]
+                      - text: Smart View
+                  - listitem "Popular Shopping Ideas" [ref=e3831]:
+                    - link "Apply the filter SmartShare to narrow results" [ref=e3833] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015501903111%3A100436379031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100436148031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015501903111_6&ds=v1%3A8TQm36x5ruTrfEad2Ukr%2F7d%2B95hxMtPLWZN8CcymWps
+                      - checkbox [ref=e3836]
+                      - text: SmartShare
+              - group "Tuner Technology" [ref=e3838]:
+                - heading "Tuner Technology" [level=2] [ref=e3839]
+                - list "Tuner Technology" [ref=e3840]:
+                  - listitem "Popular Shopping Ideas" [ref=e3841]:
+                    - link "Apply the filter ATSC to narrow results" [ref=e3843] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015678274111%3A203782440031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=203782418031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015678274111_1&ds=v1%3APMuh4jI%2BEMtXHbB59D5Uvy2QzTq2NUYJjajmVj2aORA
+                      - checkbox [ref=e3846]
+                      - text: ATSC
+                  - listitem "Popular Shopping Ideas" [ref=e3848]:
+                    - link "Apply the filter DVB-S2 to narrow results" [ref=e3850] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015678274111%3A203782436031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=203782418031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015678274111_2&ds=v1%3A9srL4gBHFFcGyg8FM86ur%2F3JG54Ynh5ECFTZTXIixYM
+                      - checkbox [ref=e3853]
+                      - text: DVB-S2
+                  - listitem "Popular Shopping Ideas" [ref=e3855]:
+                    - link "Apply the filter DVB-T to narrow results" [ref=e3857] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015678274111%3A203782438031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=203782418031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015678274111_3&ds=v1%3A206AZZGY0qvmc3ZdnTTxOasqRQuCO4ZvPge%2By%2FO%2BEiA
+                      - checkbox [ref=e3860]
+                      - text: DVB-T
+                  - listitem "Popular Shopping Ideas" [ref=e3862]:
+                    - link "Apply the filter DVB-T2 to narrow results" [ref=e3864] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015678274111%3A203782426031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=203782418031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015678274111_4&ds=v1%3AMATaK45Eqj2pmMUSK3K0FSEyPm4z3NpyBQOgTeXNF7M
+                      - checkbox [ref=e3867]
+                      - text: DVB-T2
+                  - listitem "Popular Shopping Ideas" [ref=e3869]:
+                    - link "Apply the filter NTSC to narrow results" [ref=e3871] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015678274111%3A203782432031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=203782418031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015678274111_5&ds=v1%3AWK%2FGLcAZlbf1hoQAKtBn7GlI7ihqx1z34%2BERg%2BakCxY
+                      - checkbox [ref=e3874]
+                      - text: NTSC
+                  - listitem "Popular Shopping Ideas" [ref=e3876]:
+                    - link "Apply the filter PAL to narrow results" [ref=e3878] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015678274111%3A203782434031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=203782418031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015678274111_6&ds=v1%3ACYp0ts8fw3RktcO7mviM0RS1XOlGmQHqx2JCFQKNSZo
+                      - checkbox [ref=e3881]
+                      - text: PAL
+              - group "Screen Type" [ref=e3883]:
+                - heading "Screen Type" [level=2] [ref=e3884]
+                - list "Screen Type" [ref=e3885]:
+                  - listitem "Popular Shopping Ideas" [ref=e3886]:
+                    - link "Apply the filter Glossy to narrow results" [ref=e3888] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015680631111%3A205120336031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=205120335031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015680631111_1&ds=v1%3AOBEMvvI6fL9qajXi9PLutiG2ww5ld%2BfLix3UCdf%2F8nQ
+                      - checkbox [ref=e3891]
+                      - text: Glossy
+                  - listitem "Popular Shopping Ideas" [ref=e3893]:
+                    - link "Apply the filter Matte to narrow results" [ref=e3895] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015680631111%3A205120337031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=205120335031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015680631111_2&ds=v1%3AuIw8R6fHWZTJiPbXfa%2F1kjz9jfg1b7Mr6iC9V0odM7I
+                      - checkbox [ref=e3898]
+                      - text: Matte
+              - group "Display Refresh Rate in Hertz" [ref=e3900]:
+                - heading "Display Refresh Rate in Hertz" [level=2] [ref=e3901]
+                - list "Display Refresh Rate in Hertz" [ref=e3902]:
+                  - listitem "Popular Shopping Ideas" [ref=e3903]:
+                    - link "Apply the filter 60 to narrow results" [ref=e3905] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101017397150111%3A214852212031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=214852198031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101017397150111_1&ds=v1%3AV4uN1bqEWaemOZv8HC%2FKzCuHp%2Fp%2Fc0GB8FeR3U%2Fz9dY
+                      - checkbox [ref=e3908]
+                      - text: "60"
+                  - listitem "Popular Shopping Ideas" [ref=e3910]:
+                    - link "Apply the filter 75 to narrow results" [ref=e3912] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101017397150111%3A214852200031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=214852198031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101017397150111_2&ds=v1%3AZihOZlVhcyRK9nDKeXaz69smBIHQ1aRoG1IckKEZf9Y
+                      - checkbox [ref=e3915]
+                      - text: "75"
+                  - listitem "Popular Shopping Ideas" [ref=e3917]:
+                    - link "Apply the filter 120 to narrow results" [ref=e3919] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101017397150111%3A214852205031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=214852198031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101017397150111_3&ds=v1%3A%2BISavi4p1ibApv6nuunh6FOZdWXN3FWtW4ZN60s%2BCbg
+                      - checkbox [ref=e3922]
+                      - text: "120"
+                  - listitem "Popular Shopping Ideas" [ref=e3924]:
+                    - link "Apply the filter 600 to narrow results" [ref=e3926] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101017397150111%3A214852202031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=214852198031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101017397150111_4&ds=v1%3ABw1EW7HzhJqYrizWVUakW9p2a1riRIaYn4%2FKMjM0748
+                      - checkbox [ref=e3929]
+                      - text: "600"
+              - group "Surround Sound Format" [ref=e3931]:
+                - heading "Surround Sound Format" [level=2] [ref=e3932]
+                - list "Surround Sound Format" [ref=e3933]:
+                  - listitem "Popular Shopping Ideas" [ref=e3934]:
+                    - link "Apply the filter Dolby Atmos to narrow results" [ref=e3936] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101014967190111%3A90131140031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=90131108031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101014967190111_1&ds=v1%3A%2BwGnkUdBeYRF%2FtgwYBzubFAYTscWBnpAOrq2FzFTMuY
+                      - checkbox [ref=e3939]
+                      - text: Dolby Atmos
+                  - listitem "Popular Shopping Ideas" [ref=e3941]:
+                    - link "Apply the filter Dolby Audio to narrow results" [ref=e3943] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101014967190111%3A90131136031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=90131108031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101014967190111_2&ds=v1%3Az%2BHsCEPgIFzF2IY7xptT0FOLkLk39rr207mgOWlDJq4
+                      - checkbox [ref=e3946]
+                      - text: Dolby Audio
+                  - listitem "Popular Shopping Ideas" [ref=e3948]:
+                    - link "Apply the filter DTS to narrow results" [ref=e3950] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101014967190111%3A90131145031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=90131108031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101014967190111_3&ds=v1%3ApUleWMbjuKg8%2F16Vkl2DJjztUUut0z6EUBm7fuCznus
+                      - checkbox [ref=e3953]
+                      - text: DTS
+                  - listitem "Popular Shopping Ideas" [ref=e3955]:
+                    - link "Apply the filter Dolby Digital to narrow results" [ref=e3957] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101014967190111%3A90131130031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=90131108031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101014967190111_4&ds=v1%3A54Xm02hWvk9sqodb1MBYmcd4h0%2B6RSdi549MyNX3JmA
+                      - checkbox [ref=e3960]
+                      - text: Dolby Digital
+                  - listitem "Popular Shopping Ideas" [ref=e3962]:
+                    - link "Apply the filter Dolby Digital Plus to narrow results" [ref=e3964] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101014967190111%3A90131146031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=90131108031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101014967190111_5&ds=v1%3AnoTSkFqJgIj2DYhZdDvqFK%2BvNfKXKh%2Bl1BxK8qfOT%2Fk
+                      - checkbox [ref=e3967]
+                      - text: Dolby Digital Plus
+              - group "Water Resistance Level" [ref=e3969]:
+                - heading "Water Resistance Level" [level=2] [ref=e3970]
+                - list "Water Resistance Level" [ref=e3971]:
+                  - listitem "Popular Shopping Ideas" [ref=e3972]:
+                    - link "Apply the filter Not Water Resistant to narrow results" [ref=e3974] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015502249111%3A100428917031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100428895031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015502249111_1&ds=v1%3Ah2OB0q09QYRFDZs45c0x08eePF3nmzBzfoplmCWT7mg
+                      - checkbox [ref=e3977]
+                      - text: Not Water Resistant
+                  - listitem "Popular Shopping Ideas" [ref=e3979]:
+                    - link "Apply the filter Water Resistant to narrow results" [ref=e3981] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015502249111%3A100428919031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100428895031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015502249111_2&ds=v1%3Acc22K8M0c70eJNa6o8Zldw%2FXTnqNFDRTpZosSWKGGIw
+                      - checkbox [ref=e3984]
+                      - text: Water Resistant
+                  - listitem "Popular Shopping Ideas" [ref=e3986]:
+                    - link "Apply the filter Waterproof to narrow results" [ref=e3988] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015502249111%3A100428916031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100428895031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015502249111_3&ds=v1%3A52OZDAHei2UEvy6a4E%2FIgGCTafBPZtvBsLqNnz%2B32Bw
+                      - checkbox [ref=e3991]
+                      - text: Waterproof
+              - group "Aspect Ratio" [ref=e3993]:
+                - heading "Aspect Ratio" [level=2] [ref=e3994]
+                - list "Aspect Ratio" [ref=e3995]:
+                  - listitem "Popular Shopping Ideas" [ref=e3996]:
+                    - link "Apply the filter 16:9 to narrow results" [ref=e3998] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015503032111%3A100436345031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100436147031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015503032111_1&ds=v1%3AypQg8XXrL%2FGAi19A24hETZuZqYAZN%2F80937GN3ITqY0
+                      - checkbox [ref=e4001]
+                      - text: 16:9
+                  - listitem "Popular Shopping Ideas" [ref=e4003]:
+                    - link "Apply the filter 4:3 to narrow results" [ref=e4005] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015503032111%3A100436344031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100436147031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015503032111_2&ds=v1%3AsmAZ%2FBulG6OeuOk0COIU%2FUih4rHSp5%2FNj8UUSp%2Ftqx0
+                      - checkbox [ref=e4008]
+                      - text: 4:3
+              - group "Seller" [ref=e4010]:
+                - heading "Seller" [level=2] [ref=e4011]
+                - list "Seller" [ref=e4012]:
+                  - listitem "Popular Shopping Ideas" [ref=e4013]:
+                    - link "Apply the filter wellhome decor furnishing to narrow results" [ref=e4015] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_6%3AA161UCGA9EG1R6&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=1318474031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_6_1&ds=v1%3A9QS8ZDMSPddVLVD6ubMidrNdu2OFnpUmdVyDh2q2xGg
+                      - checkbox [ref=e4018]
+                      - text: wellhome decor furnishing
+                  - listitem "Popular Shopping Ideas" [ref=e4020]:
+                    - link "Apply the filter DAWNTECH ELECTRONICS PRIVATE LIMITED to narrow results" [ref=e4022] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_6%3AA3K8GDUW67973J&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=1318474031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_6_2&ds=v1%3ALsrMpcaeuEO3dAwP86JKuNVw0ahHp9cY%2FJmVVvBnU0Y
+                      - checkbox [ref=e4025]
+                      - text: DAWNTECH ELECTRONICS PRIVATE LIMITED
+                  - listitem [ref=e4027]:
+                    - button "See more, Seller" [ref=e4030] [cursor=pointer]: See more
+              - group "Country of Origin" [ref=e4032]:
+                - heading "Country of Origin" [level=2] [ref=e4033]
+                - list "Country of Origin" [ref=e4034]:
+                  - listitem "Popular Shopping Ideas" [ref=e4035]:
+                    - link "Apply the filter India to narrow results" [ref=e4037] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_country_of_origin-bin%3AIN&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=215263484031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_country_of_origin-bin_1&ds=v1%3AX1sXPTuOBBtIWgRFWywlSufsozy1%2FrU53RWGorm2BGM
+                      - checkbox [ref=e4040]
+                      - text: India
+                  - listitem "Popular Shopping Ideas" [ref=e4042]:
+                    - link "Apply the filter Taiwan to narrow results" [ref=e4044] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_country_of_origin-bin%3ATW&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=215263484031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_country_of_origin-bin_2&ds=v1%3AshVsBKIZBlRNXt0tUO66Ozfea3SYsUwuP%2F8IhzKZC3w
+                      - checkbox [ref=e4047]
+                      - text: Taiwan
+                  - listitem "Popular Shopping Ideas" [ref=e4049]:
+                    - link "Apply the filter Vietnam to narrow results" [ref=e4051] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_country_of_origin-bin%3AVN&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=215263484031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_country_of_origin-bin_3&ds=v1%3AA5iwV3jCNsQOx%2FPKKwA2ntdkHTmshKGg7gMhz0Z0pnU
+                      - checkbox [ref=e4054]
+                      - text: Vietnam
+                  - listitem "Popular Shopping Ideas" [ref=e4056]:
+                    - link "Apply the filter United States to narrow results" [ref=e4058] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_country_of_origin-bin%3AUS&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=215263484031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_country_of_origin-bin_4&ds=v1%3AlZ2sqt8ihEvdTpC9GrmT51D%2F8E%2FWLoWZWPPURFN7it0
+                      - checkbox [ref=e4061]
+                      - text: United States
+              - group "Battery Type" [ref=e4063]:
+                - heading "Battery Type" [level=2] [ref=e4064]
+                - list "Battery Type" [ref=e4065]:
+                  - listitem "Popular Shopping Ideas" [ref=e4066]:
+                    - link "Apply the filter Alkaline to narrow results" [ref=e4068] [cursor=pointer]:
+                      - /url: /s?k=TV&rh=p_n_g-101015503376111%3A100430214031&dc&crid=8XMTCS9DYB1P&qid=1784142121&rnid=100430206031&sprefix=tv%2Caps%2C819&ref=sr_nr_p_n_g-101015503376111_1&ds=v1%3AmkSEwDtyKxia%2BLs7zikUf5BeTqOeum26eEGhyjnhjj4
+                      - checkbox [ref=e4071]
+                      - text: Alkaline
+            - generic [ref=e4076]:
+              - iframe [ref=e4077]:
+                - generic [ref=f19e4]:
+                  - generic [ref=f19e5]: "Sponsored Ad. Brand logo. Product image. PHILIPS 138 cm (55 inches) 4K Ultra HD QLED Smart QD-Mini LED Google TV 55MLED610/94 Price: ₹43,999.00 Shop now"
+                  - link "Click to navigate to product detail page" [ref=f19e8] [cursor=pointer]:
+                    - /url: https://aax-eu-zaz.amazon.in/x/c/RIkXYttsNEdgdC89K6UuwJ0AAAGfZyhL9AoAAAH_AQBvbm9fdHhuX2JpZDEgICBvbm9fdHhuX2ltcDIgICAtQvFr/clv1c_ek-4wnvSJdTWTBnNnWcepmi3sY0vfpblsZFd9Cb9o690m7IyMaxZDnh0xN63byIPoxP3DUV8yE7UPiy54KvxpZd_fkFXg6YZBa6CXC1YcwnDnpFhNUvg7m3g4Zi_Md-PoigbbMTs9w500r1VAARU2eetafYJLxTgrBSQTzGIXKMnwfKKXnzklfsFP2s_Mzi_k9KnYaZySkJgDLGvlGO11dhpyb1fBMs_mrnDoQWjCfPMOUBWNJzeffScZge8HiI4NDxSHfnI0Ki2CG2w3aUGEA3GI-4r9Dxxeq1Cs7zCZHLZORYRH1vNc90KsltLA4du1OmfQ3ydujxQ7RQ6JgfHaQRfkdNkBf8PKrDKXFfozqgmIzDg1Jcc6V4V8mFq9CUhE3Ux5wPqc39rctT7gMJhaGLlslqYaTZyCSNlVIVC06RnHNbroNlqZgbdhGrc1GMOToatwarEuupvxd0l_DyPdcCbYB1a1JSOVrLAcddgaxeTFMNAc-lWIDwSIWV9uEOLDxYRiI1iZlHZeCSVnNnpPGUf1sQlBiG-iAcJB1WlUv2wIdlLUTS-odtEY-2Of6KQYKVvlgxEskHNTxPMfkuRcqkegiPFbxysXckr3QoE1jxUBv8X--G_E7x9R9O0qRFBGFQJjG-rP0f-cOEWsvYMmIBltn0_LLK91FgC9w3VBiVKxsDKxx7pPXrvavV3d_LdPHfZoS72weP8whz-tYxN-6VNPs2jalTa9UjR9Eo0QwGY7xagSveaKw7igcd1o_x6XsRBQ8taCSJtIlYTt66OL_9U4UKckT42Qwd8mvKpDWYZxFAxe35UkTxp0-WOcQzdTNqqiJ4CpA-RFFznGzxlBy9NRDeS7vcXpCzCBlNfQyZf5I0iuPTcOoIE6j_gai4_7K4CH5uTMdRE7EqNjnnjqbjp7JP2FC-fkYGnm5YL9xzLPyTjosoz8d3NJaNZDPYQv73LnLn8gEZExhV1dzdJX5uBOUDvhZwHtbcAr9fUU696a-hxopIVcYbOZ2RW2tfHxGMkAsRwAno1Ibyi-wfajN8BfENOl0JBkpXaZq8PHOP01MhrcTz7qdiZtAq4A7JVxKBDKRZL1jYaCIIH1eX1Gnjhdp1ms0prR7KIllXdhA7uf3MgzgaMOXLQGy9oYp190WkoQjEbGJ8SLgQaTYg-g3EJjna4/http://www.amazon.in/dp/B0G6LTHMLF/ref=syn_sd_onsite_desktop_0?ie=UTF8&psc=1&pd_rd_plhdr=t&aref=mEF2NaxtgO
+                  - generic [ref=f19e9]:
+                    - img "Brand logo" [ref=f19e13]
+                    - img "Product image" [ref=f19e17]
+              - button "Leave feedback on Sponsored advertisement" [ref=e4079] [cursor=pointer]:
+                - generic [ref=e4080]: Sponsored
+  - complementary "Your recently viewed items and featured recommendations"
+  - generic [ref=e4082]:
+    - button "Back to top" [ref=e4083] [cursor=pointer]:
+      - generic [ref=e4084]: Back to top
+    - generic [ref=e4085]:
+      - generic [ref=e4086]:
+        - heading "Get to Know Us" [level=6] [ref=e4087]
+        - list [ref=e4088]:
+          - listitem [ref=e4089]:
+            - link "About Amazon" [ref=e4090] [cursor=pointer]:
+              - /url: https://www.aboutamazon.in/?utm_source=gateway&utm_medium=footer
+          - listitem [ref=e4091]:
+            - link "Careers" [ref=e4092] [cursor=pointer]:
+              - /url: https://amazon.jobs
+          - listitem [ref=e4093]:
+            - link "Press Releases" [ref=e4094] [cursor=pointer]:
+              - /url: https://press.aboutamazon.in/?utm_source=gateway&utm_medium=footer
+          - listitem [ref=e4095]:
+            - link "Amazon Science" [ref=e4096] [cursor=pointer]:
+              - /url: https://www.amazon.science
+      - generic [ref=e4098]:
+        - heading "Connect with Us" [level=6] [ref=e4099]
+        - list [ref=e4100]:
+          - listitem [ref=e4101]:
+            - link "Facebook" [ref=e4102] [cursor=pointer]:
+              - /url: https://www.facebook.com/AmazonIN
+          - listitem [ref=e4103]:
+            - link "Twitter" [ref=e4104] [cursor=pointer]:
+              - /url: https://x.com/AmazonIN
+          - listitem [ref=e4105]:
+            - link "Instagram" [ref=e4106] [cursor=pointer]:
+              - /url: https://www.instagram.com/amazondotin
+      - generic [ref=e4108]:
+        - heading "Make Money with Us" [level=6] [ref=e4109]
+        - list [ref=e4110]:
+          - listitem [ref=e4111]:
+            - link "Sell on Amazon" [ref=e4112] [cursor=pointer]:
+              - /url: /b/?node=2838698031&ld=AZINSOANavDesktopFooter_C&ref_=nav_footer_sell_C
+          - listitem [ref=e4113]:
+            - link "Sell under Amazon Accelerator" [ref=e4114] [cursor=pointer]:
+              - /url: https://accelerator.amazon.in/?ref_=map_1_b2b_GW_FT
+          - listitem [ref=e4115]:
+            - link "Protect and Build Your Brand" [ref=e4116] [cursor=pointer]:
+              - /url: https://brandservices.amazon.in/?ref=AOINABRLGNRFOOT&ld=AOINABRLGNRFOOT
+          - listitem [ref=e4117]:
+            - link "Amazon Global Selling" [ref=e4118] [cursor=pointer]:
+              - /url: https://sell.amazon.in/grow-your-business/amazon-global-selling.html?ld=AZIN_Footer_V1&ref=AZIN_Footer_V1
+          - listitem [ref=e4119]:
+            - link "Supply to Amazon" [ref=e4120] [cursor=pointer]:
+              - /url: https://supply.amazon.com/?ref_=footer_sta&lang=en-IN
+          - listitem [ref=e4121]:
+            - link "Become an Affiliate" [ref=e4122] [cursor=pointer]:
+              - /url: https://affiliate-program.amazon.in/?utm_campaign=assocshowcase&utm_medium=footer&utm_source=GW&ref_=footer_assoc
+          - listitem [ref=e4123]:
+            - link "Fulfilment by Amazon" [ref=e4124] [cursor=pointer]:
+              - /url: https://services.amazon.in/services/fulfilment-by-amazon/benefits.html/ref=az_footer_fba?ld=AWRGINFBAfooter
+          - listitem [ref=e4125]:
+            - link "Advertise Your Products" [ref=e4126] [cursor=pointer]:
+              - /url: https://advertising.amazon.in/?ref=Amz.in
+          - listitem [ref=e4127]:
+            - link "Amazon Pay on Merchants" [ref=e4128] [cursor=pointer]:
+              - /url: https://www.amazonpay.in/merchant
+      - generic [ref=e4130]:
+        - heading "Let Us Help You" [level=6] [ref=e4131]
+        - list [ref=e4132]:
+          - listitem [ref=e4133]:
+            - link "Your Account" [ref=e4134] [cursor=pointer]:
+              - /url: /gp/css/homepage.html?ref_=footer_ya
+          - listitem [ref=e4135]:
+            - link "Returns Centre" [ref=e4136] [cursor=pointer]:
+              - /url: /gp/css/returns/homepage.html?ref_=footer_hy_f_4
+          - listitem [ref=e4137]:
+            - link "Recalls and Product Safety Alerts" [ref=e4138] [cursor=pointer]:
+              - /url: https://www.amazon.in/your-product-safety-alerts?ref_=footer_bsx_ypsa
+          - listitem [ref=e4139]:
+            - link "100% Purchase Protection" [ref=e4140] [cursor=pointer]:
+              - /url: /gp/help/customer/display.html?nodeId=201083470&ref_=footer_swc
+          - listitem [ref=e4141]:
+            - link "Amazon App Download" [ref=e4142] [cursor=pointer]:
+              - /url: /gp/browse.html?node=6967393031&ref_=footer_mobapp
+          - listitem [ref=e4143]:
+            - link "Help" [ref=e4144] [cursor=pointer]:
+              - /url: /gp/help/customer/display.html?nodeId=200507590&ref_=footer_gw_m_b_he
+    - generic [ref=e4146]:
+      - link "Amazon India Home" [ref=e4149] [cursor=pointer]:
+        - /url: /ref=footer_logo
+      - generic [ref=e4152]:
+        - generic [ref=e4153]:
+          - link "Choose a language for shopping. Current selection is English." [ref=e4154] [cursor=pointer]:
+            - /url: /customer-preferences/edit?ie=UTF8&preferencesReturnUrl=%2F&ref_=footer_lang
+            - generic [ref=e4156]: English
+          - button "Expand to Change Language or Country" [ref=e4157] [cursor=pointer]
+        - button "Choose a country/region for shopping. The current selection is India." [ref=e4158] [cursor=pointer]:
+          - generic [ref=e4160]: India
+    - generic "More on Amazon" [ref=e4161]:
+      - generic "More on Amazon" [ref=e4162]:
+        - list [ref=e4163]:
+          - listitem [ref=e4164]:
+            - link "AbeBooks Books, art & collectibles" [ref=e4165] [cursor=pointer]:
+              - /url: https://www.abebooks.com/
+              - heading "AbeBooks" [level=5] [ref=e4166]
+              - generic [ref=e4167]:
+                - text: Books, art
+                - text: "& collectibles"
+          - listitem [ref=e4168]
+          - listitem [ref=e4169]:
+            - link "Amazon Web Services Scalable Cloud Computing Services" [ref=e4170] [cursor=pointer]:
+              - /url: https://aws.amazon.com/what-is-cloud-computing/?sc_channel=EL&sc_campaign=IN_amazonfooter
+              - heading "Amazon Web Services" [level=5] [ref=e4171]
+              - generic [ref=e4172]:
+                - text: Scalable Cloud
+                - text: Computing Services
+          - listitem [ref=e4173]
+          - listitem [ref=e4174]:
+            - link "Audible Download Audio Books" [ref=e4175] [cursor=pointer]:
+              - /url: https://www.audible.in/
+              - heading "Audible" [level=5] [ref=e4176]
+              - generic [ref=e4177]:
+                - text: Download
+                - text: Audio Books
+          - listitem [ref=e4178]
+          - listitem [ref=e4179]:
+            - link "IMDb Movies, TV & Celebrities" [ref=e4180] [cursor=pointer]:
+              - /url: https://www.imdb.com/
+              - heading "IMDb" [level=5] [ref=e4181]
+              - generic [ref=e4182]:
+                - text: Movies, TV
+                - text: "& Celebrities"
+        - list [ref=e4183]:
+          - listitem [ref=e4184]:
+            - link "Shopbop Designer Fashion Brands" [ref=e4185] [cursor=pointer]:
+              - /url: https://www.shopbop.com/
+              - heading "Shopbop" [level=5] [ref=e4186]
+              - generic [ref=e4187]:
+                - text: Designer
+                - text: Fashion Brands
+          - listitem [ref=e4188]
+          - listitem [ref=e4189]:
+            - link "Amazon Business Everything For Your Business" [ref=e4190] [cursor=pointer]:
+              - /url: /business?ref=footer_aingw
+              - heading "Amazon Business" [level=5] [ref=e4191]
+              - generic [ref=e4192]:
+                - text: Everything For
+                - text: Your Business
+          - listitem [ref=e4193]
+          - listitem [ref=e4194]:
+            - link "Amazon Music Stream millions of songs" [ref=e4195] [cursor=pointer]:
+              - /url: /music/player?ref=footer_apm
+              - heading "Amazon Music" [level=5] [ref=e4196]
+              - generic [ref=e4197]: Stream millions of songs
+          - listitem [ref=e4198]
+          - listitem [ref=e4199]
+    - generic [ref=e4200]:
+      - list [ref=e4201]:
+        - listitem [ref=e4202]:
+          - link "Conditions of Use & Sale" [ref=e4203] [cursor=pointer]:
+            - /url: /gp/help/customer/display.html?nodeId=200545940&ref_=footer_cou
+        - listitem [ref=e4204]:
+          - link "Privacy Notice" [ref=e4205] [cursor=pointer]:
+            - /url: /gp/help/customer/display.html?nodeId=200534380&ref_=footer_privacy
+        - listitem [ref=e4206]:
+          - link "Interest-Based Ads" [ref=e4207] [cursor=pointer]:
+            - /url: /gp/help/customer/display.html?nodeId=202075050&ref_=footer_iba
+      - generic [ref=e4208]: © 1996-2026, Amazon.com, Inc. or its affiliates
+  - iframe [ref=e4210]:
+    - iframe [ref=f22e2]:
+      - generic [active]:
+        - img [ref=f23e1]
+        - img [ref=f23e2]
+```
+
+# Test source
+
+```ts
+  1  | const {expect} = require('@playwright/test');
+  2  | const locators = {
+  3  |     signInLink:  '#nav-link-accountList a',
+  4  |     emailInput: '[id*="email_login"]',
+  5  |     continueButton: '#continue',
+  6  |     passwordInput: '#ap_password',
+  7  |     signInButton: '#signInSubmit',
+  8  |     accountName: '#nav-link-accountList-nav-line-1', 
+  9  | 
+  10 |     accountinfo: '#nav-link-accountList',
+  11 |     signOutLink: '#nav-item-signout, a[href*="ref_=nav_signout"]' 
+  12 | 
+  13 | }
+  14 | 
+  15 | class LoginPage{
+  16 | 
+  17 |     constructor(page){
+  18 |         this.page=page;
+  19 |     }
+  20 | 
+  21 |     async openSignInPage(){
+  22 |         await this.page.locator(locators.signInLink).click();   
+  23 |     }
+  24 | 
+  25 |      async enterEmail(email) {
+  26 |         await this.page.locator(locators.emailInput).fill(email);
+  27 |         await this.page.locator(locators.continueButton).click();
+  28 |     }
+  29 | 
+  30 |     async enterPassword(password) {
+  31 |         await this.page.locator(locators.passwordInput).fill(password);
+  32 |         await this.page.locator(locators.signInButton).click();
+  33 |     }
+  34 | 
+  35 |     async validateLoggedIn(expectedName) {
+  36 |         await expect(this.page.locator(locators.accountName)).toBeVisible();
+  37 |          await expect(this.page.locator(locators.accountName)).toContainText(expectedName);
+  38 |     }
+  39 | 
+  40 |     async login(email, password) {
+  41 |         await this.openSignInPage();
+  42 |         await this.enterEmail(email);
+  43 |         await this.enterPassword(password);
+  44 |         
+  45 |     }
+  46 | 
+  47 |     async logout() {
+  48 |     await this.page.locator(locators.accountinfo).hover();
+  49 |     const signOutLink = this.page.locator(locators.signOutLink);
+> 50 |     await signOutLink.waitFor({ state: 'visible', timeout: 10000 });
+     |                       ^ TimeoutError: locator.waitFor: Timeout 10000ms exceeded.
+  51 |     await signOutLink.click();
+  52 |     }
+  53 | 
+  54 |     
+  55 | }
+  56 | module.exports = { LoginPage };
+  57 | 
+```
