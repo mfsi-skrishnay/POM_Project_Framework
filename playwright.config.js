@@ -32,12 +32,12 @@ module.exports = defineConfig({
             }
         },
     
-        { 
-            name: 'Mobile Safari', 
-            use: { 
-                ...devices['iPhone 14'] 
-            } 
-        },
+        // { 
+        //     name: 'Mobile Safari', 
+        //     use: { 
+        //         ...devices['iPhone 14'] 
+        //     } 
+        // },
     //     {
     //     name: 'Firefox',
     //     use: {

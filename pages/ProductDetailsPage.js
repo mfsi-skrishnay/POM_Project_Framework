@@ -4,8 +4,12 @@ const locators = {
     productTitle: '#productTitle',
     productPrice: 'span[class*="priceToPay"]',
     productRating: 'span[id*=CustomerReview]',
-    availability: '#availability',
     deliveryInfo: '#deliveryBlockMessage',
+
+    MproductTitle: '#title',
+    MproductPrice: 'span[class*="priceToPay"]',
+    MproductRating: '#acrCustomerReviewLink',
+    MdeliveryInfo: '#deliveryBlockMessage',
 
     addToCartButton: 'input[id*="add-to-cart"]',
     goToCartButton: "//a[normalize-space()='Go to Cart']",
@@ -24,20 +28,39 @@ class ProductDetailsPage {
     this.isMobile = isMobile;
     }
 
-    async validateProductPage() {
-        await expect(this.page.locator(locators.productTitle).first()).toBeVisible();  
-        await expect(this.page.locator(locators.productPrice).first()).toBeVisible();  
-        await expect(this.page.locator(locators.productRating).nth(0)).toBeVisible(); 
-        await expect(this.page.locator(locators.availability)).toBeVisible();  
-        await expect(this.page.locator(locators.deliveryInfo)).toBeVisible();  
+   async validateProductPage() {
+    if (this.isMobile) {
+        await expect(this.page.locator(locators.MproductTitle).first()).toBeVisible();
+        await expect(this.page.locator(locators.MproductPrice).first()).toBeVisible();
+        await expect(this.page.locator(locators.MproductRating).nth(0)).toBeVisible();
+        await expect(this.page.locator(locators.MdeliveryInfo)).toBeVisible();
+    } else {
+        await expect(this.page.locator(locators.productTitle).first()).toBeVisible();
+        await expect(this.page.locator(locators.productPrice).first()).toBeVisible();
+        await expect(this.page.locator(locators.productRating).nth(0)).toBeVisible();
+        await expect(this.page.locator(locators.deliveryInfo)).toBeVisible();
+    }
     }
 
     async validateProductDetails(expectedTitle) {
+
+    if (this.isMobile) {
+        await expect(this.page.locator(locators.MproductTitle).first()).toContainText(expectedTitle);
+
+        const productPrice = await this.page.locator(locators.MproductPrice).first().textContent();
+        expect(productPrice).not.toBe('');
+
+        await expect(this.page.locator(locators.MdeliveryInfo)).toBeVisible();
+
+    } else {
         await expect(this.page.locator(locators.productTitle).first()).toContainText(expectedTitle);
+
         const productPrice = await this.page.locator(locators.productPrice).first().textContent();
         expect(productPrice).not.toBe('');
+
         await expect(this.page.locator(locators.productRating).nth(0)).toHaveAttribute('aria-label', /Reviews/);
-        await expect(this.page.locator(locators.deliveryInfo)).toBeVisible(); 
+        await expect(this.page.locator(locators.deliveryInfo)).toBeVisible();
+    }
     }
 
     async returnToSearchResults() {

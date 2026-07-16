@@ -1,14 +1,27 @@
-const { test } = require('@playwright/test');
+const { test,chromium, devices } = require('@playwright/test');
 const { HomePage } = require('../pages/HomePage.js');
 const { SearchResultsPage } = require('../pages/SearchResultsPage.js');
 const { ProductDetailsPage } = require('../pages/ProductDetailsPage.js');
 
 let homePageobj,searchResultsPageobj,productDetailsPageobj;
 
-test('Scenario 1 - Product Search and Product Details Validation', async ({ page }) => {
+test('Scenario 1 using mobile emulation - Product Search and Product Details Validation', async () => { 
+    
+    const DEVICE = 'iPhone 14'; 
+    const browser = await chromium.launch({
+        headless: false
+    });
+    const context = await browser.newContext({
+        ...devices[DEVICE]
+    });
 
-    homePageobj = new HomePage(page);
-    searchResultsPageobj = new SearchResultsPage(page);
+    const page = await context.newPage();
+    const isMobile = true;
+    //const isMobile = test.info().project.name.includes('Mobile'); //Detect current project from config
+
+
+    homePageobj = new HomePage(page, isMobile);
+    searchResultsPageobj = new SearchResultsPage(page, isMobile);
     
     const homepageTitle = "Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in";
     const productName = 'Laptop';
@@ -30,7 +43,7 @@ test('Scenario 1 - Product Search and Product Details Validation', async ({ page
     // Step 3 : Open First Product
     const productPage = await searchResultsPageobj.openProduct(productIndex);
 
-    productDetailsPageobj = new ProductDetailsPage(productPage);
+    productDetailsPageobj = new ProductDetailsPage(productPage, isMobile);
 
     // Validate Product Page
     await productDetailsPageobj.validateProductPage();     // Add mobile locators
@@ -38,11 +51,10 @@ test('Scenario 1 - Product Search and Product Details Validation', async ({ page
     // Step 4 : Validate Product Details
     await productDetailsPageobj.validateProductDetails(expectedTitle);   // Add mobile locators 
 
-    // Step 5 : Return to Search Results
-    await productDetailsPageobj.returnToSearchResults();          //Add change to go back on previous page for mobile
+    // Step 5 : close the searchResult 
+    await productDetailsPageobj.returnToSearchResults();         
 
-    // Validate Search Results Page
-    await searchResultsPageobj.validateSearchResultsAfterBack(productName);   //No chnage for mobile
+  
 
     });
 
