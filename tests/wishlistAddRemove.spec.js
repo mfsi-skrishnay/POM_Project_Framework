@@ -78,7 +78,7 @@ async function addAllProducts() {
     
 }
 
-test.describe.configure({configure:'parallel'},'Scenario 5 - Add Product to Wishlist and Remove It', () => {
+test.describe.configure('Scenario 5 - Add Product to Wishlist and Remove It', () => {
 
     test.beforeEach(async () => {
         await addAllProducts();
