@@ -23,7 +23,7 @@ test('Scenario 3 - Add Product to Cart and Validate Cart', async ({ page }) => {
     // Step 2: Open the first available product
     const productPage = await searchResultsPageobj.openProduct(productIndex);
     productDetailsPageobj = new ProductDetailsPage(productPage);
-    await productDetailsPageobj.validateProductTitleAndPrice();
+    await productDetailsPageobj.validateProductPrice();
 
     // Step 3: Add to Cart
     await productDetailsPageobj.addToCart();

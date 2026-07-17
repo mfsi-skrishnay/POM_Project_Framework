@@ -2,6 +2,7 @@ const { defineConfig, devices } = require('@playwright/test');
 
 module.exports = defineConfig({
     testDir: './tests',
+    workers: 4,
     reporter: [['html'],['list'],['./reporters/CustomReporter.js']],
     // reporter: 'list',                                          
     // reporter: 'dot',                                           

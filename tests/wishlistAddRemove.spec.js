@@ -78,7 +78,7 @@ async function addAllProducts() {
     
 }
 
-test.describe('Scenario 5 - Add Product to Wishlist and Remove It', () => {
+test.describe.configure({configure:'parallel'},'Scenario 5 - Add Product to Wishlist and Remove It', () => {
 
     test.beforeEach(async () => {
         await addAllProducts();
@@ -111,7 +111,6 @@ test('Test 2 - Remove a single item from the wishlist', async () => {
 
 test('Test 3 - Rename the wishlist', async () => {
     await wishlistPageobj.captureWishlistItemScreenshot(0, 'First wishlist item');
-
 
     await wishlistPageobj.wishlistMenuHover();
     await wishlistPageobj.clickOnManageList();

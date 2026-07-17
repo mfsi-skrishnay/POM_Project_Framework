@@ -46,10 +46,10 @@ test('Scenario 1 using mobile emulation - Product Search and Product Details Val
     productDetailsPageobj = new ProductDetailsPage(productPage, isMobile);
 
     // Validate Product Page
-    await productDetailsPageobj.validateProductPage();     // Add mobile locators
+    await productDetailsPageobj.validateProductPage();    
 
     // Step 4 : Validate Product Details
-    await productDetailsPageobj.validateProductDetails(expectedTitle);   // Add mobile locators 
+    await productDetailsPageobj.validateProductDetails(expectedTitle);    
 
     // Step 5 : close the searchResult 
     await productDetailsPageobj.returnToSearchResults();         
