@@ -13,12 +13,14 @@ module.exports = defineConfig({
     // reporter: [['github']],                                    
     // reporter: [ ['list'],['html', { outputFolder: 'playwright-report', open: 'never' }],['junit', { outputFile: 'results.xml' }] ],
     wishlistUrl: '/hz/wishlist/ls/',
+    demoURL: 'https://dummyjson.com',
+
 
 
     use: {
         baseURL: 'https://www.amazon.in',
         browserName: 'chromium',
-        headless: true,
+        headless: false,
         video: 'retain-on-failure',
         trace: 'retain-on-failure',
         screenshot: 'only-on-failure',
@@ -52,6 +54,11 @@ module.exports = defineConfig({
     //         ...devices['Desktop Safari']
     //     }
     // }
+
+    {
+        name: 'API Tests',
+        testDir: './tests/APITesting',
+    },
 
     ],
 
