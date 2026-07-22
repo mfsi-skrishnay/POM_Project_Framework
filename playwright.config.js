@@ -3,7 +3,8 @@ const { defineConfig, devices } = require('@playwright/test');
 module.exports = defineConfig({
     testDir: './tests',
    // workers: 4,
-    reporter: [['html'],['list'],['./reporters/CustomReporter.js'],['github'],['allure-playwright']],
+    reporter:'html' ,
+    //reporter: [['html'],['list'],['./reporters/CustomReporter.js'],['github'],['allure-playwright']],
     // reporter: 'list',                                          
     // reporter: 'dot',                                           
     // reporter: 'line',                                          
@@ -13,10 +14,7 @@ module.exports = defineConfig({
     // reporter: [['github']],                                    
     // reporter: [ ['list'],['html', { outputFolder: 'playwright-report', open: 'never' }],['junit', { outputFile: 'results.xml' }] ],
     wishlistUrl: '/hz/wishlist/ls/',
-    demoURL: 'https://dummyjson.com',
-
-
-
+    
     use: {
         baseURL: 'https://www.amazon.in',
         browserName: 'chromium',
@@ -24,6 +22,7 @@ module.exports = defineConfig({
         video: 'retain-on-failure',
         trace: 'retain-on-failure',
         screenshot: 'only-on-failure',
+        demoApiUrl: 'https://restful-booker.herokuapp.com',
     },
 
     projects: [
@@ -34,6 +33,8 @@ module.exports = defineConfig({
                 ...devices['Desktop Chrome']
             }
         },
+
+
     
         // { 
         //     name: 'Mobile Safari', 
@@ -54,11 +55,6 @@ module.exports = defineConfig({
     //         ...devices['Desktop Safari']
     //     }
     // }
-
-    {
-        name: 'API Tests',
-        testDir: './tests/APITesting',
-    },
 
     ],
 
