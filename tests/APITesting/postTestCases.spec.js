@@ -20,7 +20,7 @@ test.beforeEach(async ({ request }) => {
     bookingApi = new BookingApi(request);
 });
 
-test('Test1 POST Create Booking - Positive Scenario', async () => {
+test('Test1 POST create booking - Positive scenario', async () => {
     const response = await bookingApi.createBooking(validBookingPayload);
 
     expect(response.status()).toBe(200);
@@ -56,7 +56,7 @@ test('Test1 POST Create Booking - Positive Scenario', async () => {
     expect(body.booking.bookingdates.checkout).toBe(validBookingPayload.bookingdates.checkout);
 });
 
-test('Test2 POST Negativ case - Missing Required Field', async () => {
+test('Test2 POST Negative case - Missing required field', async () => {
     const payload = { ...validBookingPayload };
     delete payload.firstname;
 
@@ -72,7 +72,7 @@ test('Test2 POST Negativ case - Missing Required Field', async () => {
     }
 });
 
-test('Test3 POST Negative case - Invalid Data Type', async () => {
+test('Test3 POST Negative case - Invalid data type', async () => {
     const payload = {...validBookingPayload,totalprice: "Five Hundred"};
     const response = await bookingApi.createBooking(payload);
 
@@ -86,7 +86,7 @@ test('Test3 POST Negative case - Invalid Data Type', async () => {
     }
 });
 
-test('Test4 POST negative case - Empty Request Body', async () => {
+test('Test4 POST negative case - Empty request body', async () => {
     const response = await bookingApi.createBooking({});
     expect([200, 400, 500]).toContain(response.status());
 
@@ -96,5 +96,47 @@ test('Test4 POST negative case - Empty Request Body', async () => {
         expect(body).toHaveProperty('booking');
         expect(body.booking.firstname).toBeUndefined();
         expect(body.booking.lastname).toBeUndefined();
+    }
+});
+
+test('Test5 Edge case - Empty lastname', async () => {
+
+    const payload = {...validBookingPayload,lastname: ''};
+    const response = await bookingApi.createBooking(payload);
+    expect(response.status()).toBe(200);
+    const body = await response.json();
+
+    expect(body).toHaveProperty('booking');
+    expect(body.booking).toHaveProperty('lastname');
+
+    expect(body.booking.lastname).toBe('');
+    expect(typeof body.booking.lastname).toBe('string');
+    expect(body.booking.lastname.length).toBe(0);
+
+});
+
+test('Test6 Edge case - negative total price', async () => {
+
+    const payload = {...validBookingPayload, totalprice: -100 };
+    const response = await bookingApi.createBooking(payload);
+
+    expect([200, 400]).toContain(response.status());
+
+    if (response.status() === 200) {
+        const body = await response.json();
+        expect(body.booking.totalprice).toBe(-100);
+    }
+});
+
+test('Test7 Edge case - Special characters in first name', async () => {
+
+    const payload = { ...validBookingPayload, firstname: '@#$%^&*()_+'};
+    const response = await bookingApi.createBooking(payload);
+
+    expect([200, 400]).toContain(response.status());
+
+    if (response.status() === 200) {
+        const body = await response.json();
+        expect(body.booking.firstname).toBe(payload.firstname);
     }
 });

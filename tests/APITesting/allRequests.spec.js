@@ -39,7 +39,7 @@ test.beforeEach(async ({ request }) => {
     bookingApi = new BookingApi(request);
 });
 
-    test('Test1 GET All Bookings', async () => {
+    test('Test1 GET all bookings', async () => {
         const response = await bookingApi.getAllBookings();
         expect(response.status()).toBe(200);
         expect(response.ok()).toBeTruthy();
@@ -53,7 +53,7 @@ test.beforeEach(async ({ request }) => {
 
     });
 
-    test('Test2 GET Booking By Id', async () => {
+    test('Test2 GET booking by Id', async () => {
         const response = await bookingApi.getBookingById(BookingId);
         expect(response.status()).toBe(200);
         expect(response.ok()).toBeTruthy();
@@ -79,7 +79,7 @@ test.beforeEach(async ({ request }) => {
 
     });
 
-    test('Test3 POST Create Booking', async () => {
+    test('Test3 POST create booking', async () => {
     const response = await bookingApi.createBooking(bookingPayload);
     expect(response.status()).toBe(200);
     expect(response.ok()).toBeTruthy();
@@ -89,12 +89,10 @@ test.beforeEach(async ({ request }) => {
     const body = await response.json();
     console.log(body);
 
-    // Booking ID Validations
     expect(body).toHaveProperty('bookingid');
     expect(typeof body.bookingid).toBe('number');
     expect(body.bookingid).toBeGreaterThan(0);
 
-    // Booking Object Validations
     expect(body).toHaveProperty('booking');
     expect(body.booking).toHaveProperty('firstname');
     expect(body.booking).toHaveProperty('lastname');
@@ -111,26 +109,23 @@ test.beforeEach(async ({ request }) => {
     expect(body.booking.totalprice).toBe(bookingPayload.totalprice);
     expect(body.booking.depositpaid).toBe(bookingPayload.depositpaid);
     expect(body.booking.additionalneeds).toBe(bookingPayload.additionalneeds);
-
     expect(body.booking.bookingdates.checkin).toBe(bookingPayload.bookingdates.checkin);
     expect(body.booking.bookingdates.checkout).toBe(bookingPayload.bookingdates.checkout);
     });
 
-    test('Test4 PUT Update Booking', async () => {
+    test('Test4 PUT update booking', async () => {
     const createResponse = await bookingApi.createBooking(bookingPayload);
     expect(createResponse.status()).toBe(200);
     const createBody = await createResponse.json();
     const bookingId = createBody.bookingid;
 
-    // Generate Token
-    const authResponse = await bookingApi.createToken(authPayload);
+    const authResponse = await bookingApi.createToken(authPayload);     // Generate Token
     expect(authResponse.status()).toBe(200);
     expect(authResponse.ok()).toBeTruthy();
     const authBody = await authResponse.json();
     const token = authBody.token;
 
-    // PUT Request
-    const response = await bookingApi.updateBooking(bookingId,token,updatePayload);
+    const response = await bookingApi.updateBooking(bookingId,token,updatePayload); //PUT request
 
     expect(response.status()).toBe(200);
     expect(response.ok()).toBeTruthy();
@@ -166,7 +161,7 @@ test.beforeEach(async ({ request }) => {
 });
 
 
-    test('Test5 PATCH Partial Update Booking', async () => {
+    test('Test5 PATCH partial update booking', async () => {
     const createResponse = await bookingApi.createBooking(bookingPayload);
     expect(createResponse.status()).toBe(200);
     const createBody = await createResponse.json();
@@ -204,7 +199,7 @@ test.beforeEach(async ({ request }) => {
     expect(body.bookingdates.checkout).toBe(bookingPayload.bookingdates.checkout);
 });
 
-    test('Test6 DELETE Booking', async () => {
+    test('Test6 DELETE booking', async () => {
     const createResponse = await bookingApi.createBooking(bookingPayload);
     expect(createResponse.status()).toBe(200);
     const createBody = await createResponse.json();
