@@ -20,7 +20,7 @@ test.beforeEach(async ({ request }) => {
     bookingApi = new BookingApi(request);
 });
 
-test('Test1 POST create booking - Positive scenario', async () => {
+test('Test1 POST create booking - positive scenario', async () => {
     const response = await bookingApi.createBooking(validBookingPayload);
 
     expect(response.status()).toBe(200);
@@ -56,87 +56,91 @@ test('Test1 POST create booking - Positive scenario', async () => {
     expect(body.booking.bookingdates.checkout).toBe(validBookingPayload.bookingdates.checkout);
 });
 
-test('Test2 POST Negative case - Missing required field', async () => {
+test('Test2 POST Negative case - missing required field', async () => {
     const payload = { ...validBookingPayload };
     delete payload.firstname;
-
     const response = await bookingApi.createBooking(payload);
-    expect([200, 400, 500]).toContain(response.status());
 
-    if (response.status() === 200) {
-        const body = await response.json();
-
-        expect(body.booking.firstname).toBeUndefined();
-        expect(body.booking.lastname).toBe(payload.lastname);
-        expect(body.booking.totalprice).toBe(payload.totalprice);
-    }
+try {
+    expect(response.status()).toBe(400);
+}
+catch (error) {
+    console.error('Missing required field validation failed');
+    console.error(`Expected status : 400`);
+    console.error(`Actual status   : ${response.status()}`);
+    throw error;
+}
 });
 
-test('Test3 POST Negative case - Invalid data type', async () => {
-    const payload = {...validBookingPayload,totalprice: "Five Hundred"};
+test('Test3 POST negative case - invalid data type', async () => {
+    const payload = { ...validBookingPayload, totalprice: "Five Hundred" };
     const response = await bookingApi.createBooking(payload);
 
-    expect([200, 400, 500]).toContain(response.status());
-
-    if (response.status() === 200) {
-        const body = await response.json();
-
-        expect(body.booking.totalprice).not.toBe(payload.totalprice);
-        expect(body.booking.totalprice).toBe(null);
+    try {
+        expect(response.status()).toBe(400);
+    }
+    catch (error) {
+        console.error('Invalid data type validation failed');
+        console.error(`Expected status : 400`);
+        console.error(`Actual status   : ${response.status()}`);
+        throw error;
     }
 });
 
 test('Test4 POST negative case - Empty request body', async () => {
     const response = await bookingApi.createBooking({});
-    expect([200, 400, 500]).toContain(response.status());
-
-    if (response.status() === 200) {
-        const body = await response.json();
-
-        expect(body).toHaveProperty('booking');
-        expect(body.booking.firstname).toBeUndefined();
-        expect(body.booking.lastname).toBeUndefined();
+    try {
+        expect(response.status()).toBe(400);
+    }
+    catch (error) {
+        console.error('Empty request body validation failed');
+        console.error(`Expected status : 400`);
+        console.error(`Actual status   : ${response.status()}`);
+        throw error;
     }
 });
 
-test('Test5 Edge case - Empty lastname', async () => {
-
-    const payload = {...validBookingPayload,lastname: ''};
+test('Test5 Edge case - empty lastname', async () => {
+    const payload = { ...validBookingPayload, lastname: '' };
     const response = await bookingApi.createBooking(payload);
-    expect(response.status()).toBe(200);
-    const body = await response.json();
 
-    expect(body).toHaveProperty('booking');
-    expect(body.booking).toHaveProperty('lastname');
-
-    expect(body.booking.lastname).toBe('');
-    expect(typeof body.booking.lastname).toBe('string');
-    expect(body.booking.lastname.length).toBe(0);
-
+    try {
+        expect(response.status()).toBe(400);
+    }
+    catch (error) {
+        console.error('Empty lastname validation failed');
+        console.error(`Expected status : 400`);
+        console.error(`Actual status   : ${response.status()}`);
+        throw error;
+    }
 });
 
 test('Test6 Edge case - negative total price', async () => {
-
-    const payload = {...validBookingPayload, totalprice: -100 };
+    const payload = { ...validBookingPayload, totalprice: -100 };
     const response = await bookingApi.createBooking(payload);
 
-    expect([200, 400]).toContain(response.status());
-
-    if (response.status() === 200) {
-        const body = await response.json();
-        expect(body.booking.totalprice).toBe(-100);
+    try {
+        expect(response.status()).toBe(400);
+    }
+    catch (error) {
+        console.error('Negative total price validation failed');
+        console.error(`Expected status : 400`);
+        console.error(`Actual status   : ${response.status()}`);
+        throw error;
     }
 });
 
-test('Test7 Edge case - Special characters in first name', async () => {
-
-    const payload = { ...validBookingPayload, firstname: '@#$%^&*()_+'};
+test('Test7 Edge case - special characters in first name', async () => {
+    const payload = { ...validBookingPayload, firstname: '@#$%^&*()_+' };
     const response = await bookingApi.createBooking(payload);
 
-    expect([200, 400]).toContain(response.status());
-
-    if (response.status() === 200) {
-        const body = await response.json();
-        expect(body.booking.firstname).toBe(payload.firstname);
+    try {
+        expect(response.status()).toBe(400);
+    }
+    catch (error) {
+        console.error('Special characters validation failed');
+        console.error(`Expected status : 400`);
+        console.error(`Actual status   : ${response.status()}`);
+        throw error;
     }
 });

@@ -10,25 +10,25 @@ test('Scenario 4 - Language Preference Change and Validation', async ({ page }) 
     const hindiHeaderText = 'HI';      
     const englishHeaderText = 'EN';    
 
-    // Step 1: Open Home Page and click Language icon
+    // Step 1: Open home page and click language icon
     await homePageobj.navigateToHomePage();
     await homePageobj.openLanguageSettingPage();
     await homePageobj.validateLanguageSettingPageOpened();
 
-    // Step 2: Select Hindi by index
+    // Step 2: Select hindi by index
     await homePageobj.selectLanguageByIndex(hindiIndex);
     await homePageobj.validateLanguageSelected(hindiIndex);
 
-    // Step 3: Save Changes and validate Hindi header
+    // Step 3: Save changes and validate hindi header
     await homePageobj.saveLanguageChanges();
     await homePageobj.validateHeaderLanguage(hindiHeaderText);
 
-    // Step 4: Reopen Language settings and select English
+    // Step 4: Reopen language settings and select english
     await homePageobj.openLanguageSettingPage();
     await homePageobj.selectLanguageByIndex(englishIndex);
     await homePageobj.validateLanguageSelected(englishIndex);
 
-    // Step 5: Save Changes and validate English header
+    // Step 5: Save changes and validate english header
     await homePageobj.saveLanguageChanges();
     await homePageobj.validateHeaderLanguage(englishHeaderText);
 });

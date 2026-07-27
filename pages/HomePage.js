@@ -29,8 +29,11 @@ class HomePage {
     async handleContinueShopping() {
     const continueButton = this.page.locator(locators.continueBtn);
 
-    if (await continueButton.isVisible()) {
+    try {
+        await expect(continueButton).toBeVisible();
         await continueButton.click();
+    } catch (error) {
+        console.log('Continue shopping popup not shown, proceeding without click');
     }
 }
     
@@ -79,7 +82,7 @@ class HomePage {
     async validateHeaderLanguage(expectedText) {
         try {
             await expect(this.page.locator(locators.logo)).toBeVisible();
-            await expect(this.page.locator(locators.headerContainer).first()).toContainText(expectedText, { timeout: 20000 });
+            await expect(this.page.locator(locators.headerContainer).first()).toContainText(expectedText);
         } catch (error) {
             console.error(`validateHeaderLanguage failed for expected text "${expectedText}": ${error.message}`);
         }

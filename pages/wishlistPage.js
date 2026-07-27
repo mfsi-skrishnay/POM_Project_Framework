@@ -25,7 +25,6 @@ class WishlistPage {
         await expect(this.page).toHaveURL(new RegExp(expectedUrl));
     }
 
-    
     async validateWishlistItemCount(expectedCount) {
     await expect(this.page.locator(locators.wishlistItemTitle)).toHaveCount(expectedCount);
     }
@@ -85,7 +84,6 @@ class WishlistPage {
     try{
     await expect(this.page.locator(locators.profileListName)).toBeVisible();
     await expect(this.page.locator(locators.profileListName)).toContainText(expectedName);
-    
     }
     catch (error) {
     await this.page.screenshot({ path: `screenshots/failure-validateListName-${Date.now()}.png` });

@@ -5,7 +5,7 @@ test.beforeEach(async ({ page }) => {
     await page.goto('https://testautomationpractice.blogspot.com/p/download-files_25.html');
 });
 
-test('Download PDF File', async ({ page }) => {
+test('Download PDF file', async ({ page }) => {
         await page.locator('#inputText').fill('THIS IS SAMPLE FILE FOR CHECKING DOWNLOADING IN PLAYWRIGHT');
         
         await page.locator('#generatePdf').click();
@@ -22,7 +22,6 @@ test('Download PDF File', async ({ page }) => {
     });
 
 test('Upload Single File', async ({ page }) => {
-        
         await page.setInputFiles('#singleFileInput', 'C:\\Users\\Mindfire\\Documents\\Projects\\POM_Project_Framework\\Files\\sampleFile.pdf');
         await page.locator("[id*='singleFile'] button[type='submit']").click();
         await expect(page.locator('#singleFileStatus')).toContainText('Single file selected');

@@ -17,7 +17,7 @@ test('Scenario 1 using mobile emulation - Product Search and Product Details Val
 
     const page = await context.newPage();
     const isMobile = true;
-    //const isMobile = test.info().project.name.includes('Mobile'); //Detect current project from config
+    //const isMobile = test.info().project.name.includes('Mobile'); //Detect current project from config option2
 
 
     homePageobj = new HomePage(page, isMobile);
@@ -28,33 +28,30 @@ test('Scenario 1 using mobile emulation - Product Search and Product Details Val
     const expectedTitle = 'Laptop';
     const productIndex = 0;
 
-    // Step 1 : Open Amazon Home Page
+    // Step 1 : Open amazon home page
     await homePageobj.navigateToHomePage();
 
-    // Validate Home Page
+    // Validate home page
     await homePageobj.validateHomePage(homepageTitle);        
 
-    // Step 2 : Search Product
+    // Step 2 : Search product
     await homePageobj.searchProduct(productName);
 
-    // Validate Search Results
+    // Validate search results
     await searchResultsPageobj.validateSearchResults(productName);
 
-    // Step 3 : Open First Product
+    // Step 3 : Open first product
     const productPage = await searchResultsPageobj.openProduct(productIndex);
 
     productDetailsPageobj = new ProductDetailsPage(productPage, isMobile);
 
-    // Validate Product Page
+    // Validate product page
     await productDetailsPageobj.validateProductPage();    
 
-    // Step 4 : Validate Product Details
+    // Step 4 : Validate product details
     await productDetailsPageobj.validateProductDetails(expectedTitle);    
 
-    // Step 5 : close the searchResult 
+    // Step 5 : Close the searched result 
     await productDetailsPageobj.returnToSearchResults();         
-
-  
-
     });
 

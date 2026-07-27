@@ -75,12 +75,18 @@ class ProductDetailsPage {
         await this.page.locator(locators.addToCartButton).click();
     }
 
+    async getProductTitle() {
+        const title = await this.page.locator(locators.productTitle).first().textContent();
+        return title.trim();
+    }
+    
     async validateAddToCartConfirmation() {
         await expect(this.page.locator(locators.goToCartButton).first()).toBeVisible();  
     }
 
     async goToCart() {
         await this.page.locator(locators.goToCartButton).first().click();
+        await this.page.waitForLoadState('domcontentloaded');
     }
 
    async addToWishlist(expectedButtonText) {

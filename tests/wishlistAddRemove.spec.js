@@ -78,7 +78,7 @@ async function addAllProducts() {
     
 }
 
-test.describe.configure('Scenario 5 - Add Product to Wishlist and Remove It', () => {
+test.describe('Scenario 5 - Add Product to Wishlist and Remove It', () => {
 
     test.beforeEach(async () => {
         await addAllProducts();
@@ -90,7 +90,7 @@ test.describe.configure('Scenario 5 - Add Product to Wishlist and Remove It', ()
     }
     });
 
-    test('Test 1 - Search for an item within the wishlist', async () => {
+test('Test 1 - Search for an item within the wishlist', async () => {
     const [laptop] = products;
 
     await wishlistPageobj.captureWishlistScreenshot('Wishlist after adding 3 items');

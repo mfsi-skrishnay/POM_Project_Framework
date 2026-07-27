@@ -2,7 +2,7 @@ const { expect } = require('@playwright/test');
 
 const locators = {
     quantityValue: 'span[data-a-selector="inner-value"]',
-    quantityIncreaseBtn: 'button[aria-label*="Increase quantity"]',
+    quantityIncreaseBtn: 'button[aria-label*="Increase quantity"] span', 
     subtotal: "#sc-subtotal-amount-activecart span",
     
 };
@@ -13,7 +13,7 @@ class CartPage {
     }
 
     async validateQuantity(expectedQty) {
-        await expect(this.page.locator(locators.quantityValue).first()).toContainText(String(expectedQty)); 
+        await expect(this.page.locator(locators.quantityValue)).toContainText(String(expectedQty)); 
     }
 
     async validateSubtotalVisible() {
@@ -23,9 +23,11 @@ class CartPage {
     }
 
     async increaseQuantity(targetQty) {
-        await this.page.locator(locators.quantityIncreaseBtn).first().click();
-        await this.validateQuantity(targetQty); 
-    }    
+    const increaseBtn = this.page.locator(locators.quantityIncreaseBtn);
+    await expect(increaseBtn).toBeEnabled();
+    await increaseBtn.click();
+    await this.validateQuantity(targetQty);
+    }   
 
     async getSubtotalValue() {
         const text = await this.page.locator(locators.subtotal).first().textContent();
