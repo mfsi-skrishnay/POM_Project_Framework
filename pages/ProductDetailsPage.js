@@ -103,6 +103,7 @@ class ProductDetailsPage {
 
     async closeAfterWishlistConfirmation() {
         await this.page.close();
+        
     }
 
 }

@@ -36,8 +36,9 @@ class WishlistPage {
     }
 
     async validateSearchResultsKeyword(keyword) {
-    await expect(this.page.locator(locators.wishlistItemTitle)).toBeVisible();
-    await expect(this.page.locator(locators.wishlistItemTitle)).toContainText(keyword, { ignoreCase: true });
+    const items = this.page.locator(locators.wishlistItemTitle);
+    await expect(items.first()).toBeVisible();
+    await expect(items.first()).toContainText(keyword, { ignoreCase: true });
     }
 
     async clearSearchKeyword(){

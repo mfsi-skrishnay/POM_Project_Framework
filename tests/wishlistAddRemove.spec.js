@@ -8,11 +8,8 @@ const { wishlistUrl } = require('../playwright.config.js');
 const testData = require('../utils/testData.js');
 
 
-const products = [
-    { name: 'Laptop', index: 0 },
-    { name: 'Earbuds', index: 1 },
-    { name: 'TV', index: 3 }
-    ];
+const productName = 'Laptop';
+const productIndexes = [0, 1,3];
 const expectedWishlistItemCount = 3;
 const newWishlistName = 'MyShoppingList';
 const expectedBtnText = 'Add to Wish List';
@@ -21,6 +18,7 @@ const expectedName= 'Krishna' ;
 let homePageobj, searchResultsPageobj, loginPageobj, wishlistPageobj;
 
 test.beforeAll(async ({ browser }) => {
+   // test.setTimeout(40000); 
     const page = await browser.newPage();
     homePageobj = new HomePage(page);
     loginPageobj = new LoginPage(page);
@@ -29,74 +27,42 @@ test.beforeAll(async ({ browser }) => {
     await homePageobj.navigateToHomePage();
     await loginPageobj.login(testData.email, testData.password);
     await loginPageobj.validateLoggedIn(expectedName);
+    await addAllProducts();
 });
 
 // Adds each product to the wishlist, then opens the wishlist 
 async function addAllProducts() {
-    const [firstProduct, secondProduct, thirdProduct] = products;   //destructuring
+    await homePageobj.searchProduct(productName);
+    await searchResultsPageobj.validateSearchResults(productName);
 
-    // Add the first product 
-    await homePageobj.searchProduct(firstProduct.name);
-    await searchResultsPageobj.validateSearchResults(firstProduct.name);
-    const firstProductPage = await searchResultsPageobj.openProduct(firstProduct.index);
+    for (let i = 0; i < productIndexes.length; i++) {
+        const productPage = await searchResultsPageobj.openProduct(productIndexes[i]);
+        const productDetails = new ProductDetailsPage(productPage);
 
-    const firstProductDetails = new ProductDetailsPage(firstProductPage);
-    await firstProductDetails.validateProductPrice();
+        await productDetails.validateProductPrice();
+        await productDetails.addToWishlist(expectedBtnText);
+        await productDetails.validateAddedToWishlistDialog();
 
-    await firstProductDetails.addToWishlist(expectedBtnText);
-    await firstProductDetails.validateAddedToWishlistDialog(firstProduct.name);
-    await firstProductDetails.closeAfterWishlistConfirmation();
+        const isLastProduct = i === productIndexes.length - 1;
 
-
-    // Add the second product 
-    await homePageobj.searchProduct(secondProduct.name);
-    await searchResultsPageobj.validateSearchResults(secondProduct.name);
-    const secondProductPage = await searchResultsPageobj.openProduct(secondProduct.index);
-
-    const secondProductDetails = new ProductDetailsPage(secondProductPage);
-    await secondProductDetails.validateProductPrice();
-
-    await secondProductDetails.addToWishlist(expectedBtnText);
-    await secondProductDetails.validateAddedToWishlistDialog(secondProduct.name);
-    await secondProductDetails.closeAfterWishlistConfirmation();
-
-    // Add the third product open the wishlist
-    await homePageobj.searchProduct(thirdProduct.name);
-    await searchResultsPageobj.validateSearchResults(thirdProduct.name);
-    const thirdProductPage = await searchResultsPageobj.openProduct(thirdProduct.index);
-
-    const thirdProductDetails = new ProductDetailsPage(thirdProductPage);
-    await thirdProductDetails.validateProductPrice();
-
-    await thirdProductDetails.addToWishlist(expectedBtnText);
-    await thirdProductDetails.validateAddedToWishlistDialog(thirdProduct.name);
-
-    // Open the wishlist from the last page and validate count.
-    wishlistPageobj = new WishlistPage(thirdProductPage);
-    await wishlistPageobj.openWishlist(wishlistUrl);
-    await wishlistPageobj.validateWishlistItemCount(expectedWishlistItemCount);
-    
+        if (!isLastProduct) {
+            await productDetails.closeAfterWishlistConfirmation();
+            await homePageobj.page.bringToFront();
+        } else {
+            wishlistPageobj = new WishlistPage(productPage);
+            await wishlistPageobj.openWishlist(wishlistUrl);
+            await wishlistPageobj.validateWishlistItemCount(expectedWishlistItemCount);
+        }
+    }
 }
 
 test.describe('Scenario 5 - Add Product to Wishlist and Remove It', () => {
 
-    test.beforeEach(async () => {
-        await addAllProducts();
-    });
-
-    test.afterEach(async () => {
-    if (wishlistPageobj) {
-        await wishlistPageobj.clearAllWishlistItems();
-    }
-    });
-
 test('Test 1 - Search for an item within the wishlist', async () => {
-    const [laptop] = products;
-
     await wishlistPageobj.captureWishlistScreenshot('Wishlist after adding 3 items');
 
-    await wishlistPageobj.searchWithinWishlist(laptop.name);
-    await wishlistPageobj.validateSearchResultsKeyword(laptop.name);
+    await wishlistPageobj.searchWithinWishlist(productName);
+    await wishlistPageobj.validateSearchResultsKeyword(productName);
     await wishlistPageobj.clearSearchKeyword();
 });
 
@@ -120,6 +86,9 @@ test('Test 3 - Rename the wishlist', async () => {
 });
 });
 
-// test.afterAll(async () => {
-//     await loginPageobj.logout();
-// });
+test.afterAll(async () => {
+//test.setTimeout(40000); 
+ if (wishlistPageobj) {
+        await wishlistPageobj.clearAllWishlistItems();
+    }
+ });

@@ -51,13 +51,13 @@ class SearchResultsPage {
     if (this.page.viewportSize().width <= 768) {
         await product.click(); 
         await this.page.waitForURL(/\/dp\/|\/gp\/product\//);
-        await this.page.waitForLoadState('domcontentloaded');
+        //await this.page.waitForLoadState('domcontentloaded');
         return this.page;
     }
     const newPagePromise = this.page.context().waitForEvent('page');
     await product.click(); 
     const productPage = await newPagePromise;
-    await productPage.waitForLoadState('domcontentloaded');
+    //await productPage.waitForLoadState('domcontentloaded');
     return productPage;
     }
 
