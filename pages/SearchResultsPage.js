@@ -37,16 +37,14 @@ class SearchResultsPage {
     }
 
     async validateSearchResults(searchKeyword) {
-
     await expect(this.page.locator(locators.searchBox)).toHaveValue(searchKeyword); 
     await expect(this.page.locator(locators.productList).first()).toBeVisible();  
     const resultCount = await this.page.locator(locators.productList).count();   
     expect(resultCount).toBeGreaterThan(0);
-    
     }
    
     async openProduct(index) {
-    await this.page.bringToFront();   // ensure this tab is focused before clicking
+    await this.page.bringToFront();   
     const product = this.getNonSponsoredProducts().nth(index).locator(locators.productTitle);
     if (this.page.viewportSize().width <= 768) {
         await product.click(); 
@@ -60,25 +58,6 @@ class SearchResultsPage {
     //await productPage.waitForLoadState('domcontentloaded');
     return productPage;
     }
-
-
-
-    // async openProduct(index) {
-    // const product = this.getNonSponsoredProducts().nth(index).locator(locators.productTitle);
-    // if (this.page.viewportSize().width <= 768) {
-    //     await product.click(); 
-    //     await this.page.waitForURL(/\/dp\/|\/gp\/product\//);
-    //     await this.page.waitForLoadState('domcontentloaded');
-    //     return this.page;
-    // }
-    // const newPagePromise = this.page.context().waitForEvent('page');
-    // await product.click(); 
-    // const productPage = await newPagePromise;
-    // await productPage.waitForLoadState('domcontentloaded');
-    // return productPage;
-    // }
-
-
 
     async validateSearchResultsAfterBack(searchKeyword) {
         await expect(this.page.locator(locators.searchBox)).toHaveValue(searchKeyword);

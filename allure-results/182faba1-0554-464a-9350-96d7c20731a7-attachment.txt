@@ -1,0 +1,3 @@
+Invalid data type validation failed
+Expected status : 400
+Actual status   : 200

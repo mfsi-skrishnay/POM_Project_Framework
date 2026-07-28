@@ -1,0 +1,8 @@
+{
+  firstname: 'Ericsson',
+  lastname: 'Jim',
+  totalprice: 316,
+  depositpaid: false,
+  bookingdates: { checkin: '2020-07-28', checkout: '2021-07-28' },
+  additionalneeds: 'Break fast-1785225438736-945'
+}

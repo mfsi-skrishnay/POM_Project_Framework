@@ -4,7 +4,7 @@ module.exports = defineConfig({
     testDir: './tests',
    // workers: 4,
     reporter:'html' ,
-    //reporter: [['html'],['list'],['./reporters/CustomReporter.js'],['github'],['allure-playwright']],
+   // reporter: [['html'],['list'],['./reporters/CustomReporter.js'],['github'],['allure-playwright']],
     // reporter: 'list',                                          
     // reporter: 'dot',                                           
     // reporter: 'line',                                          

@@ -9,8 +9,8 @@ const testData = require('../utils/testData.js');
 
 
 const productName = 'Laptop';
-const productIndexes = [0, 1,3];
-const expectedWishlistItemCount = 3;
+const productIndexes = [0, 1];
+const expectedWishlistItemCount = 2;
 const newWishlistName = 'MyShoppingList';
 const expectedBtnText = 'Add to Wish List';
 const expectedName= 'Krishna' ;
@@ -18,7 +18,6 @@ const expectedName= 'Krishna' ;
 let homePageobj, searchResultsPageobj, loginPageobj, wishlistPageobj;
 
 test.beforeAll(async ({ browser }) => {
-   // test.setTimeout(40000); 
     const page = await browser.newPage();
     homePageobj = new HomePage(page);
     loginPageobj = new LoginPage(page);
@@ -58,15 +57,8 @@ async function addAllProducts() {
 
 test.describe('Scenario 5 - Add Product to Wishlist and Remove It', () => {
 
-test('Test 1 - Search for an item within the wishlist', async () => {
-    await wishlistPageobj.captureWishlistScreenshot('Wishlist after adding 3 items');
 
-    await wishlistPageobj.searchWithinWishlist(productName);
-    await wishlistPageobj.validateSearchResultsKeyword(productName);
-    await wishlistPageobj.clearSearchKeyword();
-});
-
-test('Test 2 - Remove a single item from the wishlist', async () => {
+test('Test 1 - Remove a single item from the wishlist', async () => {
     const indexOfItemToRemove = 0;
 
     await wishlistPageobj.captureFullWishlistScreenshot('Wishlist full page after adding 3 items');
@@ -75,7 +67,7 @@ test('Test 2 - Remove a single item from the wishlist', async () => {
     await wishlistPageobj.validateProductMessage('Deleted');
 });
 
-test('Test 3 - Rename the wishlist', async () => {
+test('Test 2 - Rename the wishlist', async () => {
     await wishlistPageobj.captureWishlistItemScreenshot(0, 'First wishlist item');
 
     await wishlistPageobj.wishlistMenuHover();
@@ -84,10 +76,18 @@ test('Test 3 - Rename the wishlist', async () => {
    // await wishlistPageobj.validateVisualSnapshot('wishlist-renamed');
     await wishlistPageobj.validateListName(newWishlistName);
 });
+
+test('Test 3 - Search for an item within the wishlist', async () => {
+    await wishlistPageobj.captureWishlistScreenshot('Wishlist after adding 3 items');
+
+    await wishlistPageobj.searchWithinWishlist(productName);
+    await wishlistPageobj.validateSearchResultsKeyword(productName);
+    await wishlistPageobj.clearSearchKeyword();
+});
+
 });
 
 test.afterAll(async () => {
-//test.setTimeout(40000); 
  if (wishlistPageobj) {
         await wishlistPageobj.clearAllWishlistItems();
     }

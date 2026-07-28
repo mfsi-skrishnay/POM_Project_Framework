@@ -1,0 +1,6 @@
+validateProductTitles failed for brand "HP": Brand mismatch for product: Lenovo ThinkBook 16 AMD Ryzen 5 7535HS (8GB RAM/512GB SSD/Win 11 Home/Office 2024/Backlit Keyboard/Fingerprint) 16" WUXGA IPS 300 Nits Thin & Light Laptop/1Y Warranty/Aluminium Top/1.7kg, 21MWA0BRIN
+
+expect(received).toContain(expected) // indexOf
+
+Expected substring: "hp"
+Received string:    "lenovo thinkbook 16 amd ryzen 5 7535hs (8gb ram/512gb ssd/win 11 home/office 2024/backlit keyboard/fingerprint) 16\" wuxga ips 300 nits thin & light laptop/1y warranty/aluminium top/1.7kg, 21mwa0brin"

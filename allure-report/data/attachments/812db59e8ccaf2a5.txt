@@ -1,0 +1,3 @@
+Special characters validation failed
+Expected status : 400
+Actual status   : 200
