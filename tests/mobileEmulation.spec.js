@@ -8,12 +8,8 @@ let homePageobj,searchResultsPageobj,productDetailsPageobj;
 test('Mobile emulation - Product Search and Product Details Validation', async () => { 
     
     const DEVICE = 'iPhone 14'; 
-    const browser = await chromium.launch({
-        headless: false
-    });
-    const context = await browser.newContext({
-        ...devices[DEVICE]
-    });
+    const browser = await chromium.launch({headless: false });
+    const context = await browser.newContext({...devices[DEVICE] });
 
     const page = await context.newPage();
     const isMobile = true;
