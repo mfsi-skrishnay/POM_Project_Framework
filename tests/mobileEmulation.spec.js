@@ -5,7 +5,7 @@ const { ProductDetailsPage } = require('../pages/ProductDetailsPage.js');
 
 let homePageobj,searchResultsPageobj,productDetailsPageobj;
 
-test('Scenario 1 using mobile emulation - Product Search and Product Details Validation', async () => { 
+test('Mobile emulation - Product Search and Product Details Validation', async () => { 
     
     const DEVICE = 'iPhone 14'; 
     const browser = await chromium.launch({
