@@ -7,7 +7,7 @@ on:
 jobs:
   test:
     timeout-minutes: 60
-    runs-on: ubuntu-latest 
+    runs-on: windows-latest 
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v4
@@ -37,7 +37,7 @@ jobs:
 
     - name: Generate Allure Report
       if: always()
-      run: npx generate allure-results --clean -o allure-report
+      run: npx allure generate allure-results --clean -o allure-report
 
     - name: Upload Allure Report
       uses: actions/upload-artifact@v4
