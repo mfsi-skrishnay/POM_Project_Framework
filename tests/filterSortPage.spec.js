@@ -9,7 +9,7 @@ test('Scenario 2 - Apply filters, sort and validate results', async ({ page }) =
     const productName = 'Laptop';
     const brandFilterIndex = 0;      
     const ramFilterIndex = 1;
-    const processorFilterIndex = 2;
+    const processorFilterIndex = 0;
     const sortByIndex = 1;
     
 

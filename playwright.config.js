@@ -5,14 +5,6 @@ module.exports = defineConfig({
    // workers: 4,
     reporter:'html' ,
    // reporter: [['html'],['list'],['./reporters/CustomReporter.js'],['github'],['allure-playwright']],
-    // reporter: 'list',                                          
-    // reporter: 'dot',                                           
-    // reporter: 'line',                                          
-    // reporter: [['json', { outputFile: 'results.json' }]],      
-    // reporter: [['junit', { outputFile: 'results.xml' }]],      
-    // reporter: [['blob', { outputDir: 'blob-report' }]],       
-    // reporter: [['github']],                                    
-    // reporter: [ ['list'],['html', { outputFolder: 'playwright-report', open: 'never' }],['junit', { outputFile: 'results.xml' }] ],
     wishlistUrl: '/hz/wishlist/ls/',
     
     use: {
