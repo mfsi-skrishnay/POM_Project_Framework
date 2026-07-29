@@ -90,7 +90,6 @@ class ProductDetailsPage {
     }
 
    async addToWishlist(expectedButtonText) {
-  //  await expect(this.page.locator(locators.addToWishlistButton)).toBeVisible();
     const wishlistButtonInput = this.page.locator(locators.addToWishlistButtonInput);
     await expect(wishlistButtonInput).toHaveValue(expectedButtonText);
     await this.page.locator(locators.addToWishlistButton).click();
@@ -98,7 +97,6 @@ class ProductDetailsPage {
 
     async validateAddedToWishlistDialog(expectedTitle) {
     await expect(this.page.locator(locators.wishlistConfirmation)).toBeVisible();
-    //await expect(this.page.locator(locators.productTitle).first()).toContainText(expectedTitle);
     }
 
     async closeAfterWishlistConfirmation() {

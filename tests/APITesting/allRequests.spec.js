@@ -117,7 +117,7 @@ test.beforeEach(async ({ request }) => {
     const createBody = await createResponse.json();
     const bookingId = createBody.bookingid;
 
-    const authResponse = await bookingApi.createToken(authPayload);     // Generate Token
+    const authResponse = await bookingApi.createToken(authPayload);     // Generate token
     expect(authResponse.status()).toBe(200);
     expect(authResponse.ok()).toBeTruthy();
     const authBody = await authResponse.json();
@@ -165,12 +165,12 @@ test.beforeEach(async ({ request }) => {
     const createBody = await createResponse.json();
     const bookingId = createBody.bookingid;
 
-    const authResponse = await bookingApi.createToken(authPayload);   // Generate Token
+    const authResponse = await bookingApi.createToken(authPayload);   // Generate token
     expect(authResponse.status()).toBe(200);     
     const authBody = await authResponse.json();
     const token = authBody.token;
 
-    const response = await bookingApi.partialUpdateBooking(bookingId,token,patchPayload);   // PATCH Request
+    const response = await bookingApi.partialUpdateBooking(bookingId,token,patchPayload);   // PATCH request
 
     expect(response.status()).toBe(200);
     expect(response.ok()).toBeTruthy();
@@ -208,7 +208,7 @@ test.beforeEach(async ({ request }) => {
     const authBody = await authResponse.json();
     const token = authBody.token;
 
-    const deleteResponse = await bookingApi.deleteBooking(bookingId,token);   // DELETE Booking
+    const deleteResponse = await bookingApi.deleteBooking(bookingId,token);   // DELETE booking
 
     expect(deleteResponse.status()).toBe(201);
     expect(deleteResponse.ok()).toBeTruthy();
@@ -217,7 +217,7 @@ test.beforeEach(async ({ request }) => {
     const deleteBody = await deleteResponse.text();
     expect(deleteBody).toBe('Created');
 
-    const getResponse = await bookingApi.getBookingById(bookingId);    // Verify Booking is Deleted
+    const getResponse = await bookingApi.getBookingById(bookingId);    // Verify booking is deleted
     expect(getResponse.status()).toBe(404);
     const getBody = await getResponse.text();
     expect(getBody).toContain('Not Found');

@@ -6,7 +6,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test('Download PDF file', async ({ page }) => {
-        await page.locator('#inputText').fill('THIS IS SAMPLE FILE FOR CHECKING DOWNLOADING IN PLAYWRIGHT');
+        await page.locator('#inputText').fill('This is sample file for checking downlaoding in playwright');
         
         await page.locator('#generatePdf').click();
         const downloadLink = page.locator('#pdfDownloadLink').first();

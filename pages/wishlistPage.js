@@ -104,9 +104,9 @@ class WishlistPage {
     await this.page.locator(locators.wishlistItemTitle).nth(index).screenshot({ path: `screenshots/${fileName}.png` });
     }
 
-    // async validateVisualSnapshot(name) {
-    // await expect(this.page).toHaveScreenshot(`${name}.png`,{fullPage: true});
-    // }
+    async validateVisualSnapshot(name) {
+    await expect(this.page).toHaveScreenshot(`${name}.png`,{fullPage: true});
+    }
 
     async clearAllWishlistItems() {
     const searchBox = this.page.locator(locators.wishlistSearchBox);

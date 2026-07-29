@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test');
 
 test('Test1 - Mock GET All Bookings', async ({ page }) => {
-    await page.route('**/booking', async (route) => {        // Mock API Response
+    await page.route('**/booking', async (route) => {        // Mock Api response
         await route.fulfill({
             status: 200,
             contentType: 'application/json',
@@ -26,7 +26,7 @@ test('Test1 - Mock GET All Bookings', async ({ page }) => {
 });
 
 test('Test2 - Mock Booking Not Found', async ({ page }) => {
-    await page.route('**/booking/1', async (route) => {          // Mock 404 Response
+    await page.route('**/booking/1', async (route) => {          // Mock 404 response
         await route.fulfill({
             status: 404,
             contentType: 'application/json',

@@ -21,13 +21,11 @@ class BookingApi {
     };
 
     async getAllBookings() {
-        return await this.request.get(`${config.use.demoApiUrl}${this.endpoints.getAllBookings}`
-        );
+        return await this.request.get(`${config.use.demoApiUrl}${this.endpoints.getAllBookings}`);
     }
 
     async getBookingById(id) {
-        return await this.request.get(`${config.use.demoApiUrl}${this.endpoints.getBookingById(id)}`
-        );
+        return await this.request.get(`${config.use.demoApiUrl}${this.endpoints.getBookingById(id)}`);
     }
 
     async createBooking(payload) {
@@ -38,7 +36,7 @@ class BookingApi {
         );
     }
 
-    async createToken(payload) {               // POST Create Token
+    async createToken(payload) {              
         return await this.request.post(`${config.use.demoApiUrl}${this.endpoints.createToken}`,
             {
                 data: payload
