@@ -3,7 +3,7 @@ const { defineConfig, devices } = require('@playwright/test');
 module.exports = defineConfig({
     testDir: './tests',
    // workers: 4,
-    reporter:'html' ,
+    reporter:[['html'],'allure-playwright' ],
    // reporter: [['html'],['list'],['./reporters/CustomReporter.js'],['github'],['allure-playwright']],
     wishlistUrl: '/hz/wishlist/ls/',
     

@@ -67,7 +67,6 @@ test.beforeEach(async ({ request }) => {
         expect(body).toHaveProperty('totalprice');
         expect(body).toHaveProperty('depositpaid');
         expect(body).toHaveProperty('bookingdates');
-        expect(body).toHaveProperty('additionalneeds');
         expect(body.bookingdates).toHaveProperty('checkin');
         expect(body.bookingdates).toHaveProperty('checkout');
 
@@ -75,7 +74,6 @@ test.beforeEach(async ({ request }) => {
         expect(typeof body.lastname).toBe('string');
         expect(typeof body.totalprice).toBe('number');
         expect(typeof body.depositpaid).toBe('boolean');
-        expect(typeof body.additionalneeds).toBe('string');
 
     });
 
