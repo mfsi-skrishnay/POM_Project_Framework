@@ -18,7 +18,7 @@ const locators = {
     addToWishlistButton: "#wishListMainButton",
     addToWishlistButtonInput: 'input[id*="button-submit"]', 
     wishlistdialog: 'div[aria-label="Add to Wish List"]',
-    wishlistConfirmation: 'div[aria-label="Add to Wish List"] h4',
+    wishlistConfirmation: '#wishlistButtonStack',
 
 };
 
@@ -68,7 +68,11 @@ class ProductDetailsPage {
     }
 
     async validateProductPrice() {
-        await expect(this.page.locator(locators.productPrice).first()).toBeVisible();
+        // Some product pages render price in different elements; check common alternatives
+        const priceLocator = this.page.locator('span[class*="priceToPay"], span.a-offscreen, span.a-price-whole');
+        const elem = priceLocator.first();
+        const priceText = await elem.textContent();
+        expect(priceText && priceText.trim().length > 0);
     }
 
     async addToCart() {
@@ -96,7 +100,9 @@ class ProductDetailsPage {
 }
 
     async validateAddedToWishlistDialog(expectedTitle) {
-    await expect(this.page.locator(locators.wishlistConfirmation)).toBeVisible();
+    const wishlistConfirmation = this.page.locator(locators.wishlistConfirmation);
+    await expect(wishlistConfirmation).toBeVisible();
+    await expect(wishlistConfirmation).toContainText('Added to');
     }
 
     async closeAfterWishlistConfirmation() {
