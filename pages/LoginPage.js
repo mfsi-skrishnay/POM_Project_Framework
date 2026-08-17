@@ -8,7 +8,9 @@ const locators = {
     accountName: '#nav-link-accountList-nav-line-1', 
 
     accountinfo: '#nav-link-accountList',
-    signOutLink: '#nav-item-signout, a[href*="ref_=nav_signout"]' 
+    signOutLink: 'a#nav-item-signout',     //#nav-item-signout, a[href*="ref_=nav_signout"]
+
+    authError: '#auth-error-message-box .a-alert-content'
 
 }
 
@@ -34,7 +36,7 @@ class LoginPage{
 
     async validateLoggedIn(expectedName) {
         await expect(this.page.locator(locators.accountName)).toBeVisible();
-         await expect(this.page.locator(locators.accountName)).toContainText(expectedName);
+        await expect(this.page.locator(locators.accountName)).toContainText(expectedName);
     }
 
     async login(email, password) {
@@ -51,6 +53,30 @@ class LoginPage{
     await signOutLink.click();
     }
 
-    
+     
+   async validateAuthError() {
+        await expect(this.page.locator(locators.authError)).toBeVisible();
+    }
+ 
+    async clickContinueButton() {
+        await this.page.locator(locators.continueButton).click();
+    }
+ 
+    async clickSignInButton() {
+        await this.page.locator(locators.signInButton).click();
+    }
+ 
+    async continueWithEmailOnly(email) {
+        await this.page.locator(locators.emailInput).fill(email);
+        await this.page.locator(locators.continueButton).click();
+    }
+ 
+    async loginExpectingFailure(email, password) {
+        await this.openSignInPage();
+        await this.enterEmail(email);
+        await this.enterPassword(password);
+        return this.page.locator(locators.authError).isVisible();
+    }
+  
 }
 module.exports = { LoginPage };
