@@ -3,33 +3,34 @@ const { HomePage } = require('../pages/HomePage.js');
 const { SearchResultsPage } = require('../pages/SearchResultsPage.js');
 const { ProductDetailsPage } = require('../pages/ProductDetailsPage.js');
 
-let homePageobj,searchResultsPageobj,productDetailsPageobj;
+let homePageobj, searchResultsPageobj, productDetailsPageobj;
 
-test('Scenario 1 - Product search and product details validation', async ({ page }) => {
+test.describe('Scenario 1 - product searching and validation', () => {
+    test('TC01 - Product search and product details validation', async ({ page }) => {
 
-    homePageobj = new HomePage(page);
-    searchResultsPageobj = new SearchResultsPage(page);
-    
-    const homepageTitle = "Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in";
-    const productName = 'Laptop';
-    const expectedTitle = 'Laptop';
-    const productIndex = 0;
+        homePageobj = new HomePage(page);
+        searchResultsPageobj = new SearchResultsPage(page);
 
-    await homePageobj.navigateToHomePage();
-    await homePageobj.validateHomePage(homepageTitle);        
+        const homepageTitle = "Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in";
+        const productName = 'Laptop';
+        const expectedTitle = 'Laptop';
+        const productIndex = 0;
 
-    await homePageobj.searchProduct(productName);
-    await searchResultsPageobj.validateSearchResults(productName);
+        await homePageobj.navigateToHomePage();
+        await homePageobj.validateHomePage(homepageTitle);
 
-    const productPage = await searchResultsPageobj.openProduct(productIndex);   // Open product based on index
+        await homePageobj.searchProduct(productName);
+        await searchResultsPageobj.validateSearchResults(productName);
 
-    productDetailsPageobj = new ProductDetailsPage(productPage);
+        const productPage = await searchResultsPageobj.openProduct(productIndex);   // Open product based on index
 
-    await productDetailsPageobj.validateProductPage();     
-    await productDetailsPageobj.validateProductDetails(expectedTitle);   
-    await productDetailsPageobj.returnToSearchResults();       
+        productDetailsPageobj = new ProductDetailsPage(productPage);
 
-    await searchResultsPageobj.validateSearchResultsAfterBack(productName);   
+        await productDetailsPageobj.validateProductPage();
+        await productDetailsPageobj.validateProductDetails(expectedTitle);
+        await productDetailsPageobj.returnToSearchResults();
+
+        await searchResultsPageobj.validateSearchResultsAfterBack(productName);
 
     });
-
+});

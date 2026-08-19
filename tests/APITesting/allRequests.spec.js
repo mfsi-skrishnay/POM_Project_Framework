@@ -39,7 +39,9 @@ test.beforeEach(async ({ request }) => {
     bookingApi = new BookingApi(request);
 });
 
-    test('Test1 GET all bookings', async () => {
+test.describe('Booking API', () => {
+
+    test('TC01: GET all bookings', async () => {
         const response = await bookingApi.getAllBookings();
         expect(response.status()).toBe(200);
         expect(response.ok()).toBeTruthy();
@@ -53,7 +55,7 @@ test.beforeEach(async ({ request }) => {
 
     });
 
-    test('Test2 GET booking by Id', async () => {
+    test('TC02: GET booking by Id', async () => {
         const response = await bookingApi.getBookingById(BookingId);
         expect(response.status()).toBe(200);
         expect(response.ok()).toBeTruthy();
@@ -77,7 +79,7 @@ test.beforeEach(async ({ request }) => {
 
     });
 
-    test('Test3 POST create booking', async () => {
+    test('TC03: POST create booking', async () => {
     const response = await bookingApi.createBooking(bookingPayload);
     expect(response.status()).toBe(200);
     expect(response.ok()).toBeTruthy();
@@ -111,7 +113,7 @@ test.beforeEach(async ({ request }) => {
     expect(body.booking.bookingdates.checkout).toBe(bookingPayload.bookingdates.checkout);
     });
 
-    test('Test4 PUT update booking', async () => {
+    test('TC04: PUT update booking', async () => {
     const createResponse = await bookingApi.createBooking(bookingPayload);
     expect(createResponse.status()).toBe(200);
     const createBody = await createResponse.json();
@@ -159,7 +161,7 @@ test.beforeEach(async ({ request }) => {
 });
 
 
-    test('Test5 PATCH partial update booking', async () => {
+    test('TC05:  PATCH partial update booking', async () => {
     const createResponse = await bookingApi.createBooking(bookingPayload);
     expect(createResponse.status()).toBe(200);
     const createBody = await createResponse.json();
@@ -197,7 +199,7 @@ test.beforeEach(async ({ request }) => {
     expect(body.bookingdates.checkout).toBe(bookingPayload.bookingdates.checkout);
 });
 
-    test('Test6 DELETE booking', async () => {
+    test('TC06: DELETE booking', async () => {
     const createResponse = await bookingApi.createBooking(bookingPayload);
     expect(createResponse.status()).toBe(200);
     const createBody = await createResponse.json();
@@ -221,5 +223,7 @@ test.beforeEach(async ({ request }) => {
     expect(getResponse.status()).toBe(404);
     const getBody = await getResponse.text();
     expect(getBody).toContain('Not Found');
+
+});
 
 });

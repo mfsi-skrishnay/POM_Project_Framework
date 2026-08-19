@@ -1,53 +1,54 @@
-const { test,chromium, devices } = require('@playwright/test');
+const { test, chromium, devices } = require('@playwright/test');
 const { HomePage } = require('../pages/HomePage.js');
 const { SearchResultsPage } = require('../pages/SearchResultsPage.js');
 const { ProductDetailsPage } = require('../pages/ProductDetailsPage.js');
 
-let homePageobj,searchResultsPageobj,productDetailsPageobj;
+let homePageobj, searchResultsPageobj, productDetailsPageobj;
 
-test('Mobile emulation - Product Search and Product Details Validation', async () => { 
-    
-    const DEVICE = 'iPhone 14'; 
-    const browser = await chromium.launch({headless: false });
-    const context = await browser.newContext({...devices[DEVICE] });
+test.describe('Mobile emulation testcases', () => {
+    test('TC01 - Mobile emulation: Product Search and Product Details Validation', async () => {
 
-    const page = await context.newPage();
-    const isMobile = true;
-    //const isMobile = test.info().project.name.includes('Mobile'); //Detect current project from config option2
+        const DEVICE = 'iPhone 14';
+        const browser = await chromium.launch({ headless: false });
+        const context = await browser.newContext({ ...devices[DEVICE] });
+
+        const page = await context.newPage();
+        const isMobile = true;
+        //const isMobile = test.info().project.name.includes('Mobile'); //Detect current project from config option2
 
 
-    homePageobj = new HomePage(page, isMobile);
-    searchResultsPageobj = new SearchResultsPage(page, isMobile);
-    
-    const homepageTitle = "Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in";
-    const productName = 'Laptop';
-    const expectedTitle = 'Laptop';
-    const productIndex = 0;
+        homePageobj = new HomePage(page, isMobile);
+        searchResultsPageobj = new SearchResultsPage(page, isMobile);
 
-    // Step 1 : Open amazon home page
-    await homePageobj.navigateToHomePage();
+        const homepageTitle = "Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in";
+        const productName = 'Laptop';
+        const expectedTitle = 'Laptop';
+        const productIndex = 0;
 
-    // Validate home page
-    await homePageobj.validateHomePage(homepageTitle);        
+        // Step 1 : Open amazon home page
+        await homePageobj.navigateToHomePage();
 
-    // Step 2 : Search product
-    await homePageobj.searchProduct(productName);
+        // Validate home page
+        await homePageobj.validateHomePage(homepageTitle);
 
-    // Validate search results
-    await searchResultsPageobj.validateSearchResults(productName);
+        // Step 2 : Search product
+        await homePageobj.searchProduct(productName);
 
-    // Step 3 : Open first product
-    const productPage = await searchResultsPageobj.openProduct(productIndex);
+        // Validate search results
+        await searchResultsPageobj.validateSearchResults(productName);
 
-    productDetailsPageobj = new ProductDetailsPage(productPage, isMobile);
+        // Step 3 : Open first product
+        const productPage = await searchResultsPageobj.openProduct(productIndex);
 
-    // Validate product page
-    await productDetailsPageobj.validateProductPage();    
+        productDetailsPageobj = new ProductDetailsPage(productPage, isMobile);
 
-    // Step 4 : Validate product details
-    await productDetailsPageobj.validateProductDetails(expectedTitle);    
+        // Validate product page
+        await productDetailsPageobj.validateProductPage();
 
-    // Step 5 : Close the searched result 
-    await productDetailsPageobj.returnToSearchResults();         
+        // Step 4 : Validate product details
+        await productDetailsPageobj.validateProductDetails(expectedTitle);
+
+        // Step 5 : Close the searched result 
+        await productDetailsPageobj.returnToSearchResults();
     });
-
+});

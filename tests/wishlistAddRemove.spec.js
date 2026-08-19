@@ -19,7 +19,7 @@ let homePageobj, searchResultsPageobj, loginPageobj, wishlistPageobj;
 
 test.beforeAll(async ({ browser }) => {
     const page = await browser.newPage();
-    homePageobj = new HomePage(page);
+    homePageobj = new HomePage(page);           //Avoid calling objects everyplace
     loginPageobj = new LoginPage(page);
     searchResultsPageobj = new SearchResultsPage(page);
 
@@ -58,7 +58,7 @@ async function addAllProducts() {
 test.describe('Scenario 5 - Add Product to Wishlist and Remove It', () => {
 
 
-test('Test 1 - Remove a single item from the wishlist', async () => {
+test('TC01 - Remove a single item from the wishlist', async () => {
     const indexOfItemToRemove = 0;
 
     await wishlistPageobj.captureFullWishlistScreenshot('Wishlist full page after adding 3 items');
@@ -67,7 +67,7 @@ test('Test 1 - Remove a single item from the wishlist', async () => {
     await wishlistPageobj.validateProductMessage('Deleted');
 });
 
-test('Test 2 - Rename the wishlist', async () => {
+test('TC02 - Rename the wishlist', async () => {
     await wishlistPageobj.captureWishlistItemScreenshot(0, 'First wishlist item');
 
     await wishlistPageobj.wishlistMenuHover();
@@ -77,7 +77,7 @@ test('Test 2 - Rename the wishlist', async () => {
     await wishlistPageobj.validateListName(newWishlistName);
 });
 
-test('Test 3 - Search for an item within the wishlist', async () => {
+test('TC03 - Search for an item within the wishlist', async () => {
     await wishlistPageobj.captureWishlistScreenshot('Wishlist after adding 3 items');
 
     await wishlistPageobj.searchWithinWishlist(productName);
