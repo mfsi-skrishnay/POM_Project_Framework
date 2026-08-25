@@ -1,25 +1,32 @@
 const { expect } = require('@playwright/test');
 
 const locators = {
-    productTitle: '#productTitle',
-    productPrice: 'span[class*="priceToPay"]',
-    productRating: 'span[id*=CustomerReview]',
-    deliveryInfo: '#deliveryBlockMessage',
+    desktop: {
+        productTitle: '#productTitle',
+        productPrice: 'span[class*="priceToPay"]',
+        productRating: 'span[id*=CustomerReview]',
+        deliveryInfo: '#deliveryBlockMessage',
+    },
 
-    MproductTitle: '#title',
-    MproductPrice: 'span[class*="priceToPay"]',
-    MproductRating: '#acrCustomerReviewLink',
-    MdeliveryInfo: '#deliveryBlockMessage',
+    mobile: {
+        MproductTitle: '#title',
+        MproductPrice: 'span[class*="priceToPay"]',
+        MproductRating: '#acrCustomerReviewLink',
+        MdeliveryInfo: '#deliveryBlockMessage',
+    },
 
-    addToCartButton: 'input[id*="add-to-cart"]',
-    goToCartButton: "//a[normalize-space()='Go to Cart']",
-    addedItemPrice: "span[class*='subtotal'] h2",
+    cart: {
+        addToCartButton: 'input[id*="add-to-cart"]',
+        goToCartButton: "//a[normalize-space()='Go to Cart']",
+        addedItemPrice: "span[class*='subtotal'] h2",
+    },
 
-    addToWishlistButton: "#wishListMainButton",
-    addToWishlistButtonInput: 'input[id*="button-submit"]', 
-    wishlistdialog: 'div[aria-label="Add to Wish List"]',
-    wishlistConfirmation: '#wishlistButtonStack',
-
+    wishlist: {
+        addToWishlistButton: "#wishListMainButton",
+        addToWishlistButtonInput: 'input[id*="button-submit"]',
+        wishlistdialog: 'div[aria-label="Add to Wish List"]',
+        wishlistConfirmation: '#wishlistButtonStack',
+    },
 };
 
 class ProductDetailsPage {
@@ -30,36 +37,36 @@ class ProductDetailsPage {
 
    async validateProductPage() {
     if (this.isMobile) {
-        await expect(this.page.locator(locators.MproductTitle).first()).toBeVisible();
-        await expect(this.page.locator(locators.MproductPrice).first()).toBeVisible();
-        await expect(this.page.locator(locators.MproductRating).nth(0)).toBeVisible();
-        await expect(this.page.locator(locators.MdeliveryInfo)).toBeVisible();
+        await expect(this.page.locator(locators.mobile.MproductTitle).first()).toBeVisible();
+        await expect(this.page.locator(locators.mobile.MproductPrice).first()).toBeVisible();
+        await expect(this.page.locator(locators.mobile.MproductRating).nth(0)).toBeVisible();
+        await expect(this.page.locator(locators.mobile.MdeliveryInfo)).toBeVisible();
     } else {
-        await expect(this.page.locator(locators.productTitle).first()).toBeVisible();
-        await expect(this.page.locator(locators.productPrice).first()).toBeVisible();
-        await expect(this.page.locator(locators.productRating).nth(0)).toBeVisible();
-        await expect(this.page.locator(locators.deliveryInfo)).toBeVisible();
+        await expect(this.page.locator(locators.desktop.productTitle).first()).toBeVisible();
+        await expect(this.page.locator(locators.desktop.productPrice).first()).toBeVisible();
+        await expect(this.page.locator(locators.desktop.productRating).nth(0)).toBeVisible();
+        await expect(this.page.locator(locators.desktop.deliveryInfo)).toBeVisible();
     }
     }
 
     async validateProductDetails(expectedTitle) {
 
     if (this.isMobile) {
-        await expect(this.page.locator(locators.MproductTitle).first()).toContainText(expectedTitle);
+        await expect(this.page.locator(locators.mobile.MproductTitle).first()).toContainText(expectedTitle);
 
-        const productPrice = await this.page.locator(locators.MproductPrice).first().textContent();
+        const productPrice = await this.page.locator(locators.mobile.MproductPrice).first().textContent();
         expect(productPrice).not.toBe('');
 
-        await expect(this.page.locator(locators.MdeliveryInfo)).toBeVisible();
+        await expect(this.page.locator(locators.mobile.MdeliveryInfo)).toBeVisible();
 
     } else {
-        await expect(this.page.locator(locators.productTitle).first()).toContainText(expectedTitle);
+        await expect(this.page.locator(locators.desktop.productTitle).first()).toContainText(expectedTitle);
 
-        const productPrice = await this.page.locator(locators.productPrice).first().textContent();
+        const productPrice = await this.page.locator(locators.desktop.productPrice).first().textContent();
         expect(productPrice).not.toBe('');
 
-        await expect(this.page.locator(locators.productRating).nth(0)).toHaveAttribute('aria-label', /Reviews/);
-        await expect(this.page.locator(locators.deliveryInfo)).toBeVisible();
+        await expect(this.page.locator(locators.desktop.productRating).nth(0)).toHaveAttribute('aria-label', /Reviews/);
+        await expect(this.page.locator(locators.desktop.deliveryInfo)).toBeVisible();
     }
     }
 
@@ -76,31 +83,31 @@ class ProductDetailsPage {
     }
 
     async addToCart() {
-        await this.page.locator(locators.addToCartButton).click();
+        await this.page.locator(locators.cart.addToCartButton).click();
     }
 
     async getProductTitle() {
-        const title = await this.page.locator(locators.productTitle).first().textContent();
+        const title = await this.page.locator(locators.desktop.productTitle).first().textContent();
         return title.trim();
     }
     
     async validateAddToCartConfirmation() {
-        await expect(this.page.locator(locators.goToCartButton).first()).toBeVisible();  
+        await expect(this.page.locator(locators.cart.goToCartButton).first()).toBeVisible();  
     }
 
     async goToCart() {
-        await this.page.locator(locators.goToCartButton).first().click();
+        await this.page.locator(locators.cart.goToCartButton).first().click();
         await this.page.waitForLoadState('domcontentloaded');
     }
 
    async addToWishlist(expectedButtonText) {
-    const wishlistButtonInput = this.page.locator(locators.addToWishlistButtonInput);
+    const wishlistButtonInput = this.page.locator(locators.wishlist.addToWishlistButtonInput);
     await expect(wishlistButtonInput).toHaveValue(expectedButtonText);
-    await this.page.locator(locators.addToWishlistButton).click();
+    await this.page.locator(locators.wishlist.addToWishlistButton).click();
 }
 
     async validateAddedToWishlistDialog(expectedTitle) {
-    const wishlistConfirmation = this.page.locator(locators.wishlistConfirmation);
+    const wishlistConfirmation = this.page.locator(locators.wishlist.wishlistConfirmation);
     await expect(wishlistConfirmation).toBeVisible();
     await expect(wishlistConfirmation).toContainText('Added to');
     }

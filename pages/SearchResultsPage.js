@@ -1,29 +1,36 @@
 const { expect } = require('@playwright/test');
+
 const locators = {
-    searchBox: '[type="text"][placeholder*="Search"]',
-    productList: 'div[data-component-type*="result"]',
-    productTitle: 'a h2',
-    
-    brandFilterOptions: '#filter-p_123 li',
-    brandFilter: 'a[aria-label*="the filter"]',
-    brandText: 'span.a-size-base.a-color-base',
+    results: {
+        searchBox: '[type="text"][placeholder*="Search"]',
+        productList: 'div[data-component-type*="result"]',
+        productTitle: 'a h2',
+    },
 
-    // RAM Size Filter
-    ramFilterOptions: '#filter-p_n_g-1003119721111 li',
-    ramFilter: 'a[aria-label*="the filter"]',
-    ramText: 'span.a-size-base.a-color-base',
+    brandFilter: {
+        brandFilterOptions: '#filter-p_123 li',
+        brandFilter: 'a[aria-label*="the filter"]',
+        brandText: 'span.a-size-base.a-color-base',
+    },
 
-    // Processor Count Filter
-    processorFilterOptions: '#filter-p_n_g-1003513532111 li',
-    processorFilter: 'a[aria-label*="the filter"]',
-    processorText: 'span.a-size-base.a-color-base',
-    processorCheckbox: 'input[type="checkbox"]',
+    ramFilter: {
+        ramFilterOptions: '#filter-p_n_g-1003119721111 li',
+        ramFilter: 'a[aria-label*="the filter"]',
+        ramText: 'span.a-size-base.a-color-base',
+    },
 
-    //sorting products
-    sortDropdown: 'select[id*="sort"]',
-    sortOptions: 'select[id*="sort"] option',
-    productPrice: 'span.a-price-whole'
+    processorFilter: {
+        processorFilterOptions: '#filter-p_n_g-1003513532111 li',
+        processorFilter: 'a[aria-label*="the filter"]',
+        processorText: 'span.a-size-base.a-color-base',
+        processorCheckbox: 'input[type="checkbox"]',
+    },
 
+    sorting: {
+        sortDropdown: 'select[id*="sort"]',
+        sortOptions: 'select[id*="sort"] option',
+        productPrice: 'span.a-price-whole',
+    },
 };
 
 class SearchResultsPage {
@@ -33,19 +40,19 @@ class SearchResultsPage {
     }
 
     getNonSponsoredProducts() {
-    return this.page.locator(locators.productList).filter({hasNot: this.page.getByText('Sponsored')});
+    return this.page.locator(locators.results.productList).filter({hasNot: this.page.getByText('Sponsored')});
     }
 
     async validateSearchResults(searchKeyword) {
-    await expect(this.page.locator(locators.searchBox)).toHaveValue(searchKeyword); 
-    await expect(this.page.locator(locators.productList).first()).toBeVisible();  
-    const resultCount = await this.page.locator(locators.productList).count();   
+    await expect(this.page.locator(locators.results.searchBox)).toHaveValue(searchKeyword); 
+    await expect(this.page.locator(locators.results.productList).first()).toBeVisible();  
+    const resultCount = await this.page.locator(locators.results.productList).count();   
     expect(resultCount).toBeGreaterThan(0);
     }
    
     async openProduct(index) {
     await this.page.bringToFront();   
-    const product = this.getNonSponsoredProducts().nth(index).locator(locators.productTitle);
+    const product = this.getNonSponsoredProducts().nth(index).locator(locators.results.productTitle);
     if (this.page.viewportSize().width <= 768) {
         await product.click(); 
         await this.page.waitForURL(/\/dp\/|\/gp\/product\//);
@@ -59,15 +66,15 @@ class SearchResultsPage {
     }
 
     async validateSearchResultsAfterBack(searchKeyword) {
-        await expect(this.page.locator(locators.searchBox)).toHaveValue(searchKeyword);
-        await expect(this.page.locator(locators.productList).first()).toBeVisible();
+        await expect(this.page.locator(locators.results.searchBox)).toHaveValue(searchKeyword);
+        await expect(this.page.locator(locators.results.productList).first()).toBeVisible();
     }
 
    async selectBrandByIndex(index) {
-    const brandOption = this.page.locator(locators.brandFilterOptions).nth(index);
-    const brandName = await brandOption.locator(locators.brandText).innerText();
-    await brandOption.locator(locators.brandFilter).click();
-    await expect(this.page.locator(locators.productList).first()).toBeVisible();
+    const brandOption = this.page.locator(locators.brandFilter.brandFilterOptions).nth(index);
+    const brandName = await brandOption.locator(locators.brandFilter.brandText).innerText();
+    await brandOption.locator(locators.brandFilter.brandFilter).click();
+    await expect(this.page.locator(locators.results.productList).first()).toBeVisible();
     return brandName.trim();
     }
      async validateBrandSelected(brandName) {
@@ -76,7 +83,7 @@ class SearchResultsPage {
  
     async validateProductTitles(brandName) {
     try {
-        const titles = await this.page.locator(locators.productList).locator(locators.productTitle).allTextContents();
+        const titles = await this.page.locator(locators.results.productList).locator(locators.results.productTitle).allTextContents();
         for (const title of titles) {
         const actualTitle = title.toLowerCase();
         const expectedBrand = brandName.toLowerCase();
@@ -88,10 +95,10 @@ class SearchResultsPage {
     }}
 
     async selectRamSizeByIndex(index) {
-        const ramOption = this.page.locator(locators.ramFilterOptions).nth(index);
-        const ramSize = await ramOption.locator(locators.ramText).innerText();
-        await ramOption.locator(locators.ramFilter).click();
-        await expect(this.page.locator(locators.productList).first()).toBeVisible();
+        const ramOption = this.page.locator(locators.ramFilter.ramFilterOptions).nth(index);
+        const ramSize = await ramOption.locator(locators.ramFilter.ramText).innerText();
+        await ramOption.locator(locators.ramFilter.ramFilter).click();
+        await expect(this.page.locator(locators.results.productList).first()).toBeVisible();
         return ramSize.trim();
     }
 
@@ -101,17 +108,17 @@ class SearchResultsPage {
     }
 
     async validateProductRam(ramSize) {
-    const products = await this.getNonSponsoredProducts().locator(locators.productTitle).allTextContents();
+    const products = await this.getNonSponsoredProducts().locator(locators.results.productTitle).allTextContents();
     for (const product of products) {
         expect(product.toLowerCase().replaceAll(' ', '')).toContain(ramSize.toLowerCase().replaceAll(' ', ''));
     }
     }
 
     async selectProcessorCountByIndex(index) {
-    const processorOption = this.page.locator(locators.processorFilterOptions).nth(index);
-    const processorCount = await processorOption.locator(locators.processorText).allTextContents();
-    await processorOption.locator(locators.processorFilter).click();
-    await expect(this.page.locator(locators.productList).first()).toBeVisible();
+    const processorOption = this.page.locator(locators.processorFilter.processorFilterOptions).nth(index);
+    const processorCount = await processorOption.locator(locators.processorFilter.processorText).allTextContents();
+    await processorOption.locator(locators.processorFilter.processorFilter).click();
+    await expect(this.page.locator(locators.results.productList).first()).toBeVisible();
     return processorCount;
     }
 
@@ -131,18 +138,18 @@ class SearchResultsPage {
     }
 
     async selectSortByIndex(index) {
-    const sortOption = await this.page.locator(locators.sortOptions).nth(index).innerText();
-    await this.page.locator(locators.sortDropdown).selectOption({ index: index });
-    await expect(this.page.locator(locators.productList).first()).toBeVisible();
+    const sortOption = await this.page.locator(locators.sorting.sortOptions).nth(index).innerText();
+    await this.page.locator(locators.sorting.sortDropdown).selectOption({ index: index });
+    await expect(this.page.locator(locators.results.productList).first()).toBeVisible();
     return sortOption.trim();
     }
 
     async validateSelectedSort(sortOption) {
-    await expect(this.page.locator(locators.sortDropdown)).toContainText(sortOption);
+    await expect(this.page.locator(locators.sorting.sortDropdown)).toContainText(sortOption);
     }
 
     async validatePriceLowToHigh() {
-    const prices = await this.getNonSponsoredProducts().locator(locators.productPrice).allTextContents();
+    const prices = await this.getNonSponsoredProducts().locator(locators.sorting.productPrice).allTextContents();
     for (let i = 0; i < prices.length - 1; i++) {
         const currentPrice = Number(prices[i].replace(/,/g, ''));
         const nextPrice = Number(prices[i + 1].replace(/,/g, ''));
