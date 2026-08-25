@@ -1,4 +1,5 @@
 const { expect } = require('@playwright/test');
+const { ProductDetailsPage } = require('./ProductDetailsPage.js');
 
 const locators = {
     wishlistNavLink: '[id*="your-list"] a',
@@ -126,5 +127,36 @@ class WishlistPage {
     await expect(this.page.locator(locators.emptyWishlistMessage)).toContainText('There are no items in this List.');
     await this.page.close();
     }
+
+    static async addProductsAndOpenWishlist({
+        homePageobj,searchResultsPageobj,productName,productIndexes,expectedBtnText,wishlistUrl,expectedWishlistItemCount
+    }) {
+        await homePageobj.searchProduct(productName);
+        await searchResultsPageobj.validateSearchResults(productName);
+        let wishlistPageobj;
+
+        for (let i = 0; i < productIndexes.length; i++) {
+            const productPage = await searchResultsPageobj.openProduct(productIndexes[i]);
+            const productDetails = new ProductDetailsPage(productPage);
+
+            await productDetails.validateProductPrice();
+            await productDetails.addToWishlist(expectedBtnText);
+            await productDetails.validateAddedToWishlistDialog();
+            const isLastProduct = i === productIndexes.length - 1;
+
+            if (!isLastProduct) {
+                await productDetails.closeAfterWishlistConfirmation();
+                await homePageobj.page.bringToFront();
+            } else {
+                wishlistPageobj = new WishlistPage(productPage);
+                await wishlistPageobj.openWishlist(wishlistUrl);
+                await wishlistPageobj.validateWishlistItemCount(expectedWishlistItemCount);
+            }
+        }
+
+        return wishlistPageobj;
+    }
+
+
 }
 module.exports = { WishlistPage };

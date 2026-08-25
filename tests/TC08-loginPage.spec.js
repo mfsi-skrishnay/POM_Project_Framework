@@ -1,7 +1,7 @@
 const { test } = require('@playwright/test');
 const { HomePage } = require('../pages/HomePage.js');
 const { LoginPage } = require('../pages/LoginPage.js');
-const testData = require('../utils/testData');
+const testData = require('../utils/testData.js');
 
 const expectedName = 'Krishna';
 

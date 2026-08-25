@@ -19,45 +19,19 @@ let homePageobj, searchResultsPageobj, loginPageobj, wishlistPageobj;
 
 test.beforeAll(async ({ browser }) => {
     const page = await browser.newPage();
-    homePageobj = new HomePage(page);           //Avoid calling objects everyplace
+    homePageobj = new HomePage(page);          
     loginPageobj = new LoginPage(page);
     searchResultsPageobj = new SearchResultsPage(page);
 
     await homePageobj.navigateToHomePage();
     await loginPageobj.login(testData.email, testData.password);
     await loginPageobj.validateLoggedIn(expectedName);
-    await addAllProducts();
+
+    wishlistPageobj = await WishlistPage.addProductsAndOpenWishlist({homePageobj,searchResultsPageobj,productName,productIndexes,expectedBtnText,wishlistUrl,expectedWishlistItemCount});
 });
 
-// Adds each product to the wishlist, then opens the wishlist 
-async function addAllProducts() {
-    await homePageobj.searchProduct(productName);
-    await searchResultsPageobj.validateSearchResults(productName);
-
-    for (let i = 0; i < productIndexes.length; i++) {
-        const productPage = await searchResultsPageobj.openProduct(productIndexes[i]);
-        const productDetails = new ProductDetailsPage(productPage);
-
-        await productDetails.validateProductPrice();
-        await productDetails.addToWishlist(expectedBtnText);
-        await productDetails.validateAddedToWishlistDialog();
-
-        const isLastProduct = i === productIndexes.length - 1;
-
-        if (!isLastProduct) {
-            await productDetails.closeAfterWishlistConfirmation();
-            await homePageobj.page.bringToFront();
-        } else {
-            wishlistPageobj = new WishlistPage(productPage);
-            await wishlistPageobj.openWishlist(wishlistUrl);
-            await wishlistPageobj.validateWishlistItemCount(expectedWishlistItemCount);
-        }
-    }
-}
 
 test.describe('Scenario 5 - Add Product to Wishlist and Remove It', () => {
-
-
 test('TC01 - Remove a single item from the wishlist', async () => {
     const indexOfItemToRemove = 0;
 
