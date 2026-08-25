@@ -5,39 +5,24 @@ class BookingApi {
         this.request = request;
     }
 
-    endpoints = {
-        getAllBookings: '/booking',
-        getBookingById: (id) => `/booking/${id}`,
-
-        createBooking: '/booking',
-
-        createToken: '/auth',
-        updateBooking: (id) => `/booking/${id}`,
-
-        partialUpdateBooking: (id) => `/booking/${id}`,
-
-        deleteBooking: (id) => `/booking/${id}`
-
-    };
-
     async getAllBookings() {
-        return await this.request.get(`${config.use.demoApiUrl}${this.endpoints.getAllBookings}`);
+        return await this.request.get(`${config.use.demoApiUrl}/booking`);
     }
 
     async getBookingById(id) {
-        return await this.request.get(`${config.use.demoApiUrl}${this.endpoints.getBookingById(id)}`);
+        return await this.request.get(`${config.use.demoApiUrl}/booking/${id}`);
     }
 
     async createBooking(payload) {
-        return await this.request.post(`${config.use.demoApiUrl}${this.endpoints.createBooking}`,
+        return await this.request.post(`${config.use.demoApiUrl}/booking`,
             {
                 data: payload
             }
         );
     }
 
-    async createToken(payload) {              
-        return await this.request.post(`${config.use.demoApiUrl}${this.endpoints.createToken}`,
+    async createToken(payload) {
+        return await this.request.post(`${config.use.demoApiUrl}/auth`,
             {
                 data: payload
             }
@@ -45,7 +30,7 @@ class BookingApi {
     }
 
     async updateBooking(id, token, payload) {
-        return await this.request.put(`${config.use.demoApiUrl}${this.endpoints.updateBooking(id)}`,
+        return await this.request.put(`${config.use.demoApiUrl}/booking/${id}`,
             {
                 headers: {
                     Cookie: `token=${token}`
@@ -56,7 +41,7 @@ class BookingApi {
         }
 
     async partialUpdateBooking(id, token, payload) {
-    return await this.request.patch(`${config.use.demoApiUrl}${this.endpoints.partialUpdateBooking(id)}`,
+    return await this.request.patch(`${config.use.demoApiUrl}/booking/${id}`,
         {
             headers: 
             {
@@ -68,7 +53,7 @@ class BookingApi {
     }
 
     async deleteBooking(id, token) {
-    return await this.request.delete(`${config.use.demoApiUrl}${this.endpoints.deleteBooking(id)}`,
+    return await this.request.delete(`${config.use.demoApiUrl}/booking/${id}`,
         {
             headers: 
             {
