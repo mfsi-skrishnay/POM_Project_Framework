@@ -1,39 +1,50 @@
-const { test, expect } = require('@playwright/test');
+const { test, expect, request } = require('@playwright/test');
 const { BookingApi } = require('../../pages/ApiDemo/bookingApi');
 const { authPayload } = require('../../utils/testData');
 
+const {
+    assertSuccessResponse,
+    assertBookingStructure,
+    assertBookingDataTypes,
+    assertBookingData,
+    assertCreateBookingResponse,
+    assertDeletedResponse,
+    assertNotFoundResponse
+} = require('../../utils/apiAssertions');
+
 let bookingApi;
-const BookingId=2;
+let token;
+
+const BookingId = 2;
+
 const bookingPayload = {
-        firstname: 'Sam',
-        lastname: 'Muller',
-        totalprice: 500,
-        depositpaid: true,
-        bookingdates: 
-        {
-            checkin: '2026-07-22',
-            checkout: '2026-07-30'
-        },
-        additionalneeds: 'Breakfast'
-    };
+    firstname: 'Sam',
+    lastname: 'Muller',
+    totalprice: 500,
+    depositpaid: true,
+    bookingdates: {
+        checkin: '2026-07-22',
+        checkout: '2026-07-30'
+    },
+    additionalneeds: 'Breakfast'
+};
 
-    const updatePayload = {
-        firstname: 'Krishna',
-        lastname: 'Yadav',
-        totalprice: 800,
-        depositpaid: false,
-        bookingdates: 
-        {
-            checkin: '2026-08-01',
-            checkout: '2026-08-10'
-        },
-        additionalneeds: 'Lunch'
-    };
+const updatePayload = {
+    firstname: 'Krishna',
+    lastname: 'Yadav',
+    totalprice: 800,
+    depositpaid: false,
+    bookingdates: {
+        checkin: '2026-08-01',
+        checkout: '2026-08-10'
+    },
+    additionalneeds: 'Lunch'
+};
 
-    const patchPayload = {
-        firstname: 'Thomas',
-        additionalneeds: 'Dinner'
-    };
+const patchPayload = {
+    firstname: 'Thomas',
+    additionalneeds: 'Dinner'
+};
 
 test.beforeEach(async ({ request }) => {
     bookingApi = new BookingApi(request);
@@ -41,189 +52,168 @@ test.beforeEach(async ({ request }) => {
 
 test.describe('Booking API', () => {
 
+    test.beforeAll(async () => {
+
+        const apiRequest = await request.newContext();
+
+        const authApi = new BookingApi(apiRequest);
+
+        const authResponse = await authApi.createToken(authPayload);
+
+        expect(authResponse.status()).toBe(200);
+        expect(authResponse.ok()).toBeTruthy();
+
+        const authBody = await authResponse.json();
+
+        expect(authBody).toHaveProperty('token');
+
+        token = authBody.token;
+
+        console.log('Authentication token generated successfully');
+
+        await apiRequest.dispose();
+    });
+
+
     test('TC01: GET all bookings', async () => {
+
         const response = await bookingApi.getAllBookings();
-        expect(response.status()).toBe(200);
-        expect(response.ok()).toBeTruthy();
-        expect(response.statusText()).toBe('OK');
-        expect(response.headers()['content-type']).toContain('application/json');
+
+        assertSuccessResponse(response);
 
         const body = await response.json();
 
         expect(body.length).toBeGreaterThan(0);
         expect(body[0]).toHaveProperty('bookingid');
-
     });
+
 
     test('TC02: GET booking by Id', async () => {
-        const response = await bookingApi.getBookingById(BookingId);
-        expect(response.status()).toBe(200);
-        expect(response.ok()).toBeTruthy();
-        expect(response.headers()['content-type']).toContain('application/json');
-        
+
+        const response =await bookingApi.getBookingById(BookingId);
+
+        assertSuccessResponse(response);
+
         const body = await response.json();
 
-        console.log(body)
-        expect(body).toHaveProperty('firstname');
-        expect(body).toHaveProperty('lastname');
-        expect(body).toHaveProperty('totalprice');
-        expect(body).toHaveProperty('depositpaid');
-        expect(body).toHaveProperty('bookingdates');
-        expect(body.bookingdates).toHaveProperty('checkin');
-        expect(body.bookingdates).toHaveProperty('checkout');
+        console.log(body);
 
-        expect(typeof body.firstname).toBe('string');
-        expect(typeof body.lastname).toBe('string');
-        expect(typeof body.totalprice).toBe('number');
-        expect(typeof body.depositpaid).toBe('boolean');
-
+        assertBookingStructure(body);
+        assertBookingDataTypes(body);
     });
+
 
     test('TC03: POST create booking', async () => {
-    const response = await bookingApi.createBooking(bookingPayload);
-    expect(response.status()).toBe(200);
-    expect(response.ok()).toBeTruthy();
-    expect(response.statusText()).toBe('OK');
 
-    expect(response.headers()['content-type']).toContain('application/json');
-    const body = await response.json();
-    console.log(body);
+        const response = await bookingApi.createBooking(bookingPayload);
 
-    expect(body).toHaveProperty('bookingid');
-    expect(typeof body.bookingid).toBe('number');
-    expect(body.bookingid).toBeGreaterThan(0);
+        assertSuccessResponse(response);
 
-    expect(body).toHaveProperty('booking');
-    expect(body.booking).toHaveProperty('firstname');
-    expect(body.booking).toHaveProperty('lastname');
-    expect(body.booking).toHaveProperty('totalprice');
-    expect(body.booking).toHaveProperty('depositpaid');
-    expect(body.booking).toHaveProperty('bookingdates');
-    expect(body.booking).toHaveProperty('additionalneeds');
-    expect(body.booking.bookingdates).toHaveProperty('checkin');
-    expect(body.booking.bookingdates).toHaveProperty('checkout');
+        const body = await response.json();
 
-    // Value Validations
-    expect(body.booking.firstname).toBe(bookingPayload.firstname);
-    expect(body.booking.lastname).toBe(bookingPayload.lastname);
-    expect(body.booking.totalprice).toBe(bookingPayload.totalprice);
-    expect(body.booking.depositpaid).toBe(bookingPayload.depositpaid);
-    expect(body.booking.additionalneeds).toBe(bookingPayload.additionalneeds);
-    expect(body.booking.bookingdates.checkin).toBe(bookingPayload.bookingdates.checkin);
-    expect(body.booking.bookingdates.checkout).toBe(bookingPayload.bookingdates.checkout);
+        console.log(body);
+
+        assertCreateBookingResponse(body,bookingPayload);
     });
 
+
     test('TC04: PUT update booking', async () => {
-    const createResponse = await bookingApi.createBooking(bookingPayload);
-    expect(createResponse.status()).toBe(200);
-    const createBody = await createResponse.json();
-    const bookingId = createBody.bookingid;
 
-    const authResponse = await bookingApi.createToken(authPayload);     // Generate token
-    expect(authResponse.status()).toBe(200);
-    expect(authResponse.ok()).toBeTruthy();
-    const authBody = await authResponse.json();
-    const token = authBody.token;
+        // Create booking
+        const createResponse = await bookingApi.createBooking(bookingPayload);
 
-    const response = await bookingApi.updateBooking(bookingId,token,updatePayload); //PUT request
+        assertSuccessResponse(createResponse);
 
-    expect(response.status()).toBe(200);
-    expect(response.ok()).toBeTruthy();
-    expect(response.statusText()).toBe('OK');
-    expect(response.headers()['content-type']).toContain('application/json');
-
-    const body = await response.json();
-    console.log(body);
-
-    expect(body).toHaveProperty('firstname');
-    expect(body).toHaveProperty('lastname');
-    expect(body).toHaveProperty('totalprice');
-    expect(body).toHaveProperty('depositpaid');
-    expect(body).toHaveProperty('bookingdates');
-    expect(body).toHaveProperty('additionalneeds');
-    expect(body.bookingdates).toHaveProperty('checkin');
-    expect(body.bookingdates).toHaveProperty('checkout');
-
-    expect(typeof body.firstname).toBe('string');
-    expect(typeof body.lastname).toBe('string');
-    expect(typeof body.totalprice).toBe('number');
-    expect(typeof body.depositpaid).toBe('boolean');
-    expect(typeof body.additionalneeds).toBe('string');
-
-    expect(body.firstname).toBe(updatePayload.firstname);
-    expect(body.lastname).toBe(updatePayload.lastname);
-    expect(body.totalprice).toBe(updatePayload.totalprice);
-    expect(body.depositpaid).toBe(updatePayload.depositpaid);
-    expect(body.additionalneeds).toBe(updatePayload.additionalneeds);
-
-    expect(body.bookingdates.checkin).toBe(updatePayload.bookingdates.checkin);
-    expect(body.bookingdates.checkout).toBe(updatePayload.bookingdates.checkout);
-});
+        const createBody = await createResponse.json();
+        const bookingId = createBody.bookingid;
 
 
-    test('TC05:  PATCH partial update booking', async () => {
-    const createResponse = await bookingApi.createBooking(bookingPayload);
-    expect(createResponse.status()).toBe(200);
-    const createBody = await createResponse.json();
-    const bookingId = createBody.bookingid;
+        // PUT update
+        const response = await bookingApi.updateBooking(bookingId,token,updatePayload);
 
-    const authResponse = await bookingApi.createToken(authPayload);   // Generate token
-    expect(authResponse.status()).toBe(200);     
-    const authBody = await authResponse.json();
-    const token = authBody.token;
+        assertSuccessResponse(response);
 
-    const response = await bookingApi.partialUpdateBooking(bookingId,token,patchPayload);   // PATCH request
+        const body = await response.json();
 
-    expect(response.status()).toBe(200);
-    expect(response.ok()).toBeTruthy();
-    expect(response.statusText()).toBe('OK');
+        console.log(body);
 
-    expect(response.headers()['content-type']).toContain('application/json');
+        assertBookingStructure(body);
+        assertBookingDataTypes(body);
+        assertBookingData(body, updatePayload);
+    });
 
-    const body = await response.json();
-    console.log(body);
 
-    expect(body).toHaveProperty('firstname');
-    expect(body).toHaveProperty('lastname');
-    expect(body).toHaveProperty('totalprice');
-    expect(body).toHaveProperty('depositpaid');
-    expect(body).toHaveProperty('bookingdates');
-    expect(body).toHaveProperty('additionalneeds');
+    test('TC05: PATCH partial update booking', async () => {
 
-    expect(body.firstname).toBe(patchPayload.firstname);         // Updated values
-    expect(body.additionalneeds).toBe(patchPayload.additionalneeds);
-    expect(body.lastname).toBe(bookingPayload.lastname);           // Rest unchanged values
-    expect(body.totalprice).toBe(bookingPayload.totalprice);
-    expect(body.depositpaid).toBe(bookingPayload.depositpaid);
-    expect(body.bookingdates.checkin).toBe(bookingPayload.bookingdates.checkin);
-    expect(body.bookingdates.checkout).toBe(bookingPayload.bookingdates.checkout);
-});
+        // Create booking
+        const createResponse = await bookingApi.createBooking(bookingPayload);
+
+        assertSuccessResponse(createResponse);
+
+        const createBody = await createResponse.json();
+        const bookingId = createBody.bookingid;
+
+
+        // PATCH update
+        const response = await bookingApi.partialUpdateBooking(bookingId,token,patchPayload);
+
+        assertSuccessResponse(response);
+
+        const body = await response.json();
+
+        console.log(body);
+
+        assertBookingStructure(body);
+
+
+        // Validate updated fields
+        expect(body.firstname).toBe(patchPayload.firstname);
+
+        expect(body.additionalneeds).toBe(patchPayload.additionalneeds);
+
+
+        // Validate unchanged fields
+        expect(body.lastname).toBe(bookingPayload.lastname);
+
+        expect(body.totalprice).toBe(bookingPayload.totalprice);
+
+        expect(body.depositpaid).toBe(bookingPayload.depositpaid);
+
+        expect(body.bookingdates.checkin).toBe(bookingPayload.bookingdates.checkin);
+
+        expect(body.bookingdates.checkout).toBe(bookingPayload.bookingdates.checkout);
+    });
+
 
     test('TC06: DELETE booking', async () => {
-    const createResponse = await bookingApi.createBooking(bookingPayload);
-    expect(createResponse.status()).toBe(200);
-    const createBody = await createResponse.json();
-    const bookingId = createBody.bookingid;
 
-    const authResponse = await bookingApi.createToken(authPayload);
-    expect(authResponse.status()).toBe(200);
-    const authBody = await authResponse.json();
-    const token = authBody.token;
+        // Create booking
+        const createResponse = await bookingApi.createBooking(bookingPayload);
 
-    const deleteResponse = await bookingApi.deleteBooking(bookingId,token);   // DELETE booking
+        assertSuccessResponse(createResponse);
 
-    expect(deleteResponse.status()).toBe(201);
-    expect(deleteResponse.ok()).toBeTruthy();
-    expect(deleteResponse.statusText()).toBe('Created');
+        const createBody = await createResponse.json();
+        const bookingId = createBody.bookingid;
 
-    const deleteBody = await deleteResponse.text();
-    expect(deleteBody).toBe('Created');
 
-    const getResponse = await bookingApi.getBookingById(bookingId);    // Verify booking is deleted
-    expect(getResponse.status()).toBe(404);
-    const getBody = await getResponse.text();
-    expect(getBody).toContain('Not Found');
+        // DELETE booking
+        const deleteResponse =await bookingApi.deleteBooking( bookingId,token);
 
-});
+        assertDeletedResponse(deleteResponse);
+
+        const deleteBody = await deleteResponse.text();
+
+        expect(deleteBody).toBe('Created');
+
+
+        // Verify booking is deleted
+        const getResponse = await bookingApi.getBookingById(bookingId);
+
+        assertNotFoundResponse(getResponse);
+
+        const getBody = await getResponse.text();
+
+        expect(getBody).toContain('Not Found');
+    });
 
 });
