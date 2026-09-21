@@ -33,7 +33,6 @@ class HomePage {
     
     async handleContinueShopping() {
     const continueButton = this.page.locator(locators.header.continueBtn);
-
     try {
         await expect(continueButton).toBeVisible();
         await continueButton.click();
